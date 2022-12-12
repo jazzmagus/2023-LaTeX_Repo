@@ -1,0 +1,234 @@
+\documentclass[10pt, a4paper twoside, notitlepage, notoc, justified]{tufte-handout}
+\usepackage{lipsum}
+\usepackage[utf8, latin1]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{caption}
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+\setlength{\columnsep}{1cm}
+%\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+\usepackage{pgf,tikz,pgfplots} 
+%\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\setlength{\columnseprule}{0.5pt}
+\def\columnseprulecolor{\color{black}}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\small \MakeUppercase{liceo scientifico "J. Da Ponte" - bassano del grappa}}
+\fancyhead[R]{\small \emph{Anno Scolastico 2020-21}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.15pt}
+\renewcommand{\footrulewidth}{0.1pt}
+
+\parindent 0ex
+%\setlength{\parindent}{2em}
+%\setlength{\parskip}{1em}
+%\renewcommand{\baselinestretch}{1.5}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title page
+
+\begin{document}
+\noindent
+{\LARGE{\textbf{PROGRAMMAZIONI CLASSI}}}\\[3mm]
+%\begin{titlepage}
+%\begin{center}
+%\vspace{1cm}
+{\textit {\small Diego Fantinelli}}\\[4mm]
+{\textbf{Anno Scolastico 2020-21}}\\
+%\vfill
+%\line(1,0){400}\\[.5mm]
+%{\Huge{\textbf{Diario di Bordo 2021}}}
+%\Large{\textbf{- Sottotitolo:  -}}\\[1mm]
+\\
+\line(1,0){400}\\
+\tableofcontents
+%\vfill
+%{\scriptsize By Student Name}\\
+%{\scriptsize Candidate \#} \\
+%{\scriptsize \today} \\
+%\end{center}
+%
+%\end{titlepage}
+
+%------------------------------------- ESEMPIO Evento
+
+
+%------------------------------------- introduzione
+
+%\thispagestyle{empty}
+%\clearpage
+
+\setcounter{page}{1}
+
+
+\newenvironment{loggentry}[2]% date, heading
+{\noindent\textbf{#2}\marginnote{#1}\\}{\vspace{0.5cm}}
+
+%------------------------------------- OTTOBRE 2020
+\newpage
+\section{Classi Prime}
+\subsection{\small \bf MODULO 1 - Insiemi Numerici}
+
+\begin{loggentry}{Settembre - Ottobre}{\em Insiemi Numerici}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar{{\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate} 
+\columnbreak
+
+\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+\end{enumerate}
+}
+\end{multicols}
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. \newthought{nota 2}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus sit amet tortor gravida placerat. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus.
+\end{loggentry}
+
+\subsection{\small \bf MODULO 2: Calcolo Letterale}
+
+\begin{loggentry}{Settembre - Ottobre}{\em Insiemi Numerici}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar{{\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate} 
+\columnbreak
+
+\begin{enumerate}
+		\item {\em Lezione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\em Comportamento:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\item {\em Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate}
+	}
+\end{multicols}
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. \newthought{nota 2}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus sit amet tortor gravida placerat. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus.
+\end{loggentry}
+%------------------------------------- CLASSE seconda
+\newpage
+\section{Classi Seconde}
+\subsection{\small \bf MODULO 1 - Insiemi Numerici}
+
+\begin{loggentry}{Settembre - Ottobre}{\small OSSERVAZIONI}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar{{\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate} 
+\columnbreak
+
+\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+\end{enumerate}
+}
+\end{multicols}
+\marginpar{{\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. \newthought{nota 2}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus sit amet tortor gravida placerat. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus.
+\end{loggentry}
+
+\subsection{\small \bf MODULO 2: Calcolo Letterale}
+
+\begin{loggentry}{Settembre - Ottobre}{\em Insiemi Numerici}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar{{\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate} 
+\columnbreak
+
+\begin{enumerate}
+		\item {\em Lezione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\em Comportamento:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\item {\em Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate}
+}
+\end{multicols}
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. \newthought{nota 2}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus sit amet tortor gravida placerat. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus.
+\end{loggentry}
+
+%------------------------------------- CLASSE 3
+
+
+%------------------------------------- CLASSE 4
+
+
+%------------------------------------- CLASSE 5
+
+
+%------------------------------------- CLASSE 6
+
+
+%=======================================================================
+
+
+%------------------------------------- DICEMBRE 2020
+
+
+%------------------------------------- GENNAIO 2021
+
+
+%------------------------------------- FEBBRAIO 2021
+
+
+%------------------------------------- MARZO 2021
+
+
+%------------------------------------- APRILE 2021
+
+
+%------------------------------------- MAGGIO 2021
+
+
+%------------------------------------- GIUGNO 2021
+
+
+\end{document}

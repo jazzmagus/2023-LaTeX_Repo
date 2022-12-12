@@ -1,0 +1,283 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper, landscape, answers]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+\newcommand{\class}{\huge {verifica di matematica}}
+\newcommand{\term}{I Quadrimestre}
+\newcommand{\examnum}{num.: 1}
+\newcommand{\examdate}{\scriptsize 13 novembre 2020}
+\newcommand{\timelimit}{45 min}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+%\unframedsolutions
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{\small ISS "G. A. Remondini" - Bassano del Grappa}{}{\examdate}
+\runningheader{\footnotesize VERIFICA DI MATEMATICA}{\footnotesize SOLUZIONI}{Classe $3^a$ QA}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[20pt]
+{\huge{ \term} -{ \examnum}}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf $3^a$ QA}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} & {\em prof.:} & \makebox[2.5in]{\em Diego Fantinelli}
+\end{tabular*}\\
+
+\vspace{5cm}
+% ---------------------------------- Avvertenze
+
+\noindent
+
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, di cui uno facoltativo di \numbonuspoints \;punti, che verrà conteggiato soltanto se verranno svolti anche tutti i precedenti.
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}
+
+\vfill
+\newpage
+
+
+% ---------------------------------- Esercizi
+\begin{questions}
+\addpoints
+\question Risolvi i seguenti problemi, nell'Insieme \(\mathbb{N}\) dei Numeri Naturali:
+\begin{parts}
+\part[10]  Tre fari si accendono ad intervalli regolari.\\ Il primo si accende ogni 8 s, il secondo faro ogni 12 s, il terzo ogni 15 s.\\ Se ad un certo istante si accendono contemporaneamente, dopo quanti secondi torneranno ad accendersi insieme?
+
+\begin{solution}
+I secondi che dovranno passare per far sì che i tre fari si accendano contemporaneamente
+dovranno essere un multiplo di 8, 12 e 15, il minimo comune multiplo.
+Effettuata la scomposizione in fattori primi, risulta che:\\
+\begin{align*}
+	8 & = 2^3\\
+	12 & = 2^2 \cdot 3\\
+	15 & = 3 \cdot 5
+\end{align*}
+per cui il \(m.c.m. = 2^3 \cdot 3 \cdot 5 = \boxed{120} \)\\
+I tre fari torneranno ad accendersi contemporaneamente dopo 120 secondi.
+\end{solution}
+
+\addpoints
+
+\part[10]
+ Gli studenti che frequentano il primo, il secondo ed il terzo anno di una scuola sono rispettivamente 140, 168 e 154.\\ Se si vogliono disporre tutti gli allievi in squadre di uguale numero di alunni, formate da alunni della stessa classe e con il numero più alto possibile, quanti
+alunni devono essere presenti in ogni squadra e quante squadre si formeranno in totale?
+
+
+\begin{solution}
+Si tratta di un classico problema di M.C.D., si tratta cioè di calcolare il Massimo tra i Divisori Comuni di 140, 168 e 154.
+Effettuata la scomposizione in fattori primi, risulta che:\\
+\begin{align*}
+	140 & = 2^2 \cdot 5 \cdot 7\\
+	168 & = 2^3 \cdot 3 \cdot 7\\
+	154 & = 2 \cdot 7 \cdot 11
+\end{align*}
+per cui il \(M.C.D. = 2 \cdot 7\)\\
+In ogni squadra vi saranno pertanto \fbox{14} alunni.\\
+In totale si formeranno (il totale degli studenti diviso il numero di studenti per squadra):\\
+\((140 + 168 + 154) : 14 = 462 : 14 = \boxed{33}\) squadre
+
+\end{solution}
+
+\end{parts}
+
+\addpoints
+\question[10]
+Calcola il M.C.D. e il m.c.m. fra i seguenti numeri naturali \(\mathbb{N}\):
+
+\begin{multicols}{2}
+\begin{parts}
+
+\part
+
+\(110, \quad 55, \quad 121\)
+
+
+\begin{solution}
+
+\(M.C.D. = \boxed{11}, \quad m.c.m. = \boxed{1210}\)
+\end{solution}
+
+
+\vspace{4pt}
+\part
+\(15, \quad 25, \quad 125, \quad 150\)
+
+
+\begin{solution}
+
+\(M.C.D. = \boxed{5}, \quad m.c.m. = \boxed{750}\)
+
+\end{solution}
+
+\vspace{5pt}
+\end{parts}
+\end{multicols}
+
+\addpoints
+\question [5]Quale, tra le seguenti definizioni, esprime meglio il procedimento di calcolo del M.C.D.?
+
+\emph{Suggerimento:} leggere con molta attenzione il testo delle risposte perché le differenze potrebbero essere minime.
+\begin{choices}
+ \choice Scomposti in fattori primi i numeri di cui si vuole calcolare il M.C.D., il M.C.D. è il quoziente dei fattori primi non comuni, presi una sola volta, con il massimo esponente.
+ \choice Scomposti in fattori primi i numeri di cui si vuole calcolare il M.C.D., il M.C.D. è il prodotto dei fattori primi comuni e non comuni, presi una sola volta, con il minimo esponente.
+ \CorrectChoice Scomposti in fattori primi i numeri di cui si vuole calcolare il M.C.D., il M.C.D. è il prodotto dei fattori primi comuni, presi una sola volta, con il minimo esponente.
+ \choice Scomposti in fattori primi i numeri di cui si vuole calcolare il M.C.D., il M.C.D. è il prodotto dei fattori primi non comuni, presi una sola volta, con il minimo esponente.
+\end{choices}
+\vspace{5pt}
+
+\addpoints
+\quad
+\addpoints
+\question Ricordando le {\em proprietà delle potenze} e le {\em regole dei segni}, semplifica le seguenti espressioni, nell'Insieme \(\mathbb{Z}\) dei Numeri Interi:
+\vspace{5pt}
+\begin{parts}
+\part[10]
+\([(5^7)^2 : (5^5)^2 : 5^2 - 5^0] : (12^3 : 12^2)\)
+\vspace{5pt}
+
+
+\begin{solution}
+\begin{align*}
+	[ 5^{14} : 5^{10} : 5^2 - 1] : (12^1) & = [5^2 - 1] : 12\\
+	& = [25 - 1] : 12\\
+	& = 24 : 12 = \boxed{2}
+\end{align*}
+\end{solution}
+\vspace{5pt}
+
+\addpoints
+\part[15]
+\((2^{13} : 2^7)^2 : 2^{10} + (-3)^7 : (-3)^4\)
+\vspace{5pt}
+\footnotesize
+\begin{solution}
+\begin{align*}
+	(2^6)^2 : 2^{10} + (-3)^3 & = 2^{12} : 2^{10} - 27\\
+	& = 2^2 - 27\\
+	& = 4 - 27 = \boxed{-23}
+\end{align*}
+\end{solution}
+
+\end{parts}
+
+% ------------------------------------- Domanda suddivisa in parti con bonus
+%\begin{questions}
+%
+%\question Given the equation \(x^n + y^n = z^n\) for \(x,y,z\) and \(n\) positive
+%integers.
+%\begin{parts}
+%\part[5] For what values of $n$ is the statement in the previous question true?
+%\vspace{\stretch{1}}
+%
+%\part[2 \half] For $n=2$ there's a theorem with a special name. What's that name?
+%\vspace{\stretch{1}}
+%
+%
+%\bonuspart[2 \half] What famous mathematician had an elegant proof for this theorem but there was
+%not enough space in the margin to write it down?
+%\vspace{\stretch{1}}
+%
+%\end{parts}
+
+%\droptotalpoints
+%
+%\question[20] Compute \[\int_{0}^{\infty} \frac{\sin(x)}{x}\]
+%
+%\vspace{\stretch{1}}
+
+% ------------------------------------- Domanda Bonus
+\vspace{10pt}
+\bonusquestion[10]{\em Esercizio facoltativo:}
+
+Si deve recintare un campo triangolare di lati 60, 126 e 132 metri con una rete metallica
+sostenuta da paletti di cemento posti a distanze uguali tra loro ed in numero minore possibile. \\A
+che distanza saranno piantati i paletti? Quanti ne serviranno?
+
+
+\begin{solution}
+I paletti dovranno essere distribuiti alla stessa distanza tra loro, quindi occorre cercare un divisore comune tra 60, 126 e 132. Poiché la distanza tra i paletti deve essere la massima possibile, dobbiamo cercare il Massimo Divisore Comune, quindi il M.C.D.\\
+Effettuata la scomposizione in fattori primi, risulta che:\\
+\begin{align*}
+	60 & = 2^2 \cdot 3 \cdot 7\\
+	126 & = 2 \cdot 3^2 \cdot 7\\
+	132 & = 2^2 \cdot 3 \cdot 11
+\end{align*}
+per cui il \(M.C.D. = 2 \cdot 3 = \boxed{6}\)\\
+
+I paletti andranno piantati ad una distanza di 6 metri uno dall'altro.\\
+
+Poiché il perimetro del triangolo misura \(60 + 126 + 132 = 318 \, m\), dividendo questa lunghezza per 6 otterremo il numero di pali necessari: \(318 : 6 = \boxed{53}\) paletti.
+\end{solution}
+
+\end{questions}
+\vspace{5pt}
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 35 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche in caso di andamenti troppo scostanti della media-classe.
+\end{document}

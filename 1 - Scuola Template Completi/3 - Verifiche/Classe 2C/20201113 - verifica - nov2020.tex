@@ -1,0 +1,354 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+% ---------------------------------- Intestazione
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{I Quadrimestre}
+\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{13 novembre 2020}
+\newcommand{\timelimit}{50 minuti}
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{ISS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di MATEMATICA}{}{Classe 2\string^C}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[20pt]
+{\huge{ \term} -{ \examnum}}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+
+\vspace{5cm}
+% ---------------------------------- Avvertenze
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, e un esercizio facoltativo, di \numbonuspoints \;punti, che verrà conteggiato soltanto se verranno svolti anche tutti i precedenti.
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}
+%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ---------------------------------- Esercizi
+\begin{questions}
+
+\addpoints
+\question[30]
+Fattorizza i seguenti polinomi con il metodo che ritieni più opportuno:
+\begin{multicols}{2}
+\begin{parts}
+\part
+\(ax + x + a + 1\)
+{\footnotesize
+\begin{solution}
+	\(a(x+1)\)
+\end{solution}
+}
+\vspace{.3cm}
+\part
+\(2a^3 + a^2 - 6a -3\)
+{\footnotesize
+\begin{solution}
+	\(a(x+1)\)
+\end{solution}
+}
+\vspace{.3cm}
+\part
+\(7x + 7 - x(x + 1)\)
+{\footnotesize
+\begin{solution}
+	\(a(x+1)\)
+\end{solution}
+}
+\vspace{.3cm}
+\part
+\(2x^6 + 2x^5 + x^3 + x^2\)
+{\footnotesize
+\begin{solution}
+	\(a(x+1)\)
+\end{solution}
+}
+\vspace{.3cm}
+\part
+\(36x^4y^2 - z^6\)
+{\footnotesize
+\begin{solution}
+	\(a(x+1)\)
+\end{solution}
+}
+\vspace{.3cm}
+\part
+\(- 12 ab + 9a^2 + 4 b^2\)
+{\footnotesize
+\begin{solution}
+	\(a(x+1)\)
+\end{solution}
+}
+\vspace{.3cm}
+\end{parts}
+\end{multicols}
+\vspace{.3cm}
+
+%\addpoints
+%\question[25]  Tre fari si accendono ad intervalli regolari.\\ Il primo si accende ogni 8 s, il secondo faro ogni 12 s, il terzo ogni 15 s. Se ad un certo istante si accendono contemporaneamente, dopo quanti secondi torneranno ad accendersi insieme?\\
+%\[
+%	f(x) = x^4 - 4x^2 + 4
+%\]
+%\emph{suggerimento:}
+%
+%Per determinare le radici o {\em zeri} si risolva l'equazione {\em associata}: \[x^4 - 4x^2 + 4 = 0\]
+%
+%\emph{osservazione:} 
+%
+%La determinaci\'on de la paridad (en particular) debe estar apoyada en el procedimiento algebraico que la sustenta. Dado que conoce con exactitud los puntos de inflexi\'on, los intervalos en que la curva es creciente o decreciente deben darse exactamente definidos.
+%\vspace{.5cm}
+%
+%\addpoints
+%\question[25] Dai una sintetica definizione di {\em Polinomio}:
+%\fillwithlines{1in}
+%\vspace{.5cm}
+
+\question
+Rispondi in modo chiaro e sintetico alle seguenti domande:\\
+\begin{parts}
+\part[5]
+Dimostra la seguente uguaglianza: \(A^2 - 2AB + B^2 = (A - B)^2\)
+\fillwithlines{0.75in}
+
+{\footnotesize
+\begin{solution}
+\begin{align*}
+(A - B)^2 & = (A - B)(A - B)\\ 
+& = A^2 - AB - BA + B^2\\
+& = A^2 - 2AB + B^2
+\end{align*}
+\end{solution}
+}
+\vspace{.5cm}
+\part[5]
+Che cosa si intende con {\em Fattorizzazione} di un Polinomio?\\
+{\footnotesize
+\begin{solution}
+{\bf Fattorizzare} un polinomio significa scriverlo come prodotto di fattori (per l'appunto) irriducibili, ovviamente di grado inferiore.\\ Un polinomio è {\bf irriducibile} quando non può essere scritto come prodotto di due o più fattori di grado inferiore.	
+\end{solution}
+}
+\fillwithlines{.5in}
+\end{parts}
+
+\vspace{.5cm}
+%\addpoints
+%\question [12]Che cosa si intende con il termine {\em Polinomio}?
+
+%\begin{oneparchoices}
+% \choice Stephen Hawking 
+% \choice Albert Einstein
+% \choice Emmy Noether
+% \choice This makes no sense
+%\end{oneparchoices}
+
+%\addpoints
+%\question [20]Quali dei seguenti monomi sono {\em simili}?
+%
+%\begin{checkboxes}
+% \choice Stephen Hawking \quad \dotfill
+% \correctchoice Albert Einstein \quad \dotfill
+% \choice Emmy Noether \quad \dotfill
+% \choice I don't know \quad \dotfill
+%\end{checkboxes}
+
+\addpoints
+\question [10] \((a + b)(x - 2y)\) è la fattorizzazione di uno dei seguenti polinomi, quale?\\
+\begin{choices}
+\setlength{\leftmargin}{0pt}
+ \choice \(x(a - b) + 2y(a + b)\) 
+ \choice \(2x(x - b) + 2y(y + b)\)
+ \CorrectChoice \(x(a + b) - 2y(a + b)\)
+ \choice \((a - b)^2 + 2xy\)
+\end{choices}
+\vspace{.5cm}
+
+%\addpoints
+%\question[25] 
+%En la funci\'on dada se garantiza que hay tres puntos de inflexi\'on ubicados en las raices o ceros y el $y_i$. Determine: Dominio, Rango, Tipo de funci\'on (inyectiva, sobreyectiva o biyectiva), paridad e intervalos en los que es creciente o decreciente y construya una aproximaci\'on gr\'afica del lugar geom\'etrico de la funci\'on.
+%\[
+%	f(x) = x^4 - 4x^2 + 4
+%\]
+%\emph{Suggerimento:} Para determinar las raices o ceros resuelva la ecuaci\'on $$x^4 - 4x^2 + 4 = 0$$
+%
+%\emph{Osservazione:} La determinaci\'on de la paridad (en particular) debe estar apoyada en el procedimiento algebraico que la sustenta. Dado que conoce con exactitud los puntos de inflexi\'on, los intervalos en que la curva es creciente o decreciente deben darse exactamente definidos.
+%
+%\addpoints
+%\question[25]  En la funci\'on dada se garantiza que hay tres puntos de inflexi\'on ubicados en las raices o ceros y el $y_i$. Determine: Dominio, Rango, Tipo de funci\'on (inyectiva, sobreyectiva o biyectiva), paridad e intervalos en los que es creciente o decreciente y construya una aproximaci\'on gr\'afica del lugar geom\'etrico de la funci\'on.
+%\[
+%	f(x) = x^4 - 4x^2 + 4
+%\]
+%\emph{Sugerencia:} Para determinar las raices o ceros resuelva la ecuaci\'on $x^4 - 4x^2 + 4 = 0$
+%
+%\emph{Observaci\'on:} La determinaci\'on de la paridad (en particular) debe estar apoyada en el procedimiento algebraico que la sustenta. Dado que conoce con exactitud los puntos de inflexi\'on, los intervalos en que la curva es creciente o decreciente deben darse exactamente definidos.
+%
+%\addpoints
+%\question[25] Semplifica la seguente espressione algebrica:
+%	\[
+%		\lim _{x \to 1} \frac{x^3 - 1}{x^2 - 1}
+%	\]
+%
+%\addpoints
+%\question[25] Determine, si los hay, los n\'umeros en los que la funci\'on dada es discontinua.
+%	\[
+%		f(x) = (x^2 - 9x + 18)^{-1}
+%	\]
+%\vspace{.5cm}
+% ------------------------------------- Domanda suddivisa in parti con bonus
+%\begin{questions}
+%
+%\question Given the equation \(x^n + y^n = z^n\) for \(x,y,z\) and \(n\) positive
+%integers.
+%\begin{parts}
+%\part[5] For what values of $n$ is the statement in the previous question true?
+%\vspace{\stretch{1}}
+%
+%\part[2 \half] For $n=2$ there's a theorem with a special name. What's that name?
+%\vspace{\stretch{1}}
+%
+%
+%\bonuspart[2 \half] What famous mathematician had an elegant proof for this theorem but there was
+%not enough space in the margin to write it down?
+%\vspace{\stretch{1}}
+%
+%\end{parts}
+
+%\droptotalpoints
+%
+%\question[20] Compute \[\int_{0}^{\infty} \frac{\sin(x)}{x}\]
+%
+%\vspace{\stretch{1}}
+
+% ------------------------------------- Domanda Bonus
+
+%\bonusquestion[20] {\em Esercizio facoltativo:}\\Si deve recintare un campo triangolare di lati 60, 126 e 132 metri con una rete metallica
+%sostenuta da paletti di cemento posti a distanze uguali tra loro ed in numero minore possibile. A
+%che distanza saranno piantati i paletti? Quanti ne saranno?
+%\end{questions}
+
+\bonusquestion[10] {\em Esercizio facoltativo:}
+
+Scomporre in fattori - se possibile - il seguente trinomio: \(- 4a^2 - 25 b^2 + 20ab\)
+{\footnotesize
+\begin{solution}
+\begin{align*}
+	- 4a^2 - 25 b^2 + 20ab & =
+	-(+ 4a^2 - 20ab + 25b^2)\\ & = {\bf -(2a - 5b)^2}
+\end{align*}	
+\end{solution}
+}
+\end{questions}
+
+\vspace{8pt}
+%\addpoints
+%\question[25] Encuentre $D_xy$
+%\[
+%	y = \frac{(x + 1)^2}{3x - 4}
+%\]
+%
+%\end{questions}
+
+%\begin{table}[h]
+%\centering
+%	\caption{Relazione tra $f$ e $f'$.}
+%	\def\arraystretch{1.5}
+%	\begin{tabular}{c|c|r} % con |c| si definiscono le colonne e poi si separano le righe tra loro con \hline
+%
+%	{$f(x)$} & {$f'(x)$}\\ \hline
+%	$x>0$ & La funzione $f(x)$ Ã¨ \emph{crescente}. & prova 1\\
+%	\hline
+%	$x<0$ & La funzione $f(x)$ Ã¨ \emph{decrescente}. & prova 2\\
+%	\hline	
+%	$x<0$ & La funzione $f(x)$ Ã¨ \emph{costante}. & prova 3\\	
+%	\end{tabular}
+%\end{table}
+
+%\vfill
+%% ================================= Bloque de instrucciones
+%\noindent
+%\rule[2ex]{\textwidth}{0.5pt}
+%\textbf{Istruzioni}: Este examen contiene \numquestions \;planteamientos que corresponde a \numpoints \;puntos de la valoraciÃ³n final. Tenga presente que no esta autorizada la comunicaciÃ³n con sus compaÃ±eros, ni el uso de ayudas computacionales (calculadora, celular, etc) y que resolver el pliego a l\'apiz implica renunciar a cualquier reclamaciÃ³n despuÃ©s de entregados los resultados.\\
+
+% Tabla de calificaciones
+%\vspace{8pt}
+
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{4pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 30 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrino prestazioni della classe sensibilmente lontane dalla media-classe stimata.
+\end{document}

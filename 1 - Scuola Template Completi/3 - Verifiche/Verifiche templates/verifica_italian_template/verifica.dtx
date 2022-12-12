@@ -1,0 +1,2669 @@
+% \iffalse meta-comment
+%
+% verifica.cls. Version: 1.2 - February 7, 2020.
+% Author: Riccardo DOSSENA <riccardo.dossena@gmail.com>
+%
+% Questa è una classe per comporre le verifiche
+%--------------------------------------------------------------------------------
+% Copyright 2020 R. Dossena
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is R. Dossena.
+%--------------------------------------------------------------------------------
+%
+% \fi
+% \iffalse
+%<*driver>
+\ProvidesFile{verifica.dtx}
+%</driver>
+%<class|package>\NeedsTeXFormat{LaTeX2e}
+%<class>\ProvidesClass{verifica}
+%<package>\ProvidesPackage{ver-doc}
+%<*class|package>
+    [2020/02/07 v1.2 Riccardo Dossena]
+%</class|package>
+%
+%<*driver>
+\PassOptionsToClass{a4paper}{article}
+\documentclass{ltxdoc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,italian]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage{ver-doc}
+\usepackage[numbered]{hypdoc} % after ver-doc 'cause setspace interferes
+\usepackage[all]{hypcap} % needed to help hyperlinks direct correctly
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+
+\newcommand{\pack}[1]{\mbox{\sffamily#1}}
+\newcommand{\opt}[1]{``\texttt{#1}''}
+\newcommand{\env}{\texttt}
+\def\labelitemi{\small $\blacktriangleright$}
+
+\setISOcompliance
+
+\definecolor{lightergray}{gray}{0.99}
+\definecolor{mathgreen}{RGB}{2,112,10}
+
+\lstset{language=[LaTeX]TeX,
+     keywordstyle=\color{RoyalBlue},
+     aboveskip=\bigskipamount,
+     belowskip=\medskipamount,
+     basicstyle=\ttfamily,
+     commentstyle=\color{Emerald}\ttfamily,
+     stringstyle=\rmfamily,
+     numberstyle=\scriptsize,
+     showstringspaces=false,
+     breaklines=true,
+     frame=lines,
+     backgroundcolor=\color{lightergray},
+     flexiblecolumns=true,
+     escapeinside={?*}{*)},
+     firstnumber=last,
+     inputencoding=utf8,
+     keepspaces=true,
+     literate={à}{{\`a}}1 {è}{{\`e}}1 {é}{{\'e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1
+              {ù}{{\`u}}1 {È}{{\`E}}1 {°}{{\degree}}1
+              {<B>}{\{\color{green!60!black}}1 {<E>}{\}\normalcolor}1,
+     % keyword highlighting
+     keywordstyle=[2]{\color{RedOrange}},
+     keywordstyle=[3]{\color{Mahogany}},
+     otherkeywords={$,\\[,\\],&},
+     morekeywords=[2]{$,\\[,\\],&},
+     morekeywords=[3]{intestazione,tipologia,disciplina,istituto,
+                      data,classe,tempo,intestazionesemplice,
+                      intestazionerighe,dss,vf,verofalso,fattorevf,punti,
+                      puntiadestra,puntipt,totpunti,vartotpunti,puntiman,
+                      riga,dotword,dotrule,ddfrac,numfrac,denfrac,
+                      arc,vararc,eps,del,Del,R,N,Z,Q,tsa,tso,
+                      restorephi,restoretheta,abs,labeltest,labelbox,
+                      biglabelbox,unitx,lineanome,vfitem},
+}
+
+\lstset{morekeywords=%
+    {setlength,subsection,part,chapter,dfrac,varto,
+     ointclockwise,iint,iiint,oiint,IntelligentComma,NoIntelligentComma,
+     setISOcompliance,unit,text,SI,DeclareMathOperator,mathbb,
+     mathcal,varnothing,lvert,rvert,lVert,rVert,implies,boldsymbol,
+     binom,hdotsfor,ap,ped,notag,eqref,theoremstyle,swapnumbers,
+     qedhere,qedsymbol,blacksquare,newunicodechar,foreignlanguage,
+     setactivedoublequote,maketitle,euro,EUR,includegraphics,
+     tableofcontents,refname,bibname,setbibliographyfont,btxauthorcolon,
+     addbibresource,printbibliography,printindex,indexprologue,
+     appendix,listoffigures,listoftables,graphicspath,RequirePackage,
+     toprule,midrule,bottomrule,sisetup,multirow,cmidrule,rowcolors,
+     scalebox,resizebox,rotatebox,reflectbox,cancel,bcancel,xcancel,
+     setstretch,doublespacing,onehalfspacing,singlespacing,textcolor,
+     color,url,href,DeclareFontEncoding,DeclareFontSubstitution,
+     DeclareMathAlphabet,bm,pmb,columnbreak,tag,cfrac,micro,selectlanguage}}
+
+\usepackage{tcolorbox}
+\newenvironment{riquadro}[1][]{%
+\begin{tcolorbox}[arc=0mm,colback=SkyBlue!10,colframe=black,boxrule=.6pt,%
+                  before={\par\medskip\pagebreak[0]\noindent},%
+                  after={\smallskip},#1]}%
+{\end{tcolorbox}}
+
+\newlist{options}{description}{1}
+\setlist[options]{leftmargin=10em,font=\ttfamily,style=sameline}
+
+\newcommand{\Mcmd}[1]{\texttt{\textbackslash\color{Mahogany}#1}}
+\newcommand{\Bcmd}[1]{\texttt{\textbackslash\color{RoyalBlue}#1}}
+
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{verifica.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{806}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{v1.0}{2019/11/28}{First public release}
+%
+% \GetFileInfo{verifica.dtx}
+%
+% \DoNotIndex{\newcommand,\newenvironment,\def,\begin,\end,\par}
+% \DoNotIndex{\DeclareOption,\ExecuteOptions,\ProcessOptions,\RequirePackage}
+% \DoNotIndex{\LoadClass,\AtBeginDocument,\SetSymbolFont}
+% \DoNotIndex{\newif,\geometry,\pagestyle,\setISOcompliance,\IntelligentComma}
+% \DoNotIndex{\relax,\let,\phi,\theta,\varphi,\vartheta,\else,\fi,\undefined}
+% \DoNotIndex{\renewcommand,\newlength,\hline,\textbf,\textit,\\,\setlength}
+% \DoNotIndex{\DeclarePairedDelimiter,\MakeUppercase,\MessageBreak,\ClassError}
+% \DoNotIndex{\widthof,\textwidth,\ifdefined,\null,\vspace,\noindent,\hfill}
+% \DoNotIndex{\hrulefill,\makebox,\linewidth,\small,\centering,\lvert,\rvert}
+% \DoNotIndex{\newunicodechar,\ensuremath,\circ,\textsuperscript,\,}
+% \DoNotIndex{\varepsilon,\delta,\Delta,\displaystyle,\mathbb,\arraystretch}
+% \DoNotIndex{\bm,\box,\DeclareFontShape,\DeclareFontFamily,\DeclareMathAccent}
+% \DoNotIndex{\DeclareSymbolFont,\doublespacing,\frac,\mathstrut,\bfseries}
+% \DoNotIndex{\usefont,\symbol,\mathpalette,\sbox,\vbox,\hbox,\box}
+% \DoNotIndex{\m@th,\wd,\resizebox,\height,\nointerlineskip,\mathord}
+% \DoNotIndex{\mathrm,\labelitemi,\blacktriangleright,\textup,\fbox,\parbox}
+% \DoNotIndex{\alph,\newlist,\renewlist,\setlist,\hspace,\iflanguage,\protect}
+% \DoNotIndex{\ifdim,\newcounter,\newsavebox,\savebox,\setcounter,\linenumbers}
+% \DoNotIndex{\thelinenumbers,\addtocounter,\multido,\i,\phantom,\newline}
+% \DoNotIndex{\value,\leavevmode,\leaders,\hss,\kern,\real,\tabcolsep,\space}
+% \DoNotIndex{\doublespacing,\singlespacing,\@nil,\@nnil,\vphantom,\today}
+% \DoNotIndex{\nolinebreak,\null,\textsc,\ifx,\tmp,\mbox,\vfill,\LARGE,\Huge}
+% \DoNotIndex{\enitkv@key,\item,\@ifpackageloaded,\@ifpackagewith}
+%
+% \title{La classe \pack{verifica}\thanks{Versione \fileversion\ del
+% \filedate.}}
+% \author{Riccardo Dossena\thanks{%
+% E-mail: \href{mailto:riccardo.dossena@gmail.com}%
+%         {\ttfamily riccardo.dossena@gmail.com}}}
+%
+% \maketitle
+%
+% \pagestyle{plain}
+%
+% \selectlanguage{english}
+% \begin{abstract}
+% This \LaTeX\ document class is intended for teachers who must write
+% out the text of a test or an exam. It provides various environments
+% and commands to produce the typical exercises contained in this
+% kind of document. It is mainly intended for Italian high school teachers,
+% as the style is probably more in line with Italian high school tests.
+% \end{abstract}
+%
+% \selectlanguage{italian}
+%
+% \tableofcontents
+%
+% \section{Introduzione}
+%
+% Questa classe di documento è rivolta principalmente agli insegnanti delle
+% scuole superiori italiane che devono comporre il testo di una verifica, di un
+% esame o di un test. Essa mette a disposizione vari ambienti e comandi per
+% produrre gli esercizi tipici contenuti in questo genere di documenti.
+%
+% Il codice è stato abbozzato in occasione dell'ultima lezione del Corso \LaTeX\
+% tenuto al Liceo Novello di Codogno (LO)
+% fra ottobre e novembre 2019, prima sotto forma di pacchetto e in seguito di
+% classe. L'intento era di fornire ai partecipanti uno strumento
+% concreto e utile per la realizzazione di uno fra i documenti più
+% frequentemente utilizzati: il test, comunemente chiamato ``verifica''.
+% Le attente osservazioni dei miei ottimi colleghi mi hanno spinto in seguito
+% a potenziare la classe, al fine di permettere una migliore personalizzazione
+% e un più efficace utilizzo degli ambienti definiti.
+%
+% Desidero ringraziare Tommaso Gordini per i preziosi consigli e suggerimenti.
+%
+% \section{Licenza}
+%
+% Il codice \LaTeX\ di questa classe è rilasciato sotto la \LaTeX\ Project
+% Public License, v1.3.
+%
+% \section{Come usare la classe \pack{verifica}}
+%
+% Per usare la classe è sufficiente copiare il file \texttt{verifica.cls} nella
+% stessa cartella dove risiede il file sorgente del documento che si
+% vuole comporre, oppure installarlo secondo le procedure standard in una
+% directory opportuna della propria distribuzione \TeX\footnote{Si vedano, nel
+% caso, le \TeX\ FAQ alla pagina \url{https://texfaq.org/FAQ-inst-wlcf}.}.
+% Per iniziare a editare un documento si può digitare direttamente il file
+% \texttt{verifica-template.tex}, che contiene alcuni comandi già impostati.
+%
+% Per caricare la classe, il comando da dare nel preambolo è
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\documentclass{verifica}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \subsection{Opzioni di classe}
+%
+% Le opzioni di default per il corpo del testo e per il formato della pagina
+% sono \opt{11pt} e \opt{a4paper}. È possibile tuttavia modificarle inserendo
+% altre opzioni di classe, ad esempio:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\documentclass[12pt,a5paper]{verifica}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% Le opzioni di classe disponibili, oltre a quelle per il formato pagina,
+% sono elencate di seguito.
+%
+% \begin{options}[leftmargin=4.2cm,itemsep=2pt]
+% \item[10pt] corpo del testo a $10\unit{pt}$
+% \item[11pt] corpo del testo a $11\unit{pt}$ (default)
+% \item[12pt] corpo del testo a $12\unit{pt}$
+% \item[14pt] corpo del testo a $14\unit{pt}$
+% \item[senzagrazie] stile del testo senza grazie (font \pack{cmbright})
+% \item[textbullet] stile punti elenco \textbullet\ (anziché
+%        {\small $\blacktriangleright$})
+% \item[intestazionesemplice] intestazione stile ``semplice''
+% \item[intestazionerighe] intestazione stile ``con righe''
+% \end{options}
+%
+%\section{L'intestazione della verifica}
+%
+% Per creare l'intestazione della verifica occorre impostare i comandi che ne
+% definiscono la tipologia, la disciplina, l'istituto, la data, la classe ed
+% eventualmente il tempo a disposizione~(tabella~\ref{tab:intest}).
+% \begin{table}[htbp]
+% \centering
+% \renewcommand{\arraystretch}{1.4}\renewcommand{\tabcolsep}{1.2em}
+%   \begin{tabularx}{\linewidth}{lp{.3\linewidth}X}
+%   \toprule
+%   \textbf{Comando}  & \textbf{Esempi/descrizione}     & \textbf{Valore di%
+%                                                         default} \\
+%   \midrule
+%   \Mcmd{tipologia}  & verifica, prova per competenze,%
+%                       test, prova comune,%
+%                       verifica orale, \ldots          & verifica \\
+%   \Mcmd{disciplina} & matematica, fisica, scienze,%
+%                       italiano, \ldots                & matematica \\
+%   \Mcmd{istituto}   & nome dell'Istituto              & Liceo ``G. Novello''%
+%                                                          -- Codogno \\
+%   \Mcmd{data}       & data della verifica             & \Bcmd{today}%
+%                                                         (data odierna) \\
+%   \Mcmd{classe}     & classe                          & \emph{non definito} \\
+%   \Mcmd{tempo}      & tempo a disposizione            & \emph{non definito} \\
+%   \bottomrule
+%   \end{tabularx}
+%   \caption{I comandi per l'intestazione della verifica.}\label{tab:intest}
+% \end{table}
+%
+% Per generare l'intestazione si deve inserire il comando
+% \lstinline|\intestazione|.
+%
+% La classe \pack{verifica} fornisce inoltre i comandi \lstinline|\tsa| e
+% \lstinline|\tso|\footnote{Abbreviazioni di
+% \Bcmd{textsuperscript}\texttt{\{a\}} e \Bcmd{textsuperscript}\texttt{\{o\}}.}
+% che generano rispettivamente i simboli~$\textsuperscript{a}$
+% e~$\textsuperscript{o}$ per i numeri ordinali, seguiti da uno spazio
+% fine. Essi sono utili per scrivere l'argomento di \lstinline|\classe|.
+%
+% Mostriamo un esempio di intestazione standard:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{document}
+
+\tipologia{verifica orale}
+\disciplina{fisica}
+\istituto{Liceo ``F. Indovino'' -- Roma}
+\classe{3\tsa C}
+\data{12 novembre 2019}
+
+\intestazione
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \makeatletter
+% \def\@tipologia{verifica orale}
+% \def\@disciplina{fisica}
+% \def\@istituto{Liceo ``F. Indovino'' -- Roma}
+% \def\@classe{Classe 3\tsa C}
+% \def\@data{12 novembre 2019}
+% \makeatother
+% \begin{riquadro}
+% \intestazionedefault
+% \end{riquadro}
+% Se in aggiunta si inserisce il comando \lstinline|\tempo|, viene
+% stampato il tempo a disposizione per la prova. In assenza dei comandi
+% di definizione, apparirà l'intestazione coi valori di default indicati
+% nella tabella~\ref{tab:intest}. Ad esempio:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{document}
+
+\classe{}
+\tempo{60 minuti}
+
+\intestazione
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+%
+% \makeatletter
+% \def\@tipologia{verifica}
+% \def\@disciplina{matematica}
+% \def\@istituto{Liceo ``G. Novello'' -- Codogno}
+% \def\@data{\today}
+% \def\@classe{Classe}
+% \def\@tempo{60 minuti}
+% \makeatother
+%
+% \begin{riquadro}
+% \intestazionedefault
+% \end{riquadro}
+% Il campo \lstinline|\classe| rimasto vuoto può rivelarsi utile nel caso in cui
+% la verifica sia proposta a più classi e l'informazione debba essere inserita
+% dal candidato.
+%
+% Se il comando \lstinline|\classe| non viene inserito, il campo corrispondente
+% rimane indefinito e la dicitura ``Classe'' non appare.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{document}
+
+\intestazione
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+%
+% \makeatletter
+% \def\@tipologia{verifica}
+% \def\@disciplina{matematica}
+% \def\@istituto{Liceo ``G. Novello'' -- Codogno}
+% \def\@data{\today}
+% \def\@classe{}
+% \let\@tempo\undefined
+% \makeatother
+%
+% \begin{riquadro}
+% \intestazionedefault
+% \end{riquadro}
+%
+% \subsection{Altri tipi di intestazione}
+%
+% È possibile usare altri due stili di intestazione tramite i comandi
+% \lstinline|\intestazionesemplice| e \lstinline|\intestazionerighe|. La prima
+% produce un'intestazione ``essenziale'':
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\tipologia{prova per competenze}
+\disciplina{matematica}
+\istituto{Liceo ``G. Novello'' -- Codogno (LO)}
+\classe{3\tsa C}
+\data{12 novembre 2019}
+
+\intestazionesemplice
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+%
+% \makeatletter
+% \def\@tipologia{prova per competenze}
+% \def\@disciplina{matematica}
+% \def\@istituto{Liceo ``G. Novello'' -- Codogno}
+% \def\@classe{Classe 3\tsa C}
+% \def\@data{12 novembre 2019}
+% \let\@tempo\undefined
+% \makeatother
+%
+% \begin{riquadro}
+% \vspace{.5em}
+% \intestazionesemplice%
+% \end{riquadro}
+% La seconda produce un'intestazione delimitata da due righe:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\tipologia{verifica orale}
+\disciplina{matematica}
+\istituto{Liceo ``G. Novello'' -- Codogno (LO)}
+\classe{2\tsa B}
+\data{12 novembre 2019}
+\tempo{55 minuti}
+
+\intestazionerighe
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+%
+% \makeatletter
+% \def\@tipologia{verifica orale}
+% \def\@disciplina{matematica}
+% \def\@istituto{Liceo ``G. Novello'' -- Codogno}
+% \def\@classe{Classe 2\tsa B}
+% \def\@data{12 novembre 2019}
+% \def\@tempo{55 minuti}
+% \makeatother
+%
+% \begin{riquadro}
+% \vspace{2em}
+% \intestazionerighe%
+% \end{riquadro}
+% In entrambi i casi si può definire oppure no il tempo a disposizione.
+%
+% Anziché usare i comandi \lstinline|\intestazionesemplice| e \lstinline|\intestazionerighe|, è possibile
+% impostare un'opzione di classe. Scrivendo infatti
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\documentclass[intestazionesemplice]{verifica}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% oppure
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\documentclass[intestazionerighe]{verifica}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% l'intestazione verrà generata dal comando \lstinline|\intestazione| con lo
+% stile impostato dall'opzione.
+%
+% \subsection{Il nominativo del candidato}
+%
+% Le intestazioni ``semplice'' e ``con righe'' non prevedono spazi in cui
+% il candidato deve scrivere il proprio nome. Il comando \lstinline|\lineanome|
+% genera una linea punteggiata con la dicitura ``Cognome e nome'' destinata a
+% tale scopo.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\tipologia{verifica orale}
+\disciplina{matematica}
+\istituto{Liceo ``G. Novello'' -- Codogno (LO)}
+\classe{2\tsa B}
+\data{12 novembre 2019}
+\tempo{55 minuti}
+
+\lineanome
+\intestazionesemplice
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \lineanome
+% \intestazionesemplice
+% \end{riquadro}
+% Di seguito il risultato per l'intestazione ``con righe''.
+% \begin{riquadro}
+% {\noindent {\small Cognome e nome} \dotrule{.3\textwidth}\par\vskip8pt}
+% \intestazionerighe
+% \end{riquadro}
+% Se l'intestazione è quella di default, che prevede di per sé lo spazio per il
+% nome del candidato, il comando \lstinline|\lineanome| produce semplicemente
+% una riga punteggiata nel riquadro di destra.
+% \begin{riquadro}
+% \lineanome
+% \intestazionedefault
+% \end{riquadro}
+%
+% \section{Gli ambienti}
+%
+% \subsection{L'ambiente \texttt{esercizi}}
+%
+% L'ambiente |esercizi| è quello principale: esso produce, mediante il pacchetto
+% \pack{enumitem}, un elenco numerato allineato al margine sinistro, con
+% etichette (label) in grassetto. La spaziatura verticale fra un
+% esercizio (item) e l'altro è impostata per default a $2\unit{em}$.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item La mamma dà a Pierino \EUR{10} per comprare la frutta. Pierino li
+      spende tutti. Quanto rimane a Pierino?
+
+\item Risolvi la seguente equazione
+      \[
+        x+1=2
+      \]
+
+\item Enuncia e dimostra il teorema di Pitagora.
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item La mamma dà a Pierino \EUR{10} per comprare la frutta. Pierino li spende
+%       tutti. Quanto rimane a Pierino?
+%
+% \item Risolvi la seguente equazione
+%       \[
+%         x+1=2
+%       \]
+%
+% \item Enuncia e dimostra il teorema di Pitagora.
+% \end{esercizi}
+% \end{riquadro}
+% Qualora si volesse modificare la spaziatura tra gli item, è sufficiente
+% modificare il valore del parametro |itemsep|, esattamente come nelle liste
+% definite da \pack{enumitem}. Nel codice di esempio seguente viene prodotta una
+% spaziatura di $1\unit{em}$ (anziché di $2\unit{em}$) tra un item e l'altro.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}[itemsep=1em]
+\item La mamma dà a Pierino...
+...
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+%
+% \subsection{Sottoelenchi dell'ambiente \texttt{esercizi}}
+%
+% È possibile, all'interno dell'ambiente \env{esercizi}, creare dei sottoelenchi
+% che sfruttano i vantaggi del pacchetto \pack{enumitem}. Mostriamo come
+% esempio un esercizio che consiste in un elenco di equazioni da risolvere.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Risolvi le seguenti equazioni
+    \begin{enumerate}[a),itemsep=1.5em,topsep=1.2em,leftmargin=*]
+        \item $\dss{\frac{x+1}{x-2}+4=\frac{x}{x-1}}$
+
+        \item $\dss{\sin^2 x+\cos x = \cos 2x}$
+
+        \item $\dss{\ln (x+1)=\ln 5 + \log_2 x}$
+    \end{enumerate}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Risolvi le seguenti equazioni
+%     \begin{enumerate}[a),itemsep=1.5em,topsep=1.2em,leftmargin=*]
+%         \item $\dss{\frac{x+1}{x-2}+4=\frac{x}{x-1}}$
+%
+%         \item $\dss{\sin^2 x+\cos x = \cos 2x}$
+%
+%         \item $\dss{\ln (x+1)=\ln 5 + \log_2 x}$
+%     \end{enumerate}
+% \end{esercizi}
+% \end{riquadro}
+%
+% Il comando \lstinline|\dss| è un'abbreviazione di \lstinline|\displaystyle|,
+% che serve a ottenere le formule nel testo in stile display. La
+% tabella~\ref{tab:enumitem} mostra alcuni dei parametri opzionali di
+% \pack{enumitem} che possono essere impostati per personalizzare gli elenchi.
+%
+% \begin{table}[htbp]
+% \centering
+% \renewcommand{\arraystretch}{1.5}\renewcommand{\tabcolsep}{1em}
+%   \begin{tabularx}{\linewidth}{lX}
+%   \toprule
+%   \textbf{Parametro}    & \textbf{Esempi/descrizione} \\
+%   \midrule
+%   \texttt{a)}           & imposta la numerazione alfabetica con parentesi.
+%                           Altri esempi sono:
+%                           \begin{itemize}[\textbullet,leftmargin=*]
+%                           \item \texttt{A.} (numerazione alfabetica in
+%                                 maiuscolo con punto)
+%                           \item \texttt{i.} (numerazione romana in minuscolo
+%                                 con punto)
+%                           \item \verb|\bfseries 1)| (numerazione in grassetto
+%                                 con parentesi)
+%                           \end{itemize} \\
+%   \texttt{itemsep}      & imposta lo spazio verticale tra un item e l'altro \\
+%   \texttt{topsep}       & imposta lo spazio verticale tra il testo che precede
+%                           l'elenco e il primo item \\
+%   \texttt{labelsep}     & imposta la distanza tra il testo dell'item e
+%                           l'etichetta  \\
+%   \texttt{leftmargin}   & imposta il rientro dell'elenco rispetto al margine
+%                           sinistro; il comando \verb|leftmargin=*| allinea le
+%                           etichette (label) numeriche al margine degli item
+%                           dell'elenco principale \\
+%   \bottomrule
+%   \end{tabularx}
+%   \caption{Alcuni parametri utili del pacchetto
+%   \pack{enumitem}.}\label{tab:enumitem}
+% \end{table}
+%
+% \subsection{Sottoelenchi puntati}
+%
+% È possibile usare \env{itemize} per suddividere un esercizio in punti non
+% numerati, utilizzando gli stessi parametri opzionali dell'ambiente
+% \env{enumerate}.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Un'automobile sta viaggiando alla velocità $v_0$ lungo una strada
+      rettilinea. A un certo istante $t_0$ comincia ad accelerare e
+      raggiunge la velocità $v$ all'istante $t$. Calcola:
+      \begin{itemize}
+        \item l'accelerazione media dell'automobile;
+        \item lo spazio percorso in fase di accelerazione.
+      \end{itemize}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Un'automobile sta viaggiando alla velocità $v_0$ lungo una strada
+%       rettilinea. A un certo istante $t_0$ comincia ad accelerare e raggiunge
+%       la velocità $v$ all'istante $t$. Calcola:
+%     \begin{itemize}
+%         \item l'accelerazione media dell'automobile;
+%         \item lo spazio percorso in fase di accelerazione.
+%     \end{itemize}
+% \end{esercizi}
+% \end{riquadro}
+%
+% Se al posto di {\small $\blacktriangleright$} si preferisce \textbullet, si
+% deve impostare l'opzione di classe {\color{Mahogany}\texttt{itembullet}}.
+% Nell'esempio seguente mostriamo anche l'uso del parametro
+% \texttt{leftmargin=*}, che evita il rientro del sottoelenco.
+%
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\documentclass[?*\textcolor{Mahogany}{\texttt{itembullet}}*)]{verifica}
+...
+\begin{esercizi}
+\item Un'automobile sta viaggiando...
+      ...
+      \begin{itemize}[leftmargin=*]
+        \item l'accelerazione media dell'automobile;
+        \item lo spazio percorso in fase di accelerazione.
+      \end{itemize}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Un'automobile sta viaggiando alla velocità $v_0$ lungo una strada
+%       rettilinea. A un certo istante $t_0$ comincia ad accelerare e raggiunge
+%       la velocità $v$ all'istante $t$. Calcola:
+%     \begin{itemize}[\textbullet,leftmargin=*]
+%         \item l'accelerazione media dell'automobile;
+%         \item lo spazio percorso in fase di accelerazione.
+%     \end{itemize}
+% \end{esercizi}
+% \end{riquadro}
+%
+%\subsection{Test a risposta multipla}
+%
+% Vengono forniti tre ambienti per i test a risposta multipla:
+% l'ambiente \texttt{test} (risposte allineate verticalmente) e gli
+% ambienti ``in linea'' \texttt{test-orizz} e \texttt{test-orizz-newline}
+% (``orizzontali'', cioè con risposte scritte di seguito). Mostriamo di seguito
+% come utilizzarli.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+    \begin{test}
+        \item $\sin x$;
+        \item $\cos x$;
+        \item $-\sin x$;
+        \item $-\cos x$;
+        \item nessuna delle precedenti.
+    \end{test}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+%     \begin{test}
+%         \item $\sin x$;
+%         \item $\cos x$;
+%         \item $-\sin x$;
+%         \item $-\cos x$;
+%         \item nessuna delle precedenti.
+%     \end{test}
+% \end{esercizi}
+% \end{riquadro}
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+    \begin{test-orizz}
+        \item $\sin x$;
+        \item $\cos x$;
+        \item $-\sin x$;
+        \item $-\cos x$;
+        \item nessuna delle precedenti.
+    \end{test-orizz}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+%     \begin{test-orizz}
+%         \item $\sin x$;
+%         \item $\cos x$;
+%         \item $-\sin x$;
+%         \item $-\cos x$;
+%         \item nessuna delle precedenti.
+%     \end{test-orizz}
+% \end{esercizi}
+% \end{riquadro}
+%
+% Se si desidera che le risposte comincino a capo in una nuova riga, è
+% disponibile la variante \texttt{test-orizz-newline}:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+    \begin{test-orizz-newline}
+        \item $\sin x$;
+        \item $\cos x$;
+        \item $-\sin x$;
+        \item $-\cos x$;
+        \item nessuna delle precedenti.
+    \end{test-orizz-newline}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+%     \begin{test-orizz-newline}
+%         \item $\sin x$;
+%         \item $\cos x$;
+%         \item $-\sin x$;
+%         \item $-\cos x$;
+%         \item nessuna delle precedenti.
+%     \end{test-orizz-newline}
+% \end{esercizi}
+% \end{riquadro}
+%
+% Gli ambienti \texttt{test}, \texttt{test-orizz} e \texttt{test-orizz-newline}
+% sono ancora liste definite tramite il pacchetto \pack{enumitem}, per cui è
+% possibile modificarne i parametri come mostrato per l'ambiente
+% \texttt{esercizi}\footnote{Consultare, nel caso, la documentazione di
+% \pack{enumitem}:
+% \url{http://ctan.mirror.garr.it/mirrors/CTAN/macros/latex/contrib/enumitem/enumitem.pdf}.}.
+%
+% Se si vuole cambiare il formato delle label per l'intero documento, si può
+% impostare nel preambolo o all'inizio del testo il comando seguente:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\labeltest{?*\meta{\textrm{label}}*)}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% dove \meta{label} definisce il nuovo stile secondo i criteri di
+% \pack{enumitem}, anche in modalità \opt{shortlabels}. Ricordiamo che se il
+% contatore viene scritto tra parentesi graffe (ad esempio se si
+% utilizza una box) non può essere in forma abbreviata, ma deve essere una fra
+% \lstinline|\arabic*|, \lstinline|\alph*|,
+% \lstinline|\Alph*|, \lstinline|\roman*| o \lstinline|\Roman*|.
+%
+% L'esempio che segue è ispirato ai testi dei \emph{Giochi di Archimede}.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\labeltest{\bfseries (A)}
+...
+\begin{esercizi}
+\item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+    \begin{test-orizz-newline}
+        \item $\sin x$;
+        \item $\cos x$;
+        \item $-\sin x$;
+        \item $-\cos x$;
+        \item nessuna delle precedenti.
+    \end{test-orizz-newline}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+%     \begin{test-orizz-newline}[label=\bfseries (\Alph*)]
+%         \item $\sin x$;
+%         \item $\cos x$;
+%         \item $-\sin x$;
+%         \item $-\cos x$;
+%         \item nessuna delle precedenti.
+%     \end{test-orizz-newline}
+% \end{esercizi}
+% \end{riquadro}
+%
+% La classe \pack{verifica} definisce i comandi \lstinline|\labelbox| e
+% \lstinline|\biglabelbox|, che racchiudono i loro argomenti in box quadrate
+% ``framed''. La prima è usata per le label di default dei test a risposta
+% multipla e la seconda per le caselle dei test vero/falso. Esse possono essere
+% opportunamente utilizzate insieme a \lstinline|\labeltest| per ridefinire lo
+% stile di altre label.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\labeltest{\biglabelbox{\Alph*}}
+...
+\begin{esercizi}
+\item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+    \begin{test-orizz-newline}
+        \item $\sin x$;
+        \item $\cos x$;
+        \item $-\sin x$;
+        \item $-\cos x$;
+        \item nessuna delle precedenti.
+    \end{test-orizz-newline}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+%     \begin{test-orizz-newline}[label=\biglabelbox{\Alph*}]
+%         \item $\sin x$;
+%         \item $\cos x$;
+%         \item $-\sin x$;
+%         \item $-\cos x$;
+%         \item nessuna delle precedenti.
+%     \end{test-orizz-newline}
+% \end{esercizi}
+% \end{riquadro}
+% \subsection{Scrivere su più colonne}
+%
+% La classe carica in automatico il pacchetto \pack{multicol}, che consente
+% di scrivere su più colonne tramite l'ambiente \env{multicols}:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{multicols}{?*\meta{\textrm{numero di colonne}}*)}
+...
+\end{multicols}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% L'esempio seguente mostra un possibile utilizzo di questa funzionalità.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+{\setlength{\columnsep}{2.5em}
+\begin{multicols}{2}
+\begin{esercizi}
+    \item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+        \begin{test}
+        \item $\sin x$;
+        \item $\cos x$;
+        \item $-\sin x$;
+        \item $-\cos x$;
+        \item nessuna delle precedenti.
+        \end{test}\columnbreak
+    \item Un'automobile sta viaggiando...
+        ...
+        \begin{itemize}[leftmargin=*]
+          \item l'accelerazione media dell'automobile;
+          \item lo spazio percorso in fase di accelerazione.
+        \end{itemize}
+\end{esercizi}
+\end{multicols}}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}\setlength{\columnsep}{2.5em}
+% \begin{multicols}{2}
+% \begin{esercizi}
+%     \item Quale tra le funzioni seguenti è la derivata di $1+\sin x$?
+%         \begin{test}
+%         \item $\sin x$;
+%         \item $\cos x$;
+%         \item $-\sin x$;
+%         \item $-\cos x$;
+%         \item nessuna delle precedenti.
+%         \end{test} \columnbreak
+%     \item Un'automobile sta viaggiando alla velocità $v_0$ lungo una strada
+%       rettilinea. A un certo istante $t_0$ comincia ad accelerare e
+%       raggiunge la velocità $v$ all'istante~$t$. Calcola:
+%       \begin{itemize}[leftmargin=*]
+%         \item l'accelerazione media dell'automobile;
+%         \item lo spazio percorso in fase di accelerazione.
+%       \end{itemize}
+% \end{esercizi}
+% \end{multicols}
+% \end{riquadro}
+%
+% L'esempio mostra anche come usare il comando
+% \lstinline|\setlength{\columnsep}|\marg{valore} per
+% impostare lo spazio di separazione tra le colonne. Questo comando e tutto
+% l'ambiente \env{multicols} vanno racchiusi tra parentesi graffe,
+% in modo che lo spazio di separazione impostato abbia
+% effetto solo sull'ambiente multicolonna corrente. Se lo si desidera, si può
+% far apparire una linea di separazione tra le colonne con
+% \lstinline|\setlength{\columnseprule}{.4pt}|.
+%
+% \section{Strumenti}
+%
+% \subsection{Vero o falso}
+%
+% Se la lingua selezionata per il documento è l'italiano o un'altra lingua
+% diversa dall'inglese, il comando \lstinline|\vf| stampa alla fine della riga
+% corrente le box {\small \biglabelbox{V}~\biglabelbox{F}}. Se
+% invece la lingua selezionata è l'inglese (per l'intero documento o solo
+% per una parte, dopo \lstinline|\selectlanguage{english}| o all'interno
+% dell'ambiente \verb|otherlanguage|)
+% stampa {\small \biglabelbox{T}~\biglabelbox{F}}.
+%
+% Questo comando è utile per test con brevi domande vero/falso.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Stabilisci se le seguenti affermazioni sono vere o false.
+\begin{enumerate}[a)]
+    \item La derivata di $3x^2$ è $6x$. \vf
+    \item $7+3=11$. \vf
+    \item Una soluzione di $x^2-1=0$ è $1$. \vf
+    \item Il lavoro di una forza costante $\vec{F}$ relativo allo spostamento
+          $\vec{s}$ è dato dal prodotto scalare $\vec{F}\cdot\vec{s}$. \vf
+\end{enumerate}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Stabilisci se le seguenti affermazioni sono vere o false.
+% \begin{enumerate}[a)]
+%     \item La derivata di $3x^2$ è $6x$. \vf
+%     \item $7+3=11$. \vf
+%     \item Una soluzione di $x^2-1=0$ è $1$. \vf
+%     \item Il lavoro di una forza costante $\vec{F}$ relativo allo spostamento
+%           $\vec{s}$ è dato dal prodotto scalare $\vec{F}\cdot\vec{s}$. \vf
+% \end{enumerate}
+% \end{esercizi}
+% \end{riquadro}
+% Come si vede, se la frase è troppo lunga e raggiunge il margine destro,
+% il risultato è insoddisfacente. Per rimediare all'inconveniente viene definito
+% l'ambiente \env{test-verofalso}. Esso produce una lista con label alfabetiche
+% e item che si interrompono al~$75\%$ della lunghezza della
+% linea. Viene inoltre stampato automaticamente
+% {\small \biglabelbox{V}~\biglabelbox{F}} alla fine dell'ultima riga di ogni
+% item. Ciascun item deve essere impostato tramite il comando
+% \lstinline|\vfitem|\marg{testo}\footnote{La versione 1.0 della classe
+% prevedeva la creazione dei test vero/falso mediante il comando
+% \texttt{\textbackslash\color{Mahogany}verofalso}. Questo comando è ancora
+% attivo, per cui rimane piena compatibilità con la versione 1.0.}.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Stabilisci se le seguenti affermazioni sono vere o false.
+\begin{test-?*\texttt{verofalso}*)}
+    \vfitem{La derivata di $3x^2$ è $6x$.}
+           ...
+    \vfitem{Il lavoro di una forza costante $\vec{F}$ relativo allo
+           spostamento $\vec{s}$ è dato dal prodotto scalare
+           $\vec{F}\cdot\vec{s}$.}
+    \vfitem{Siano $f$ e $g$ due funzioni reali di variabile reale
+           aventi lo stesso dominio. Se esse sono entrambe pari oppure entrambe
+           dispari allora $fg$ è una funzione pari; se una di esse è dispari
+           allora $fg$ è una funzione dispari.}
+\end{test-?*\texttt{verofalso}*)}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Stabilisci se le seguenti affermazioni sono vere o false.
+% \begin{test-verofalso}
+%     \vfitem{La derivata di $3x^2$ è $6x$.}
+%     \vfitem{$7+3=11$.}
+%     \vfitem{Una soluzione di $x^2-1=0$ è $1$.}
+%     \vfitem{Il lavoro di una forza costante $\vec{F}$ relativo allo
+%            spostamento $\vec{s}$ è dato dal prodotto scalare
+%            $\vec{F}\cdot\vec{s}$.}
+%     \vfitem{Siano $f$ e $g$ due funzioni reali di variabile reale
+%            aventi lo stesso dominio. Se esse sono entrambe pari oppure
+%            entrambe dispari allora $fg$ è una funzione pari; se una di esse
+%            è dispari allora $fg$ è una funzione dispari.}
+% \end{test-verofalso}
+% \end{esercizi}
+% \end{riquadro}
+%
+% L'ambiente \env{test-verofalso} è ancora una lista creata tramite
+% \pack{enumitem}, per cui è possibile impostare per essa tutti i parametri
+% descritti nella tabella~\ref{tab:enumitem}. Ad esempio:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{test-?*\texttt{verofalso}*)}[1),itemsep=1.2em,leftmargin=*,...]
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% Se anziché al $75\%$ si vuole interrompere la riga a una percentuale
+% diversa, si può scegliere il fattore di scala desiderato (riferito a $1$)
+% impostando il parametro |fattorevf|. Nell'esempio che segue impostiamo
+% l'interruzione all'$85\%$ della lunghezza della riga.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Stabilisci se le seguenti affermazioni sono vere o false.
+\begin{test-?*\texttt{verofalso}*)}[?*\texttt{fattorevf}*)=.85]
+    \vfitem{Il lavoro di una forza costante $\vec{F}$ relativo
+            allo spostamento $\vec{s}$ è dato dal prodotto scalare
+            $\vec{F}\cdot\vec{s}$.}
+    \vfitem{Siano $f$ e $g$ due funzioni reali di variabile reale
+            aventi lo stesso dominio. Se esse sono entrambe pari oppure
+            entrambe dispari allora $fg$ è una funzione pari; se una di
+            esse è dispari allora $fg$ è una funzione dispari.}
+\end{test-?*\texttt{verofalso}*)}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Stabilisci se le seguenti affermazioni sono vere o false.
+% \begin{test-verofalso}[fattorevf=.85]
+%     \vfitem{Il lavoro di una forza costante $\vec{F}$ relativo
+%             allo spostamento $\vec{s}$ è dato dal prodotto scalare
+%             $\vec{F}\cdot\vec{s}$.}
+%     \vfitem{Siano $f$ e $g$ due funzioni reali di variabile reale
+%             aventi lo stesso dominio. Se esse sono entrambe pari oppure
+%             entrambe dispari allora $fg$ è una funzione pari; se una di
+%             esse è dispari allora $fg$ è una funzione dispari.}
+% \end{test-verofalso}
+% \end{esercizi}
+% \end{riquadro}
+%
+% Infine, se si vuole impostare definitivamente un fattore di scala per
+% l'\emph{intero} documento, senza doverlo specificare ogni volta come
+% parametro, si può inserire nel preambolo o all'inizio del testo il comando:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\fattorevf?*\marg{\textrm{fattore di scala}}*)
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% dove \meta{fattore di scala} deve essere un numero compreso tra $0$ e $1$.
+%
+% \subsection{Righe per scrivere le risposte}
+%
+% Viene definito il comando:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\riga?*\marg{\textrm{numero di righe}}*)
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% che stampa delle righe punteggiate ben spaziate verticalmente, su
+% cui il candidato può scrivere manualmente (tante righe quante
+% indicate nell'argomento).
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+    \item Enuncia il teorema di Pitagora.\par\riga{3}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%     \item Enuncia il teorema di Pitagora.\par\riga{3}
+% \end{esercizi}
+% \vspace{.2em}
+% \end{riquadro}
+% Se si omette \lstinline|\par| (che fa andare a capo e iniziare un
+% nuovo capoverso) e si inserisce il comando di seguito al testo, la prima riga
+% viene stampata dalla posizione corrente fino al margine destro.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+    \item Enuncia il teorema di Pitagora. \riga{3}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%     \item Enuncia il teorema di Pitagora. \riga{3}
+% \end{esercizi}
+% \vspace{.2em}
+% \end{riquadro}
+%
+% \subsection{Completamenti}
+%
+% Se un esercizio consiste nel completamento di un testo con alcune parole
+% chiave, è possibile usare i comandi \lstinline|\dotword| e
+% \lstinline|\dotrule|. Il primo produce una linea punteggiata di lunghezza
+% doppia della parola racchiusa come argomento (cioè la parola esatta che lo
+% studente dovrebbe inserire), mentre il secondo produce una linea punteggiata
+% di lunghezza data nell'argomento.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+    \item \emph{Completa il seguente enunciato.} La potenza di
+          \dotword{potenza} è una potenza che ha per \dotword{base}
+          la stessa base e per \dotword{esponente} il \dotword{prodotto}
+          degli esponenti.
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%     \item \emph{Completa il seguente enunciato.} La potenza di
+%     \dotword{potenza} è una potenza che ha per \dotword{base} la stessa
+%     base e per \dotword{esponente} il \dotword{prodotto} degli esponenti.
+% \end{esercizi}
+% \end{riquadro}
+% Notiamo che in questo modo il file sorgente rende possibile la lettura
+% esplicita delle parole esatte, con un notevole vantaggio per la chiarezza.
+%
+% Se è necessario aumentare lo spazio tra una riga e l'altra, si può usare
+% \lstinline|\doublespacing| (dal pacchetto \pack{setspace}, caricato in
+% automatico). Per ripristinare l'impostazione iniziale, basta inserire
+% \lstinline|\par\singlespacing|, come nell'esempio seguente.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+    \item \doublespacing\emph{Completa il seguente enunciato.} La potenza di
+          \dotword{potenza} è una potenza che ha per \dotword{base} la
+          stessa base e per \dotword{esponente} il \dotword{prodotto} degli
+          esponenti. \par\singlespacing
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%     \item \doublespacing\emph{Completa il seguente enunciato.} La potenza di
+%     \dotword{potenza} è una potenza che ha per \dotword{base} la stessa base
+%     e per \dotword{esponente} il \dotword{prodotto} degli esponenti.
+%     \par\singlespacing
+% \end{esercizi}
+% \end{riquadro}
+%
+% Riproponiamo lo stesso esempio usando il comando \lstinline|\dotrule{4cm}|,
+% che produce linee punteggiate lunghe $4\unit{cm}$.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+    \item \doublespacing\emph{Completa il seguente enunciato.} La potenza di
+          \dotrule{4cm} è una potenza che ha per \dotrule{4cm} la stessa base
+          e per \dotrule{4cm} il \dotrule{4cm} degli esponenti.
+          \par\singlespacing
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%     \item \doublespacing\emph{Completa il seguente enunciato.} La potenza di
+%     \dotrule{4cm} è una potenza che ha per \dotrule{4cm} la stessa base
+%     e per \dotrule{4cm} il \dotrule{4cm} degli esponenti.
+%     \par\singlespacing
+% \end{esercizi}
+% \end{riquadro}
+%
+% \section{Punteggio}
+%
+% \subsection{Comandi per inserire il punteggio}
+%
+% Se si desidera assegnare un punteggio ad ogni esercizio, è possibile
+% utilizzare il comando:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\punti?*\oarg{\textrm{testo aggiuntivo}}\marg{\textrm{punteggio}}*)
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% Esso stampa il punteggio relativo all'esercizio, allineandolo al margine
+% destro sulla riga corrente.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Data la retta $y=2x$, scrivi l'equazione di una sua
+      perpendicolare. \punti{10}
+\item Data la retta $y=3x-1$, calcola l'equazione della retta per $A$ ad essa
+      parallela. \punti{10}
+\item Data la circonferenza di equazione $x^2+y^2-3x+y-2=0$, determina
+      le coordinate ?*\texttt{del}*) centro, il suo raggio e calcola la
+      lunghezza della circonferenza. \punti{20}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+%   \begin{esercizi}
+% \item Data la retta $y=2x+1$, scrivi l'equazione di una sua
+%       perpendicolare. \punti{10}
+% \item Data la retta $y=3x-1$, calcola l'equazione della retta per $A$ ad essa
+%       parallela. \punti{10}
+% \item Data la circonferenza di equazione $x^2+y^2-3x+y-2=0$, determina
+%       le coordinate del centro, il suo raggio e calcola la lunghezza
+%       della circonferenza. \punti{20}
+% \end{esercizi}
+% \end{riquadro}
+% Se lo spazio disponibile sulla riga non fosse sufficiente, il punteggio viene
+% scritto automaticamente nella riga successiva.
+%
+% L'opzione \meta{testo aggiuntivo} serve per specificare eventuali
+% informazioni da stampare dopo il punteggio. Ciò
+% può essere utile ad esempio per indicare uno stesso punteggio per più
+% esercizi.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Risolvi le seguenti equazioni. \punti[per ogni equazione]{10}
+    \begin{enumerate}[a),itemsep=.5em]
+      \item $\dss{x^2-3x=1}$
+      \item $\dss{2x+1=4x^2-3}$
+    \end{enumerate}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Risolvi le seguenti equazioni. \punti[per ogni equazione]{10}
+%     \begin{enumerate}[a),itemsep=.5em]
+%       \item $\dss{x^2-3x=1}$
+%       \item $\dss{2x+1=4x^2-3}$
+%     \end{enumerate}
+% \end{esercizi}
+% \end{riquadro}
+%
+% Nel caso particolare in cui si volesse stampare il punteggio alla stessa
+% altezza di una formula in display, è possibile inserirlo come argomento
+% del comando \lstinline|\tag*|.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+\item Disegna la parabola di equazione
+    \[
+      x=-\frac{1}{2}x^2-x+1 \tag*{\punti{5}}
+    \]
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%     \item Disegna la parabola di equazione
+%           \[
+%             y=-\frac{1}{2}x^2-x+1 \tag*{\punti{5}}
+%           \]
+% \end{esercizi}
+% \end{riquadro}
+%
+% \subsection{Varianti per il punteggio}
+%
+% \makeatletter
+%
+% Esistono due varianti per la stampa del punteggio, utilizzabili anche
+% simultaneamente.
+%
+% La prima si ottiene mediante il comando-dichiarazione
+% \lstinline|\puntiadestra|, che imposta la stampa del valore numerico del
+% punteggio prima della dicitura ``\textsc{Punti}''.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\puntiadestra
+\begin{esercizi}
+    \item Scrivi l'equazione di una retta parallela all'asse $y$. \punti{5}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%     \item Scrivi l'equazione di una retta parallela all'asse $y$. \punti@dx{5}
+% \end{esercizi}
+% \end{riquadro}
+%
+% La seconda si ottiene col comando-dichiarazione \lstinline|\puntipt|, che
+% sostituisce alla scritta ``\textsc{Punti}'' l'abbreviazione ``\textsc{Pt.}''
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\puntipt
+\begin{esercizi}
+    \item Scrivi l'equazione di una retta parallela all'asse $y$. \punti{5}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}\renewcommand{\@punteggio}{Pt.}
+%     \item Scrivi l'equazione di una retta parallela all'asse $y$. \punti{5}
+% \end{esercizi}
+% \end{riquadro}
+% Combinando le due dichiarazioni si ha:
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\puntiadestra\puntipt
+\begin{esercizi}
+    \item Scrivi le equazioni di due rette parallele
+          all'asse $y$. \punti[per ogni retta]{5}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}\renewcommand{\@punteggio}{Pt.}
+%     \item Scrivi le equazioni di due rette parallele
+%           all'asse $y$. \punti@dx[per ogni retta]{5}
+% \end{esercizi}
+% \end{riquadro}
+%
+% \makeatother
+%
+% \subsection{Un piccolo bug del punteggio (e soluzione)}
+%
+% Se la prima parola di una riga dove si intende stampare il punteggio è
+% sillabata, il comando \lstinline|\punti| sposta il punteggio nella riga
+% vuota successiva, quindi in una posizione non corretta, come mostra il
+% prossimo esempio.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+  \item Scrivi in forma implicita l'equazione della retta parallela
+        all'asse~$x$ e precipitevolissimevolmente passante
+        per $P(0, 1)$. \punti{12}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%   \item Scrivi in forma implicita l'equazione della retta parallela
+%   all'asse~ $x$ e precipitevolissimevolmente passante per $P(0, 1)$.
+%   \punti{12}
+% \end{esercizi}
+% \end{riquadro}
+% Qualora si presentasse una situazione del genere, è possibile risolvere
+% sostituendo localmente al comando \lstinline|\punti| il comando
+% \lstinline|\puntiman| (che sta per ``punteggio manuale'' e ha la stessa
+% sintassi di \lstinline|\punti|).
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}
+  \item Scrivi in forma implicita l'equazione della retta parallela
+        all'asse~$x$ e precipitevolissimevolmente passante
+        per $P(0, 1)$. \puntiman{12}
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+%   \item Scrivi in forma implicita l'equazione della retta parallela
+%   all'asse~$x$ e precipitevolissimevolmente passante per $P(0, 1)$.
+%   \puntiman{12}
+% \end{esercizi}
+% \end{riquadro}
+%
+% \subsection{Il riquadro del punteggio totale}
+%
+% Se lo si desidera, è possibile stampare un riquadro in cui inserire il
+% punteggio totale della verifica, specificando il calcolo del voto finale.
+% Il comando, da dare al di fuori dell'ambiente \texttt{esercizi},~è
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\totpunti
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% Esso produce, in fondo alla pagina e allineato al margine destro, il
+% riquadro seguente:
+% \begin{riquadro}
+%   \vartotpunti
+% \end{riquadro}
+%
+% L'impostazione di default prevede che il punteggio massimo totalizzabile
+% sia $90$ punti e che il voto (in decimi) sia calcolato tramite la formula
+% \[
+%   \text{Voto} = \text{Punteggio totalizzato}/10+1
+% \]
+% Per impostare un calcolo diverso, basta inserirlo come argomento opzionale di
+% \lstinline|\totpunti|.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{document}
+\begin{esercizi}
+...
+\end{esercizi}
+\totpunti[/12+2]
+\end{document}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \totpunti[/12+2]
+% \end{riquadro}
+%
+% La variante \lstinline|\vartotpunti| produce lo stesso riquadro senza
+% spostarlo in fondo alla pagina. In questo modo risulta possibile
+% posizionare un altro oggetto appena prima del riquadro stesso
+% (ad esempio una tabella dei punteggi ottenuti), inserendo manualmente
+% eventuali comandi~\lstinline|\vfill|.
+%
+% \section{Miscellanea}
+%
+% \subsection{Le frazioni doppie}
+%
+% Le frazioni ``doppie'' (frazioni di frazioni) non vengono rese in modo
+% ottimale con i comandi standard di \LaTeX. Si noti come il codice
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\[
+  \frac{\dfrac{3}{2}+\dfrac{4}{3}}{\dfrac{5}{7}+\dfrac{8}{17}+1}
+\]
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% produca frazioni non ben distanziate dalla linea di frazione principale:
+% \[
+%   \frac{\dfrac{3}{2}+\dfrac{4}{3}}{\dfrac{5}{7}+\dfrac{8}{17}+1}
+% \]
+% Per rimediare, la classe \pack{verifica} mette a disposizione i comandi
+% \lstinline|\ddfrac|, \lstinline|\numfrac| e \lstinline|\denfrac|. Il primo
+% imposta la frazione principale, con una linea leggermente
+% sporgente; il secondo e il terzo servono per inserire frazioni al numeratore
+% e al denominatore distanziate dalla linea di frazione principale.
+% In presenza di più frazioni al numeratore o al denominatore, è sufficiente
+% usare questi comandi solo per la prima e inserire le successive
+% con \lstinline|\frac|.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\[
+  \ddfrac{\numfrac{3}{2}+\frac{4}{3}}{\denfrac{5}{7}+\frac{8}{17}+1} \qquad
+  \ddfrac{\numfrac{3}{2}+2+\frac{1}{3}}{4} \qquad
+  \ddfrac{4}{\denfrac{1}{2}+\frac{2}{7}}
+\]
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \[
+%   \ddfrac{\numfrac{3}{2}+\frac{4}{3}}{\denfrac{5}{7}+\frac{8}{17}+1} \qquad
+%   \ddfrac{\numfrac{3}{2}+2+\frac{1}{3}}{4} \qquad
+%   \ddfrac{4}{\denfrac{1}{2}+\frac{2}{7}}
+% \]
+% \end{riquadro}
+%
+% \subsection{La virgola intelligente}
+%
+% Se viene caricato il pacchetto \pack{babel} con l'opzione \opt{italian},
+% viene attivata automaticamente la virgola intelligente da esso definita.
+% In questo modo sarà possibile scrivere agevolmente i numeri decimali con
+% la virgola come separatore. Ricordardiamo che nel caso si voglia usare la
+% virgola come simbolo di interpunzione in modalità matematica, è necessario
+% lasciare uno spazio dopo di essa. Gli esempi proposti illustrano il
+% funzionamento della virgola intelligente.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\usepackage[italian]{babel}
+...
+Il rapporto fra la circonferenza e il diametro è dato da
+\[
+  \pi=3,14159\ldots
+\]
+Siano poi $A(3, 4)$ e $B(-2, 1)$ gli estremi di un segmento\ldots
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% Il rapporto fra la circonferenza e il diametro è dato da
+% \[
+%   \pi=3,14159\ldots
+% \]
+% Siano poi $A(3, 4)$ e $B(-2, 1)$ gli estremi di un segmento\ldots
+% \end{riquadro}
+% Insistiamo nel ribadire che se non vengono lasciati spazi dopo la virgola, si
+% possono ottenere scritture errate: \lstinline|$A(3,4)$| e
+% \lstinline|$B(-2,1)$| producono rispettivamente $A(3,4)$ e $B(-2,1)$. Se però
+% dopo la virgola viene inserito un carattere non numerico (ad esempio un meno),
+% la spaziatura risulta comunque corretta.
+%
+% Per disattivare e riattivare manualmente la virgola
+% intelligente basta inserire nel testo le dichiarazioni
+% \lstinline|\NoIntelligentComma| e \lstinline|\IntelligentComma|.
+%
+% \subsection{Soprassegno per gli archi}
+%
+% Viene definito il comando \lstinline|\arc| che pone il soprassegno arrotondato
+% per indicare gli archi.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+Si consideri l'arco $\arc{AB}$ e la corrispondente corda di
+misura $\overline{AB}=15$.
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% Si consideri l'arco $\arc{AB}$ e la corrispondente corda di
+%  misura $\overline{AB}=15$.
+% \end{riquadro}
+%
+% Viene definita inoltre una variante \lstinline|\vararc|, qualora si preferisca
+% un soprassegno per gli archi più marcato.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+Si consideri l'arco $\vararc{AB}$ e la corrispondente corda di
+misura $\overline{AB}=15$.
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% Si consideri l'arco $\vararc{AB}$ e la corrispondente corda di misura
+% $\overline{AB}=15$.
+% \end{riquadro}
+%
+% \subsection{Unità di misura}
+%
+% Se viene caricato il pacchetto \pack{babel} con l'opzione \opt{italian},
+% viene attivata automaticamente la dichiarazione \lstinline|\setISOcompliance|,
+% che consente di scrivere le unità di misura in modalità matematica tramite il
+% comando \lstinline|\unit|.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\usepackage[italian]{babel}
+...
+\begin{esercizi}
+\item Un'automobile sta viaggiando a $20\unit{m/s}$ lungo una strada
+      rettilinea. Ad un certo istante comincia ad aumentare la sua
+      velocità con accelerazione costante $a=4,5\unit{m/s^2}$. Quale
+      velocità avrà dopo $10\unit{s}$?
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}
+% \item Un'automobile sta viaggiando a $20\unit{m/s}$ lungo una strada
+%       rettilinea. Ad un certo istante comincia ad aumentare la sua velocità
+%       con accelerazione costante $a=4,5\unit{m/s^2}$. Quale velocità avrà
+%       dopo $10\unit{s}$?
+% \end{esercizi}
+% \end{riquadro}
+% In particolare, il simbolo dei gradi può essere inserito direttamente da
+% tastiera\footnote{Ciò è reso possibile grazie al pacchetto
+% \pack{newunicodechar}.}, mentre il simbolo~$\micro$ (prefisso di \emph{micro}
+% nelle unità di misura) è prodotto dal comando \lstinline|\micro|.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+L'angolo $\alpha$ misura $30°$. La temperatura della stanza è di $22\unit{°C}$.
+Consideriamo una distanza di $2,0\unit{\micro m}$.
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% L'angolo $\alpha$ misura $30°$. La temperatura della stanza è di $22\unit{°C}$.
+% Consideriamo una distanza di $2,0\unit{\micro m}$.
+% \end{riquadro}
+%
+% Infine, segnaliamo che è possibile caricare il pacchetto \pack{siunitx} per
+% la gestione e la scrittura delle unità di misura. In tal caso, però, non deve
+% essere \emph{mai} usato nel documento il comando~\lstinline|\unit|, altrimenti
+% \LaTeX\ produrrebbe un errore.
+%
+% Se viene selezionata una lingua diversa dall'italiano, il comando
+% \lstinline|\unit| non è attivo. In questo caso si può utilizzare il comando
+% \lstinline|\unitx|, che nei casi più semplici consente di ottenere le
+% stesse funzionalità di \lstinline|\unit|.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\begin{esercizi}\selectlanguage{english}
+  \item The Gravitational constant is approximately
+        $6.67\times 10^{-11}\unitx{?*\texttt{N}*)\cdot m^2/kg^2}$. \vf
+\end{esercizi}
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \begin{esercizi}\selectlanguage{english}
+% \item  The Gravitational constant is approximately
+%        $6.67\times 10^{-11}\unitx{N\cdot m^2/kg^2}$. \vf
+% \end{esercizi}\selectlanguage{italian}
+% \end{riquadro}
+%
+% \subsection{Definizioni abbreviate}
+%
+% Elenchiamo nella tabella~\ref{tab:def-abbr} alcune definizioni di comandi
+% abbreviati.
+%
+% \begin{table}[htbp]
+% \centering
+%   \begin{tabular}{ccc}
+%     \toprule
+%     \textbf{Simbolo} & \textbf{\LaTeX}        & \textbf{\pack{verifica}} \\
+%     \midrule
+%     $\delta$         & {\lstinline|\delta|}         & {\lstinline|\del|} \\
+%     $\Delta$         & {\lstinline|\Delta|}         & {\lstinline|\Del|} \\
+%     $\varepsilon$    & {\lstinline|\varepsilon|}    & {\lstinline|\eps|} \\
+%     $\mathbb{N}$     & {\lstinline|\mathbb|\verb|{N}|}  & {\lstinline|\N|}  \\
+%     $\mathbb{Z}$     & {\lstinline|\mathbb|\verb|{Z}|}  & {\lstinline|\Z|}  \\
+%     $\mathbb{Q}$     & {\lstinline|\mathbb|\verb|{Q}|}  & {\lstinline|\Q|}  \\
+%     $\mathbb{R}$     & {\lstinline|\mathbb|\verb|{R}|}  & {\lstinline|\R|}  \\
+%     \bottomrule
+%   \end{tabular}
+%   \caption{Definizioni abbreviate di alcuni comandi.}\label{tab:def-abbr}
+% \end{table}
+% I comandi \lstinline|\phi| e \lstinline|\theta| vengono ridefiniti per
+% produrre $\phi$ e $\theta$ (come \lstinline|\varphi| e \lstinline|\vartheta|).
+% Per ripristinare i comandi originari basta dare le dichiarazioni
+% \lstinline|\restorephi| e \lstinline|\restoretheta|.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+Di default sono definiti $\phi$ e $\theta$, ma si possono ripristinare
+\restorephi\restoretheta in modo che appaiano $\phi$ e $\theta$.
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% Di default sono definiti $\phi$ e $\theta$, ma si possono ripristinare in modo
+% che appaiano \makeatletter$\@tempvarphi$ e $\@tempvartheta$\makeatother.
+% \end{riquadro}
+%
+% Il valore assoluto si ottiene col comando \lstinline|\abs|, definito
+% seguendo le indicazioni della documentazione del pacchetto \pack{mathtools}.
+% Il suo utilizzo è mostrato di seguito.
+%\iffalse
+%<*example>
+%\fi
+\begin{lstlisting}
+\[
+  \abs{x} \qquad \abs[\bigg]{\frac{x+2}{x-1}}
+\]
+\end{lstlisting}
+%\iffalse
+%</example>
+%\fi
+% \begin{riquadro}
+% \[
+%   \abs{x} \qquad \abs[\bigg]{\frac{x+2}{x-1}}
+% \]
+% \end{riquadro}
+%
+% \newgeometry{text={355.0pt,598.0pt},centering}
+% \addtolength\marginparwidth{30pt}
+% \addtolength\oddsidemargin{20pt}
+% \addtolength\evensidemargin{20pt}
+%
+% \StopEventually{\PrintChanges\PrintIndex}
+% \selectlanguage{english}
+% \section{Implementation}
+% \subsection{Class options}
+%
+% We define new conditionals for class options: \cs{if@blacktriangleright} is
+% true by default and sets the \env{itemize} label symbol; \cs{if@intestrighe}
+% and \cs{if@intestsemplice} are true if we choose the document heading
+% ``with lines'' or ``plain'', respectively; \cs{if@extrasize} is true if we set
+% the font size to $14\unitx{pt}$; \cs{if@senzagrazie} is true if we choose the
+% sans serif font (\pack{cmbright} package).
+%\iffalse
+%<*class|package>
+%\fi
+%    \begin{macrocode}
+\newif\if@blacktriangleright
+\newif\if@intestrighe
+\newif\if@intestsemplice
+\newif\if@extrasize
+\newif\if@senzagrazie
+%    \end{macrocode}
+%\iffalse
+%</class|package>
+%\fi
+%\iffalse
+%<*class>
+%\fi
+% Now, we define the class options and set \cs{@blacktrianglerighttrue} by
+% default.
+%    \begin{macrocode}
+\DeclareOption{10pt}{\def\ver@ptsize{0}}
+\DeclareOption{11pt}{\def\ver@ptsize{1}}
+\DeclareOption{12pt}{\def\ver@ptsize{2}}
+\DeclareOption{14pt}{\@extrasizetrue}
+\DeclareOption{default}{\@blacktrianglerighttrue}
+\DeclareOption{itembullet}{\@blacktrianglerightfalse}
+\DeclareOption{intestazionerighe}{\@intestrighetrue}
+\DeclareOption{intestazionesemplice}{\@intestsemplicetrue}
+\DeclareOption{senzagrazie}{\@senzagrazietrue}
+%    \end{macrocode}
+% The option \opt{11pt} is added by default.
+%    \begin{macrocode}
+\ExecuteOptions{default,11pt}
+\ProcessOptions
+%    \end{macrocode}
+% If the option \opt{14pt} is chosen, the conditional \cs{if@extrasize} is
+% true and the \pack{extarticle} class will be loaded with the options
+% \opt{a4paper} and \opt{14pt}. Otherwise, the \pack{article} class will be
+% loaded with the option \opt{a4paper} and the font size set by the user
+% (default \opt{11pt}).
+%    \begin{macrocode}
+\if@extrasize
+  \LoadClass[a4paper,14pt]{extarticle}
+\else
+  \LoadClass[a4paper,1\ver@ptsize pt]{article}
+\fi
+%    \end{macrocode}
+%\iffalse
+%</class>
+%\fi
+%\iffalse
+%<*package>
+%% ------------------------------------------------------------------------------
+%% Questo file .sty è destinato esclusivamente alla documentazione della
+%% classe `verifica'. Il supporto non verrà garantito.
+%%
+%% This .sty file is meant only for the documentation of the `verifica' class.
+%% Support will not be guaranteed.
+%% ------------------------------------------------------------------------------
+%</package>
+%\fi
+%\iffalse
+%<*class|package>
+%\fi
+% Below is the list of packages loaded by the \pack{verifica} class.
+%    \begin{macrocode}
+\RequirePackage[shortlabels,inline]{enumitem}
+\RequirePackage{graphicx}
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+\RequirePackage{geometry}
+\RequirePackage{nccmath}
+\RequirePackage{multido}
+\RequirePackage{setspace}
+\RequirePackage{multicol}
+\RequirePackage{gensymb}
+\RequirePackage{newunicodechar}
+\RequirePackage{textcomp}
+\RequirePackage{eurosym}
+\RequirePackage{tabto}
+\RequirePackage{tabularx}
+\RequirePackage[running]{lineno}
+%    \end{macrocode}
+%\iffalse
+%</class|package>
+%\fi
+% Margins are set using the \pack{geometry} package. We also set the page
+% style to \opt{empty}.
+%\iffalse
+%<*class>
+%\fi
+%    \begin{macrocode}
+\geometry{top=1cm,bottom=1.5cm,left=1.5cm,right=1.5cm}
+\pagestyle{empty}
+%    \end{macrocode}
+% If the option \opt{senzagrazie} is chosen, then the \pack{cmbright} package is
+% loaded, so we have a sans serif font. The control sequence \cs{AtBeginDocument}
+% causes the \pack{cmbright} package to be loaded after all other packages.
+%    \begin{macrocode}
+\if@senzagrazie
+  \AtBeginDocument{%
+    \RequirePackage{cmbright}
+}
+\fi
+%    \end{macrocode}
+%\iffalse
+%</class>
+%\fi
+%\iffalse
+%<*class|package>
+%\fi
+% The following lines contain various commands which must be placed at the
+% beginning of the document, through the \cs{AtBeginDocument} command. If the
+% \pack{babel-italian} package is loaded, then |\setISOcompliance| and
+% |\IntelligentComma| will be activated.
+%    \begin{macrocode}
+\AtBeginDocument{%
+\@ifpackagewith{babel}{italian}{%
+  \setISOcompliance
+  \IntelligentComma
+\relax}{}
+%    \end{macrocode}
+% If the \pack{cmbright} package is loaded, the following declaration fixes the
+% font for the bold-math mode, used in conjunction with the \pack{bm} package.
+% Otherwise, we will get the ``poor man bold''.
+%    \begin{macrocode}
+\@ifpackageloaded{cmbright}{%
+  \SetSymbolFont{operators}{bold}{OT1}{cmbr}{b}{n}
+\relax}{}
+%    \end{macrocode}
+% The \pack{bm} package will be loaded after all the other packages (in
+% particular after \pack{cmbright}).
+%    \begin{macrocode}
+\RequirePackage{bm}
+%    \end{macrocode}
+% \begin{macro}{\restorephi}
+% \begin{macro}{\restoretheta}
+% We redefine the \cs{phi} and \cs{theta} commands to get \cs{varphi} and
+% \cs{vartheta}. We copy the original definitions to \cs{@tempvarphi} and
+% \cs{@tempvartheta} for restoring them eventually through the \cs{restorephi}
+% and \cs{restoretheta} commands.
+% \end{macro}
+% \end{macro}
+%    \begin{macrocode}
+\let\@tempvarphi\phi
+\let\@tempvartheta\theta
+\renewcommand{\phi}{\varphi}
+\renewcommand{\theta}{\vartheta}
+\newcommand{\restorephi}{\renewcommand{\phi}{\@tempvarphi}}
+\newcommand{\restoretheta}{\renewcommand{\theta}{\@tempvartheta}}
+}
+%    \end{macrocode}
+%\iffalse
+%</class|package>
+%\fi
+%\iffalse
+%<*class|package>
+%\fi
+% \begin{macro}{\abs}
+% The next definition of the ``absolute value'' command is  taken from the
+% documentation of the \pack{mathtools} package.
+% \end{macro}
+%    \begin{macrocode}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+%    \end{macrocode}
+%
+% \subsection{The document heading}
+%
+% \begin{macro}{\tipologia}
+% \begin{macro}{\disciplina}
+% \begin{macro}{\istituto}
+% \begin{macro}{\data}
+% \begin{macro}{\classe}
+% \begin{macro}{\tempo}
+% \begin{macro}{\lineanome}
+% \changes{v1.1}{2020/01/19}{Added the \cs{lineanome} command, which draws a
+% dotted line for writing the candidate's name.}
+% The following lines are related to the creation of the document heading.
+% First, we define the markup commands that pass their arguments to the internal
+% macros. Every command is set to a default value, except \cs{@classe},
+% \cs{@tempo} and \cs{@lineanome}, which are undefined.
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+%    \begin{macrocode}
+\def\@tipologia{verifica}
+  \newcommand{\tipologia}[1]{\def\@tipologia{#1}}
+\def\@disciplina{matematica}
+  \newcommand{\disciplina}[1]{\def\@disciplina{#1}}
+\def\@istituto{Liceo ``G. Novello'' -- Codogno}
+  \newcommand{\istituto}[1]{\def\@istituto{#1}}
+\def\@data{\today}
+  \newcommand{\data}[1]{\def\@data{#1}}
+\let\@classe\undefined
+  \newcommand{\classe}[1]{\def\@classe{Classe~#1}}
+\let\@tempo\undefined
+  \newcommand{\tempo}[1]{\def\@tempo{#1}}
+\let\@lineanome\undefined
+  \newcommand{\lineanome}{\def\@lineanome{\relax}}
+%    \end{macrocode}
+% \begin{macro}{\intestazionedefault}
+% We define the default heading. It consists of two \env{tabular} environments,
+% side by side, stored in the control sequences \cs{@tabellauno} and
+% \cs{@tabelladue}. The first contains information about the discipline, the
+% typology of the test, the institute name and the date. The second contains an
+% empty space (which must be filled in by the candidate's name) and the class
+% (eventually empty), if defined. The length of the two tables are stored in
+% \cs{@prima} and \cs{@seconda}. The length of \cs{@tabelladue} depends on the
+% length of \cs{@tabellauno}. We use the \pack{calc} package, which is loaded by
+% the \pack{mathtools} package, to determine the width of \cs{@tabellauno}
+% (through the \cs{widthof} command). If \cs{tempo} is defined, the time
+% available for the test will be printed. If \cs{lineanome} is defined, a dotted
+% line for writing the candidate's name will be printed.
+%    \begin{macrocode}
+\newlength{\@prima}
+\newlength{\@seconda}
+\def\intestazionedefault{%
+  \def\@tabellauno{%
+    \begin{tabular}{|c|}
+    \hline \\[-.2cm]
+    \textbf{\MakeUppercase{\@tipologia} DI \MakeUppercase{\@disciplina}}\\[.2cm]
+    \textbf{\@istituto}\\[.2cm]
+    \textbf{\@data}\\[.2cm]
+    \hline
+    \end{tabular}}
+  \setlength{\@prima}{\widthof{\@tabellauno}}
+  \setlength{\@seconda}{\textwidth-\@prima-.7cm}
+  \ifdefined\@classe
+    \def\@@classe{\@classe}
+  \else
+    \def\@@classe{}
+  \fi
+  \ifdefined\@lineanome
+    \def\@@lineanome{\raisebox{-4pt}{\dotrule{\linewidth}}}
+  \else
+    \def\@@lineanome{\relax}
+  \fi
+  \def\@tabelladue{%
+    \begin{tabular}{|p{\@seconda}|}
+    \hline \\[-.2cm]
+    Cognome e nome  \\[.2cm]
+    \@@lineanome    \\[.2cm]
+    \@@classe       \\[.2cm]
+    \hline
+  \end{tabular}}
+  \ifdefined\@tempo
+    \def\tempo@ad{\begin{center}%
+      \textit{Tempo a disposizione: \@tempo}\end{center}}
+  \else
+    \def\tempo@ad{\vspace{.5cm}}
+  \fi
+\noindent\@tabellauno\hfill\@tabelladue\tempo@ad}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\intestazionerighe}
+% We define the second type of heading: ``intestazione con righe''
+% (``with lines''). It puts the information about the document between two
+% horizontal lines. If \cs{lineanome} is defined, a field for writing the
+% candidate's name will be printed.
+%    \begin{macrocode}
+\def\intestazionerighe{%
+\ifdefined\@classe
+  \def\@@classe{\@classe}
+\else
+  \def\@@classe{}
+\fi
+\ifdefined\@lineanome
+  \def\@@lineanome{%
+    \noindent {\small Cognome e nome} \dotrule{.3\textwidth}\par\vskip6pt}
+\else
+  \def\@@lineanome{\relax}
+\fi
+\ifdefined\@tempo
+  \def\tempo@ad{{\centering%
+    \textit{Tempo a disposizione: \@tempo}\par}\vspace{.5em}}
+\else
+  \def\tempo@ad{\vspace{.1em}}
+\fi
+\@@lineanome
+\null\vspace{-1cm}
+\noindent\hrulefill \\
+\noindent\makebox[.3\linewidth][l]{\small\@istituto} \hfill%
+\makebox[.3\linewidth]{\@@classe} \hfill%
+\makebox[.3\linewidth][r]{\small\@data}%
+\begin{center}
+  \textbf{\MakeUppercase{\@tipologia} DI \MakeUppercase{\@disciplina}}\\[-.5em]
+  \hrulefill
+\end{center}
+\tempo@ad}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\intestazionesemplice}
+% We define the third type of heading: ``intestazione semplice'' (``plain'').
+% It is similar to the ``intestazione con righe'', but without the two horizontal
+% lines.
+%    \begin{macrocode}
+\def\intestazionesemplice{%
+\ifdefined\@classe
+  \def\@@classe{\@classe}
+\else
+  \def\@@classe{}
+\fi
+\ifdefined\@lineanome
+  \def\@@lineanome{%
+    \noindent {\small Cognome e nome} \dotrule{.3\textwidth}\par\vskip4pt}
+\else
+  \def\@@lineanome{\relax}
+\fi
+\ifdefined\@tempo
+  \def\tempo@ad{{\centering%
+    \textit{Tempo a disposizione: \@tempo}\par}\vspace{.5em}}
+\else
+   \def\tempo@ad{\vspace{.1em}}
+\fi
+\@@lineanome
+\noindent\makebox[.3\linewidth][l]{\small\@istituto} \hfill%
+\makebox[.3\linewidth]{\@@classe} \hfill%
+\makebox[.3\linewidth][r]{\small\@data}%
+\begin{center}
+  \textbf{\MakeUppercase{\@tipologia} DI \MakeUppercase{\@disciplina}}\\[-.5em]
+\end{center}
+\tempo@ad}
+%    \end{macrocode}
+% \end{macro}
+%\iffalse
+%</class|package>
+%\fi
+% \begin{macro}{\intestazione}
+% The \cs{intestazione} command generates the document heading.
+%\iffalse
+%<*class>
+%\fi
+%    \begin{macrocode}
+\if@intestrighe
+  \def\intestazione{\intestazionerighe}
+\else
+  \if@intestsemplice
+    \def\intestazione{\intestazionesemplice}
+  \else
+    \def\intestazione{\intestazionedefault}
+  \fi
+\fi
+%    \end{macrocode}
+% \end{macro}
+%\iffalse
+%</class>
+%\fi
+%
+% \subsection{New commands}
+%
+%\iffalse
+%<*class|package>
+%\fi
+% \begin{macro}{\tsa}
+% \begin{macro}{\tso}
+% Here are some definition of new commands. Thanks to the
+% \pack{newunicodechar} package, we can type the character \texttt{\textdegree}
+% to get the corresponding symbol directly. The commands \cs{tsa} and \cs{tso}
+% produce the ordinal number symbols $\textsuperscript{a}$ and
+% $\textsuperscript{o}$, followed by a thin space.
+% \end{macro}
+% \end{macro}
+%    \begin{macrocode}
+\newunicodechar{°}{\ensuremath{^\circ}}
+\newcommand{\tsa}{\textsuperscript{a}\,}
+\newcommand{\tso}{\textsuperscript{o}\,}
+%    \end{macrocode}
+% \begin{macro}{\eps}
+% \begin{macro}{\del}
+% \begin{macro}{\Del}
+% \begin{macro}{\R}
+% \begin{macro}{\Q}
+% \begin{macro}{\Z}
+% \begin{macro}{\N}
+% \begin{macro}{\dss}
+% The following lines define some useful abbreviation for some frequently
+% used commands.
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+%    \begin{macrocode}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\del}{\delta}
+\newcommand{\Del}{\Delta}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dss}[1]{\displaystyle{#1}}
+%    \end{macrocode}
+% \begin{macro}{\arc}
+% The following code is taken from
+% \url{https://tex.stackexchange.com/questions/96680#284787} (thanks to
+% \textsf{egreg}). It defines a symbol to denote an arc.
+% \end{macro}
+%    \begin{macrocode}
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{%
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }
+}
+%    \end{macrocode}
+% \begin{macro}{\vararc}
+% Here is a variant of the same symbol (more marked).
+% \end{macro}
+%    \begin{macrocode}
+\DeclareFontFamily{OMX}{yhex}{}
+\DeclareFontShape{OMX}{yhex}{m}{n}{<->yhcmex10}{}
+\DeclareSymbolFont{yhlargesymbols}{OMX}{yhex}{m}{n}
+\DeclareMathAccent{\vararc}{\mathord}{yhlargesymbols}{"F3}
+%    \end{macrocode}
+%
+% \begin{macro}{\ddfrac}
+% \begin{macro}{\numfrac}
+% \begin{macro}{\denfrac}
+% We define the \cs{ddfrac} command for ``double'' fractions (fractions of
+% fractions), with a slightly longer line. The \cs{numfrac} and \cs{denfrac}
+% commands produce correct vertical spacing in double fractions.
+%    \begin{macrocode}
+\newcommand\ddfrac[2]{\frac{\,\displaystyle #1\,}{\,\displaystyle #2\,}}
+\newcommand\numfrac[2]{\frac{#1}{#2\mathstrut}}
+\newcommand\denfrac[2]{\frac{\mathstrut#1}{#2}}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \begin{macro}{\unitx}
+% If \pack{babel-italian} is not loaded or a different language is temporarily
+% set for the document, the \cs{unit} command will not be available. In this
+% case, the \cs{unitx} command can be used in place of \cs{unit}: the \cs{unitx}
+% command is roughly similar to \cs{unit}.
+% \end{macro}
+%    \begin{macrocode}
+\newcommand{\unitx}[1]{\ensuremath{\,\mathrm{#1}}}
+%    \end{macrocode}
+% By default, \cs{if@blacktriangleright} is true and the \env{itemize} label
+% symbol is~{\small $\blacktriangleright$}. If the option \opt{itembullet} is
+% chosen, \cs{if@blacktriangleright} is false and the \env{itemize} label symbol
+% is~\textbullet.
+%    \begin{macrocode}
+\if@blacktriangleright
+  \def\labelitemi{\small $\blacktriangleright$}
+\fi
+%    \end{macrocode}
+%
+%\subsection{Test environments}
+%
+% \begin{macro}{\labelbox}
+% \begin{macro}{\biglabelbox}
+% We use the \pack{enumitem} package to define the main environment
+% \env{esercizi} and various lists for multiple choice tests.
+% By default, the label for the multiple choice test, stored in \cs{@risp},
+% consists of an alphabetical counter inside a squared framed box.
+% There are two types of boxes: normal (\cs{labelbox}, used for multiple choice
+% tests) and big (\cs{biglabelbox}, used for true/false tests). If the option
+% \opt{senzagrazie} is set, the default style for the alphabetic counter is
+% upright, otherwise is italic. If the option \opt{14pt} is set, the size
+% of these boxes increases.
+%    \begin{macrocode}
+\if@senzagrazie
+  \def\@labelstyle{\textup}
+\else
+  \def\@labelstyle{\textit}
+\fi
+\newcommand{\labelbox}[1]{\fbox{\parbox[][.2cm][c]{.2cm}{#1}}}
+\newcommand{\biglabelbox}[1]{\fbox{\parbox[b][.25cm][c]{.25cm}{#1}}}
+\if@extrasize
+  \renewcommand{\labelbox}[1]{\fbox{\parbox[][.3cm][c]{.3cm}{#1}}}
+  \renewcommand{\biglabelbox}[1]{\fbox{\parbox[b][.35cm][c]{.35cm}{#1}}}
+\fi
+\def\@risp{\labelbox{\@labelstyle{\alph*}}}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+% \begin{environment}{esercizi}
+% \begin{environment}{test}
+% \begin{environment}{test-orizz}
+% \begin{macro}{\labeltest}
+% We define the new lists \env{esercizi}, \env{test} and \env{test-orizz}. The
+% last one is a ``horizontal'' list, that is, it's an inline \pack{enumitem}
+% list. The \cs{labeltest} command allows us to change the label style of all
+% test environments, even in the \opt{shortlabels} \pack{enumitem} mode.
+%    \begin{macrocode}
+\newlist{esercizi}{enumerate}{1}
+  \setlist[esercizi]{\bfseries 1.,itemsep=2em,leftmargin=*}
+\newlist{test}{enumerate}{1}
+  \setlist[test]{\@risp,leftmargin=*}
+\newlist{test-orizz}{enumerate*}{1}
+  \setlist[test-orizz]{%
+    \@risp,before=\hspace{1em},itemjoin=\hspace{1.2em},afterlabel=~~}
+\newcommand{\labeltest}[1]{%
+  \renewlist{test}{enumerate}{1}
+    \setlist[test]{#1,leftmargin=*}
+  \renewlist{test-orizz}{enumerate*}{1}
+    \setlist[test-orizz]{%
+      #1,before=\hspace{1em},itemjoin=\hspace{1.2em},afterlabel=~~}
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{environment}
+% \end{environment}
+% \end{environment}
+% \begin{environment}{test-orizz-newline}
+% The \env{test-orizz-newline} environment is similar to \env{test-orizz},
+% but multiple choices start on a new line.
+%    \begin{macrocode}
+\newenvironment{test-orizz-newline}[1][]{%
+  \par\begin{test-orizz}[before=\noindent,#1]}{\end{test-orizz}}
+%    \end{macrocode}
+% \end{environment}
+%
+% \subsection{True/False tools}
+%
+% \begin{macro}{\vf}
+% We define tools for creating true/false tests. If the selected language is
+% English, or the \pack{babel} package is not loaded, the \cs{vf} command
+% generates the true/false boxes~{\small\biglabelbox{T}~\biglabelbox{F}}.
+% Otherwise, it generates {\small\biglabelbox{V}~\biglabelbox{F}} (especially
+% when the selected language is Italian). The boxes will be placed at the end of
+% the current line. The \cs{vf} command is right for short questions (shorter
+% than the line width).
+% \end{macro}
+%    \begin{macrocode}
+\newcommand{\vf}{%
+  \iflanguage{english}{%
+    \hfill{\small\biglabelbox{T}~\biglabelbox{F}}}{%
+    \hfill{\small\biglabelbox{V}~\biglabelbox{F}}}%
+}
+%    \end{macrocode}
+% Now, we define a more complex macro for creating long true/false questions.
+% \begin{macro}{\fattorevf}
+% The control sequence \cs{@fattorevf} contains the scale factor that determines
+% the line break point. It is set by default to $0.75$. It can be changed
+% using the \cs{fattorevf}\marg{scale factor} command, which takes as an argument
+% a number from~$0$ to~$1$ and overwrites the previous value of \cs{@fattorevf}.
+% If the argument is not a number between $0$ and $1$, we will get an error
+% message.
+%    \begin{macrocode}
+\def\@fattorevf{.75}
+\def\@fattorevferror{%
+    \ClassError{verifica}{%
+    \protect\fattorevf\space e fattorevf devono avere come argomento
+    un\MessageBreak numero compreso tra 0 e 1}{%
+    Riprova scrivendo \protect\fattorevf{.85} o fattorevf=.85
+    o qualcosa di simile. Ciao ;) \MessageBreak}%
+}
+\newcommand{\fattorevf}[1]{%
+  \ifdim0pt<#1pt\relax
+    \ifdim1pt>#1pt\relax
+      \def\@fattorevf{#1}
+    \else
+      \@fattorevferror
+    \fi
+  \else
+      \@fattorevferror
+  \fi
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\CalcNumber}
+% In the following lines we define the internal macro \cs{CalcNumber}, which
+% counts the number of lines of a text. The text is put in a minipage of
+% the same width as the current line, which in turn is placed in the
+% \cs{@boxcountlines} savebox. The \pack{lineno} package allows us to determine
+% the number of the lines of the text, which is stored in the \texttt{mylines}
+% counter.
+%
+% This macro is taken
+% from \url{https://tex.stackexchange.com/questions/402779#406791} (thanks to
+% \textsf{user121799}).
+%    \begin{macrocode}
+\newcounter{mylines}
+\newsavebox{\@boxcountlines}
+\newcommand{\CalcNumber}[2]{%
+\savebox{\@boxcountlines}{%
+  \begin{minipage}{\linewidth}\linenumbers*
+    \begin{internallinenumbers}
+      #1\par
+      \setcounter{mylines}{\thelinenumber}\addtocounter{mylines}{-1}
+    \end{internallinenumbers}
+  \end{minipage}}
+  \let#2=\themylines
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\Repeat}
+% The next macro is defined through the \pack{multido} package. It causes the
+% repetition of the command that follows it as many times as specified by
+% the argument.
+%    \begin{macrocode}
+\newcommand{\Repeat}{\multido{\i=1+1}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\verofalso}
+% The macro \cs{verofalso}\oarg{scale factor}\marg{text} is defined to handle a
+% long text in a true/false test. The mandatory argument is the text of a
+% true/false question and the optional one is the scale factor for the line width
+% (set by default by \cs{@fattorevf}). The macro puts the text in a
+% \env{tabularx} environment (\pack{tabularx} package), within a cell of width
+% equal to the resized line width, and passes it to the \cs{CalcNumber} macro,
+% which counts the number of lines and stores this value in the counter \cs{myx}.
+% Since this counting takes place in a cell, the current \cs{linewidth}
+% is equal to the cell width. The \cs{numrighe} counter contains the number
+% of \cs{newline} required to correctly position the true/false boxes within the
+% second \env{tabularx} cell, at the same level as the last line of the
+% question.
+%    \begin{macrocode}
+\newcounter{numrighe}
+\newcommand{\verofalso}[2][\@fattorevf]{%
+  \renewcommand{\tabcolsep}{0em}%
+  \begin{tabularx}{\linewidth}[b]{p{#1\linewidth}X}%
+    {#2}\CalcNumber{#2}{\myx}\setcounter{numrighe}{\myx-1}%
+    & \phantom{e}\Repeat{\value{numrighe}}\newline\phantom{e}\vf \\
+  \end{tabularx}
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{environment}{test-verofalso}
+%  \changes{v1.1}{2020/01/19}{Added the \env{test-verofalso} environment}
+%  We define the \env{test-verofalso} environment. First, we define the
+%  \env{test-vf} list through the \pack{enumitem} package and the
+%  \opt{fattorevf} parameter, which sets the value of the |\fattorevf| command.
+%  Second, we define the |\vfitem| command, which has the text of the item as an
+%  argument.
+%    \begin{macrocode}
+\enitkv@key{}{fattorevf}{\fattorevf{#1}}
+\newlist{test-vf}{enumerate}{1}
+  \setlist[test-vf]{label=\alph*)}
+\newcommand{\vfitem}[1]{\item\verofalso{#1}}
+\newenvironment{test-verofalso}[1][]{%
+  \begin{test-vf}[#1]}{\end{test-vf}}
+%    \end{macrocode}
+% \end{environment}
+%
+% \subsection{Dotted lines}
+%
+% \begin{macro}{\dotrule}
+% \begin{macro}{\dotword}
+% The \cs{dotrule}\marg{length} command inserts a dotted line of length equal to
+% its argument; the \cs{dotword}\marg{word} command inserts a dotted line that is
+% twice the width of the word specified as an argument.
+%    \begin{macrocode}
+\newcommand{\@leadersbox}{.45em}
+\newcommand{\@tratto}{.}
+\newcommand{\@completeleaders}{%
+  \leavevmode\leaders\hbox to \@leadersbox{\hss\@tratto\hss}\hfill\kern0pt}
+\newcommand{\dotrule}[1]{%
+  \parbox[t]{#1}{\@completeleaders}}
+\newcommand{\dotword}[1]{%
+  \parbox[t]{\widthof{#1} * \real{2}}{\@completeleaders}}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+% \begin{macro}{\riga}
+% The \cs{riga}\marg{number} command inserts dotted lines with double vertical
+% spacing, as many as specified by the argument. It is defined through the
+% \pack{multido} and \pack{setspace} packages.
+%    \begin{macrocode}
+\newcommand{\@rigaleaders}{%
+  \leavevmode\leaders\hbox to \@leadersbox{\hss\@tratto\hss}\hfill\kern0pt\par}
+\newcommand{\riga}[1]{%
+  \doublespacing\Repeat{#1}{\noindent\@rigaleaders}\singlespacing}
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsection{Scoring tools}
+%
+% \begin{macro}{\punti}
+% The \cs{punti}\oarg{additional text}\marg{score} command places the score at
+% the end of the current line. If there is not enough space at the end of the
+% current line, the score will be automatically positioned at the end of a new
+% line. If the optional argument is defined, an additional text will be written
+% after the score, automatically separated by a non-breaking space. If the
+% optional argument is missing, this non-breaking space disappears: this feature
+% is made possibile by the macro described at
+% \url{https://tex.stackexchange.com/questions/217757#217763} (thanks to
+% \textsf{David~Carlisle}).
+%    \begin{macrocode}
+\newcommand{\@punteggio}{Punti}
+\newcommand{\punti}[2][\@nil]{%
+  \hfill\vphantom{,}\nolinebreak[1]\null~\hfill%
+  [\textsc{\@punteggio~#2%
+    \def\tmp{#1}%
+      \ifx\tmp\@nnil
+        \relax
+      \else
+        ~\mbox{#1}%
+      \fi}]%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\puntiman}
+% \changes{v1.2}{2020/02/07}{Added the \cs{puntiman} command, which prints the
+% score at the end of the line when the \cs{punti} command fails.}
+% Unfortunately, there is a bug: if the first word of the line where the
+% score has to be printed is part of a hyphenated word, the score will not
+% be printed on the same line, but on the next (empty). To solve
+% this issue ``manually'', the \cs{puntiman} command can be used instead of
+% \cs{punti}.
+%    \begin{macrocode}
+\newcommand{\puntiman}[2][\@nil]{%
+  \hfill%
+  [\textsc{\@punteggio~#2%
+    \def\tmp{#1}%
+      \ifx\tmp\@nnil
+        \relax
+      \else
+        ~\mbox{#1}%
+      \fi}]%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\puntiadestra}
+% This command can be placed anywhere in the document and simply prints
+% the word ``Punti'' after the score.
+%    \begin{macrocode}
+\newcommand{\punti@dx}[2][\@nil]{%
+  \hfill\vphantom{,}\nolinebreak[1]\null~\hfill%
+    [\textsc{#2~\@punteggio%
+    \def\tmp{#1}%
+      \ifx\tmp\@nnil
+        \relax
+      \else
+        ~\mbox{#1}%
+      \fi}]%
+}
+\newcommand{\puntiman@dx}[2][\@nil]{%
+  \hfill%
+    [\textsc{#2~\@punteggio%
+    \def\tmp{#1}%
+      \ifx\tmp\@nnil
+        \relax
+      \else
+        ~\mbox{#1}%
+      \fi}]%
+}
+\def\puntiadestra{%
+  \renewcommand{\punti}{\punti@dx}
+  \renewcommand{\puntiman}{\puntiman@dx}
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\puntipt}
+% This command can also be placed anywhere in the document and replaces
+% the word ``Punti'' with the abbreviation ``Pt.''
+%    \begin{macrocode}
+\def\puntipt{%
+  \renewcommand{\@punteggio}{Pt.}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\totpunti}
+% The \cs{totpunti}\oarg{calculation} command creates a \env{tabular}
+% environment at the end of the current page, which is used to write the total
+% score and calculate the final grade. The optional calculation is set by
+% default to $/10+1$ (the one I usually adopt), but it can be changed as
+% desired. The optional argument will be automatically set in math mode.
+%    \begin{macrocode}
+\newcommand{\totpunti}[1][/10 + 1]{%
+  \vfill
+  \begin{flushright}
+  {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|cc|}
+      \hline
+        & {\hspace{-7pt}\textbf{VOTO}} \\
+      {\textbf{Totale punti} \fbox{\phantom{\LARGE MM}} $\bm{#1=}$}%
+        & \hspace{-7pt}\fbox{\phantom{\Huge MM}} \\
+      \hline
+    \end{tabular}}
+  \end{flushright}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\vartotpunti}
+% This command is similar to \cs{totpunti}, but it doesn't place the final score
+% \env{tabular} environment at the end of the page.
+%    \begin{macrocode}
+\newcommand{\vartotpunti}[1][/10 + 1]{%
+  \begin{flushright}
+  {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|cc|}
+      \hline
+        & {\hspace{-7pt}\textbf{VOTO}} \\
+      {\textbf{Totale punti} \fbox{\phantom{\LARGE MM}} $\bm{#1=}$}%
+        & \hspace{-7pt}\fbox{\phantom{\Huge MM}} \\
+      \hline
+    \end{tabular}}
+  \end{flushright}}
+%    \end{macrocode}
+% \end{macro}
+%\iffalse
+%</class|package>
+%\fi
+%
+% \Finale
+\endinput

@@ -1,0 +1,231 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath,amssymb, systeme}
+\usepackage{multicol}
+\usepackage{anyfontsize}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+\usepackage[normalem]{ulem}
+%\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+\newenvironment{sistema}% 
+{\left\lbrace\begin{array}{@{}l@{}}}% 
+{\end{array}\right.} 
+
+% ---------------------------------- Intestazione
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{2° Quadrimestre}
+\newcommand{\examnum}{Recupero insufficienze a.s. 2020/'21}
+\newcommand{\examdate}{data: \uline{\hspace{6em}}}
+\newcommand{\timelimit}{60 minuti}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{IIS "G.A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di MATEMATICA}{}{\emph{CASPON Edward}}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+
+%\printanswers
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+	\rule[2ex]{\textwidth}{0.5pt}\\
+	{\huge{\bf \class}}\\[12pt]
+	%{\huge -\, \term \, - }\\[8pt]
+	{\huge -\, \examnum \, - }\\[8pt]
+	\rule[2ex]{\textwidth}{0.5pt}\\
+	\vspace{1cm}
+%\color{red} {\fontsize{50}{10}\selectfont {\bf SOLUZIONI}}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Cognome e Nome:} & \makebox[2.5in]{\Large{\bf CASPON Edward}}\\
+
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 3\string^C}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+
+\vspace{3cm}
+% ---------------------------------- Avvertenze
+
+\noindent
+\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica di Recupero - che viene somministrata in modalità IN PRESENZA - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti;
+	\item Per gli eventuali studenti che dovessero svolgere la prova in DDI, la webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici - scientifiche e non -, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}
+%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ================================== ESERCIZI ===================================
+% todo completare punto a
+% ---------------------------------- Esercizio 1 --------------------------------
+
+\begin{questions}
+
+\addpoints
+
+\question[6]
+Fattorizza il seguente polinomio con il metodo che ritieni più opportuno:\\
+\small{\emph{suggerimento: ti sarà sufficiente ricordare i Prodotti Notevoli }}\\[10pt]
+\(4x^2 - 12x - 40\)
+
+\fillwithdottedlines{.75in}
+
+{\footnotesize
+\begin{solution}
+	\(\left[ \; 4(x - 5)(x + 2) \; \right]\)
+\end{solution}
+}
+%\vspace{12pt}
+
+
+\addpoints
+
+\question
+Semplifica la seguenti espressioni e determina le condizioni di esistenza:\\
+
+\begin{parts}
+
+\part[6]
+\(\left( x - \dfrac{x}{x + 1} \right) : \left( 1 - \dfrac{2x}{x - 1}\right)\cdot \left( \dfrac{1}{x^2} + \dfrac{2}{x} + 1 \right)\)
+
+\fillwithdottedlines{1.25in}
+\vspace{12pt}
+{\footnotesize
+\begin{solution}
+	\(\left[ \; 1 - x; \quad x \neq \pm 1 \wedge x \neq 0 \; \right]\)
+\end{solution}
+}
+\vspace{12pt}
+
+\part[8]
+\(\left( \dfrac{x}{x + 1} + \dfrac{x}{1 + x} \right) : \left( 1 - \dfrac{1}{1 - x^2}\right)\)
+
+\fillwithdottedlines{1.5in}
+\vspace{12pt}
+{\footnotesize
+\begin{solution}
+	\(\left[ \; 2 \; \right]\)
+\end{solution}
+}
+
+\end{parts}
+
+\vspace{12pt}
+%\pagebreak
+
+\addpoints
+
+\question[10]
+Determina la soluzione della seguente Equazione Frazionaria:\\[4pt]
+\small{\emph{suggerimento: ricorda di verificare le Condizioni di Esistenza: C.E. }}\\[10pt]
+\(\dfrac{1}{x^{2}-4}-\dfrac{2}{x+2}=\dfrac{3}{x-2}\)
+
+\fillwithdottedlines{1.5in}
+\vspace{12pt}
+
+{\footnotesize
+\begin{solution}
+	Risolviamo l'equazione:
+
+\(\dfrac{1}{x^{2}-4}-\dfrac{2}{x+2}=\dfrac{3}{x-2}\)
+
+{\bfseries \(1^{\mathrm{o}}\) passo:} Scomponendo i denominatori dell'equazione, riscriviamo l'equazione nella forma:
+\[
+\dfrac{1}{(x-2)(x+2)}-\dfrac{2}{x+2}=\dfrac{3}{x-2}
+\]
+Poniamo le condizioni di esistenza.
+C.E.: \(\quad x \neq 2 \wedge x \neq-2\)\\[10pt]
+{\bfseries \(2^{\mathrm{o}}\) passo:} Il m.c.m. dei denominatori è \((x-2)(x+2)\).
+
+\[
+\begin{array}{l}
+\dfrac{1}{(x-2)(x+2)}-\dfrac{2}{x+2} = \dfrac{3}{x-2} \\[8pt]
+(x-2)\cancel{(x+2)} \cdot \dfrac{1}{(x-2)\cancel{(x+2)}} - (x-2)\cancel{(x+2)} \cdot \dfrac{2}{\cancel{x+2}} = \\[8pt]
+=\cancel {(x-2)}(x+2) \cdot \dfrac{3}{\cancel{x-2}} \\[8pt]
+1-2(x-2)=3(x+2) \\[8pt]
+1-2 x+4=3 x+6 \\[8pt]
+-2 x-3 x=6-1-4
+\end{array}
+\]
+
+\(-5 x=1 \Rightarrow x=-\dfrac{1}{5} \)\\[10pt]
+{\bfseries \(3^{\mathrm{o}}\) passo:} La soluzione trovata,  \(x=-\dfrac{1}{5}\), soddisfa le condizioni di esistenza dell'equazione, quindi è {\bfseries accettabile.}
+\end{solution}
+}
+\end{questions}
+\pagebreak
+
+
+
+% ===============================================================================
+
+\begin{center}
+\rule[2ex]{\textwidth}{1pt}
+\vspace{.5cm}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\small La sufficienza è fissata a 14 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrassero prestazioni della classe sensibilmente lontane dalla media stimata.
+
+\end{document}

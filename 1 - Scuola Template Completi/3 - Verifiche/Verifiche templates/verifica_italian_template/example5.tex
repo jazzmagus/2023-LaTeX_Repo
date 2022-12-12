@@ -1,0 +1,97 @@
+\documentclass[senzagrazie]{verifica}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tasks}
+
+\begin{document}
+
+\tipologia{prova comune}
+\disciplina{matematica e fisica}
+\istituto{Liceo ``G. Novello'' -- Codogno}
+\classe{4\tsa C}
+\data{7 febbraio 2020}
+\tempo{55 minuti}
+
+\lineanome
+\intestazionerighe
+
+\begin{esercizi}
+
+\item Data l'ellisse
+\[
+  9x^2+y^2+36x-4y+4=0
+\]
+calcola il suo centro, i valori dei semiassi, i fuochi e l'eccentricità.
+
+\item Un aereo di linea ha una potenza sonora di circa
+      $4,8\times 10^4\unit{W}$. Un operatore aeroportuale si trova
+      a $25\unit{m}$ di distanza.
+\begin{itemize}
+  \item Calcola l'intensità e il livello sonoro percepiti dall'operatore.
+  \item Calcola l'intensità e il livello sonoro a $1,5\times 10^3\unit{m}$
+        di distanza.
+\end{itemize}
+
+\item Data l'equazione
+\[
+  \frac{x^2}{25}+\frac{y^2}{12-k}=1
+\]
+determina per quale valore di $k$ essa rappresenta
+\begin{enumerate}[a)]
+  \item un'ellisse;
+  \item un'ellisse coi fuochi sull'asse $x$;
+  \item un'ellisse coi fuochi sull'asse $y$;
+  \item un'ellisse passante per il punto $(-2, 1)$;
+  \item un'ellisse passante per il punto $(5\sqrt{2},-1)$.
+\end{enumerate}
+
+\item Risolvi le seguenti equazioni e disequazioni.
+\begin{tasks}[after-item-skip=2em,column-sep=2em,item-indent=2em](2)
+  \task $\dss{2\cos^2 x +3\sin^2 x=\frac{5}{2}\sin 2x}$
+  \task $\dss{\frac{1 -\cos 2x}{\sqrt{3}\sin x}=\frac{\tan x}{2\cos x}}$
+  \task $\dss{2\sin^2 x +3\cos x -2 \le 0}$
+  \task $\dss{3\sin^2 x -2\sqrt{3}\sin x\cos x > 3\cos^2 x}$
+\end{tasks}
+
+\item \begin{otherlanguage}{english}
+True or false?
+\begin{test-verofalso}
+  \vfitem{The speed of light in vacuum is approximately
+          $3.0\times 10^8\unitx{m/s}$.}
+  \vfitem{The gravitational acceleration of an object in vacuum, near
+          the surface of the Earth, is denoted by $g$ and is
+          approximately $9.8\unitx{m/s^2}$. At different points, $g$
+          changes depending on altitude and latitude.}
+\end{test-verofalso}
+\end{otherlanguage}
+
+\end{esercizi}
+
+\vfill
+
+% tabella per l'attribuzione dei singoli punteggi
+% consultare la documentazione del pacchetto tabularx
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\begin{flushright}
+{\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|X|*{12}{P{.75cm}|}}
+\hline
+\textbf{Esercizio} & \textbf{1} & \textbf{2} & \multicolumn{5}{c|}{\textbf{3}}
+                                          & \multicolumn{4}{c|}{\textbf{4}}
+                                          & \textbf{5} \\
+\cline{4-12}
+                   &   &   & a & b & c & d & e & a  & b  & c  & d  & \\
+\hline
+\hline
+Punteggio          & 9 & 9 & 6 & 6 & 6 & 6 & 6 & 10 & 10 & 12 & 12 & 4 \\
+\hline
+Totalizzato        &   &   &   &   &   &   &   &    &    &    &    &\\
+\hline
+\end{tabularx}}
+\end{flushright}
+
+\vartotpunti[/12+2]
+
+\end{document}

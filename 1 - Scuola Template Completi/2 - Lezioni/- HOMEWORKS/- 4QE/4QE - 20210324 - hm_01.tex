@@ -1,0 +1,133 @@
+% -------------------------------------------------------------
+% Template HOMEWORK
+% -------------------------------------------------------------
+% 2020 by d!egofantinelli at jazzmagus@gmail.com
+% -------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[12pt, a4paper, landscape]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsthm, amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[none]{hyphenat}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{tikz}
+%\usepackage[dvipsnames]
+%\usepackage{upquote}
+\usepackage{caption}
+\usepackage{float}
+
+%\printanswers
+
+% ---------------------------------- General Math Setup
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+
+\newcommand{\ChoiceLabel}[1]{\hspace{-1.6em}\makebox[1.6em][l]{\textbf{#1.}}\ignorespaces}
+
+\newcommand{\WrongChoice}[1]{\choice \ChoiceLabel{#1}}
+\newcommand{\RightChoice}[1]{\correctchoice \ChoiceLabel{#1}}
+\newcommand{\Item}[1]{\hspace{-17pt}\makebox[17pt][l]{\textbf{#1.}}\ignorespaces}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+% ---------------------------------- Intestazione
+\newcommand{\class}{\LARGE {Esercizi proposti}}
+%%\newcommand{\term}{I Quadrimestre}
+%\newcommand{\examnum}{Verifica numero: 1}
+%\newcommand{\examdate}{11 dicembre 2020}
+%\newcommand{\timelimit}{40 minuti}
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+
+% ---------------------------------- Intestazione
+\pagestyle{headandfoot}
+\footrule
+\headrule
+\lhead{MATEMATICA}
+\rhead{Classe 4\string^QE}
+\chead{IIS "G. A. Remondini" - Bassano del Grappa (VI)}
+\rfoot{\em{\color{orange} scadenza consegna: giovedì 25 marzo 2021, ore 19:30}}
+\lfoot{pag. \thepage\ of \numpages}
+
+% ---------------------------------- Punteggi
+%\pointpoints{punto}{\em punti}
+%\pointformat{[{\footnotesize \thepoints}]}
+%\bonuspointpoints{punto bonus}{\em punti bonus}
+%\bonuspointformat{[{\footnotesize \thepoints}]}
+%\pointsinrightmargin
+%\setlength{\rightpointsmargin}{.2cm}
+%\chqword{Esercizio}
+%\chpword{Punti}
+%\chbpword{Punti Bonus}
+%\chsword{Punteggio}
+%\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+%\vspace{2cm}
+\noindent
+{\huge{\bf \class}}\\[20pt]
+\vspace{10pt}
+{\Large{Disequazioni Razionali Frazionarie di secondo grado}}:\\
+\hrule
+
+%{\large {\(y = f(x) = \dfrac {x - 1}{x^2 - x - 6}\)}}\\
+
+
+% ====================== VERIFICA 
+
+\begin{questions}
+
+\begin{multicols}{2}
+% ------------------------------------------- Esercizio #1
+%\addpoints
+\question
+Studiare il Segno della seguente disequazione:\\
+
+{\large {\[\dfrac {x - 1}{x^2 - x - 6} \le 0\]}}\\
+
+\fillwithdottedlines{1in}
+
+%\vspace{0.3cm}
+
+% ------------------------------------------- Esercizio #2
+\question
+Studiare il Segno della seguente disequazione, dopo averla opportunamente riportata nella forma \(\dfrac{N(x)}{D(x)} \ge 0\), oppure\(\dfrac{N(x)}{D(x)} \le 0\)\\
+
+{\large {\[\dfrac {1}{x^2 - 1} + \dfrac {1}{2x - 2} > \dfrac {1}{6} + \dfrac {1}{2x - 2}  \]}}\\
+
+\fillwithdottedlines{1in}
+
+\begin{solution}
+La differenza sta nel fatto che i Numero Razionali - che appartiene cioè all'Insieme \( \Q \)	- per definizione hanno un SEGNO, in quanto composti da numeri Interi Relativi \( \Z \); si può anche dire, più precisamente, che una \emph{frazione} è il rapporto tra due numeri Naturali \( \N \), mentre un numero \emph{razionale} è il rapporto tra due numeri Interi Relativi dell'insieme \( \Z \).
+\end{solution}
+
+\vspace{.8cm}
+
+
+\end{multicols}
+\end{questions}
+
+\end{document}

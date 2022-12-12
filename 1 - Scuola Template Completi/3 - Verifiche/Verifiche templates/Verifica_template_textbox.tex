@@ -1,0 +1,137 @@
+\documentclass[10pt,a4paper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{physics}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{mhchem}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{changepage}
+\usepackage{csquotes}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\small {\MakeUppercase{verifica di matematica}}}
+\fancyhead[C]{\small {\MakeUppercase {Cognome e Nome:}}}
+\fancyfoot[L]{\em Liceo Scientifico "J. da Ponte"}
+\fancyfoot[C]{A.S. 2020/'21}
+\fancyfoot[R]{pag. \thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\sisetup{locale=DE}
+\sisetup{per-mode = symbol-or-fraction}
+\DeclareSIUnit\year{a}
+\DeclareSIUnit\clight{c}
+\mdfdefinestyle{exercise}{
+	backgroundcolor=black!8,roundcorner=8pt,hidealllines=true,nobreak
+}
+\begin{document}
+\begin{titlepage}
+
+\begin{center}
+	\Large{Liceo Scientifico "B. Brocchi" - Bassano del Grappa}\\[6pt]
+	\large{- Sottotitolo -}\\
+	\vspace{4cm}
+	\line(1,0){400}\\[3.5mm]
+	{\huge{\textbf{VERIFICA DI MATEMATICA}}}\\[3mm]
+	\textit{\today}\\[1mm]	
+	\line(1,0){400}\\
+	\vspace{5cm}
+\end{center}
+
+\begin{adjustwidth}{1.5cm}{1.5cm}
+\textbf{Avvertenze:}\\[6pt]
+	\begin{itemize}
+		\item 
+			Si avere una funzione $f$ di variabile reale a valori reali definita nell'intervallo $[a, b]$, come nell'immagine. Supponiamo che essa sia continua e che in ogni punto del suo grafico - esclusi $(a, f(a))$ $(b, f(b))-$ sia ben definita la retta tangente, quest'ultima non parallela all'asse delle ordinate (supponiamo cioè che la funzione $f$ sia derivabile in $] a, b[$\\
+			\item 
+			Supponiamo che essa sia continua e che in ogni punto del suo grafico - esclusi $(a, f(a))$ $(b, f(b))-$ sia ben definita la retta tangente, quest'ultima non parallela\\
+			\item 
+			Supponiamo che essa sia continua e che in ogni punto del suo grafico - esclusi $(a, f(a))$ $(b, f(b))-$ sia ben definita la retta tangente, quest'ultima non parallela\\
+		\end{itemize}
+\end{adjustwidth}
+
+\vfill
+	\begin{center}
+	\vspace{18pt}
+	{\Large{\tt COGNOME e NOME:}}\quad \underline{\hspace{2.8in}}\\
+	\end{center}
+\end{titlepage}
+
+	\begin{enumerate}
+    	\setcounter{enumi}{0}
+        \item \textbf{Polinomi e Prodotti Notevoli:}
+        \begin{mdframed}[style=exercise]
+        Verwenden Sie die Gleichung $m\qty(\dv{v}{t}+\frac{v}{\tau})=-eE$ für die Driftgeschwindigkeit $v$ der Elektronen um zu zeigen, dass die Leitfähigkeit bei der Frequenz $\omega$ gleich
+        \begin{align*}
+			 \sigma (\omega) &= \sigma(0)\qty(\frac{1+i\omega\tau}{1+\qty(\omega\tau)^2})
+		\end{align*}
+        ist, wobei $\sigma (0)=ne^2\tau/m$.\\
+        \textit{Hinweis:} Verwenden Sie $v=e^{-i\omega t}$
+        \end{mdframed}
+        \begin{align*}
+			\dv{v}{t} &= -i\omega\cdot v\\
+            m\qty(-i\omega\cdot v + \frac{v}{\tau}) &= -eE\\
+            \Leftrightarrow v &= \frac{-eE/m}{-i\omega+\frac{1}{\tau}}=\tau\frac{-eE/m}{-i\omega\tau+1}\stackrel{\text{c.c.}}{=}\tau\frac{-eE/m}{\qty(\omega\tau)^2+1}\qty(i\omega\tau+1)\\
+            j&=-nev\qquad\sigma=\frac{j}{E}\\
+            \Rightarrow\sigma(\omega) &= \underbrace{\frac{-ne}{E}\tau\qty(-eE/m)}_{=ne^2\tau/m=\sigma (0)}\frac{1+i\omega\tau}{1+\qty(\omega\tau)^2}
+		\end{align*}
+        \item \textbf{Teorema del Resto e Teorema di Ruffini}
+        \begin{mdframed}[style=exercise]
+			Supponiamo di avere una funzione $f$ di variabile reale a valori reali definita nell'intervallo $[a, b]$, come nell'immagine. Supponiamo che essa sia continua e che in ogni punto del suo grafico - esclusi $(a, f(a))$ $(b, f(b))-$ sia ben definita la retta tangente, quest'ultima non parallela all'asse delle ordinate (supponiamo cioè che la funzione $f$ sia derivabile in $] a, b[$ ). Tracciamo la retta secante il grafico, passante per i punti $(a, f(a))$ e $(b, f(b))$
+II teorema di Lagrange afferma che sotto le ipotesi di regolarità sopra enunciate esiste almeno un punto $c \in] a, b[,$ come nell'esempio, tale che la tangente al grafico di $f$ nel punto $(c, f(c))$ abbia la stessa pendenza della retta passante per i punti $(a, f(a))$ e $(b, f(b))$?
+		\end{mdframed}
+        \begin{itemize}
+			\item Gitteranteil
+            \begin{align*}
+				T\gg\Theta : \qquad C_{\mathrm{V,Gitter}} &= 3nk_B = \SI{3.5}{\joule\per\centi\metre\cubed\per\kelvin}\\
+                T\ll\Theta:\qquad C_{\mathrm{V,Gitter}} &= 3nk_B\frac{4\pi^4}{5}\qty(\frac{T}{\Theta})^3=\SI{3.5}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\num{77.93}\qty(\frac{T}{\SI{343}{\kelvin}})^3
+            \end{align*}
+            \item elektronischer Anteil
+            \begin{align*}
+				C_{\mathrm{V,e}} &= \frac{\pi^2}{2}k_Bn\frac{T}{T_{\mathrm{F,Cu}}}=\SI{5.75}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\qty(\frac{T}{\SI{8.16e4}{\kelvin}})
+			\end{align*}
+		\end{itemize}
+        \begin{align*}
+			\Rightarrow C_V(T\gg \Theta) &= \SI{3.5}{\joule\per\centi\metre\cubed\per\kelvin} + \SI{5.75}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\qty(\frac{T}{\SI{8.16e4}{\kelvin}})\\
+            \Rightarrow C_V(T\ll\Theta) &= \SI{5.75}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\qty(\frac{T}{\SI{8.16e4}{\kelvin}}) + \SI{5.75}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\qty(\frac{T}{\SI{8.16e4}{\kelvin}})
+        \end{align*}
+        \begin{align*}
+            &T\gg\Theta\qquad \SI{3.5}{\joule\per\centi\metre\cubed\per\kelvin}\stackrel{!}{=}\SI{5.75}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\qty(\frac{T}{\SI{8.16e4}{\kelvin}})\\
+            &\Rightarrow T = \SI{5.0e4}{\kelvin}\\
+            &T\ll\Theta\qquad \SI{3.5}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\num{77.93}\qty(\frac{T}{\SI{343}{\kelvin}})^3\stackrel{!}{=}\SI{5.75}{\joule\per\centi\metre\cubed\per\kelvin}\cdot\qty(\frac{T}{\SI{8.16e4}{\kelvin}})\\
+            & \Rightarrow T^2=\SI{10.43}{\kelvin\squared} \Leftrightarrow T=\SI{3.23}{\kelvin}
+		\end{align*}
+%\newpage
+%        \item \textbf{Photoemissionsspektren}
+%        \begin{mdframed}[style=exercise]
+%			Für ein eindimensionales freies Elektronengas ergibt sich nachstehende Dispersion $E(k)$ (Abb.
+%1), wenn der unterste \enquote{gebundene} Zustand $\SI{9}{\electronvolt}$ unterhalb der Fermikante $E_F$ liegt. Nehmen Sie an, dass in einem Photoemissions-Experiment in senkrechter Emission bei den angegebenen Photonenenergien $h\nu$ nachstehende Spektren gemessen wurden. Bestimmen Sie graphisch den Verlauf $E_i(k)$ der (beiden) besetzten Bänder relativ zu $E_f$ (d.h. $E_i < 0$) unter der Annahme, dass die Endzustände $E_f(k)$ in ihrer Dispersion der gezeichneten Form freier Elektronen folgen.\\
+%\textit{Hinweis:} $E_f(k)=E_i(k)+h\nu$, wobei $E_i$ der Bindungsenergie relativ zur Fermikante entspricht.
+%		\end{mdframed}
+%        \begin{tabular}{| l | r | r | r | r | r |}
+%        \hline
+%        	 $h\nu$ & \SI{36}{\electronvolt} & \SI{24}{\electronvolt} & \SI{18}{\electronvolt} & \SI{9}{\electronvolt} & \SI{6}{\electronvolt}\\ \hline
+%			1. $E_i$ & -8 & -6 & -5 & \num{-3.5} & -3\\ \hline
+%            2. $E_i$ & \num{-0.25} & \num{-0.5} & -1 & -2 & \num{-2.5}\\ \hline
+%            1. $E_f$ & 28 & 18 & 13 & \num{5.5} & 3\\ \hline
+%            2. $E_f$ & 35 & \num{23.5} & 17 & 7 & \num{3.5} \\ \hline
+%		\end{tabular}
+  \end{enumerate}
+\end{document}

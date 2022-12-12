@@ -1,0 +1,295 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+\usepackage{enumitem}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+% ---------------------------------- Intestazione
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{I Quadrimestre}
+\newcommand{\examnum}{Verifica numero: 2}
+\newcommand{\examdate}{18 dicembre 2020}
+\newcommand{\timelimit}{50 minuti}
+\CorrectChoiceEmphasis{\color{yellow}}
+\SolutionEmphasis{\color{yellow} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{ISS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di MATEMATICA}{}{Classe 2\string^C}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+
+%\printanswers
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[20pt]
+{\huge{ \term \quad -\quad\examnum}}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} & {\em prof.:} & \makebox[2.5in]{\em Diego Fantinelli}
+\end{tabular*}\\
+
+\vspace{5cm}
+% ---------------------------------- Avvertenze
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, di cui uno facoltativo di \numbonuspoints \;punti, che verrà conteggiato soltanto se verranno svolti anche tutti i precedenti.
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+	\item La verifica dovrà essere consegnata in formato digitale (pdf, jpeg, png, etc.) e dovrà essere ben leggibile (si consiglia l'inquadratura verticale).
+
+\end{itemize}
+%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ---------------------------------- Esercizi
+\begin{questions}
+
+\addpoints
+\question[12]
+Fattorizza i seguenti polinomi utilizzando i Prodotti Notevoli:
+\begin{multicols}{2}
+\begin{parts}
+\part
+\(81x^8 - 1\)
+
+\begin{solution}
+	\( (9x^4 + 1)(9x^4 - 1)\)
+\end{solution} 
+
+\vspace{.3cm}
+\part
+\(25y^2 - 20xy + 4x^2\)
+
+\begin{solution}
+	\( (5y^2 - 2x)^2 \)
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(-1 + t^2\)
+
+\begin{solution}
+	\( (t + 1)(t -1) \) 
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(125x^6 - 75x^4y + 15x^2y^2 - 27y^3\)
+
+\begin{solution}
+	\( (5x^2 - 3y)^3 \)
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(36x^2 + y^2 + 81z^4 + 12xy - 54yz^2 + xz^2 \)
+
+\begin{solution} 
+	\( ( 6x - y + 3z^2)^2\)
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(a^6 - b^{12} \)
+
+\begin{solution} 
+	\( (a^3 - b^6)(a^3 + b^6)\)
+\end{solution}
+
+\vspace{.3cm}
+\end{parts}
+\end{multicols}
+
+\question
+Rispondi in modo chiaro e sintetico alle seguenti domande:
+
+\begin{parts}
+\part[4]
+Dimostra la seguente uguaglianza: \(A^3 + 3A^2B + 3AB^2 + B^3 = (A + B)^3\)
+%\fillwithlines{0.5in}
+
+\vspace{3pt}
+\begin{solution}
+\begin{align*} 
+(A - B)^3 & = (A - B)^2 \cdot (A - B)\\ 
+& = (A^2 - 2AB + B^2) \cdot (A - B)\\
+& = A^3 - 2A^2B + AB^2 - A^2B + 2AB^2 - B^3 \\
+&= A^3 + 3A^2B + 3AB^2 + B^3
+\end{align*}
+\end{solution}
+% TODO Mancano le soluzioni
+
+\part[4]
+
+Scomponi in fattori i seguenti \emph {Trinomi Particolari}:\\
+{\footnotesize \emph{Suggerimento:} con una rapida verifica potrai controllare se la scomposizione adottata è corretta.
+}
+\begin{enumerate}[label=\alph*.]
+\begin{multicols}{2}
+		\item \(x^2 - x - 6\)
+			\begin{solution}
+			\( (x - 3)(x + 2) \)	
+			\end{solution}
+		\item \(m^2 - 7m  + 10\)
+		\begin{solution}
+			\( (m - 5)(m - 2) \)	
+			\end{solution}
+		\item \(a^2 + 5a - 50\)
+		\begin{solution}
+			\( (a + 5)(a + 10) \)	
+			\end{solution}
+		\item \(x^2 - 11x + 30\)
+		\begin{solution}
+			\( (x - 5)(x - 6) \)	
+			\end{solution}
+\end{multicols}
+\end{enumerate}
+
+\end{parts}
+
+%\begin{solution}
+%{\bf Fattorizzare} un polinomio significa scriverlo come prodotto di fattori (per l'appunto) irriducibili, ovviamente di grado inferiore.\\ {\em Un polinomio è {\bf irriducibile} quando non può essere scritto come prodotto di due o più fattori di grado inferiore.}
+%\end{solution}
+
+%\fillwithlines{.5in}
+
+\vspace{3pt}
+% --------------------------- Esercizio 3
+\addpoints
+\question [2] \((x + 4)(x - 7)\) è la fattorizzazione di uno dei seguenti polinomi, quale?
+
+\begin{choices}
+\setlength{\leftmargin}{0pt}
+\begin{multicols}{2}
+ \choice \(x^2 - 2x + 1\) 
+ \choice \(2x^2 - 2x + 3\)
+ \CorrectChoice \(x^2 - 3x - 28\)
+ \choice \(x^2 + 6x - 1\)
+ \end{multicols}
+\end{choices}
+\vspace{3pt}
+
+\addpoints
+\question Semplifica le seguenti espressioni?\\
+{\footnotesize \emph{Suggerimento:} Cerca di individuare la presenza di eventuali Prodotti Notevoli che facilitano i calcoli.}
+
+\begin{parts}
+\part [4]
+	\(  (x + 2)^{2} + (x + 2)(x - 2) - 2 \cdot (x - 1)\)
+
+\vspace{5pt}
+\begin{solution}
+			\( 2 \)	
+\end{solution}
+
+\part [4]	
+	\(  6x - 6x \cdot (3x - 1) + (3x - 2)^{2} + (3x - 2)(3x + 2) \)
+	
+	\vspace{5pt}
+\begin{solution}
+			\( 0 \)	
+\end{solution}
+\end{parts}
+\vspace{6pt}
+%%\emph{Suggerimento:} leggere con molta attenzione il testo delle risposte perché le differenze potrebbero essere minime.
+%\begin{choices}
+% \CorrectChoice Un \emph{numero decimale periodico semplice} di periodo 9 coincide esattamente con il numero intero successivo.
+% \choice La parte intera di un numero decimale è quella che precede la virgola.
+% \CorrectChoice Una frazione che ha 100 al denominatore genera un numero decimale finito.
+% \choice La frazione generatrice di un \emph{numero periodico} ha al denominatore un numero le cui cifre sono tutte uguali a 9.
+%\end{choices}
+%\vspace{5pt}
+
+% --------------------------- Esercizio 4
+\bonusquestion[4] {\em Esercizio facoltativo:} Semplifica la seguente espressione: 
+
+\((2x^2 + y)^2 - (2x^2 + y) \cdot (2x^2 - y) - 4(x^2)y\)
+
+\begin{solution}
+
+\( 2y^2\)
+
+\end{solution}
+
+\end{questions}
+
+\vspace{5pt}
+
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+
+\begin{center}
+\vfill
+{\bf Tabella dei punteggi}\\
+\vspace{10pt}
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 20 punti, ma potrebbe subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche in caso di andamenti troppo scostanti della media-classe.
+\end{document}

@@ -1,0 +1,17 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdftex 2021.7.5)  10 AUG 2021 16:17
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/- LaTeX DoX Repository/1 - Scuola Template Completi/2 - Lezioni/- HOMEWORKS/- 3QA/fancy compiti"
+
+! Emergency stop.
+<to be read again> 
+                   \penalty 
+~->\penalty 
+            \@M \ 
+<*> ...egofantinelli/Library/Mobile Documents/com~
+                                                  apple~CloudDocs/- LaTeX Do...
+*** (job aborted, file error in nonstop mode)
+
+!  ==> Fatal error occurred, no output PDF file produced!

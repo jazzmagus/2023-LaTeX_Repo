@@ -1,0 +1,246 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+%\printanswers
+
+% ---------------------------------- Command
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{Recupero Primo Quadrimestre}
+%\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{22 febbraio 2021}
+\newcommand{\timelimit}{50 minuti}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Headers and Footers
+
+\pagestyle{headandfoot}
+\firstpageheader{IIS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di Recupero di MATEMATICA}{}{Classe 2\string^C}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[12pt]
+{\huge -\, \term \, - }\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+\vspace{5cm}
+
+% ---------------------------------- Avvertenze
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica di Recupero - che viene somministrata in modalità IN PRESENZA - contiene \numquestions \;quesiti, per un totale di \numpoints \;punti.
+%	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ================================== Esercizi
+
+% ---------------------------------- Esercizio 1
+\begin{questions}
+
+\addpoints
+\question [5]Quale tra le risposte elencate è la {\em fattorizzazione} del seguente trinomio di secondo grado?\\ \[P(x) = 4x^2 - 12x + 9\]
+
+\begin{choices}
+\setlength{\leftmargin}{0pt}
+ \choice \((x + 3)^2\) 
+ \choice \((2x - 3) \cdot (2x + 3)\) 
+ \CorrectChoice \((2x - 3)^2\) 
+ \choice \((x - 3)^3\)
+\end{choices}
+\vspace{.5cm}
+
+\addpoints
+\question
+Semplifica le seguenti espressioni algebriche, utilizzando il metodo di raccoglimento indicato:\\
+\begin{parts}
+\part[5] Raccoglimento totale: \(2a^4b^3 - 3a^3b^2 + 5a^2b^4\)\\
+{\footnotesize
+\begin{solution}
+	\(a^2b^2(2a^2b - 3a + 5b^2)\)
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[5] Raccoglimento parziale: \(t^5 - 5t^4 + t - 5\)\\
+{\footnotesize
+\begin{solution}
+	\((t - 5)(t^4 + 1)\)
+\end{solution}
+}
+
+\end{parts}
+\vspace{.5cm}
+
+% ---------------------------------- Esercizio 2
+\question [6] Cosa significa {\em fattorizzare} un polinomio?
+\fillwithlines{0.5in}
+
+{\footnotesize
+\begin{solution}
+Significa riscriverlo come prodotto di polinomi di grado inferiore.
+\end{solution}
+}
+\vspace{.5cm}
+
+\addpoints
+\question [4] Quali dei seguenti gruppi di monomi sono {\em simili}?\\
+
+\begin{oneparchoices}
+ \choice $x^3y^4, \quad x^3y^2$ 
+ \choice $\dfrac{1}{6}rst, \quad \dfrac{1}{6}rs^2t$
+ \CorrectChoice $\dfrac{1}{2}a^3bc^2, \quad 3a^3bc^2$
+ \choice $abc,\quad 2abc, \quad 3a^2bc$
+\end{oneparchoices}
+\vspace{.5cm}
+
+%
+%\addpoints
+%\question [20]Quali dei seguenti monomi sono {\em simili}?
+%
+%\begin{checkboxes}
+% \choice Stephen Hawking \quad \dotfill
+% \correctchoice Albert Einstein \quad \dotfill
+% \choice Emmy Noether \quad \dotfill
+% \choice I don't know \quad \dotfill
+%\end{checkboxes}
+
+
+% ---------------------------------- Esercizio 3
+
+\addpoints
+\question
+Esegui i seguenti {\em Prodotti Notevoli}:\\
+\begin{parts}
+\part[3] \((6x - 5y) \cdot (6x + 5y)\)\\
+{\footnotesize
+\begin{solution}
+	\(36x^2 - 25y^2\)
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[3] \((2a - 3b)^2\)\\
+{\footnotesize
+\begin{solution}
+	\((4a^2 - 12ab + 9b^2)\)
+\end{solution}
+}
+
+\end{parts}
+\vspace{.5cm}
+
+%\addpoints
+%\question [5]Quale delle seguenti affermazioni è VERA?\\
+%\begin{choices}
+%\setlength{\leftmargin}{0pt}
+% \CorrectChoice \( 4x^2 - 16x + 16\) è un QUADRATO di BINOMIO. 
+% \choice Il doppio del prodotto tra il quadrato di $x$ e il quadrato della somma di $x$ con $y$.
+% \choice \( (x^2 - 1) \cdot (x^2 + 1)\) non è un {\em prodotto notevole}
+% \CorrectChoice Il doppio del prodotto tra il quadrato di $x$ e la somma dei quadrati di $x$ e $y$.
+%\end{choices}
+%\vspace{.5cm}
+
+% ---------------------------------- Esercizio 4
+
+\addpoints
+\question [7]Esegui la seguente divisione utilizzando la Regola di Ruffini, scrivendo alla fine la scomposizione ottenuta: \(A(x) = B(x) \cdot Q(x) + R\)
+\[ (2x^4 - 5x^3 + 2) : (x - 1)\]
+\fillwithlines{0.5in}
+
+{\footnotesize
+\begin{solution}
+	\(Q(x) = 2x^3 - 3x^2 - 3x - 3, \quad R = -1\).
+\end{solution}
+}
+% ------------------------------------- Domanda Bonus
+
+%\bonusquestion[5] {\em Esercizio facoltativo:}
+%
+%Determina il M.C.D. e il m.c.m. fra i seguenti monomi: \[ 9a^2b^4c, \quad 3ac^4, \quad 6bc^2.\]
+%{\footnotesize
+%\begin{solution}
+%	\(M.C.D. = 3c\), \quad \(m.c.m. = 18a^2b^4c^4\)
+%\end{solution}
+%}
+
+\end{questions}
+%\vfill
+%\noindent
+%\rule[2ex]{\textwidth}{1pt}
+\pagebreak
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 20 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrino prestazioni della classe sensibilmente lontane dalla media-classe stimata.
+
+\end{document}

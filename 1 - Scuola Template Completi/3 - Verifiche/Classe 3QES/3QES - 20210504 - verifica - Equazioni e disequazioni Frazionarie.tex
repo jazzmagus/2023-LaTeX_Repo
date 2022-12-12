@@ -1,0 +1,263 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+% ---------------------------------- Command
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{n. 02 | quad. 02}
+%\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{04 maggio 2021}
+\newcommand{\timelimit}{50 minuti}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+% ---------------------------------- Headers and Footers
+
+\pagestyle{headandfoot}
+\firstpageheader{IIS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di MATEMATICA}{}{Classe 3\string^QES}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+%\printanswers
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[12pt]
+{\huge \, \term}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Cognome e Nome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 3 \string^ QES}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+\vspace{4.5cm}
+
+% ---------------------------------- Avvertenze
+
+\noindent
+\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità {\em in presenza} - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, uno dei quali facoltativo, che verrà valutato soltanto se saranno stati risolti anche tutti gli altri.
+	\item Nel caso vi fossero studenti in DDI la webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}
+\vspace{5pt}
+\noindent
+\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+%\newpage
+
+% ---------------------------------- Esercizio 1
+\begin{questions}
+
+\addpoints
+\question Risolvi le seguenti equazioni algebriche intere:\\
+\begin{parts}
+
+\part[4]
+\((5x - 2)^2 + 1 = 5(x - 1)(x + 1) + 20x^2\)
+
+\fillwithdottedlines{.5in}
+
+{\footnotesize
+\begin{solution}
+	\(\dfrac{1}{2}\)
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[4]
+\((3 - x)(3 + x) = 3 - (x - 3)^2\)
+
+\fillwithdottedlines{.5in}
+
+{\footnotesize
+\begin{solution}
+	\(\dfrac{5}{2}\)
+\end{solution}
+}
+
+\end{parts}
+\vspace{.5cm}
+
+% ---------------------------------- Esercizio 2
+
+\addpoints
+\question [6] Risolvi la seguente equazione algebrica intera:\\
+
+%\begin{parts}
+%
+%\part[4]
+%\(- \dfrac{1}{2} \left[ x - 2 \left(\dfrac{x - 1}{3} - \dfrac{3 - x}{2} \right)\right] - 1 = \dfrac{1}{6}\)
+%
+%\fillwithdottedlines{.5in}
+%
+%{\footnotesize
+%\begin{solution}
+%	\([9]\)
+%\end{solution}
+%}
+
+%\vspace{.2cm}
+%\part[4]
+\(\dfrac{(x - 1)^2}{4} - \dfrac{(x + 1)^2}{3} = \dfrac{(1 + x )(1 - x)}{12} - \dfrac{x - 2}{6}\)
+
+\fillwithdottedlines{.5in}
+
+{\footnotesize
+\begin{solution}
+	\(\left[ -\dfrac{1}{2}\right]\)
+\end{solution}
+}
+%
+%\end{parts}
+
+\vspace{.5cm}
+
+% ------------------------------------- Esercizio 3
+\addpoints
+\question [4] Quali tra le seguenti affermazioni sono VERE?:\\
+
+\begin{choices}
+\setlength{\leftmargin}{0pt}
+ \choice l'equazione \(3x = 0\) è impossibile\\
+ \CorrectChoice l'equazione \(3x = 1\) ha come soluzione il {\em reciproco} di \(3\)\\
+ \choice L'equazione \(x - 5 = 0\) ha come soluzione l'{\em opposto} di \(5\)\\
+ \choice L'equazione \(\dfrac{3}{4}x = 0\) ha come soluzione \(x = \dfrac{4}{3}\)\\
+ \choice L'equazione \(\dfrac{3}{4}x = \dfrac{5}{4}\) ha come soluzione \(x = \dfrac{1}{2}\)\\
+ \CorrectChoice L'equazione \(7x = 5\) è impossibile in \(\mathbb{N}\) ma non in \(\mathbb{Q}\)\\
+ \CorrectChoice L'equazione \(x = -x\) è impossibile perché un numero non può essere uguale al suo opposto\\
+ \CorrectChoice L'equazione \(x + 6 = x + 7\) è impossibile\\
+ \choice L'equazione \((x - 1)^2 = (1 - x)^2\) è indeterminata\\
+\end{choices}
+\vspace{1cm}
+
+% ------------------------------- Esercizio 4
+\addpoints
+\question Determina le soluzioni delle seguenti disequazioni algebriche intere:\\
+ 
+\begin{parts}
+	
+\part[6] 
+
+\((2x - 3)^2 + (1 - 3x)^2 \ge (4x - 1)(4x + 1) - 3x^2\)
+
+\fillwithdottedlines{.5in}
+\vspace{4pt}
+{\footnotesize
+\begin{solution}
+	\(\left[ x \le \dfrac{11}{18} \right]\)
+\end{solution}
+}
+\vspace{10pt}
+
+\part[6] 
+
+\( x^2 - (x + 1)^2 \ge \dfrac{x - 1}{2} - \dfrac{x + 1}{4}\)
+
+\fillwithdottedlines{.5in}
+\vspace{8pt}
+{\footnotesize
+
+\begin{solution}
+	\(\left[ x \le - \dfrac{1}{9} \right]\)
+\end{solution}
+}
+\vspace{4pt}
+
+\end{parts}
+%\vfill
+%\newpage
+%\vspace{2cm}
+
+% ------------------------------- Esercizio 5 - Facoltativo (bonus points)
+\noindent
+\rule[1ex]{\textwidth}{0.5pt}
+\addpoints
+\bonusquestion[6] {\em Esercizio facoltativo:}\\
+
+Risolvi la seguente disequazione:\\
+
+ \( \dfrac{1}{5} \left( \dfrac{3}{2} - x \right) - \dfrac{1}{3} (x - 1) \le - \dfrac{1}{2} [x^2 - (x + 1)^2] \)
+
+\fillwithdottedlines{.75in}
+\vspace{4pt}
+{\footnotesize
+\begin{solution}
+
+	\(\left[ x \ge \dfrac{2}{23}\right]\)
+\end{solution}
+}
+\end{questions}
+
+%\pagebreak
+% ---------------------- Tabella punteggi
+\vfill
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 18 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrassero prestazioni della classe sensibilmente lontane dalla media prevista.
+
+\end{document}

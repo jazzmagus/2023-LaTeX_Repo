@@ -1,0 +1,409 @@
+% -------------------------------------------------------------
+% Template HOMEWORK
+% -------------------------------------------------------------
+% 2020 by d!egofantinelli at jazzmagus@gmail.com
+% -------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[12pt, a4paper, landscape]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsthm, amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[none]{hyphenat}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{tikz}
+%\usepackage[dvipsnames]
+%\usepackage{upquote}
+\usepackage{caption}
+\usepackage{float}
+
+%\printanswers
+
+
+% ---------------------------------- Checkbox Answer Setup
+%\checkboxchar{$\square$}
+%\checkedchar{$\boxtimes$}
+%\CorrectChoiceEmphasis{}  % solo per non avere bold nelle risposte corrette
+%
+
+%% Create a Matching question format
+%\newcommand*\Matching[1]{
+%\ifprintanswers
+%    \textbf{#1}
+%\else
+%    \rule{1in}{0.5pt}
+%\fi
+%}
+%\newlength\matchlena
+%\newlength\matchlenb
+%\settowidth\matchlena{\rule{1.1in}{0pt}}
+%\newcommand\MatchQuestion[2]{%
+%    \setlength\matchlenb{\linewidth}
+%    \addtolength\matchlenb{-\matchlena}
+%    \parbox[t]{\matchlena}{\Matching{#1}}\enspace\parbox[t]{\matchlenb}{#2}}
+%
+%\renewcommand{\thequestion}{\arabic{question}}
+%\renewcommand{\thepartno}{\alph{partno}}
+%\renewcommand{\thechoice}{\alph{choice}}
+%
+%\renewcommand{\checkboxeshook}{
+%  \setlength{\labelsep}{2.4em}
+%  \setlength{\leftmargin}{4em}
+%}
+
+% ---------------------------------- General Math Setup
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+
+\newcommand{\ChoiceLabel}[1]{\hspace{-1.6em}\makebox[1.6em][l]{\textbf{#1.}}\ignorespaces}
+
+\newcommand{\WrongChoice}[1]{\choice \ChoiceLabel{#1}}
+\newcommand{\RightChoice}[1]{\correctchoice \ChoiceLabel{#1}}
+\newcommand{\Item}[1]{\hspace{-17pt}\makebox[17pt][l]{\textbf{#1.}}\ignorespaces}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+% ---------------------------------- Intestazione
+\newcommand{\class}{\LARGE {Esercizi assegnati}}
+%%\newcommand{\term}{I Quadrimestre}
+%\newcommand{\examnum}{Verifica numero: 1}
+%\newcommand{\examdate}{11 dicembre 2020}
+%\newcommand{\timelimit}{40 minuti}
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+
+% ---------------------------------- Intestazione
+\pagestyle{headandfoot}
+\footrule
+\headrule
+\lhead{MATEMATICA}
+\rhead{Classe 3\string^QA}
+\chead{IIS "G. A. Remondini" - Bassano del Grappa (VI)}
+\rfoot{{\emph {\color{red} {\bfseries scadenza consegna:} venerdì 11 dicembre 2020, ore 22:00}}}
+\lfoot{pag. \thepage\ of \numpages}
+
+% ---------------------------------- Punteggi
+%\pointpoints{punto}{\em punti}
+%\pointformat{[{\footnotesize \thepoints}]}
+%\bonuspointpoints{punto bonus}{\em punti bonus}
+%\bonuspointformat{[{\footnotesize \thepoints}]}
+%\pointsinrightmargin
+%\setlength{\rightpointsmargin}{.2cm}
+%\chqword{Esercizio}
+%\chpword{Punti}
+%\chbpword{Punti Bonus}
+%\chsword{Punteggio}
+%\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+%\vspace{2cm}
+\noindent
+{\huge{\bf \class}}\\
+
+%\vspace{3cm}
+%\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+%\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+%\textbf{} &&\\
+%\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+%\textbf{} &&\\
+%\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}\\
+%\textbf{} &&\\
+%\textbf{} &&\\
+%\textbf{} &&\\
+%\textbf{} & {\em prof.:} & \makebox[2.5in]{\em Diego Fantinelli}
+%\end{tabular*}\\
+%
+%\vspace{5cm}
+% ---------------------------------- Avvertenze
+
+%\noindent
+%%\rule[2ex]{\textwidth}{0.2pt}
+%\textbf{Avvertenze}:
+%\begin{itemize}
+%	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, di cui uno facoltativo di \numbonuspoints \;punti, che verrà conteggiato soltanto se verranno svolti anche tutti i precedenti.
+%	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+%	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+%
+%\end{itemize}
+%%\rule[2ex]{\textwidth}{0.2pt}
+%\vfill
+%\newpage
+%
+
+% =========================================== VERIFICA 
+
+\begin{questions}
+
+\begin{multicols}{2}
+% ------------------------------------------- Esercizio #1
+%\addpoints
+\question
+Semplifica le seguenti espressioni con le frazioni:
+ 
+%\( (A + B) \cdot (A - B) = A^2 - B^2\)\\
+
+\begin{parts}
+
+%\part
+%\( (2a - 3b) \cdot (2a + 3b) \);
+%
+%%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+%
+%\begin{solution}
+%
+%\( [- 115] \)
+%\end{solution} 
+%
+%\vspace{.3cm}
+%\part
+%\( (3x^2 - 5y^3) \cdot (3x^2 + 5y^3) \);
+%
+%%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+%
+%\begin{solution} 
+%\( [+ 17] \)
+%\end{solution}
+%
+\vspace{0.3cm}
+\part
+
+\(\left\{\dfrac{3}{20} \cdot\left[\left(\dfrac{4}{9}-\dfrac{1}{3}\right): 5+\left(\dfrac{3}{7}-\dfrac{2}{5}\right): \dfrac{1}{14}+\dfrac{1}{5} \cdot \dfrac{1}{9}\right]+\dfrac{2}{15}\right\}: 2 \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Parziale e poi Totale}}
+
+\begin{solution} 
+\begin{align*}
+	\left\{\dfrac{3}{20} \cdot\left[\left(\dfrac{4}{9}-\dfrac{1}{3}\right): 5+\left(\dfrac{3}{7}-\dfrac{2}{5}\right): \dfrac{1}{14}+\dfrac{1}{5} \cdot \dfrac{1}{9}\right]+\dfrac{2}{15}\right\}: 2=\\
+=\left\{\dfrac{3}{20} \cdot\left[\left(\dfrac{4-3}{9}\right): 5+\left(\dfrac{15-14}{35}\right): \dfrac{1}{14}+\dfrac{1}{45}\right]+\dfrac{2}{15}\right\}: 2 \\
+=\left[\dfrac{3}{20} \cdot\left(\dfrac{1}{9}: 5+\dfrac{1}{35}: \dfrac{1}{14}+\dfrac{1}{45}\right)+\dfrac{2}{15}\right]: 2 \\
+=\left[\dfrac{3}{20} \cdot\left(\dfrac{1}{9} \cdot \dfrac{1}{5}+\dfrac{1}{35} \cdot \dfrac{14}{1}+\dfrac{1}{45}\right)+\dfrac{2}{15}\right]: 2\\
+=\left[\dfrac{3}{20} \cdot\left(\dfrac{1}{45}+\dfrac{1}{7 \cdot 5} \cdot \dfrac{7 \cdot 2}{1}+\dfrac{1}{45}\right)+\dfrac{2}{15}\right]: 2\\
+=\left[\dfrac{3}{20} \cdot\left(\dfrac{1}{45}+\dfrac{2}{5}+\dfrac{1}{45}\right)+\dfrac{2}{15}\right]: 2\\
+=\left[\dfrac{3}{20} \cdot\left(\dfrac{1+18+1}{45}\right)+\dfrac{2}{15}\right]: 2 \\
+=\left(\dfrac{3}{20} \cdot \dfrac{20}{45}+\dfrac{2}{15}\right): 2 \\
+=\left(\dfrac{3}{20} \cdot \dfrac{4}{9}+\dfrac{2}{15}\right): 2 \\
+=\left(\dfrac{1}{5} \cdot \dfrac{1}{3}+\dfrac{2}{15}\right): 2\\
+=\left(\dfrac{1}{15}+\dfrac{2}{15}\right): 2  \\
+=\dfrac{3}{15}: 2 \\
+=\dfrac{1}{5} \cdot \dfrac{1}{2} \\
+=\dfrac{1}{10} \qed
+\end{align*}
+
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(
+	 \left[\dfrac{13}{5}:\left(3+\dfrac{9}{10}\right)+\dfrac{7}{8}+\left(\dfrac{13}{4}-2\right) \cdot \dfrac{4}{15}-\dfrac{7}{8}\right] \cdot \dfrac{11}{3}:\left(6-\dfrac{1}{2}\right)
+\);
+
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution}
+\begin{align*}
+	\left[\begin{array}{l}\left.\dfrac{13}{5}:\left(3+\dfrac{9}{10}\right)+\dfrac{7}{8}+\left(\dfrac{13}{4}-2\right) \cdot \dfrac{4}{15}-\dfrac{7}{8}\right] \cdot \dfrac{11}{3}:\left(6-\dfrac{1}{2}\right)= \\ =\left[\dfrac{13}{5}:\left(\dfrac{30+9}{10}\right)+\dfrac{7}{8}+\left(\dfrac{13-8}{4}\right) \cdot \dfrac{4}{15}-\dfrac{7}{8}\right] \cdot \dfrac{11}{3}:\left(\dfrac{12-1}{2}\right) \\ =\left(\dfrac{13}{5}: \dfrac{39}{10}+\dfrac{7}{8}+\dfrac{5}{4} \cdot \dfrac{4}{15}-\dfrac{7}{8}\right) \cdot \dfrac{11}{3}: \dfrac{11}{2} \\ =\left(\dfrac{13}{5}: \dfrac{39}{10}+\dfrac{7}{8}+\dfrac{1}{3}-\dfrac{7}{8}\right) \cdot \dfrac{11}{3} \cdot \dfrac{2}{11} \\ =\left(\dfrac{2}{3}+\dfrac{7}{8}+\dfrac{1}{3}-\dfrac{7}{8}\right) \cdot \dfrac{11}{3} \cdot \dfrac{2}{11} \\ =\left(\dfrac{2}{3}+\dfrac{7}{8}+\dfrac{1}{3}-\dfrac{7}{8}\right) \cdot \dfrac{2}{3} \\ =\left(\dfrac{2}{3}+\dfrac{1}{3}\right) \cdot \dfrac{2}{3} \\ =1 \cdot \dfrac{2}{3} \\ =\dfrac{2}{3}\end{array}\right. 
+\end{align*} 
+\end{solution}
+
+\end{parts}
+
+\vspace{0.3cm}
+
+% ------------------------------------------- Esercizio #2
+\question
+Utilizzando le \emph{proprietà delle potenze} nell'Insieme \( \Q \), \\ semplifica le seguenti espressioni: \\
+
+\begin{parts}
+
+\part
+\(  - \left( \dfrac{5}{6}  \right)^{-1} \); \quad  \( \left[ \left( - \dfrac{3}{5}  \right)^{-2} \right]^{2}\); \quad  \( - \left[ - \left( - \dfrac{3}{5}  \right)^{-2} \right]^{2}\); 
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution}
+
+\( [+ 2] \)
+\end{solution} 
+
+\vspace{.3cm}
+
+\part
+\( \left( - \dfrac{3}{5}  \right)^{0} \); \quad  \( \left( - \dfrac{2}{3}  \right)^{-2} \); \quad  \( \left\{ \left[ \left( - \dfrac{2}{3}  \right)^{-2} \right]^{0} \right\}^{-3} \); 
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution}
+
+\( [+ 2] \)
+\end{solution} 
+
+\vspace{.3cm}
+
+\part
+\( \left\{ - \left[ - \left( - 1  \right)^{-2} \right]^{3} \right\}^{-1} \); \quad  \( \left( - \dfrac{3}{2}  \right)^{-2} \cdot \left( - \dfrac{3}{2}  \right)^{-3} \); \quad  \( \left[ \left( - \dfrac{5}{4}  \right)^{-2}\right]^{-1}  \); 
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution} 
+\( \left[ - \dfrac{1}{16} \right] \)
+\end{solution}
+
+%\vspace{0.3cm}
+%\part
+%\( ( x - x^2 + 1)^2 \);
+%
+%%{\footnotesize {\emph{Suggerimento:} Raccoglimento Parziale e poi Totale}}
+%
+%\begin{solution} 
+%\( [- 3] \) 
+%\end{solution}
+%
+%\vspace{.3cm}
+%\part
+%\(  \left( 3x^2 + \dfrac{1}{2}y^2 - \dfrac{3}{4} \right)^{2} \);
+%
+%%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+%
+%\begin{solution}
+%\( \left[ + \dfrac{8}{9} \right] \)
+%\end{solution}
+\end{parts}
+
+%\fillwithlines{1in}
+
+\begin{solution}
+La differenza sta nel fatto che i Numero Razionali - che appartiene cioè all'Insieme \( \Q \)	- per definizione hanno un SEGNO, in quanto composti da numeri Interi Relativi \( \Z \); si può anche dire, più precisamente, che una \emph{frazione} è il rapporto tra due numeri Naturali \( \N \), mentre un numero \emph{razionale} è il rapporto tra due numeri Interi Relativi dell'insieme \( \Z \).
+\end{solution}
+
+\vspace{.8cm}
+
+% ------------------------------------------- Esercizio #3
+
+%\addpoints
+%\question Riconosci quali dei seguenti polinomi sono \emph{cubi di binomi}:\\
+%
+%\begin{choices}
+%\CorrectChoice
+%\quad \( -a^3 - 3 a^2b + 3ab^2 + b^3\)
+%
+%\vspace{0.2\baselineskip}
+%
+%\choice
+%\quad \( a^9 - 6a^4b - 12a^2b^2 - 8b^3 \)
+%\vspace{0.2\baselineskip}
+%
+%\choice
+%\quad \( 8a^9 - b^3 - 6b^2a^3 + 12a^6b \)
+%\vspace{0.2\baselineskip}
+%
+%\CorrectChoice
+%\quad \( \dfrac{1}{27} a^6 - 8b^3 + 4a^2b^2 - \dfrac{2}{3} a^4b \)
+%
+%\end{choices}
+%
+%\vspace{.8cm}
+
+% ------------------------------------------- Esercizio #34
+%\addpoints
+\question Semplifica le seguenti espressioni in \( \Q \):
+
+\begin{parts}
+\vspace{.3cm}
+
+%\part
+%
+%\( (a + b) \cdot (a - b) - (a + b)^2 \);
+%
+%\vspace{.3cm}
+\part
+
+\( \left[ \dfrac{2}{3} - \left( - \dfrac{1}{4} + \dfrac{2}{5} \right) \right] - \left[ \dfrac{3}{5} - \left( \dfrac{3}{4} - \dfrac{1}{3} \right) \right] \);
+
+%{\emph{Fattorizzare}} un polinomio, che è generalmente espresso come \fillin[somma][40pt] algebrica di monomi, nel \fillin[prodotto][45pt]  di altri polinomi di grado \fillin[inferiore][45pt] a quello del polinomio assegnato inizialmente.
+
+\part
+
+\( \left\{ \left( \dfrac{2}{5} \right)^{4} \cdot \left[ \left( \dfrac{2}{5} \right)^{8}  : \left( \dfrac{2}{5} \right)^{3} \right]^{2} \right\}^{2} : \left[ \left( \dfrac{2}{5} \right)^{3} \cdot \dfrac{2}{5} \cdot \left( \dfrac{2}{5} \right)^{3} \right]^{4} \);
+
+%Il Quadrato di un Binomio è un {\fillin[Prodotto][45pt]} Notevole e la sua espressione è la seguente:\\ 
+%
+%\( (a + b )^2 = (\) \fillin[\(a + b \)][30pt] \() \cdot (a + b) = a^2 \, + \) \fillin[\( 2ab\)][20pt] \( + \, b^2 \)
+
+\part
+
+\( \left( 2 + \dfrac{1}{2} \right)^{2} : \left( 2 - \dfrac{1}{2} \right)^{-2} + \left[ \left( 2 + \dfrac{1}{3} \right) \cdot \left( \dfrac{7}{3} \right)^{-2} \right]^{-1} \)
+\end{parts}
+
+\vspace{0.3cm}
+\question Risolvi i seguenti problemi utilizzando le frazioni:
+\begin{parts}
+
+\part
+Luigi ha 18 anni, cioè i \( \dfrac{3}{7} \) dell'età di sua madre che a sua volta ha i \( \dfrac{4}{5} \) dell'età del marito. Quali sono l'età della madre e del padre di Luigi?
+\fillwithlines{1in}
+
+\vspace{0.3cm}
+
+\part
+Un televisore a \( \dfrac{16}{9} \) ha la base di 18 pollici. Quanti pollici misura l'altezza?
+\fillwithlines{1in}
+
+\end{parts}
+\end{multicols}
+\end{questions}
+
+
+%\vspace{.6cm}
+%
+%% ------------------------------------------- Esercizio #4 - Facoltativo (bonus points)
+%
+%\addpoints
+%\bonusquestion[8] {\em Esercizio facoltativo:}
+%
+%Esegui il seguente Prodotto Notevole: \[ \left(- \dfrac {3}{4}a + 4b^2 \right)^2 \]
+%
+%\begin{solution}
+%\[ \left(- \dfrac {9}{16}a^2 - 6ab^2 + 16b^4 \right)^2 \]
+%\end{solution}
+%
+
+%
+%\noindent
+%\rule[2ex]{\textwidth}{1pt}
+%
+%\begin{center}
+%{\bf Tabella dei punteggi}
+%\vspace{10pt}
+%
+%\combinedgradetable[h][questions]
+%\end{center}
+%\vspace{4pt}
+%\footnotesize La sufficienza è fissata a 18 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità  della prova anche in caso di andamenti troppo scostanti della media-classe.
+
+%\begin{flushright}
+%	\emph{tempo medio stimato: 40 minuti}
+%\end{flushright}
+\end{document}

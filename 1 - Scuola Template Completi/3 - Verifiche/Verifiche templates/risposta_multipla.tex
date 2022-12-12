@@ -1,0 +1,47 @@
+\documentclass[a4paper,10pt,answers]{exam}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[default,semibold]{sourcesanspro}
+\usepackage{lipsum}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+
+\checkboxchar{$\square$}
+\checkedchar{$\boxtimes$}
+\CorrectChoiceEmphasis{}  % solo per non avere bold nelle risposte corrette
+
+\renewcommand{\checkboxeshook}{
+  \setlength{\labelsep}{2.4em}
+  \setlength{\leftmargin}{4em}
+}
+
+\newcommand{\ChoiceLabel}[1]{\hspace{-1.6em}\makebox[1.6em][l]{\textbf{#1.}}\ignorespaces}
+
+\newcommand{\WrongChoice}[1]{\choice \ChoiceLabel{#1}}
+\newcommand{\RightChoice}[1]{\correctchoice \ChoiceLabel{#1}}
+\newcommand{\Item}[1]{\hspace{-17pt}\makebox[17pt][l]{\textbf{#1.}}\ignorespaces}
+
+\begin{document}
+
+\begin{questions}
+
+\question Testo della domanda
+\begin{checkboxes}
+  \choice        \Item{A} \lipsum[130]
+  \correctchoice \Item{B} \lipsum[133]
+  \choice        \Item{C} \lipsum[138]
+  \WrongChoice{A} blabla
+  \RightChoice{B} blabla
+\end{checkboxes}
+
+\question Testo della domanda
+\begin{checkboxes}
+  
+  \WrongChoice{A} blabla
+  \RightChoice{B} blabla
+  \WrongChoice{C} blabla
+  \WrongChoice{D} blabla
+\end{checkboxes}
+\end{questions}
+
+\end{document}

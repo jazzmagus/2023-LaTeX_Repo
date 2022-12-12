@@ -1,0 +1,188 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+\printanswers
+
+% ---------------------------------- Command
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{n.1 | Secondo Quadrimestre}
+%\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{09 marzo 2021}
+\newcommand{\timelimit}{45 minuti}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Headers and Footers
+
+\pagestyle{headandfoot}
+\firstpageheader{IIS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di MATEMATICA}{}{Classe 3\string^QES}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[12pt]
+{\huge -\, \term \, - }\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 3 \string^ QE|S}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+\vspace{5cm}% ---------------------------------- Avvertenze
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti.
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ---------------------------------- Esercizio 1
+\begin{questions}
+
+\addpoints
+\question
+Semplifica le seguenti espressioni algebriche:\\
+\begin{parts}
+\part[5]
+\(2xy + 3x^2 y - {\dfrac{1}{3}}xy - 4x^2y + {\dfrac{4}{3} xy}\)\\
+{\footnotesize
+\begin{solution}
+	\(3xy - x^2y;\) \quad scrittura ottimale con fattorizzazione: \(xy(3-x)\)
+\end{solution}
+}
+%\vspace{.5cm}
+
+\part[5]
+\(\left(-{\dfrac{2}{3}} a^2 b^3\right) \cdot (-9ab^2)\)\\
+{\footnotesize
+\begin{solution}
+	\(+6a^3b^5\)
+\end{solution}
+}
+
+\end{parts}
+\vspace{.5cm}
+
+
+% ------------------------------------- Esercizio 2
+\question
+Rispondi in modo chiaro e sintetico alle seguenti domande:\\
+\begin{parts}
+\part[4]
+Quando due o più monomi si dicono {\bfseries simili}?\ Puoi fare un esempio numerico?
+%\fillwithlines{0.75in}
+{\footnotesize
+\begin{solution}
+Due o più monomi si dicono simili quando presentano la stessa parte letterale; ad es sono simili: \(3ab^2, -6ab^2\) e \(\dfrac{1}{2}ab^2\).
+\end{solution}
+}
+\vspace{.5cm}
+\part[5]
+Che cosa sono gli {\bfseries zeri} di un polinomio?
+%\fillwithlines{.75in}
+
+{\footnotesize
+\begin{solution}
+Gli zeri di un polinomio sono quei valori della variabile per cui il valore numerico del polinomio risulta nullo.	
+\end{solution}
+}
+\end{parts}
+
+\vspace{.5cm}
+
+
+% ------------------------------------- Esercizio 3
+\addpoints
+\question [6] Quale delle seguenti frasi è la traduzione verbale dell'espressione \(2x^2(x^2 + y^2)\)?\\
+\begin{choices}
+\setlength{\leftmargin}{0pt}
+ \choice Il prodotto tra il quadrato del doppio di $x$ e la somma dei quadrati di $x$ e $y$. 
+ \choice Il doppio del prodotto tra il quadrato di $x$ e il quadrato della somma di $x$ con $y$.
+ \choice Il prodotto tra il quadrato del doppio di $x$ e il quadrato della somma di $x$ con $y$.
+ \CorrectChoice Il doppio del prodotto tra il quadrato di $x$ e la somma dei quadrati di $x$ e $y$.
+\end{choices}
+\vspace{.5cm}
+
+% ------------------------------------- Esercizio 4
+\addpoints
+\question[5] Esegui la seguente moltiplicazione tra polinomi: \[(x^2 - 2x + 2)\cdot(x^2 + 2x + 2)\]
+{\footnotesize
+\begin{solution}
+	\(\left[x^4 + 4 \right]\)
+\end{solution}
+}
+\end{questions}
+\vfill
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 18 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrassero prestazioni della classe sensibilmente lontane dalla media prevista.
+
+\end{document}

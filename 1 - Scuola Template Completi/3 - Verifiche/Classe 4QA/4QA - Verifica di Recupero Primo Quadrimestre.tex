@@ -1,0 +1,215 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+%\printanswers
+
+% ---------------------------------- Intestazione
+\newcommand{\class}{\huge {Verifica di Recupero di Matematica}}
+\newcommand{\term}{1° Quadrimestre}
+\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{22 febbraio 2021}
+\newcommand{\timelimit}{40 minuti}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{IIS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di MATEMATICA}{}{Classe 4\string^QA}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[12pt]
+{\huge - Recupero Primo Quadrimestre -}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 4 \string^ QA}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+
+\vspace{5cm}
+% ---------------------------------- Avvertenze
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica di Recupero - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti;
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}
+%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ---------------------------------- Esercizi
+\begin{questions}
+
+
+
+% ------------------------------------- Esercizio 1
+\addpoints
+\question
+Semplifica le seguenti espressioni di secondo grado {\em pure} o riconducibili a {\em pure}:\\
+\begin{parts}
+\part[4]
+\((x + 1)^2 = 2\)\\
+{\footnotesize
+\begin{solution}
+	\([-1 \pm \sqrt{2}]\)
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[4]
+\(\dfrac{1}{3}(x - 2)^2 = 3\)\\
+{\footnotesize
+\begin{solution}
+	\([-1, 5]\)
+\end{solution}
+}
+
+\end{parts}
+\vspace{.5cm}
+
+% ------------------------------------- Esercizio 2
+
+\addpoints
+\question
+Semplifica le seguenti espressioni di secondo grado {\em spurie} o riconducibili a {\em spurie}:\\
+\begin{parts}
+\part[4]
+\(2x^2 + 3x = 0\)\\
+{\footnotesize
+\begin{solution}
+	\(\left[- \dfrac{1}{2}, \, 0 \right];\) 
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[4]
+\(\left(\dfrac{1}{2}x - 1 \right) \cdot \left(\dfrac{1}{3}x - 2 \right) = 2\)\\
+{\footnotesize
+\begin{solution}
+	\([0, 8]\)
+\end{solution}
+}
+
+\end{parts}
+\vspace{.5cm}
+
+% ------------------------------------- Esercizio 3
+\addpoints
+\question [4] Quale delle seguenti affermazioni riguardanti il {\em discriminante} è VERA?\\
+\begin{choices}
+\setlength{\leftmargin}{0pt}
+ \choice Il discriminante si calcola nel seguente modo: \(\Delta = \sqrt{b^2 - 4ac} \). 
+ \choice Se il discriminante è negativo \((\Delta < 0)\) la parabola è rivolta verso il basso.
+ \choice Quando il discriminante è nullo l'equazione di secondo grado ha una sola soluzione reale.
+ \CorrectChoice Il valore del discriminante permette di stabilire se l'equazione ammette soluzioni reali oppure no.
+\end{choices}
+\vspace{.5cm}
+
+% ------------------------------------- Esercizio 4
+
+\question 
+Determina le soluzioni delle seguenti equazione di secondo grado e utilizzale per fattorizzare i trinomi:\\
+
+\begin{parts}
+\part[5]
+\(x^2 + x - 30 = 0\)
+\fillwithlines{0.75in}
+{\footnotesize
+\begin{solution}
+
+	\([-5, 6]\)\\
+	
+	\(x^2 + x - 30 = (x + 5) \cdot (x - 6)\)
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[5]
+\(2x^2 + 3x - 9 = 0\)
+\fillwithlines{0.75in}
+{\footnotesize
+\begin{solution}
+
+	\(\left[-3, \dfrac{3}{2}\right]\)\\
+	
+	\(2x^2 + 3x - 9 = 2 \cdot (x + 3) \cdot \left(x - \dfrac{3}{2}\right)\)
+\end{solution}
+}
+\end{parts}
+\end{questions}
+\vfill
+
+\pagebreak
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 20 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrino prestazioni della classe sensibilmente lontane dalla media-classe stimata.
+
+\end{document}

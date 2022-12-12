@@ -1,0 +1,314 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+
+\printanswers
+% ---------------------------------- Command
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{\#01 | 1 quadrimestre}
+%\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{30 settembre 2021}
+\newcommand{\timelimit}{60 minuti}
+
+\CorrectChoiceEmphasis{\color{orange}}
+\SolutionEmphasis{\color{orange} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Headers and Footers
+
+\pagestyle{headandfoot}
+\firstpageheader{ITIS "E. Fermi" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di MATEMATICA}{}{Classe 2\string^C}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[12pt]
+{\huge -\, \term \, - }\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Cognome e Nome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+\vspace{5cm}
+
+% ---------------------------------- Avvertenze
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica di Recupero - che viene somministrata in modalità DDI - contiene \numquestions \;quesiti, per un totale di \numpoints \;punti.
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ================================== Esercizi ==============================
+
+% ---------------------------------- Esercizio 1
+\begin{questions}
+% todo completare punto a
+
+\addpoints
+\question
+Determina le condizioni di esistenza delle seguenti Frazioni Algebriche:\\
+
+\begin{parts}
+\part[5] \(\dfrac{35a^{2}xy}{10ax^2}\)
+
+%\fillwithlines{0.5in}
+{\footnotesize
+\begin{solution}
+	\(\dfrac{7a}{2x}\)
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[5]  
+\(\dfrac{2}{4x + 10}\)
+
+%\fillwithlines{0.5in}
+
+{\footnotesize
+\begin{solution}
+	\(\nexists \, x \in \mathbb{R}\)
+\end{solution}
+}
+\vspace{.5cm}
+
+\part[5]  
+\(\dfrac{a^3 - 8}{a^3 + 2a^2 + 4a}\)
+
+%\fillwithlines{0.5in}
+
+{\footnotesize
+\begin{solution}
+	\(\dfrac{a - 2}{a}\)
+\end{solution}
+}
+
+
+\end{parts}
+\vspace{.5cm}
+
+% ---------------------------------- Esercizio 2
+
+\addpoints
+\question
+determina le {\em condizioni di esistenza} e, ove possibile, semplifica le seguenti frazioni algebriche utilizzando i metodi di fattorizzazione;\\
+\begin{parts}
+\part[2]
+ \(\dfrac{a^2 + 2ab + b^2}{a^2 - b^2}\)
+% \fillwithlines{.5in}
+{\footnotesize
+\begin{solution}
+
+	\(\dfrac{a + b}{a - b}\)\\
+	
+	\(C.E. = \{a \neq b\}\)
+\end{solution}
+}
+\vspace{0.5cm}
+
+\part[3] 
+\(\dfrac{4x^3 + 8x^2 + 4x}{4x^2 - 4x}\)
+%\fillwithlines{.5in}
+{\footnotesize
+\begin{solution}
+
+	\(\dfrac{x + 1}{x - 1}\)\\
+	
+	\(C.E. = \{x \neq 1\}\)
+\end{solution}
+}
+\vspace{0.5cm}
+\part[3] 
+\(\dfrac{t^5 - 5t^4 + t - 5}{t^2 - 25}\)
+% \fillwithlines{.5in}
+{\footnotesize
+\begin{solution}
+
+	\(\dfrac{t^4 + 1}{t + 5}\)\\
+	
+	\(C.E. = \{t \neq -5\}\)
+\end{solution}
+}
+\vspace{.5cm}
+\end{parts}
+
+
+% ---------------------------------- Esercizio 3
+\question [4] Verifica se le seguenti razioni algebriche sono {\em equivalenti}?
+%\fillwithlines{0.5in}
+
+\begin{parts}
+\part[3] \(\dfrac{a - b}{a - b} = \quad \ldots \quad = \dfrac{a^2 - ab}{a^2 - ab}\)
+%{\footnotesize
+%\begin{solution}
+%	\(36x^2 - 25y^2\)
+%\end{solution}
+%}
+%\fillwithlines{.5in}
+
+\vspace{.5cm}
+
+\part[3] \(\dfrac{2xb^2}{4x - 2xb} = \quad \ldots \quad = \dfrac{b^2}{2 - b}\)
+%{\footnotesize
+%\begin{solution}
+%	\((4a^2 - 12ab + 9b^2)\)
+%\end{solution}
+%}
+%\fillwithlines{.5in}
+\end{parts}
+\vspace{.5cm}
+
+
+% ---------------------------------- Esercizio 3
+
+\addpoints
+\question [2] Quali tra quelle elencate non sono {\em Frazioni algebriche}?\\
+
+\begin{oneparchoices}
+ \CorrectChoice \(\dfrac{x^3 - 4x^2 -x +3}{27}\)
+ \choice \(\dfrac{4bcde}{a}\)
+ \CorrectChoice \(\dfrac{x^3 - 4}{24}\)
+ \choice \(\dfrac{1}{x}\)
+ \choice nessuna delle precedenti
+\end{oneparchoices}
+\vspace{.5cm}
+
+% ---------------------------------- Esercizio 3
+
+%\addpoints
+%\question
+%Esegui i seguenti {\em Prodotti Notevoli}:\\
+%\begin{parts}
+%\part[3] \((6x - 5y) \cdot (6x + 5y)\)\\
+%{\footnotesize
+%\begin{solution}
+%	\(36x^2 - 25y^2\)
+%\end{solution}
+%}
+%\vspace{.5cm}
+%
+%\part[3] \((2a - 3b)^2\)\\
+%{\footnotesize
+%\begin{solution}
+%	\((4a^2 - 12ab + 9b^2)\)
+%\end{solution}
+%}
+%
+%\end{parts}
+%\vspace{.5cm}
+%
+%\addpoints
+%\question [5] Qual è il significato di calcolare le condizioni di esistenza - C.E. - di una frazione algebrica?
+%
+%\begin{choices}
+%\setlength{\leftmargin}{0pt}
+% \choice per poterla semplificare meglio. 
+% \choice per stabilire per quali valori dell'incognita il numeratore della frazione si annulla.
+% \choice per verificare la presenza di prodotti notevoli
+% \CorrectChoice per stabilire per quali valori dell'incognita il denominatore della frazione si annulla.
+% \choice nessuna delle precedenti.
+%\end{choices}
+%\vspace{.5cm}
+
+% ---------------------------------- Esercizio 4
+%
+%\addpoints
+%\question [7]Esegui la seguente divisione utilizzando la Regola di Ruffini, scrivendo alla fine la scomposizione ottenuta: \(A(x) = B(x) \cdot Q(x) + R\)
+%\[ (2x^4 - 5x^3 + 2) : (x - 1)\]
+%\fillwithlines{0.5in}
+%
+%{\footnotesize
+%\begin{solution}
+%	\(Q(x) = 2x^3 - 3x^2 - 3x - 3, \quad R = -1\).
+%\end{solution}
+%}
+% ------------------------------------- Domanda Bonus
+\vfill
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+
+\bonusquestion[5] {\em Esercizio facoltativo:}
+
+Dopo aver determinato le condizioni di esistenza semplifica la seguente frazione algebrica:\\
+ \[\dfrac{x^3 - 2x^2 + x}{x^3 - 3x^2 + 3x - 1}\]
+%\fillwithlines{.5in}
+{\footnotesize
+\begin{solution}
+	\(C.E.: x \neq 1\), \quad \(\dfrac{x}{x - 1}\)
+\end{solution}
+}
+
+\end{questions}
+%\vfill
+%\noindent
+%\rule[2ex]{\textwidth}{1pt}
+\pagebreak
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 18 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrino prestazioni della classe sensibilmente lontane dalla media-classe stimata.
+
+\end{document}

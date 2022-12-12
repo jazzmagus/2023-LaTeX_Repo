@@ -1,0 +1,348 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper, landscape]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsfonts, amsthm, amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[none]{hyphenat}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+
+%\checkboxchar{$\square$}
+%\checkedchar{$\boxtimes$}
+%\CorrectChoiceEmphasis{}  % solo per non avere bold nelle risposte corrette
+%
+
+%% Create a Matching question format
+\newcommand*\Matching[1]{
+\ifprintanswers
+    \textbf{#1}
+\else
+    \rule{1in}{0.5pt}
+\fi
+}
+\newlength\matchlena
+\newlength\matchlenb
+\settowidth\matchlena{\rule{1.1in}{0pt}}
+\newcommand\MatchQuestion[2]{%
+    \setlength\matchlenb{\linewidth}
+    \addtolength\matchlenb{-\matchlena}
+    \parbox[t]{\matchlena}{\Matching{#1}}\enspace\parbox[t]{\matchlenb}{#2}}
+
+\renewcommand{\thequestion}{\arabic{question}}
+\renewcommand{\thepartno}{\alph{partno}}
+\renewcommand{\thechoice}{\alph{choice}}
+
+\renewcommand{\checkboxeshook}{
+  \setlength{\labelsep}{2.4em}
+  \setlength{\leftmargin}{4em}
+}
+
+
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+
+\newcommand{\ChoiceLabel}[1]{\hspace{-1.6em}\makebox[1.6em][l]{\textbf{#1.}}\ignorespaces}
+
+\newcommand{\WrongChoice}[1]{\choice \ChoiceLabel{#1}}
+\newcommand{\RightChoice}[1]{\correctchoice \ChoiceLabel{#1}}
+\newcommand{\Item}[1]{\hspace{-17pt}\makebox[17pt][l]{\textbf{#1.}}\ignorespaces}
+
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+% ---------------------------------- Intestazione
+\newcommand{\class}{\LARGE {Esercizi proposti}}
+%\newcommand{\term}{I Quadrimestre}
+\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{\today}
+\newcommand{\timelimit}{40 minuti}
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{ISS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di RECUPERO di MATEMATICA}{}{Classe 2\string^C}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\noindent
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[20pt]
+%{\huge{ \term}}\\[8pt]
+%\rule[2ex]{\textwidth}{0.5pt}\\
+
+%\vspace{3cm}
+%\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+%\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+%\textbf{} &&\\
+%\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+%\textbf{} &&\\
+%\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}\\
+%\textbf{} &&\\
+%\textbf{} &&\\
+%\textbf{} &&\\
+%\textbf{} & {\em prof.:} & \makebox[2.5in]{\em Diego Fantinelli}
+%\end{tabular*}\\
+%
+%\vspace{5cm}
+% ---------------------------------- Avvertenze
+
+%\noindent
+%%\rule[2ex]{\textwidth}{0.2pt}
+%\textbf{Avvertenze}:
+%\begin{itemize}
+%	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, di cui uno facoltativo di \numbonuspoints \;punti, che verrà conteggiato soltanto se verranno svolti anche tutti i precedenti.
+%	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+%	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+%
+%\end{itemize}
+%%\rule[2ex]{\textwidth}{0.2pt}
+%\vfill
+%\newpage
+%
+
+% =========================================== VERIFICA 
+
+
+% ------------------------------------------- Esercizio #1
+
+\begin{questions}
+
+\begin{multicols}{2}
+%\addpoints
+
+
+\question
+Calcola il valore delle seguenti espressioni nell'Insieme \( \Z \):\\
+
+
+\begin{parts}
+
+\part
+\( -5 \cdot (12 - 3 + 4) - 2 \cdot [3 - 16 : (- 2 + 4)]^{2} \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution}
+
+\( [- 115] \)
+\end{solution} 
+
+\vspace{.3cm}
+\part
+\( [- 3 + (- 5) \cdot (-1)]^{3} + [- 4 - (1 - 2)]^{2} \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution} 
+\( [+ 17] \)
+\end{solution}
+
+\vspace{0.3cm}
+\part
+\( [2 \cdot (- 3)^{2} + 2 \cdot (- 3) \cdot (- 2)]^{2} : [2^4 - 3 \cdot (+6)]^{2} \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Parziale e poi Totale}}
+
+\begin{solution} 
+\( [+ 225]\) 
+\end{solution}
+
+\vspace{.3cm}
+\part
+\( (- 3)^{2} \cdot(4 -1)^{5} : [(- 4)^{3} : (2^{5}) - 3^{3} : (- 3)^{3}] \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution}
+\( [- 1] \)
+\end{solution}
+
+\end{parts}
+
+\vspace{2cm}
+
+
+\question
+Calcola il valore delle seguenti espressioni negli Insiemi \( \Z \) e \( \Q \):\\
+
+\begin{parts}
+
+\part
+\( \left[+ \dfrac{2}{5} + \left( - \dfrac{4}{5} \cdot  \dfrac{15}{12}\right)^{2} \right] + \dfrac{3}{5} \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution}
+
+\( [+ 2] \)
+\end{solution} 
+
+\vspace{.3cm}
+\part
+\( \left[ \left( - \dfrac{3}{8} - 2 \right) + \dfrac{5}{4} \right] \cdot \left( 1 - \dfrac{17}{18}  \right) \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution} 
+\( \left[ - \dfrac{1}{16} - 2 \right] \)
+\end{solution}
+
+\vspace{0.3cm}
+\part
+\( 3 - \dfrac{2}{5} \cdot \left[ \left( - \dfrac{18}{5} \right)^{2} \cdot \left( + \dfrac{25}{9} \right)^{2} \right] : \dfrac{20}{3} \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Parziale e poi Totale}}
+
+\begin{solution} 
+\( [- 3] \) 
+\end{solution}
+
+\vspace{.3cm}
+\part
+\( + \dfrac{4}{3} - \left[ \left( + \dfrac{15}{22} \right) : \left( + \dfrac{45}{44} \right) \right]^{4} : \left( + \dfrac{20}{3}  \right)^{2} \);
+
+%{\footnotesize {\emph{Suggerimento:} Raccoglimento Totale}}
+
+\begin{solution}
+\( \left[ + \dfrac{8}{9} \right] \)
+\end{solution}
+\end{parts}
+
+\end{multicols}
+
+\question
+Qual è la differenza tra una Frazione e un Numero Razionale?\\
+\fillwithlines{1in}
+
+\begin{solution}
+La differenza sta nel fatto che i Numero Razionali - che appartiene cioè all'Insieme \( \Q \)	- per definizione hanno un SEGNO, in quanto composti da numeri Interi Relativi \( \Z \)
+\end{solution}
+
+\end{questions}
+
+
+% ------------------------------------------- Esercizio #2
+
+%\addpoints
+%\question [8] Quali delle seguenti fattorizzazioni sono corrette?
+%
+%\begin{multicols}{2}
+%\begin{choices}
+%\choice
+%\(48x^2 - 4 = (6x + 2) \cdot (6x - 2)\)
+%\vspace{0.5\baselineskip}
+%
+%\CorrectChoice
+%\((x^4 - 9y^2) \cdot (x^4 - 9y^2) = (x^8 -49y)^4\)
+%\vspace{0.5\baselineskip}
+%
+%\choice
+%\(5x - 15 + x(3 - x) = (x + 3) \cdot (x - 5)\)
+%\vspace{0.5\baselineskip}
+%
+%\CorrectChoice
+%\((5a - 2b)^2 = 25a^2 - 20ab + 4b^2\)
+%
+%\end{choices}
+%\end{multicols}
+
+
+% ------------------------------------------- Esercizio #3 
+
+%\addpoints
+%\question Completa le seguenti definizioni:
+%
+%\begin{parts}
+%\vspace{.3cm}
+%\part [6]
+%
+%{\emph{Fattorizzare}} un polinomio, che è generalmente espresso come \fillin[somma][40pt] algebrica di monomi, nel \fillin[prodotto][45pt]  di altri polinomi di grado \fillin[inferiore][45pt] a quello del polinomio assegnato inizialmente.
+%
+%\vspace{.5cm}
+%
+%\part [6]
+%
+%Il Quadrato di un Binomio è un {\fillin[Prodotto][45pt]} Notevole e la sua espressione è la seguente:\\ 
+%
+%\( (a + b )^2 = (\) \fillin[\(a + b \)][30pt] \() \cdot (a + b) = a^2 \, + \) \fillin[\( 2ab\)][20pt] \( + \, b^2 \)
+%
+%\end{parts}
+%\vspace{.6cm}
+%
+%% ------------------------------------------- Esercizio #4 - Facoltativo (bonus points)
+%
+%\addpoints
+%\bonusquestion[8] {\em Esercizio facoltativo:}
+%
+%Esegui il seguente Prodotto Notevole: \[ \left(- \dfrac {3}{4}a + 4b^2 \right)^2 \]
+%
+%\begin{solution}
+%\[ \left(- \dfrac {9}{16}a^2 - 6ab^2 + 16b^4 \right)^2 \]
+%\end{solution}
+%
+
+%
+%\noindent
+%\rule[2ex]{\textwidth}{1pt}
+%
+%\begin{center}
+%{\bf Tabella dei punteggi}
+%\vspace{10pt}
+%
+%\combinedgradetable[h][questions]
+%\end{center}
+%\vspace{4pt}
+%\footnotesize La sufficienza è fissata a 18 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità  della prova anche in caso di andamenti troppo scostanti della media-classe.
+\end{document}

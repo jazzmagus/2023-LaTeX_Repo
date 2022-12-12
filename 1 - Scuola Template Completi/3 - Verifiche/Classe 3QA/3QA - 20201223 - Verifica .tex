@@ -1,0 +1,224 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+
+% ------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+\renewcommand{\arraystretch}{3}
+
+\newcommand{\class}{\huge {verifica di matematica}}
+\newcommand{\term}{I Quadrimestre}
+\newcommand{\examnum}{num.: 3}
+\newcommand{\examdate}{\scriptsize 23 novembre 2020}
+\newcommand{\timelimit}{50 min}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+%\unframedsolutions
+%\printanswers
+
+
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{\small IIS "G. A. Remondini" - Bassano del Grappa}{}{\examdate}
+\runningheader{\footnotesize VERIFICA DI MATEMATICA}{\footnotesize SOLUZIONI}{Classe $3^a$ QA}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+
+% ============================================
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[20pt]
+{\huge{ \term} -{ \examnum}}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{1cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf $3^a$ QA}}\\
+%\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}\\
+%\textbf{} &&\\
+%\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} & {\em prof.:} & \makebox[2.5in]{\em Diego Fantinelli}
+\end{tabular*}\\
+
+\vspace{3cm}
+
+% ---------------------------------- Avvertenze
+
+\noindent
+
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, di cui uno facoltativo di \numbonuspoints \;punti, che verrà conteggiato soltanto se verranno svolti anche tutti i precedenti.
+	\item La webcam dovrà rimanere accesa per l'intera durata della della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min della prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+	\item La verifica dovrà essere consegnata in formato digitale (pdf, jpeg, png, etc.) e dovrà essere ben leggibile; si consiglia l'inquadratura verticale.
+\end{itemize}
+
+\vfill
+\newpage
+
+% ---------------------------------- Esercizio 1
+\begin{questions}
+\addpoints
+\question Ricordando le proprietà delle potenze, semplifica le seguenti espressioni, nell'Insieme \(\mathbb{Q}\) dei Numeri Razionali:
+\begin{parts}
+\part[6]  \( \left \{ \left [ - \dfrac{1}{3^2} : \left( - \dfrac{1}{3} \right)^{3} - 2 \right ]^{4}   : \left ( 2 - \dfrac{1}{3} \right )^{2} \right \} : \left ( - \dfrac{1}{5} \right )^{2} \)
+
+\begin{solution}
+	\( 9 \)
+\end{solution}
+
+\addpoints
+\part[6]
+\( \left [- 2^{3} : (-2)^{2} + \left( - \dfrac{1}{3} \right )^{3} : \left( -\dfrac{1}{3} \right)^{2} - \dfrac{1}{2^2} : \left( - \dfrac{1}{2} \right)^{3} \right ] : \left ( - \dfrac{1}{3} \right )^{3} \)
+
+\begin{solution}
+	\( 9 \)
+\end{solution}
+\end{parts}
+\vspace{5pt}
+
+% ---------------------------------- Esercizio 2
+\addpoints
+\question[6] Per le seguenti frazioni calcolare il numero decimale generato e indicare la tipologia di numero decimale alla quale appartiene:
+
+\begin{oneparchoices}
+	\choice \( \dfrac{37}{11} \)
+	\choice \( \dfrac{15}{8} \)
+	\choice \( \dfrac{2}{9}\)
+	\choice \( \dfrac{19}{24}\)
+	\choice \( \dfrac{7598}{100}\)
+	\choice \( \dfrac{7}{15}\)
+\end{oneparchoices}
+\vspace{3pt}
+
+% ---------------------------------- Esercizio 3
+
+\addpoints
+\question [4] Quale, tra le seguenti affermazioni, è falsa?
+
+\begin{choices}
+ \choice Un \emph{numero decimale periodico semplice} di periodo 9 coincide esattamente con il numero intero successivo.
+ \choice Un frazione, ridotta ai minimi termini, genera un numero decimale limitato se il suo denominatore scomposto in fattori primi contiene solo fattori 2 e/o 5.
+ \choice Un frazione, ridotta ai minimi termini, genera un numero periodico semplice se il suo denominatore scomposto in fattori primi non contiene fattori 2 e/o 5.
+ \CorrectChoice La frazione generatrice di un \emph{numero periodico} ha al denominatore un numero le cui cifre sono tutte uguali a 9.
+ \choice Un frazione, ridotta ai minimi termini, genera un numero periodico misto se il suo denominatore scomposto in fattori primi contiene fattori 2 e/o 5 e altri fattori
+\end{choices}
+\vspace{3pt}
+
+% ---------------------------------- Esercizio 4
+
+\addpoints
+\question [8]Calcola la \emph{frazione generatrice} dei seguenti numeri decimali:
+
+\begin{multicols}{2}
+\begin{parts}
+\part
+\( 37,35\)
+\vspace{3pt}
+
+\begin{solution}
+\( \dfrac{747}{20} \)
+\end{solution}
+\vspace{3pt}
+
+\part
+\( 0,0 \overline{32} \)
+\vspace{3pt}
+
+\begin{solution}
+\( \dfrac{16}{495} \)
+\end{solution}
+
+\part
+\( 0,17 \overline{2} \)
+\vspace{3pt}
+
+\begin{solution}
+\( \dfrac{31}{180} \)
+\end{solution}
+
+\part
+\( 0, \overline{43902} \)
+\vspace{3pt}
+
+\begin{solution}
+\( \dfrac{18}{41} \)
+\end{solution}
+
+\end{parts}
+\end{multicols}
+
+%\vspace{\stretch{2}}
+
+% ---------------------------------- Esercizio Bonus
+\bonusquestion[5]{\em Esercizio facoltativo:}
+Semplifica la seguente espressione in \(\mathbb{Q}\):
+
+\( (- 0,5 - 0. \overline {3}) \cdot \left[ \dfrac{2}{5} - ( - 0,5 + 1) + 0,4 \right] : [- (1 - 2^{2})] \)
+
+\begin{solution}
+\( - \dfrac{1}{12} \)	
+\end{solution}
+
+
+\end{questions}
+%\vspace{3pt}
+\noindent
+\rule[1ex]{\textwidth}{1pt}
+\begin{center}
+{\bf Tabella dei punteggi}\\
+\vspace{1pt}
+\combinedgradetable[h][questions]
+\end{center}
+%\vspace{2pt}
+\footnotesize La sufficienza è fissata a 20 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche in caso di andamenti troppo scostanti della media-classe.
+\end{document}
+  

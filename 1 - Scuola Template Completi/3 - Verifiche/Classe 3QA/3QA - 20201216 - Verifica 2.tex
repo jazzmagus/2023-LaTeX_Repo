@@ -1,0 +1,321 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+\newcommand{\class}{\huge {verifica di matematica}}
+\newcommand{\term}{I Quadrimestre}
+\newcommand{\examnum}{num.: 2}
+\newcommand{\examdate}{\scriptsize 16 novembre 2020}
+\newcommand{\timelimit}{45 min}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+%\unframedsolutions
+\printanswers
+
+
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{\small ISS "G. A. Remondini" - Bassano del Grappa}{}{\examdate}
+\runningheader{\footnotesize VERIFICA DI MATEMATICA}{\footnotesize SOLUZIONI}{Classe $3^a$ QA}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[20pt]
+{\huge{ \term} -{ \examnum}}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf $3^a$ QA}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} & {\em prof.:} & \makebox[2.5in]{\em Diego Fantinelli}
+\end{tabular*}\\
+
+\vspace{5cm}
+
+% ---------------------------------- Avvertenze
+
+\noindent
+
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, di cui uno facoltativo del valore di \numbonuspoints \;punti, che verrà conteggiato soltanto se risulteranno svolti anche tutti i precedenti.
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+	\item La verifica dovrà essere consegnata in formato digitale (pdf, jpeg, png, etc.) e dovrà essere ben leggibile; si consiglia l'inquadratura verticale.
+\end{itemize}
+
+\vfill
+\newpage
+
+% ---------------------------------- Esercizio 1
+\begin{questions}
+\addpoints
+\question Ricordando le proprietà delle potenze, semplifica le seguenti espressioni, nell'Insieme \(\mathbb{Q}\) dei Numeri Razionali:
+\begin{parts}
+\part[6]  \( \left [ \left (- \dfrac{2}{5} \right )^{7} \cdot \dfrac{2}{5} \cdot \left ( - \dfrac{2}{5}  \right )^{4} \right ]^{3} : \left [ - \left ( - \dfrac{2}{5} \right )^{4} \right ]^{5} : \left [ \left ( - \dfrac{2}{5} \right )^{3} \cdot \left ( - \dfrac{2}{5} \right )^{2} \right ]^{3} \)
+
+\begin{solution} 
+\( - \dfrac{2}{5} \)
+
+\end{solution}
+%\begin{solution}
+%I secondi che dovranno passare per far sì che i tre fari si accendano contemporaneamente
+%dovranno essere un multiplo di 8, 12 e 15, il minimo comune multiplo.
+%Effettuata la scomposizione in fattori primi, risulta che:\\
+%\begin{align*}
+%	8 & = 2^3\\
+%	12 & = 2^2 \cdot 3\\
+%	15 & = 3 \cdot 5
+%\end{align*}
+%per cui il \(m.c.m. = 2^3 \cdot 3 \cdot 5 = \boxed{120} \)\\
+%I tre fari torneranno ad accendersi contemporaneamente dopo 120 secondi.
+%\end{solution}
+
+\addpoints
+
+\part[6]
+\( \left[ -2^{2} : \left ( 1 + \dfrac{1}{4} \right )^{2} \right ]^{2} : \left( -\dfrac{4}{5} \right)^{4}  - \left [ - 5 : \left ( 1 + \dfrac{2}{3} \right )  \right ]^{3} \cdot \left ( \dfrac{1}{3} \right )^{3}\)
+\begin{solution} 
+\( 17 \)
+
+\end{solution}
+%\begin{solution}
+%Si tratta di un classico problema di M.C.D., si tratta cioè di calcolare il Massimo tra i Divisori Comuni di 140, 168 e 154.
+%Effettuata la scomposizione in fattori primi, risulta che:\\
+%\begin{align*}
+%	140 & = 2^2 \cdot 5 \cdot 7\\
+%	168 & = 2^3 \cdot 3 \cdot 7\\
+%	154 & = 2 \cdot 7 \cdot 11
+%\end{align*}
+%per cui il \(M.C.D. = 2 \cdot 7\)\\
+%In ogni squadra vi saranno pertanto \fbox{14} alunni.\\
+%In totale si formeranno (il totale degli studenti diviso il numero di studenti per squadra):\\
+%\((140 + 168 + 154) : 14 = 462 : 14 = \boxed{33}\) squadre
+%
+%\end{solution}
+
+\end{parts}
+
+% ---------------------------------- Esercizio 2
+\addpoints
+\question[6] Calcola le seguenti potenze nell'Insieme \(\mathbb{Q}\):
+
+\begin{multicols}{2}
+\begin{parts}
+
+\part
+\( \left \{ - [ - ( - 2 )^{-1} ]^{-2} \right \}^{-2} \)
+
+\begin{solution} 
+\( \dfrac{1}{16}\)
+\end{solution}
+
+\part
+\( \left\{ \left[ - \left( - \dfrac{1}{10} \right)^{2} \right]^{-3} \right\}^{3} \)
+
+\begin{solution} 
+\( - 10^{18}\)
+\end{solution}
+
+\part
+\( \left \{  \left[  \left( - \dfrac{1}{10} \right)^{-2} \right]^{-1} \right \}^{-2} \)
+
+\begin{solution} 
+\(  10^{4}\)
+\end{solution}
+
+\part
+\( \{  [  ( - 3 )^{-1} ]^{2} \}^{-2} \)
+
+\begin{solution} 
+\( 81 \) oppure \( 3^{4}\)
+\end{solution}
+
+\end{parts}
+\end{multicols}
+
+
+% ---------------------------------- Esercizio 3
+
+\addpoints
+\question [4] Quali, tra le seguenti definizioni, sono vere?
+%
+%\emph{Suggerimento:} leggere con molta attenzione il testo delle risposte perché le differenze potrebbero essere minime.
+\begin{choices}
+ \choice Una \emph{frazione decimale} è una frazione che ha 10 al numeratore.
+ \CorrectChoice La parte intera di un numero decimale periodico semplice è quella che precede la virgola.
+ \CorrectChoice Una frazione che ha 100 al denominatore genera un numero decimale finito.
+ \choice La frazione generatrice di un \emph{numero periodico} ha al denominatore un numero le cui cifre sono tutte uguali a 9.
+ \CorrectChoice In un numero decimale periodico misto, l'\emph{antiperiodo} appartiene alla parte decimale
+\end{choices}
+\vspace{3pt}
+
+% ---------------------------------- Esercizio 4
+\addpoints
+\question [6]Determina la \emph{frazione generatrice} dei seguenti numeri decimali :
+\vspace{3pt}
+\begin{multicols}{2}
+\begin{parts}
+\part
+\( 16,45\)
+\vspace{3pt}
+
+%\footnotesize
+\begin{solution} 
+\( \dfrac{1645}{100} \)
+\end{solution}
+
+%\begin{solution}
+%\begin{align*}
+%	[ 5^{14} : 5^{10} : 5^2 - 1] : (12^1) & = [5^2 - 1] : 12\\
+%	& = [25 - 1] : 12\\
+%	& = 24 : 12 = \boxed{2}
+%\end{align*}
+%\end{solution}
+%\vspace{5pt}
+
+\part
+\( 2, \overline{9} \)
+\vspace{3pt}
+\begin{solution}
+\( 3\)
+\end{solution}
+
+\part
+\( 2, \overline{34} \)
+
+\vspace{3pt}
+\begin{solution}
+\( \dfrac{232}{99}\)
+\end{solution}
+
+\part
+\( 1, 2 \overline{13} \)
+
+\vspace{3pt}
+\begin{solution}
+\( \dfrac{1201}{990} \)
+\end{solution}
+
+\end{parts}
+\end{multicols}
+% ------------------------------------- Domanda suddivisa in parti con bonus
+%\begin{questions}
+%
+%\question Given the equation \(x^n + y^n = z^n\) for \(x,y,z\) and \(n\) positive
+%integers.
+%\begin{parts}
+%\part[5] For what values of $n$ is the statement in the previous question true?
+%\vspace{\stretch{1}}
+%
+%\part[2 \half] For $n=2$ there's a theorem with a special name. What's that name?
+%\vspace{\stretch{1}}
+%
+%
+%\bonuspart[2 \half] What famous mathematician had an elegant proof for this theorem but there was
+%not enough space in the margin to write it down?
+%\vspace{\stretch{1}}
+%
+%\end{parts}
+
+%\droptotalpoints
+%
+%\question[20] Compute \[\int_{0}^{\infty} \frac{\sin(x)}{x}\]
+%
+%\vspace{\stretch{1}}
+
+
+% ---------------------------------- Esercizio Bonus
+%\vspace{10pt}
+\bonusquestion[2]{\em Esercizio facoltativo:}
+
+Semplifica la seguente espressione in \(\mathbb{Q}\):
+
+\( \left \{ - [-2 \cdot (-2)^{-2} + (-2)] : \left( -\dfrac{1}{2} \right)^{-1} \right \} : \left ( - \dfrac{5}{2} + 7. \overline{7} \right ) \)
+
+\begin{solution} 
+\( - \dfrac{9}{38} \)
+\end{solution}
+
+%\begin{solution}
+%I paletti dovranno essere distribuiti alla stessa distanza tra loro, quindi occorre cercare un divisore comune tra 60, 126 e 132. Poiché la distanza tra i paletti deve essere la massima possibile, dobbiamo cercare il Massimo Divisore Comune, quindi il M.C.D.\\
+%Effettuata la scomposizione in fattori primi, risulta che:\\
+%\begin{align*}
+%	60 & = 2^2 \cdot 3 \cdot 7\\
+%	126 & = 2 \cdot 3^2 \cdot 7\\
+%	132 & = 2^2 \cdot 3 \cdot 11
+%\end{align*}
+%per cui il \(M.C.D. = 2 \cdot 3 = \boxed{6}\)\\
+%
+%I paletti andranno piantati ad una distanza di 6 metri uno dall'altro.\\
+%
+%Poiché il perimetro del triangolo misura \(60 + 126 + 132 = 318 \, m\), dividendo questa lunghezza per 6 otterremo il numero di pali necessari: \(318 : 6 = \boxed{53}\) paletti.
+%\end{solution}
+
+\end{questions}
+\vspace{5pt}
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{5pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{2pt}
+\footnotesize La sufficienza è fissata a 18 punti, ma potrebbe subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche in caso di andamenti troppo scostanti della media-classe.
+\end{document}
+  

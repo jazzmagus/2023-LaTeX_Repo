@@ -1,0 +1,155 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+
+
+%\printanswers
+% ---------------------------------- Command
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+
+\newcommand{\class}{\huge {Verifica di Matematica}}
+\newcommand{\term}{02 | quad 02}
+\newcommand{\examnum}{Verifica numero: 02/02 | parte 2. bis}
+\newcommand{\examdate}{30 aprile 2021}
+\newcommand{\timelimit}{40 minuti}
+
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Headers and Footers
+
+\pagestyle{headandfoot}
+\firstpageheader{IIS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di Recupero di MATEMATICA}{}{Classe 2\string^C}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[12pt]
+%{\huge -\, \term \, - }\\[8pt]
+{\huge -\, \examnum \, - }\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Cognome e Nome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}
+\end{tabular*}\\[3cm]
+\vspace{5cm}
+
+% ---------------------------------- Avvertenze ----------------------------------
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità  DDI al 50$\%$ - contiene \numquestions \;quesito, in due parti, per un totale di \numpoints \;punti.
+	\item Gli studenti che sosterranno la prova terranno la webcam accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ================================== ESERCIZI ===================================
+
+% todo completare punto a
+% ---------------------------------- Esercizio 1 --------------------------------
+\begin{questions}
+
+\addpoints
+\question
+Semplifica la seguenti espressioni e determina le condizioni di esistenza:\\
+
+\begin{parts}
+
+\part[6]
+\(\left( \dfrac{x}{x + 1} + \dfrac{x}{1 + x} \right) : \left( 1 - \dfrac{1}{1 - x^2}\right)\)
+
+\fillwithdottedlines{1.5in}
+
+{\footnotesize
+\begin{solution}
+	\(\left[ \; 2 \; \right]\)
+\end{solution}
+}
+\vspace{2cm}
+
+\part[6]
+\(\left( a + \dfrac{a^2 - 3ab}{a + b} \right) : \left( \dfrac{a}{a + b} + \dfrac{a}{a - b} - \dfrac{2ab}{a^2 - b^2} \right)\)
+
+\fillwithdottedlines{1.5in}
+
+{\footnotesize
+\begin{solution}
+	\(\left[\; a - b \; \right]\)
+\end{solution}
+}
+\vfill
+
+\end{parts}
+
+\end{questions}
+
+% ===============================================================================
+
+\begin{center}
+\rule[2ex]{\textwidth}{1pt}
+\vspace{.5cm}
+{\bf Tabella dei punteggi}
+\vspace{10pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 8 punti, ma potrà  subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche nel caso in cui si riscontrassero prestazioni della classe sensibilmente lontane dalla media stimata.
+
+\end{document}

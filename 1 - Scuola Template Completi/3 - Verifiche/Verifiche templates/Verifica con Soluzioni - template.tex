@@ -1,0 +1,235 @@
+% ----------------------------------------------------------------------
+% Template VERIFICA
+% ----------------------------------------------------------------------
+% 2020 di d!egofantinelli at jazzmagus@gmail.com
+% ----------------------------------------------------------------------
+
+% ---------------------------------- Preambolo
+\documentclass[11pt, a4paper, answers]{exam}
+\usepackage[T1]{fontenc}
+\usepackage{mdframed}
+%\usepackage{nicefrac}
+%\usepackage[applemac]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{upquote}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+\usepackage{float}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{0pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\leftmargin}{20pt}%
+}
+% ---------------------------------- Intestazione
+\newcommand{\class}{\huge {Verifica di Recupero di Matematica}}
+\newcommand{\term}{I Quadrimestre}
+\newcommand{\examnum}{Verifica numero: 1}
+\newcommand{\examdate}{25 novembre 2020}
+\newcommand{\timelimit}{40 minuti}
+\CorrectChoiceEmphasis{\color{red}}
+\SolutionEmphasis{\color{red} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+% ---------------------------------- Intestazione
+
+\pagestyle{headandfoot}
+\firstpageheader{ISS "G. A. Remondini" - Bassano del Grappa (VI)}{}{\examdate}
+\runningheader{\footnotesize VERIFICA di RECUPERO di MATEMATICA}{}{Classe 2\string^C}
+\runningheadrule
+
+\firstpagefooter{}{}{pag. \thepage\ di \numpages}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+% ---------------------------------- Punteggi
+\pointpoints{punto}{\em punti}
+\pointformat{[{\footnotesize \thepoints}]}
+\bonuspointpoints{punto bonus}{\em punti bonus}
+\bonuspointformat{[{\footnotesize \thepoints}]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.2cm}
+\chqword{Esercizio}
+\chpword{Punti}
+\chbpword{Punti Bonus}
+\chsword{Punteggio}
+\chtword{Totale}
+
+\begin{document}
+
+% ---------------------------------- Title Page
+\begin{center}
+\rule[2ex]{\textwidth}{0.5pt}\\
+{\huge{\bf \class}}\\[20pt]
+{\huge{ \term}}\\[8pt]
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{} & \textbf{Nome e Cognome:} & \makebox[2.5in]{\hrulefill}\\
+\textbf{} &&\\
+\textbf{} & \textbf{Classe:} & \makebox[2.5in]{\Large{\bf 2 \string^ C}}\\
+\textbf{} &&\\
+\textbf{} & Tempo a disposizione: & \makebox[2.5in]{\timelimit}\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} &&\\
+\textbf{} & {\em prof.:} & \makebox[2.5in]{\em Diego Fantinelli}
+\end{tabular*}\\
+
+\vspace{5cm}
+% ---------------------------------- Avvertenze
+
+\noindent
+%\rule[2ex]{\textwidth}{0.2pt}
+\textbf{Avvertenze}:
+\begin{itemize}
+	\item La presente Verifica - che viene somministrata in modalità DDI - contiene \numquestions \; quesiti, per un totale di \numpoints \;punti, di cui uno facoltativo di \numbonuspoints \;punti, che verrà conteggiato soltanto se verranno svolti anche tutti i precedenti.
+	\item La webcam dovrà rimanere accesa per tutto il tempo della verifica (\timelimit), salvo impossibilità concrete di connessione; il microfono resterà spento e verrà acceso soltanto per chiarimenti e domande, che saranno consentite negli ultimi 20 min di prova.
+	\item E' vietato l'utilizzo di calcolatrici scientifiche, smartphone, tablet e altri dispositivi digitali, nonché la consultazione di testi, appunti e siti web.
+
+\end{itemize}
+%\rule[2ex]{\textwidth}{0.2pt}
+\vfill
+\newpage
+
+% ---------------------------------- Esercizi
+\begin{questions}
+
+\addpoints
+\question[30]
+Fattorizza i seguenti polinomi con il metodo del Raccoglimento Totale:
+\begin{multicols}{2}
+\begin{parts}
+\part
+\(a^{15} + a^{10} + a^{8}\)
+
+\begin{solution} raccoglimento totale:
+
+	\(a^8(a^7 + a^2 + 1)\)
+\end{solution} 
+
+\vspace{.3cm}
+\part
+\(2x^5 + 4x^3 - 6x^2 - 2x\)
+
+\begin{solution} raccoglimento parziale e poi totale:
+
+	\(2x(x^4 + 2x^2 - 3x - 1) \)
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(7x + 7 - x(x + 1)\)
+
+\begin{solution} raccoglimento parziale e poi totale:
+
+	\(7(x + 1) - x(x + 1) = (x + 1)(7 - x)\) 
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(2x^6 + 2x^5 + x^3 + x^2\)
+
+\begin{solution} raccoglimento totale e poi parziale:
+
+	\(x^2(2x^4 + 2x^3 + x + 1) =\\ x^2[2x^3(x + 1) + (x + 1)] =\\ x^2(x + 1)(2x^3 + 1) \)
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(36x^4y^2 - z^6\)
+
+\begin{solution} differenza di quadrati:
+
+	\((6x^2y + z^3)(6x^2y - z^3)\)
+\end{solution}
+
+\vspace{.3cm}
+\part
+\(- 12 ab + 9a^2 + 4 b^2\)
+
+\begin{solution} quadrato di un binomio:
+
+	\(9a^2 - 12 ab + 4 b^2 = (3a - 2b)^2\)
+\end{solution}
+
+\vspace{.3cm}
+\end{parts}
+\end{multicols}
+\vspace{.3cm}
+
+\question
+Rispondi in modo chiaro e sintetico alle seguenti domande:\\
+\begin{parts}
+\part[5]
+Dimostra la seguente uguaglianza: \(A^2 - 2AB + B^2 = (A - B)^2\)
+%\fillwithlines{0.75in}
+
+\begin{solution}
+\begin{align*} 
+(A - B)^2 & = (A - B)(A - B)\\ 
+& = A^2 - AB - BA + B^2\\
+& = A^2 - 2AB + B^2
+\end{align*}
+\end{solution}
+
+\part[5]
+Che cosa si intende con {\em Fattorizzazione} di un Polinomio?\\
+
+\begin{solution}
+{\bf Fattorizzare} un polinomio significa scriverlo come prodotto di fattori (per l'appunto) irriducibili, ovviamente di grado inferiore.\\ {\em Un polinomio è {\bf irriducibile} quando non può essere scritto come prodotto di due o più fattori di grado inferiore.}
+\end{solution}
+
+%\fillwithlines{.5in}
+\end{parts}
+
+\vspace{.5cm}
+
+\addpoints
+\question [10] \((a + b)(x - 2y)\) è la fattorizzazione di uno dei seguenti polinomi, quale?\\
+\begin{choices}
+\setlength{\leftmargin}{0pt}
+ \choice \(x(a - b) + 2y(a + b)\) 
+ \choice \(2x(x - b) + 2y(y + b)\)
+ \CorrectChoice \(x(a + b) - 2y(a + b)\)
+ \choice \((a - b)^2 + 2xy\)
+\end{choices}
+\vspace{.5cm}
+
+\bonusquestion[10] {\em Esercizio facoltativo:}
+
+Scomporre in fattori - se possibile - il seguente trinomio: \(- 4a^2 - 25 b^2 + 20ab\)
+
+\begin{solution}
+\begin{align*}
+	- 4a^2 - 25 b^2 + 20ab & =
+	-(+ 4a^2 - 20ab + 25b^2)\\ & = {\bf -(2a - 5b)^2}
+\end{align*}	
+\end{solution}
+
+\end{questions}
+
+\vspace{8pt}
+
+
+
+\noindent
+\rule[2ex]{\textwidth}{1pt}
+
+\begin{center}
+{\bf Tabella dei punteggi}
+\vspace{4pt}
+
+\combinedgradetable[h][questions]
+\end{center}
+\vspace{4pt}
+\footnotesize La sufficienza è fissata a 35 punti, ma potrà subire delle modifiche in fase di correzione, al fine di garantire la validità della prova anche in caso di andamenti troppo scostanti della media-classe.
+\end{document}

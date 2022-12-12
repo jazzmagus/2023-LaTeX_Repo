@@ -1,0 +1,85 @@
+The verifica document class v1.2 2020/02/07
+---------------------------------------------------------------------
+Riccardo Dossena Email: riccardo.dossena@gmail.com
+---------------------------------------------------------------------
+copyright 2020 by Riccardo Dossena
+
+This LaTeX document class is intended for teachers who must write 
+out the text of a test or an exam. It provides various environments 
+and commands to produce the typical exercises contained in this 
+kind of document. It is mainly intended for Italian high school
+teachers, as the style is probably more in line with Italian high 
+school tests. For this reason the documentation is mainly written 
+in Italian.
+
+This work may be distributed and/or modified under the conditions
+of the LaTeX Project Public License, either version 1.3 of this
+license or (at your option) any later version. The latest version
+of this license is in
+   http://www.latex-project.org/lppl.txt
+and version 1.3 or later is part of all distributions of LaTeX
+version 2005/12/01 or later.
+
+This work has the LPPL maintenance status "maintained".
+
+The Current Maintainer of this work is Riccardo Dossena.
+
+This work consists of the files:
+
+  README (this file)
+  verifica.dtx
+  verifica.ins
+  verifica.pdf
+  example1.tex
+  example1.pdf
+  example2.tex
+  example2.pdf
+  example3.tex
+  example3.pdf
+  example4.tex
+  example4.pdf
+  example5.tex
+  example5.pdf
+  verifica-template.tex
+
+and the derived files:
+
+  verifica.cls
+  ver-doc.sty
+
+"ver-doc.sty" is meant only for the documentation of the verifica
+document class. Support will not be guaranteed.
+
+To install the distribution:
+
+- run "latex verifica.ins"
+- move "verifica.cls" to locations where LaTeX can find it
+  (see the TeX FAQ at https://texfaq.org/FAQ-inst-wlcf)
+- you can test the document class by running
+    "pdflatex example1.tex" ...
+    "latex example1.tex" ...
+    "xelatex example1.tex" ...
+  (compile each of the five examples)
+
+To reproduce the complete documentation, run
+
+pdflatex verifica.dtx
+makeindex -s gind verifica
+makeindex -s gglo -o verifica.gls verifica.glo
+pdflatex verifica.dtx
+pdflatex verifica.dtx
+
+Additional Packages
+-------------------
+The verifica document class loads the following packages:
+enumitem, graphicx, mathtools, amssymb, geometry, nccmath, multido,
+setspace, multicol, gensymb, newunicodechar, textcomp, eurosym,
+tabto, tabularx, lineno, bm, cmbright.
+If the option "14pt" is set, it loads the extarticle document class.
+
+2020/02/07
+Riccardo Dossena
+---------------------------------------------------------------------
+If you have any ideas, questions, suggestions, feedback or bugs to
+report, please feel free to contact me.
+---------------------------------------------------------------------
