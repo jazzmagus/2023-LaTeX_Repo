@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+
+	<head>
+		<title>Preview and Live Preview</title>
+		<link rel="stylesheet" href="../style.css" type="text/css" />
+	</head>
+	<body>
+	<div class="helpcontent">
+	<div class="sectiontitle"><a href="../index.html">Latexian Help</a> &gt; Preview and Live Preview</div>
+	<div class="sectioncontent">
+		<div class="contents">
+			<div class="title">Contents</div>
+			<ul>
+				<li><a href="#preview">Preview</a></li>
+				<li><a href="#livepreview">Live Preview</a></li>
+				<li><a href="#typesettingoptions">Typesetting Options</a></li>
+				<li><a href="#previewerrors">Preview Errors</a></li>
+				<li><a href="#previewvsexport">Preview vs. Export</a></li>
+				<li><a href="#previewfile">Using a Preview File with LaTeX Includes</a></li>
+			</ul>
+		</div>
+		<div class="subsectiontitle"><a name="preview"/>Preview</div>
+		<div class="subsectioncontent">
+			<div class="caption">
+				<a href="images/previewinapp.jpg" target="_blank"><img src="images/previewinapp.jpg" height="126" width="250" border="0"/><br />
+				Preview In Application</a>
+			</div>
+			Latexian makes it easy to typeset your documents and preview them in a PDF viewer. To preview a document, select "Preview" from
+			the "View" menu. This will open the application that you have selected in the Preferences panel as the Preview application.
+			Once the application opens, your document will be rendered. Even if you haven't saved your document, the rendering
+			will show the unsaved changes. By default, Latexian is the Preview application, and documents will appear in the PDF viewer that is included in Latexian.<br /><br />
+			To preview in an application different from the one you selected in the Preferences, you can look under the "Preview In Application" item in the "View" menu. You will see a list of common PDF viewers; just select the one that you would 
+			like for previewing your document.
+		</div>
+		<div class="subsectiontitle"><a name="livepreview"/>Live Preview</div>
+		<div class="subsectioncontent">
+			<div class="caption">
+				<a href="images/livepreview.jpg" target="_blank"><img src="images/livepreview.jpg" height="202" width="250" border="0"/><br />
+				Live Preview</a>
+			</div>
+			With Live Preview, Latexian shows you a preview of your document that automatically updates as you edit it. Live Preview
+			can be enabled by selecting "Show Live Preview" from the "View" menu. When Live Preview is enabled, the command changes to
+			"Hide Live Preview". If you need to refresh the preview, then you can select "Refresh Live Preview" from the "View" menu. This
+			command is helpful if you need the preview to be updated to reflect changes in another LaTeX or image file that is referenced by your document.<br /><br />
+			The "Preview" section of the Preferences panel allows you to specify whether
+			a horizontal or vertical divider is used to separate the document pane from the Live Preview pane.
+		</div>
+		<div class="subsectiontitle"><a name="typesettingoptions"/>Typesetting Options</div>
+		<div class="subsectioncontent">
+			<div class="caption">
+				<a href="images/previewprefs.jpg" target="_blank"><img src="images/previewprefs.jpg" height="250" width="243" border="0"/><br />
+				Preview Preferences</a>
+			</div>
+			The Preview section of Latexian's Preferences include options to use more advanced typesetting behaviors. It is recommended that you use the default settings (all options disabled) in order to get the fastest response times from Preview and Live Preview. You can then use <a href="export.html">Export</a> to produce your final PDF document with more advanced options. However, enabling the Preview typesetting options may be appropriate if you need Preview and Live Preview to better reflect the final output. These are the options available:
+		<ul>
+			<li>BibTeX: Process BibTeX bibliographies when previewing documents.</li>
+			<li>MakeIndex: Process indices when previewing documents.</li>
+			<li>MakeGlossaries: Process "glossaries" package glossaries when previewing documents.</li>
+			<li>Number of Typesetter Runs at End: The number of times the typesetter will run after other options are completed. Run the typesetter twice to ensure that bibliography entries are properly numbered and page numbers are correct, and to generate a table of contents. Some documents require three runs to appear correctly.</li>
+		</ul><br/>
+		</div>
+		<div class="subsectiontitle"><a name="previewerrors"/>Preview Errors</div>
+		<div class="subsectioncontent">
+		<div class="caption">
+			<a href="images/previewerror.jpg" target="_blank"><img src="images/previewerror.jpg" height="164" width="250" border="0"/><br />
+			Preview Error</a>
+		</div>
+			Typesetting errors that occur during a Preview or Live Preview operation can be viewed in <a href="console.html">Latexian's Console</a>, where errors are hyperlinked to the document location where the error occurred. If Latexian is configured to show preview errors in the gutter (in Latexian's "General" Preferences), then error indicators will also appear alongside the text. You can move the mouse over an error indicator to see the details about the error.
+		</div>
+		<div class="subsectiontitle"><a name="previewvsexport"/>Preview vs. Export</div>
+		<div class="subsectioncontent">
+			Preview and Live Preview are designed to allow you to see the results of typesetting quickly. By default, only a single-pass through the typesetter is used, and there is no processing of bibliographies, indices, or glossaries. You can configure Preview and Live Preview to do multiple typesetter runs and use additional typesetting options in the Preview section of Latexian's Preferences<br/><br/>
+			To produce a final document intended for distribution, you should use <a href="export.html">Latexian's Export functionality</a>, which includes more advanced features. You can view typesetting results for Preview, Live Preview, and Export in <a href="console.html">Latexian's Console</a>.
+		</div>
+		<div class="subsectiontitle"><a name="previewfile"/>Using a Preview File with LaTeX Includes</div>
+		<div class="subsectioncontent">
+		<div class="caption">
+			<a href="images/getinfo.jpg" target="_blank"><img src="images/getinfo.jpg" height="250" width="169" border="0"/><br />
+			Get Info Panel</a>
+		</div>
+			Normally, when previewing a document, Latexian typesets the file that you are currently editing. However, there may be occasions where you need Latexian to perform typesetting on a different file. Specifically, when you are editing a file that is included by another file using LaTeX <code>\include</code> or <code>\input</code> commands, you will need to specify a Preview File for Latexian to typeset. The Preview File can be specified in one of two ways:
+			<ul>
+				<li>Open the Get Info panel by selecting "Get Info" from the "File" menu. Then, choose a Preview File.</li>
+				<li>At the beginning of the document, include a line <code>%!TEX root=<i>filename</i></code>, where <code><i>filename</i></code> is an absolute or relative path to the Preview File.</li>
+			</ul><br/>
+			Latexian will then typeset the Preview File whenever you perform a Preview, Live Preview, or Export operation.
+		</div>
+	</div>
+	</div>
+	</body>
+</html>

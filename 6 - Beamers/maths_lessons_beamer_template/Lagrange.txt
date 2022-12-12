@@ -1,0 +1,64 @@
+\documentclass[10pt]{article}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+\definecolor{uququq}{rgb}{0.25098039215686274,0.25098039215686274,0.25098039215686274}
+\definecolor{fftttt}{rgb}{1,0.2,0.2}
+\definecolor{ttzzqq}{rgb}{0.2,0.6,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+grid style=dashed,
+xmin=-5.560000000000003,
+xmax=11.260000000000003,
+ymin=-2.8399999999999985,
+ymax=6.399999999999997,
+xtick={-5,-4,...,11},
+ytick={-2,-1,...,6},]
+\clip(-5.56,-2.84) rectangle (11.26,6.4);
+\draw[line width=0.8pt,dash pattern=on 1pt off 1pt,color=ttzzqq,smooth,samples=100,domain=-5.560000000000003:11.260000000000003] plot(\x,{0.12363022080050769*(\x)^(3)-0.455660538543081*(\x)^(2)-0.4321866208226897*(\x)+3.5061917921166255});
+\draw[line width=0.8pt,fill=black,fill opacity=0.1] (2.66,-1.24) -- (4.66,-1.24);
+\draw[line width=0.8pt,fill=black,fill opacity=0.1] (2.66,-1.9) -- (4.66,-1.9);
+\draw[line width=2pt,smooth,samples=100,domain=-2:5] plot(\x,{0.12363022080050769*(\x)^(3)-0.455660538543081*(\x)^(2)-0.4321866208226897*(\x)+3.5061917921166255});
+\draw[line width=0.8pt,color=fftttt,smooth,samples=100,domain=-2:5] plot(\x,{0.3708906624015231*(\x)^(2)-0.911321077086162*(\x)-0.4321866208226897});
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=fftttt,domain=-5.56:11.26] plot(\x,{(--0.5498059587577135-0*\x)/1});
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=qqqqcc] (-2,1.5588811131856195)-- (5,5.4075228244896145);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=fftttt] (-0.810318157297597,-2.84) -- (-0.810318157297597,6.4);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=fftttt] (3.2674333383197967,-2.84) -- (3.2674333383197967,6.4);
+\draw (-3.94,6.36) node[anchor=north west] {$Punti \,\,di\,\,Lagrange$};
+\draw (-3.6,5.34) node[anchor=north west] {$x_1 \,=\,-0.81$};
+\draw (-3.58,4.72) node[anchor=north west] {$x_2 \,=\, 3.27$};
+\draw (0.28,-1.02) node[anchor=north west] {$\frac{f(5)-f(-2)}{5 - -2} = 0.55$};
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqcc,domain=-5.56:11.26] plot(\x,{(--3.936944810607849--0.5498059587577135*\x)/1});
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqcc,domain=-5.56:11.26] plot(\x,{(-0.25443402669441584--0.5498059587577135*\x)/1});
+\begin{scriptsize}
+\draw [fill=ttzzqq] (-1.68,2.36) circle (2pt);
+\draw[color=ttzzqq] (-1.54,2.69) node {$A$};
+\draw [fill=ttzzqq] (0.94,2.8) circle (2pt);
+\draw[color=ttzzqq] (1.08,3.13) node {$B$};
+\draw [fill=ttzzqq] (2.12,1.72) circle (2pt);
+\draw[color=ttzzqq] (2.26,2.05) node {$C$};
+\draw [fill=ttzzqq] (4.38,3.26) circle (2pt);
+\draw[color=ttzzqq] (4.52,3.59) node {$D$};
+\draw [fill=black] (3.26,-1.24) circle (1.5pt);
+\draw[color=black] (3.4,-0.85) node {$a = -2$};
+\draw [fill=black] (4.66,-1.9) circle (1.5pt);
+\draw[color=black] (4.74,-1.51) node {$b = 5$};
+\draw [fill=uququq] (-0.810318157297597,0.5498059587577135) circle (1.5pt);
+\draw[color=uququq] (-0.68,0.83) node {$E$};
+\draw [fill=uququq] (3.2674333383197967,0.5498059587577135) circle (1.5pt);
+\draw[color=uququq] (3.4,0.83) node {$F$};
+\draw [fill=uququq] (-2,1.5588811131856195) circle (1.5pt);
+\draw[color=uququq] (-1.7,2.15) node {$G$};
+\draw [fill=uququq] (5,5.4075228244896145) circle (1.5pt);
+\draw[color=uququq] (5.62,4.17) node {$H$};
+\draw[color=qqqqcc] (-4.44,1.33) node {$-0.55x + y = 3.94$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}

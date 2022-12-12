@@ -1,0 +1,9 @@
+<type name="LaTeX (DVI)" deferToType="LaTeX" mimeType="text/plain" previewFile="true">
+	<defaultTypes></defaultTypes>
+	<structures></structures>
+	<grammar></grammar>
+	<coloring></coloring>
+	<completions></completions>
+	<vocabulary></vocabulary>
+	<copyrights></copyrights>
+</type>

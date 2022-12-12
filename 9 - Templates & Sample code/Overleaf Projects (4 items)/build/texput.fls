@@ -1,0 +1,5 @@
+PWD /Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)
+INPUT /usr/local/texlive/2020/texmf.cnf
+INPUT /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
+OUTPUT build/texput.log

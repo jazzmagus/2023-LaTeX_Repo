@@ -1,0 +1,60 @@
+\ifglsentryexists{mcyber}{}%
+{%
+\gls@defglossaryentry{mcyber}%
+{%
+name={MCyber},%
+sort={MCyber},%
+type={acronym},%
+first={Master in Cybersecurity\glsspace (MCyber)},%
+firstplural={Master in Cybersecurity\acrpluralsuffix \glsspace (MCyber\acrpluralsuffix )},%
+text={MCyber},%
+plural={MCyber\acrpluralsuffix },%
+description={Master in Cybersecurity},%
+descriptionplural={Master in Cybersecurity\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Master in Cybersecurity},%
+longplural={Master in Cybersecuritys},%
+short={MCyber},%
+shortplural={MCybers},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{wn}{}%
+{%
+\gls@defglossaryentry{wn}%
+{%
+name={WN},%
+sort={WN},%
+type={acronym},%
+first={Wireless Network\glsspace (WN)},%
+firstplural={Wireless Network\acrpluralsuffix \glsspace (WN\acrpluralsuffix )},%
+text={WN},%
+plural={WN\acrpluralsuffix },%
+description={Wireless Network},%
+descriptionplural={Wireless Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Wireless Network},%
+longplural={Wireless Networks},%
+short={WN},%
+shortplural={WNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

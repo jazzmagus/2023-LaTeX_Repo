@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+
+	<head>
+		<title>Export</title>
+		<link rel="stylesheet" href="../style.css" type="text/css" />
+	</head>
+	<body>
+	<div class="helpcontent">
+	<div class="sectiontitle"><a href="../index.html">Latexian Help</a> &gt; Export</div>
+	<div class="sectioncontent">
+		<div class="caption">
+			<a href="images/export.jpg" target="_blank"><img src="images/export.jpg" height="136" width="250" border="0"/><br />
+			Export Panel</a>
+		</div>
+		When you are ready to generate a publishable PDF file from your LaTeX document, you should access Latexian's Export feature by selecting "Export..." from the "File" menu. The Export panel will appear with these options:
+		<ul>
+			<li>Export File: Specify the location of the PDF file that will be generated; this will overwrite an existing file if there is one.</li>
+			<li>After Completion: Specify an action to occur after successful generation of the PDF.</li>
+			<li>BibTeX: Select this option if your document includes a BibTeX bibliography.</li>
+			<li>MakeIndex: Select this option if your document includes an index.</li>
+			<li>MakeGlossaries: Select this option if your document uses the "glossaries" package.</li>
+			<li>Number of Typesetter Runs at End: Select two or three typesetter runs to occur after other options are completed.</li>
+		</ul><br/>
+		When you click the "Export..." button, typesetting will begin and an interactive console will appear. Unlike <a href="preview.html">Latexian's Preview</a>, typesetting for Export is interactive; you may be prompted for input, for example, if the typesetter encounters an unrecognized command. Typesetting (i.e. pdflatex or xelatex) is performed multiple times during export to ensure that page number references in citations and indices are correct.
+	</div>
+	</div>
+	</body>
+</html>

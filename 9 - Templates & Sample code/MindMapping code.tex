@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usetikzlibrary{mindmap}
+
+\begin{document}
+\pagestyle{empty}
+{\centering
+  \makebox[0pt]{%
+    \begin{tikzpicture}
+      [mindmap,
+      grow cyclic,
+      every node/.style=concept,
+      concept color=brown!80,
+      level 1/.append style={sibling angle=360/7},
+      level 2/.append style={sibling angle=37.5},
+      ]
+      \node [root concept] {Malnutrizione}
+        child [concept color=brown!40]{
+          node    {Health Facility}
+          child { node    {Inadequate ANC Care} }
+          child { node    {Long Distance of Health Care Facility} }
+          child { node    {Insufficient Health Service} }
+          child { node    {Incomplete Immunization} }
+        }
+        child [concept color=pink!40, rotate=-10]{
+          node     {Morbidity}
+          child { node    {Intestinal Diseases} }
+          child { node    {Congenital Anomalies} }
+        }
+        child [concept color=green!40, rotate=-20]{
+          node  {Maternal Health}
+          %child { node {Maternal malnutrition} }
+          child { node {Higher Birth order} }
+          child { node {Short birth interval} }
+          child { node {Adolescent mother} }
+        }
+        child [concept color=red!40, rotate=-10]{
+          node  {Cultural Factors}[counterclockwise from=-115]
+          child  { node {Adverse cultural practice} }
+          child { node {Traditional beliefs} }
+          child { node {Early marriage} }
+          child { node {Inadequate child care} }
+          child { node {Feeding practices} }
+        }
+        child [concept color=blue!40, text=white, rotate=-7.5]{
+          node     {Socio-demographic Factors}
+          child { node {Caste (ST/SC)} }
+          child { node {Illiteracy} }
+          child { node {Lack of Awareness about Nutrition} }
+          child { node {Occupation} }
+          child { node {Low Socio-Economic Status} }
+          child { node {Inadequate access to food} }
+        }
+        child [concept color=yellow!40, rotate=-5]{
+          node   {Biological Factors}%[clockwise from=45, level distance=8cm]
+          child { node {Female} }
+          child { node {Low Birth Weight} }
+          child { node {Age of the Child} }
+        }
+        child [concept color=violet!40, rotate=-5] {
+          node {Environmental Factors}
+          child { node {Poor Unsafe Drinking Water} }
+          child { node {Poor Personal Hygiene} }
+          child { node {Poor Sanitation} }
+          child { node {Open Field Defecation} }
+        };
+  \end{tikzpicture}}\par}
+  
+      \begin{tikzpicture}
+      \node[fill=green, text=red, circle, draw=black] {With
+      \textcolor{cyan}{node}};
+        \draw[fill=cyan] (3,0) circle (1cm) node[text=blue] {With draw};
+    \end{tikzpicture}
+\end{document}

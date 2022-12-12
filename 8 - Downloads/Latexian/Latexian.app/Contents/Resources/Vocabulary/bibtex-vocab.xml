@@ -1,0 +1,283 @@
+<vocabulary>
+	<word id="entrytype.article">
+		<value>@article</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a journal article.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.book">
+		<value>@book</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a book with a known publisher.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.booklet">
+		<value>@booklet</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a printed text.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.conference">
+		<value>@conference</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for an article in the proceedings of a conference.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.inbook">
+		<value>@inbook</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a part of a book, usually untitled.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.incollection">
+		<value>@incollection</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a part of a book having its own title.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.inproceedings">
+		<value>@inproceedings</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for an article in the proceedings of a conference.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.manual">
+		<value>@manual</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for technical documentation.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.mastersthesis">
+		<value>@mastersthesis</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a Master's thesis.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.misc">
+		<value>@misc</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry that is not applicable to any other entry type.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.phdthesis">
+		<value>@phdthesis</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a Ph.D. thesis.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.proceedings">
+		<value>@proceedings</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for the proceedings of a conference.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.techreport">
+		<value>@techreport</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a report published by a school or other institution, usually part of a series.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="entrytype.unpublished">
+		<value>@unpublished</value>
+		<type>Entry Type</type>
+		<standard>BibTeX</standard>
+		<description>Entry for a document with an author and title, but not published.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	
+	<word id="field.address">
+		<value>address</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The address of the publisher; often, just the city.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.annote">
+		<value>annote</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>An annotation for annotated bibliographies.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.author">
+		<value>author</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The name(s) of the author(s); separated by "and" in the case of multiple authors.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.booktitle">
+		<value>booktitle</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The title of the book when only part of it is being cited.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.chapter">
+		<value>chapter</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The chapter number.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.crossref">
+		<value>crossref</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The key for a cross-reference entry.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.edition">
+		<value>edition</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The edition of a book.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.editor">
+		<value>editor</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The name(s) of the editor(s)</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.eprint">
+		<value>eprint</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>A specification of an electronic publication.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.howpublished">
+		<value>howpublished</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The method of which the work was published, if nonstandard.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.institution">
+		<value>institution</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The institution involved in publishing.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.journal">
+		<value>journal</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The journal in which the work appeared.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.key">
+		<value>key</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>A key used for alphabetizing an entry that does not have author or editor information.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.month">
+		<value>month</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The month when the work was published (or created, if an unpublished work)</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.note">
+		<value>note</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>Additional information to include in the bibliographic entry.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.number">
+		<value>number</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The number of a journal, magazine, or report, if applicable.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.organization">
+		<value>organization</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The sponsor of the conference.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.pages">
+		<value>pages</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>Applicable page numbers, separated by commas or double-hyphens.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.publisher">
+		<value>publisher</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The name of the work's publisher.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.school">
+		<value>school</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The school where the thesis was written.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.series">
+		<value>series</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The series of books in which the book was published.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.title">
+		<value>title</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The title of the work.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.type">
+		<value>type</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The type of report.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.url">
+		<value>url</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The Internet address for the work.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.volume">
+		<value>volume</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The volume for the journal or book.</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+	<word id="field.year">
+		<value>year</value>
+		<type>Field</type>
+		<standard>BibTeX</standard>
+		<description>The year when the work was published (or created, if an unpublished work).</description>
+		<url>http://en.wikipedia.org/wiki/BibTeX</url>
+	</word>
+</vocabulary>

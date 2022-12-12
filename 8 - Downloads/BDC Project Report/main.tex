@@ -1,0 +1,114 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+%% Welcome to Overleaf!
+%% If this is your first time using LaTeX, it might be worth going through this brief presentation:
+%% https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1
+
+%% Researchers have been using LaTeX for decades to typeset their papers, producing beautiful, crisp documents in the process. By learning LaTeX, you are effectively following in their footsteps, and learning a highly valuable skill!
+
+%% The \usepackage commands below can be thought of as analogous to importing libraries into Python, for instance. We've pre-formatted this for you, so you can skip right ahead to the title below.
+
+%% Language and font encodings
+\usepackage[spanish,english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%% Title
+\title{
+		%\vspace{-1in} 	
+		\usefont{OT1}{bch}{b}{n}
+		\normalfont \normalsize \textsc{STEM Fellowship Big Data Challenge 2016-2017} \\ [10pt]
+		\huge Here is what we did using Altmetric data in a nice, descriptive title \\
+}
+
+\usepackage{authblk}
+\author[0]{First Author, Second Author, Third Author, Fourth Author \\
+		Name of secondary school \\
+        The date you see below will be automatically generated}
+
+
+\begin{document}
+\maketitle
+
+\selectlanguage{english}
+\begin{abstract}
+The abstract is probably what you'll be writing last, and should be roughly 300 words in length. Your abstract will get published whether or not your team wins the challenge, so make sure to do an extra good job of it! An easy way to structure your abstract is to write individual summaries of the four parts of your paper (Introduction, Methods, Results, Discussion) and then put them together once you're done. A template for this is below. \\
+Introduction: [write summary here] \\
+Methods: [write summary here] \\
+Results: [write summary here] \\
+Discussion: [write summary here] \\
+Once you've written those, delete the keywords, edit for flow, and you effectively have an abstract!
+\end{abstract} \\ 
+\\ 
+{\textbf{Keywords} \\
+pick, 3-5, good, keywords}
+
+\section{Introduction}
+Before we get to the actual introduction, welcome to Overleaf, as well as \LaTeX\ itself! Although \LaTeX\ certainly has its quirks, we hope that by contrasting the template you see here with the compiled document on the right side, you can get an intuitive sense of how to work with it. Anyhow, let's begin!
+
+Another thing before the introduction; here, I'm going attach a citation to this sentence \cite{a_reference}. Scroll on down to the bibliography section of the \LaTeX\ code if you'd like to see the other end of the built-in references system. The numbering is all handled in-house -- you just have to assign each reference a key, and Overleaf takes care of the rest!
+
+On with the actual introduction. Here is where you'd introduce the context surrounding your study. What led you to the question you ended up asking? Why is it relevant? Which fields of science is your question based around?
+
+You could also potentially discuss why Altmetrics themselves are relevant and were important in answering the question your team conceptualized, especially in comparison to using more traditional metrics such as citations.
+
+While the structure of the previous parts of the introduction can be relatively variable, you must make sure to provide a brief overview of the study itself, and the methods you used to accomplish it. Obviously, excessive detail is not necessary (that's what the next section is for). Lastly, be sure to make mention of the potential implications of your findings, but once again remember that you'll be going into more detail about that in the discussion.
+
+Also, please do remember that the STEM Fellowship Journal is an open access journal, which means that the full final papers of previous BDC winners are a simple Google search away!
+
+\section{Materials \& Methods}
+
+This is where you talk about the methods used to carry out the study. Be as concise and to-the-point as possible, and remember - \textbf{do not justify your methods here!} You simply need to state what you did. You can (and probably should) mention the purpose of using a certain computational tool within the context of what you set out to achieve, but mentioning things like 'it's particularly efficient at this and better than all competing computational tools' is unnecessary in the methods section. However, you can definitely talk about all of this in the discussion, and talk about why your methods are, say, the most effective ones for the task.
+
+Think of this section as a technical manual of sorts, that another team of researchers could read and easily follow in order to replicate what you did to carry out this study.
+
+Because of the straightforward nature of the methods section, this might be the one your team wants to write first. It's essentially you just documenting what your team has already done, which should be no problem to write, since you will already have an established workflow by this point.
+
+\section{Results}
+
+The results section is probably next easiest to write after the Methods section, since it essentially boils down to presenting your data. If anything, the production of good, high quality figures is the most important and potentially time-consuming part of this. However, make sure to not analyze any of your results here! All of that belongs in the discussion.
+
+Including figures into \LaTeX\ can seem intimidating at first, but Overleaf makes it easy: simply click the 'Project' button above, select 'Files', and upload away from your computer. Then, insert the file name into the appropriate section of the code below.  Figure 1  shows the output of such code. A pretty good guide to formatting figures can be found at \url{https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures}.
+\\
+
+{\scriptsize
+\begin{verbatim}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{test.png}
+    \caption{Hello!}
+\end{figure}
+\end{verbatim}
+}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{test.png}
+  \caption{Notice how \LaTeX\ automatically numbers this figure.}
+\end{figure}
+
+
+\section{Discussion}
+And here is the 'meat' of the paper, so to speak. This is where you interpret your results, pointing out interesting trends within your data and how they relate to your initial hypothesis. This is also the place to justify your methodology, if you're so inclined (i.e. Why did you specifically use a certain statistical test over another? Why this tool over that tool?). Lastly, you're going to want to discuss potential sources of error. Make sure to make explicit reference to figures/tables when discussing your data; it can be helpful to walk the reader through your own personal interpretation of each figure in order. Although we recommend looking at past winning papers over at the STEM Fellowship Journal's website anyways, referring to those papers might prove most helpful when it comes to writing your discussion.
+
+\section*{Conclusions}
+What are the long-term implications of your findings? Wrap up your discussion succinctly while pointing out the significance of your work as well as it what it means for the fields you examined as much as possible. Lastly, suggest ideas for future studies that could build on your work, and justify why they might be useful. Otherwise, you're all done!
+
+\section*{Acknowledgements}
+Anyone to thank/credit for helping your team along the way? This is the place to do it!
+
+\begin{thebibliography}{9}
+\bibitem{a_reference} Here's where a full reference would go, should you choose to write up your bibliography in Overleaf.
+
+\bibitem{other_ref} Here's another. Write these out as you would references anywhere else. The key I've assigned to this reference is 'other\_ref' - therefore, a cite command in the body of your paper with 'other\_ref' entered as the sole argument will automatically insert the appropriate reference number.
+\end{thebibliography}
+
+\end{document}

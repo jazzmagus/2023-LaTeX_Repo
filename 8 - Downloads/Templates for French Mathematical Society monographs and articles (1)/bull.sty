@@ -1,0 +1,126 @@
+%%
+%% This is file `bull.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% smfclass.dtx  (with options: `bull')
+%% 
+%%
+%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  %% Classes, paquetages pour les publications de la SMF %%
+%%  %% (c) 1999-2014 Societe mathematique de France        %%
+%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\ProvidesPackage{bull}[2001/10/17 v1.0c
+  Fichier additionnel pour la soumission des articles au Bulletin]
+
+\let\ps@copyright\ps@empty
+
+\textheight 18cm
+\textwidth 12cm
+\addtolength{\oddsidemargin}{.5cm}
+\addtolength{\evensidemargin}{.5cm}
+\addtolength{\topmargin}{.5cm}
+\headheight=10pt
+\arraycolsep 1.5pt
+\headsep 7mm
+\footskip 7mm
+\abstractmargin\normalparindent
+
+\def\th@plain{%
+  \let\thm@indent\noindent
+  \thm@headfont{\normalfont\scshape}%
+  \thm@notefont{\normalfont}%
+  \thm@preskip.5\linespacing \@plus .5\linespacing\relax
+  \thm@postskip\thm@preskip
+  \thm@headpunct{\MakePointrait}
+  \let\thmheadnl\relax
+  \itshape }
+\def\abstractheadfont{\normalfont\scshape}
+\def\smf@enddoc{}
+
+\renewcommand{\author}[2][]{%
+  \ifx\@empty\authors
+    \gdef\shortauthors{#1}\gdef\authors{#2}%
+  \else
+    \g@addto@macro\shortauthors{\and#1}%
+    \g@addto@macro\authors{\and#2}%
+  \fi
+  \g@addto@macro\addresses{\author{#2}}%
+}
+\edef\author{\@nx\@dblarg
+  \@xp\@nx\csname\string\author\endcsname}
+\def\@setaddresses{\begingroup
+  \rightskip=0pt plus 1cm
+  \emergencystretch .5\textwidth
+  \exhyphenpenalty=-100
+  \interlinepenalty\@M
+  \def\baselinestretch{1}% \normalfont\footnotesize
+  \def\\{\unskip, \penalty-10\ignorespaces}%
+  \def\cond@bullet {{\setbox0\hbox{\quad$\bullet$\quad}%
+         \hskip 0pt plus 3cm\penalty -30\hskip 0pt plus -3cm
+         \cleaders \copy0 \hskip\wd0 }}%
+  \def\firstauthor##1{{\scshape ##1}\let\address\firstaddress
+        \let\author\otherauthor}%
+  \def\otherauthor##1{\par\nobreak
+      {\scshape ##1}\let\address\firstaddress}%
+  \def\firstaddress##1##2{\unskip, \let\address\otheraddress
+         \penalty-20\ignorespaces##2}%
+  \def\otheraddress##1##2{\cond@bullet \ignorespaces##2}%
+  \let\author\firstauthor
+  \let\address\firstaddress
+  \def\curraddr{\address}%
+  \def\email##1##2{\@ifnotempty{##2}%
+        {\cond@bullet
+         \hbox{\itshape E-mail~:}~{\ttfamily\ignorespaces ##2}}}%
+  \def\urladdr##1##2{\@ifnotempty{##2}%
+        {\cond@bullet
+         {\itshape Url~:}~{\ttfamily\ignorespaces ##2}\par}}%
+  \addresses
+  \endgroup}
+\def\@setdate{{\itshape\@date}} %% enleve le \@addpunct. avant \@@par
+\def\smf@boldmath{\mathversion{bold}}
+\smf@byauthorfalse
+\def\smf@byfont{\normalfont\scshape}
+\def\smf@authorfont{\scshape}
+\def\@maketitlehook{\bgroup
+ \normalparindent 0pt
+ \ifx\@empty\@date\else\footnotetext{\@setdate\smallskip}\fi
+ \footnotetext{\@setaddresses\smallskip}%
+ \def\abstractheadfont{}
+ \ifx\@empty\@subjclass\else\footnotetext{\@setsubjclass\smallskip}\fi
+ \ifx\@empty\@keywords\else\footnotetext{\@setkeywords\smallskip}\fi
+ \ifx\@empty\thankses\else \footnotetext{\@setthanks\smallskip}\fi
+ \egroup}
+
+\def\bibliofont{\normalfont}
+\def\specialsection{\@startsection{section}{1}%
+  \z@{2\linespacing\@plus\linespacing}{.5\linespacing}%
+  {\centering\normalfont\MakeUppercase}}
+\def\bibliosection{\let\refname\bibname\specialsection}
+\def\@cite#1#2{{%
+ \m@th\upshape\mdseries[{#1}{\if@tempswa, #2\fi}]}}
+
+\def\frontmatter{}
+\def\mainmatter{}
+\def\backmatter{}
+\endinput
+%%
+%% End of file `bull.sty'.

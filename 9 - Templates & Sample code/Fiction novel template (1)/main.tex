@@ -1,0 +1,31 @@
+\documentclass[12pt, openany]{book}      % paper size is in preamble.sty
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+%%%%%%%%%% BOOK INFORMATION %%%%%%%%%%
+\newcommand{\authorname}{Diego Fantinelli}
+\newcommand{\booktitle}{Incontri improponibili}
+\newcommand{\subtitle}{Novelle moderne}
+\newcommand{\publisher}{Indie Pub}
+\newcommand{\editionyear}{2020}
+\newcommand{\isbn}{978-3-16-148410-0}   % replace this with your own ISBN
+\title{\booktitle}
+\author{\authorname}
+
+\usepackage{misc/options}
+
+\begin{document}
+\frontmatter
+\input{frontmatter/titlepage}
+\input{frontmatter/copyrightpage}
+\input{frontmatter/preface}
+\input{frontmatter/tocpage}
+
+\mainmatter
+\pagestyle{fancy}
+
+\input{content/chapter1}
+
+\end{document}

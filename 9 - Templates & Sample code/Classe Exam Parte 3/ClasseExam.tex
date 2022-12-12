@@ -1,0 +1,64 @@
+\documentclass[addpoints]{exam}
+
+%--------------------------------------------------------------------------------------------------------
+% PACKAGES USADOS
+%--------------------------------------------------------------------------------------------------------
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{xpatch}
+\usepackage{dsfont}
+\usepackage{mathtools}
+\usepackage{xcolor}
+%--------------------------------------------------------------------------------------------------------
+% OUTRAS CONFIGURAÇÕES
+%--------------------------------------------------------------------------------------------------------
+
+\geometry{a4paper,
+	top=1cm,	
+	bottom=2cm,	
+	left=1.5cm,
+	right=3cm,
+}
+
+%--------------------------------------------------------------------------------------------------------
+% CONFIGURAÇÕES DA CLASSE EXAM
+%--------------------------------------------------------------------------------------------------------
+
+\renewcommand{\thequestion}{\bf \arabic{question}}
+\renewcommand{\choicelabel}{{\bf (\thechoice)}}
+\renewcommand{\partlabel}{\bf \thequestion.\arabic{partno}}
+\renewcommand{\thepartno}{{\bf \thequestion.\arabic{partno}}}
+\renewcommand{\solutiontitle}{{\bf Resolução:\enspace}}
+\pointpoints{ponto}{pontos}
+\pointformat{[\bf \thepoints]}
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{.5cm}
+\hqword{Questão:}
+\hpword{Cotação:}
+
+\printanswers
+
+\CorrectChoiceEmphasis{\color{blue} \bf}
+\SolutionEmphasis{\color{blue}}
+\xpatchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}
+
+%--------------------------------------------------------------------------------------------------------
+% INÍCIO DO DOCUMENTO
+%--------------------------------------------------------------------------------------------------------
+
+\begin{document}
+	
+	Este teste é composto por \numquestions\ questões num total de \numpoints\ pontos.
+	
+	\begin{questions}
+		\input{EM_CalcComb_1}
+		\input{DES_Func_Cont_1}
+		
+		\vfill
+		\center
+		\pointtable[h]
+	\end{questions}
+
+\end{document}

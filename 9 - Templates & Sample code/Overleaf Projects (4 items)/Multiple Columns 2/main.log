@@ -1,0 +1,397 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.5)  6 AUG 2020 15:27
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06>
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/03/22 3.42 The Babel package
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/03/22 3.42 Babel switching mechanism
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/03/22 3.42 Babel common definitions
+\babel@savecnt=\count175
+\U@D=\dimen135
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count176
+)
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language21) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language21) on input line 108.
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count177
+\c@Blindtext=\count178
+\c@blind@countparstart=\count179
+\blind@countxx=\count180
+\blindtext@numBlindtext=\count181
+\blind@countyy=\count182
+\c@blindlist=\count183
+\c@blindlistlevel=\count184
+\c@blindlist@level=\count185
+\blind@listitem=\count186
+\c@blind@listcount=\count187
+\c@blind@levelcount=\count188
+\blind@mathformula=\count189
+\blind@Mathformula=\count190
+\c@blind@randomcount=\count191
+\c@blind@randommax=\count192
+\c@blind@pangramcount=\count193
+\c@blind@pangrammax=\count194
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count195
+\mult@box=\box45
+\multicol@leftmargin=\dimen136
+\c@unbalance=\count196
+\c@collectmore=\count197
+\doublecol@number=\count198
+\multicoltolerance=\count199
+\multicolpretolerance=\count266
+\full@width=\dimen137
+\page@free=\dimen138
+\premulticols=\dimen139
+\postmulticols=\dimen140
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box46
+\last@line=\box47
+\maxbalancingoverflow=\dimen141
+\mult@rightbox=\box48
+\mult@grightbox=\box49
+\mult@gfirstbox=\box50
+\mult@firstbox=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\c@minrows=\count267
+\c@columnbadness=\count268
+\c@finalcolumnbadness=\count269
+\last@try=\dimen142
+\multicolovershoot=\dimen143
+\multicolundershoot=\dimen144
+\mult@nat@firstbox=\box89
+\colbreak@box=\box90
+\mc@col@check@num=\count270
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/local/texlive/2020/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen145
+\WF@size=\dimen146
+\c@WF@wrappedlines=\count271
+\WF@box=\box91
+\WF@everypar=\toks17
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count272
+\l__pdf_internal_box=\box92
+)
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+(/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count273
+\scratchdimen=\dimen149
+\scratchbox=\box93
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen150
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks20
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Underfull \hbox (badness 7522) in paragraph at lines 38--43
+[]\OT1/cmr/m/n/10 A blind text like
+ []
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 38--43
+\OT1/cmr/m/n/10 ten in of the orig-i-
+ []
+
+
+Underfull \hbox (badness 7522) in paragraph at lines 65--70
+[]\OT1/cmr/m/n/10 A blind text like
+ []
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 65--70
+\OT1/cmr/m/n/10 ten in of the orig-i-
+ []
+
+[1
+
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<./lion-logo.jpg, id=8, 401.5pt x 401.5pt>
+File: ./lion-logo.jpg Graphic file (type jpg)
+<use ./lion-logo.jpg>
+Package pdftex.def Info: ./lion-logo.jpg  used on input line 93.
+(pdftex.def)             Requested size: 117.24948pt x 117.24683pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 94.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 94.
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 here is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 some
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 text
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 with-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 out a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 mean-ing.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 show
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 what a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 printed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10 at this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 here is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 some
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 text
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 with-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 out a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 mean-ing.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 show
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 what a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\OT1/cmr/m/n/10 printed
+ []
+
+[2 <./lion-logo.jpg>] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2223 strings out of 480608
+ 33066 string characters out of 5903631
+ 306294 words of memory out of 5000000
+ 18120 multiletter control sequences out of 15000+600000
+ 532943 words of font info for 26 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,7n,27p,181b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+Output written on main.pdf (2 pages, 57504 bytes).
+PDF statistics:
+ 24 PDF objects out of 1000 (max. 8388607)
+ 15 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

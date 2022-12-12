@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+ 
+\usepackage{fancyhdr}
+   \fancyhead[L]{\textsf{\rightmark}}
+     \fancyhead[R]{\textsf{\leftmark}}
+ 
+     \fancyfoot[C]{\textbf{\textsf{\thepage}}}
+ 
+ \fancyhead[L]{\textsf{\rightmark}}
+    \fancyhead[R]{\textsf{\leftmark}}
+ 
+     \fancyfoot[C]{\textbf{\textsf{\thepage}}}
+ 
+     \renewcommand{\headrulewidth}{1.4pt}
+     \renewcommand{\footrulewidth}{1.4pt}
+ 
+     \newcommand{\dict}[3]{
+         \markboth{#1}{#1}
+         \par\noindent\vspace{0\baselineskip}
+         \textbf{\textsf{#1}} \textit{-#2 -} #3}
+ 
+\pagestyle{fancy}
+
+\title{Diario di Bordo}   
+\author{Diego Fantinelli} 
+\date{\today} 
+
+ 
+\begin{document}
+
+\maketitle
+\newpage
+%\begin{titlepage}
+%		\centering{
+%			{\fontsize{40}{48}\selectfont 
+%			Diario di Bordo}
+%		}\\
+%			
+%		\vspace{5mm}
+%		\centering{\Large{Diego Fantinelli}}\\
+%		\vspace{5mm}
+%		\vspace{\fill}
+%		\centering \large{2021}
+%\end{titlepage}
+\tableofcontents
+
+%\newpage
+
+\section*{Classe 3 B}
+ 
+\begin{multicols}{2}
+     \dict{main}{n}{\lipsum[3]}
+     \dict{material}{n}{\lipsum[2]}
+     \dict{mathematic}{n}{\lipsum[2]}
+     \dict{more}{n}{\lipsum[3]}
+\end{multicols}
+ 
+\section*{Classe 4 M}
+ 
+\begin{multicols}{2}
+     \dict{zebra}{n}{\lipsum[1]}
+     \dict{zero}{n}{\lipsum[3]}
+      \dict{zinfandel}{n}{\lipsum[2]}
+\end{multicols}
+ 
+
+\section*{Classe 5 M}
+ 
+\begin{multicols}{2}
+     \dict{main}{n}{\lipsum[3]}
+     \dict{material}{n}{\lipsum[2]}
+     \dict{mathematic}{n}{\lipsum[2]}
+     \dict{more}{n}{\lipsum[3]}
+\end{multicols}
+ 
+\section*{Classe 4 Z}
+ 
+\begin{multicols}{2}
+     \dict{zebra}{n}{\lipsum[1]}
+     \dict{zero}{n}{\lipsum[3]}
+      \dict{zinfandel}{n}{\lipsum[2]}
+\end{multicols}
+
+
+\end{document}

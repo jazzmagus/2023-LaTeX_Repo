@@ -1,0 +1,110 @@
+.maintitle {
+	text-align: center;
+	font-family: Arial;
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+
+.maincontents {
+	text-align: center;
+}
+
+td {
+	vertical-align: top;
+}
+
+.sectiontitle {
+	font-family: Arial;
+	font-size: 16px;
+}
+
+.sectionlinks {
+	font-family: Arial;
+	font-size: 14px;
+}
+
+.sectionlinks ul {
+	list-style-type: none;
+	margin: 2px 0px 0px 0px;
+	padding: 0px 0px 0px 16px;
+	line-height: 18px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.maincontents tr td {
+	padding-bottom: 20px;
+}
+
+.helpcontent {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sectioncontent {
+	margin: 20px 0px 0px 0px;
+	font-family: Arial;
+	font-size: 14px;
+}
+
+.sectioncontent ul {
+	list-style: none;
+	margin: 6px 0px 0px 0px;
+	padding: 0px 0px 0px 6px;
+}
+
+.sectioncontent ul li {
+	padding-left: 10px;
+	padding-top: 4px;
+	background-image: url(images/circlebullet2.gif);
+	background-repeat: no-repeat;
+	background-position: 0 10px;
+}
+
+.subsectiontitle {
+	font-weight: bold;
+	margin-bottom: 20px;
+	clear: both;
+}
+
+.subsectioncontent {
+	margin-bottom: 20px;
+}
+
+.caption {
+	float: right;
+	width: 260px;
+	padding-left: 10px;
+	font-size: 12px;
+	text-align: center;
+	clear: right;
+	margin-bottom: 20px;
+}
+
+.contents {
+	margin-bottom: 40px;
+}
+
+.contents ul {
+	margin: 0px 0px 0px 0px;
+}
+
+.contents ul li{
+	padding-top: 1px;
+	background-position: 0 7px;
+}
+
+.title {
+	font-weight: bold;
+}
+dt {
+	font-style: italic;
+	font-size: 13px;
+}
+dd {
+	font-size: 13px;
+	padding-bottom: 8px;
+}

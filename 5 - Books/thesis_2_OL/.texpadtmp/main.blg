@@ -1,0 +1,5 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is '/Users/diegofantinelli/Dropbox/1 - Private/- Maths & LaTeX/LaTeX DoX/- Books/thesis_2_OL/.texpadtmp/main.blg'
+[117] biber-darwin:322> INFO - === Tue Sep  1, 2020, 21:55:18
+[311] Utils.pm:320> ERROR - Cannot find '/Users/diegofantinelli/Dropbox/1 - Private/- Maths & LaTeX/LaTeX DoX/- Books/thesis_2_OL/.texpadtmp/main.bcf'!
+[311] Biber.pm:132> INFO - ERRORS: 1

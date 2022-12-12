@@ -1,0 +1,16 @@
+% Package for Attachment sections in SINTEF documents.
+%
+% by Federico Zenith, federico.zenith@sintef.no.
+
+\ProvidesPackage{sintefattachments}[2013/09/19 write attachment sections]
+
+\newcommand{\attachmentsection}{
+  \ifdefempty{\@attachments}{}{% If NOT empty, add the following:
+    \section*{\@labeltext{\@attachmentlabel}}
+    \noindent\@separator
+    
+    \@attachments
+
+    \noindent\@separator
+  }
+}

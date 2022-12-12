@@ -1,0 +1,1622 @@
+<type name="LaTeX" default="true" mimeType="text/plain" previewFile="true">
+	<defaultTypes>
+		<extension value="tex"/>
+		<extension value="latex"/>
+		<extension value="ltx"/>
+		<extension value="aux"/>
+		<extension value="cls"/>
+		<extension value="sty"/>
+	</defaultTypes>
+	<structures>
+		<structure name="commandTitle">
+			<sequence>
+				<structure>
+					<text>
+						<values>
+							<value>\</value>
+						</values>
+					</text>
+				</structure>
+				<structure minOccurs="0">
+					<option>
+						<structure>
+							<text minLength="1">
+								<characterSet>
+									<alphanumeric/>
+									<characters>*@</characters>
+								</characterSet>
+							</text>
+						</structure>
+						<structure>
+							<text minLength="0" maxLength="1">
+								<characterSet>
+									<any/>
+								</characterSet>
+							</text>
+						</structure>
+					</option>
+				</structure>
+			</sequence>
+		</structure>
+		<structure name="argument">
+			<sequence>
+				<structure name="argOpen">
+					<text>
+						<values>
+							<value>{</value>
+						</values>
+					</text>
+				</structure>
+				<structure name="argumentValue" minOccurs="0">
+					<text minLength="0">
+						<characterSet>
+							<alphanumeric/>
+						</characterSet>
+					</text>
+				</structure>
+				<structure name="argClose" minOccurs="0">
+					<text>
+						<values>
+							<value>}</value>
+						</values>
+					</text>
+				</structure>
+			</sequence>
+		</structure>
+	</structures>
+	<grammar>
+		<structure name="command">
+			<start excludeFromBody="false">
+				<text>
+					<values>
+						<value>\</value>
+					</values>
+				</text>
+			</start>
+			<sequence>
+				<structure ref="commandTitle"/>
+				<structure ref="argument" minOccurs="0"/>
+			</sequence>
+		</structure>
+		<structure name="commentLine">
+			<start>
+				<text>
+					<values>
+						<value>%</value>
+					</values>
+				</text>
+			</start>
+			<end>
+				<text maxLength="1">
+					<endOfContents/>
+					<characterSet>
+						<newline/>
+					</characterSet>
+				</text>
+			</end>
+		</structure>
+		<structure name="braces">
+			<start excludeFromBody="false">
+				<text>
+					<values>
+						<value>{</value>
+						<value>}</value>
+						<value>[</value>
+						<value>]</value>
+					</values>
+				</text>
+			</start>
+			<text>
+				<values>
+					<value>{</value>
+					<value>}</value>
+					<value>[</value>
+					<value>]</value>
+				</values>
+			</text>
+		</structure>
+		<structure name="dollar">
+			<start excludeFromBody="false">
+				<text>
+					<values>
+						<value>$</value>
+					</values>
+				</text>
+			</start>
+			<text>
+				<values>
+					<value>$</value>
+				</values>
+			</text>
+		</structure>
+	</grammar>
+	<coloring>
+		<style name="Standard" default="true">
+			<rule name="Text" defaultRed="0.0" defaultGreen="0.0" defaultBlue="0.0">
+				<apply/>
+				<match/>
+			</rule>
+			<rule name="Text" defaultRed="0.0" defaultGreen="0.0" defaultBlue="0.0">
+				<apply>
+					<structure ref="command"/>
+					<structure ref="argument"/>
+					<structure ref="argumentValue"/>
+				</apply>
+				<match/>
+			</rule>
+			<rule name="Comments" defaultRed="0.1" defaultGreen="0.4" defaultBlue="0.1">
+				<apply>
+					<structure ref="commentLine"/>
+				</apply>
+				<match/>
+			</rule>
+			<rule name="Commands" defaultRed="0.0" defaultGreen="0.64" defaultBlue="0.78">
+				<apply>
+					<structure ref="command"/>
+					<structure ref="commandTitle"/>
+				</apply>
+				<match/>
+			</rule>
+			<rule name="Braces" defaultRed="0.0" defaultGreen="0.00" defaultBlue="1.0">
+				<apply>
+					<structure ref="braces"/>
+				</apply>
+				<match/>
+			</rule>
+			<rule name="Braces" defaultRed="0.0" defaultGreen="0.00" defaultBlue="1.0">
+				<apply>
+					<structure ref="command"/>
+					<structure ref="argument"/>
+					<structure ref="argOpen"/>
+				</apply>
+				<match/>
+			</rule>
+			<rule name="Braces" defaultRed="0.0" defaultGreen="0.00" defaultBlue="1.0">
+				<apply>
+					<structure ref="command"/>
+					<structure ref="argument"/>
+					<structure ref="argClose"/>
+				</apply>
+				<match/>
+			</rule>
+			<rule name="$ Symbol" defaultRed="0.5" defaultGreen="0.00" defaultBlue="0.0">
+				<apply>
+					<structure ref="dollar"/>
+				</apply>
+				<match/>
+			</rule>
+		</style>
+	</coloring>
+	<completions>
+		<completion>
+			<root><structure ref="command"/></root>
+			<apply>
+				<structure ref="argument"/>
+				<structure ref="argumentValue"/>
+			</apply>
+			<match>
+				<structure ref="commandTitle">
+					<text><values>
+						<value>\begin</value>
+						<value>\end</value>
+					</values></text>
+				</structure>
+			</match>
+			<words>
+				<word ref="argument.begin.abstract"/>
+				<word ref="argument.begin.align"/>
+				<word ref="argument.begin.alignstar"/>
+				<word ref="argument.begin.alignat"/>
+				<word ref="argument.begin.aligned"/>
+				<word ref="argument.begin.array"/>
+				<word ref="argument.begin.center"/>
+				<word ref="argument.begin.alltt"/>
+				<word ref="argument.begin.bmatrix"/>
+				<word ref="argument.begin.Bmatrix"/>
+				<word ref="argument.begin.cases"/>
+				<word ref="argument.begin.description"/>
+				<word ref="argument.begin.displaymath"/>
+				<word ref="argument.begin.document"/>
+				<word ref="argument.begin.enumerate"/>
+				<word ref="argument.begin.eqnarray"/>
+				<word ref="argument.begin.eqnarraystar"/>
+				<word ref="argument.begin.equation"/>
+				<word ref="argument.begin.falign"/>
+				<word ref="argument.begin.figure"/>
+				<word ref="argument.begin.figurestar"/>
+				<word ref="argument.begin.filecontents"/>
+				<word ref="argument.begin.filecontentsstar"/>
+				<word ref="argument.begin.flushleft"/>
+				<word ref="argument.begin.flushright"/>
+				<word ref="argument.begin.gather"/>
+				<word ref="argument.begin.gatherstar"/>
+				<word ref="argument.begin.gathered"/>
+				<word ref="argument.begin.itemize"/>
+				<word ref="argument.begin.letter"/>
+				<word ref="argument.begin.list"/>
+				<word ref="argument.begin.longtable"/>
+				<word ref="argument.begin.lrbox"/>
+				<word ref="argument.begin.math"/>
+				<word ref="argument.begin.matrix"/>
+				<word ref="argument.begin.minipage"/>
+				<word ref="argument.begin.multicols"/>
+				<word ref="argument.begin.multicolsstar"/>
+				<word ref="argument.begin.multline"/>
+				<word ref="argument.begin.multlinestar"/>
+				<word ref="argument.begin.note"/>
+				<word ref="argument.begin.overlay"/>
+				<word ref="argument.begin.picture"/>
+				<word ref="argument.begin.pmatrix"/>
+				<word ref="argument.begin.quotation"/>
+				<word ref="argument.begin.quote"/>
+				<word ref="argument.begin.slide"/>
+				<word ref="argument.begin.sloppypar"/>
+				<word ref="argument.begin.split"/>
+				<word ref="argument.begin.subarray"/>
+				<word ref="argument.begin.subequations"/>
+				<word ref="argument.begin.tabbing"/>
+				<word ref="argument.begin.table"/>
+				<word ref="argument.begin.tablestar"/>
+				<word ref="argument.begin.tabular"/>
+				<word ref="argument.begin.tabularstar"/>
+				<word ref="argument.begin.thebibliography"/>
+				<word ref="argument.begin.theindex"/>
+				<word ref="argument.begin.titlepage"/>
+				<word ref="argument.begin.trivlist"/>
+				<word ref="argument.begin.verbatim"/>
+				<word ref="argument.begin.verbatimstar"/>
+				<word ref="argument.begin.verse"/>
+				<word ref="argument.begin.vmatrix"/>
+				<word ref="argument.begin.Vmatrix"/>
+			</words>
+		</completion>
+		<completion>
+			<root><structure ref="command"/></root>
+			<apply>
+				<structure ref="argument"/>
+				<structure ref="argumentValue"/>
+			</apply>
+			<match>
+				<structure ref="commandTitle">
+					<text><values><value>\bibliographystyle</value></values></text>
+				</structure>
+			</match>
+			<words>
+				<word ref="argument.bibliographystyle.plain"/>
+				<word ref="argument.bibliographystyle.unsrt"/>
+				<word ref="argument.bibliographystyle.alpha"/>
+				<word ref="argument.bibliographystyle.abbrv"/>
+				<word ref="argument.bibliographystyle.plainnat"/>
+				<word ref="argument.bibliographystyle.unsrtnat"/>
+				<word ref="argument.bibliographystyle.abbrvnat"/>
+				<word ref="argument.bibliographystyle.natbib"/>
+			</words>
+		</completion>
+		<completion>
+			<root><structure ref="command"/></root>
+			<apply>
+				<structure ref="argument"/>
+				<structure ref="argumentValue"/>
+			</apply>
+			<match>
+				<structure ref="commandTitle">
+					<text><values><value>\pagenumbering</value></values></text>
+				</structure>
+			</match>
+			<words>
+				<word ref="argument.pagenumbering.arabic"/>
+				<word ref="argument.pagenumbering.roman"/>
+				<word ref="argument.pagenumbering.Roman"/>
+				<word ref="argument.pagenumbering.alph"/>
+				<word ref="argument.pagenumbering.Alph"/>
+			</words>
+		</completion>
+		<completion>
+			<root><structure ref="command"/></root>
+			<apply>
+				<structure ref="argument"/>
+				<structure ref="argumentValue"/>
+			</apply>
+			<match>
+				<structure ref="commandTitle">
+					<text><values><value>\thispagestyle</value></values></text>
+				</structure>
+			</match>
+			<words>
+				<word ref="argument.thispagestyle.plain"/>
+				<word ref="argument.thispagestyle.empty"/>
+				<word ref="argument.thispagestyle.headings"/>
+				<word ref="argument.thispagestyle.myheadings"/>
+			</words>
+		</completion>
+		<completion>
+			<root><structure ref="command"/></root>
+			<apply>
+				<structure ref="argument"/>
+				<structure ref="argumentValue"/>
+			</apply>
+			<match>
+				<structure ref="commandTitle">
+					<text><values><value>\pagestyle</value></values></text>
+				</structure>
+			</match>
+			<words>
+				<word ref="argument.pagestyle.plain"/>
+				<word ref="argument.pagestyle.empty"/>
+				<word ref="argument.pagestyle.headings"/>
+				<word ref="argument.pagestyle.myheadings"/>
+			</words>
+		</completion>
+		<completion>
+			<root><structure ref="command"/></root>
+			<apply>
+				<structure ref="argument"/>
+				<structure ref="argumentValue"/>
+			</apply>
+			<match>
+				<structure ref="commandTitle">
+					<text><values><value>\urlstyle</value></values></text>
+				</structure>
+			</match>
+			<words>
+				<word ref="argument.urlstyle.tt"/>
+				<word ref="argument.urlstyle.rm"/>
+				<word ref="argument.urlstyle.sf"/>
+				<word ref="argument.urlstyle.same"/>
+			</words>
+		</completion>
+		<completion>
+			<root><structure ref="command"/></root>
+			<apply><structure ref="commandTitle"/></apply>
+			<match><structure ref="start"/></match>
+			<words>
+				<word ref="command.abovedisplayshortskip"/>
+				<word ref="command.abovedisplayskip"/>
+				<word ref="command.abstractname"/>
+				<word ref="command.addcontentsline"/>
+				<word ref="command.address"/>
+				<word ref="command.addtocontents"/>
+				<word ref="command.addtocounter"/>
+				<word ref="command.addtolength"/>
+				<word ref="command.addvspace"/>
+				<word ref="command.allowdisplaybreaks"/>
+				<word ref="command.allowdisplaybreaks2"/>
+				<word ref="command.Alph"/>
+				<word ref="command.alph"/>
+				<word ref="command.alsoname"/>
+				<word ref="command.and"/>
+				<word ref="command.appendix"/>
+				<word ref="command.appendixname"/>
+				<word ref="command.arabic"/>
+				<word ref="command.arraycolsep"/>
+				<word ref="command.arrayrulewidth"/>
+				<word ref="command.arraystretch"/>
+				<word ref="command.AtBeginDocument"/>
+				<word ref="command.AtEndDocument"/>
+				<word ref="command.AtEndOfClass"/>
+				<word ref="command.AtEndOfPackage"/>
+				<word ref="command.author"/>
+				<word ref="command.backmatter"/>
+				<word ref="command.baselineskip"/>
+				<word ref="command.baselinestretch"/>
+				<word ref="command.begin"/>
+				<word ref="command.begin.abstract"/>
+				<word ref="command.begin.align"/>
+				<word ref="command.begin.alignstar"/>
+				<word ref="command.begin.alignat"/>
+				<word ref="command.begin.aligned"/>
+				<word ref="command.begin.aligned2"/>
+				<word ref="command.begin.array"/>
+				<word ref="command.begin.array2"/>
+				<word ref="command.begin.center"/>
+				<word ref="command.begin.alltt"/>
+				<word ref="command.begin.bmatrix"/>
+				<word ref="command.begin.Bmatrix"/>
+				<word ref="command.begin.cases"/>
+				<word ref="command.begin.description"/>
+				<word ref="command.begin.displaymath"/>
+				<word ref="command.begin.document"/>
+				<word ref="command.begin.enumerate"/>
+				<word ref="command.begin.eqnarray"/>
+				<word ref="command.begin.eqnarraystar"/>
+				<word ref="command.begin.falign"/>
+				<word ref="command.begin.figure"/>
+				<word ref="command.begin.figure2"/>
+				<word ref="command.begin.figurestar"/>
+				<word ref="command.begin.figurestar2"/>
+				<word ref="command.begin.filecontents"/>
+				<word ref="command.begin.filecontentsstar"/>
+				<word ref="command.begin.flushleft"/>
+				<word ref="command.begin.flushright"/>
+				<word ref="command.begin.gather"/>
+				<word ref="command.begin.gatherstar"/>
+				<word ref="command.begin.gathered"/>
+				<word ref="command.begin.gathered2"/>
+				<word ref="command.begin.itemize"/>
+				<word ref="command.begin.letter"/>
+				<word ref="command.begin.list"/>
+				<word ref="command.begin.longtable"/>
+				<word ref="command.begin.lrbox"/>
+				<word ref="command.begin.math"/>
+				<word ref="command.begin.matrix"/>
+				<word ref="command.begin.minipage"/>
+				<word ref="command.begin.minipage2"/>
+				<word ref="command.begin.multicols"/>
+				<word ref="command.begin.multicols2"/>
+				<word ref="command.begin.multicolsstar"/>
+				<word ref="command.begin.multicolsstar2"/>
+				<word ref="command.begin.multline"/>
+				<word ref="command.begin.multilinestar"/>
+				<word ref="command.begin.note"/>
+				<word ref="command.begin.overlay"/>
+				<word ref="command.begin.picture"/>
+				<word ref="command.begin.picture2"/>
+				<word ref="command.begin.pmatrix"/>
+				<word ref="command.begin.quotation"/>
+				<word ref="command.begin.quote"/>
+				<word ref="command.begin.slide"/>
+				<word ref="command.begin.sloppypar"/>
+				<word ref="command.begin.split"/>
+				<word ref="command.begin.subarray"/>
+				<word ref="command.begin.subequations"/>
+				<word ref="command.begin.tabbing"/>
+				<word ref="command.begin.table"/>
+				<word ref="command.begin.table2"/>
+				<word ref="command.begin.tablestar"/>
+				<word ref="command.begin.tablestar2"/>
+				<word ref="command.begin.tabular"/>
+				<word ref="command.begin.tabular2"/>
+				<word ref="command.begin.tabularstar"/>
+				<word ref="command.begin.tabularstar2"/>
+				<word ref="command.begin.thebibliography"/>
+				<word ref="command.begin.theindex"/>
+				<word ref="command.begin.theoremtype"/>
+				<word ref="command.begin.theoremtype2"/>
+				<word ref="command.begin.titlepage"/>
+				<word ref="command.begin.trivlist"/>
+				<word ref="command.begin.verbatim"/>
+				<word ref="command.begin.verbatimstar"/>
+				<word ref="command.begin.verse"/>
+				<word ref="command.begin.vmatrix"/>
+				<word ref="command.begin.Vmatrix"/>
+				<word ref="command.belowdisplayshortskip"/>
+				<word ref="command.belowdisplayskip"/>
+				<word ref="command.bfdefault"/>
+				<word ref="command.bfseries"/>
+				<word ref="command.bibitem"/>
+				<word ref="command.bibitem2"/>
+				<word ref="command.bibliography"/>
+				<word ref="command.bibliographystyle"/>
+				<word ref="command.bibname"/>
+				<word ref="command.big"/>
+				<word ref="command.Big"/>
+				<word ref="command.bigg"/>
+				<word ref="command.Bigg"/>
+				<word ref="command.bigskip"/>
+				<word ref="command.bigskipamount"/>
+				<word ref="command.binom"/>
+				<word ref="command.bmod"/>
+				<word ref="command.boldmath"/>
+				<word ref="command.boldsymbol"/>
+				<word ref="command.botfigrule"/>
+				<word ref="command.bottomfraction"/>
+				<word ref="command.boxed"/>
+				<word ref="command.caption"/>
+				<word ref="command.caption2"/>
+				<word ref="command.captions"/>
+				<word ref="command.cc"/>
+				<word ref="command.ccname"/>
+				<word ref="command.cdots"/>
+				<word ref="command.centering"/>
+				<word ref="command.centerline"/>
+				<word ref="command.cfrac"/>
+				<word ref="command.cfrac2"/>
+				<word ref="command.chapter"/>
+				<word ref="command.chapter2"/>
+				<word ref="command.chapterstar"/>
+				<word ref="command.chaptername"/>
+				<word ref="command.circle"/>
+				<word ref="command.circlestar"/>
+				<word ref="command.cite"/>
+				<word ref="command.cite2"/>
+				<word ref="command.citep"/>
+				<word ref="command.citep2"/>
+				<word ref="command.citep3"/>
+				<word ref="command.citet"/>
+				<word ref="command.cleardoublepage"/>
+				<word ref="command.clearpage"/>
+				<word ref="command.cline"/>
+				<word ref="command.closing"/>
+				<word ref="command.color"/>
+				<word ref="command.color2"/>
+				<word ref="command.colorbox"/>
+				<word ref="command.colorbox2"/>
+				<word ref="command.columnsep"/>
+				<word ref="command.columnseprule"/>
+				<word ref="command.contentsname"/>
+				<word ref="command.dashbox"/>
+				<word ref="command.date"/>
+				<word ref="command.datelanguage"/>
+				<word ref="command.dbinom"/>
+				<word ref="command.dblfigrule"/>
+				<word ref="command.dblfloatpagefraction"/>
+				<word ref="command.dblfloatsep"/>
+				<word ref="command.dbltextfloatsep"/>
+				<word ref="command.dbltopfraction"/>
+				<word ref="command.dddot"/>
+				<word ref="command.ddddot"/>
+				<word ref="command.definecolor"/>
+				<word ref="command.depth"/>
+				<word ref="command.dfrac"/>
+				<word ref="command.discretionary"/>
+				<word ref="command.displaybreak"/>
+				<word ref="command.displaybreak2"/>
+				<word ref="command.displaystyle"/>
+				<word ref="command.documentclass"/>
+				<word ref="command.documentclass2"/>
+				<word ref="command.documentclass3"/>
+				<word ref="command.dotfill"/>
+				<word ref="command.dots"/>
+				<word ref="command.dotsb"/>
+				<word ref="command.dotsc"/>
+				<word ref="command.dotsi"/>
+				<word ref="command.dotsm"/>
+				<word ref="command.doublebox"/>
+				<word ref="command.doublerulesep"/>
+				<word ref="command.em"/>
+				<word ref="command.emph"/>
+				<word ref="command.encl"/>
+				<word ref="command.enclname"/>
+				<word ref="command.end"/>
+				<word ref="command.endfirsthead"/>
+				<word ref="command.endfoot"/>
+				<word ref="command.endhead"/>
+				<word ref="command.endlastfoot"/>
+				<word ref="command.enlargethispage"/>
+				<word ref="command.enlargethispagestar"/>
+				<word ref="command.ensuremath"/>
+				<word ref="command.eqref"/>
+				<word ref="command.euro"/>
+				<word ref="command.EUR"/>
+				<word ref="command.evensidemargin"/>
+				<word ref="command.extracolsep"/>
+				<word ref="command.fancypage"/>
+				<word ref="command.fbox"/>
+				<word ref="command.fboxrule"/>
+				<word ref="command.fboxsep"/>
+				<word ref="command.fcolorbox"/>
+				<word ref="command.fcolorbox2"/>
+				<word ref="command.figurename"/>
+				<word ref="command.fill"/>
+				<word ref="command.floatpagefraction"/>
+				<word ref="command.floatsep"/>
+				<word ref="command.flushbottom"/>
+				<word ref="command.fnsymbol"/>
+				<word ref="command.fontencoding"/>
+				<word ref="command.fontfamily"/>
+				<word ref="command.fontseries"/>
+				<word ref="command.fontshape"/>
+				<word ref="command.fontsize"/>
+				<word ref="command.footnote"/>
+				<word ref="command.footnote2"/>
+				<word ref="command.footnotemark"/>
+				<word ref="command.footnotemark2"/>
+				<word ref="command.footnoterule"/>
+				<word ref="command.footnotesep"/>
+				<word ref="command.footnotesize"/>
+				<word ref="command.footnotetext"/>
+				<word ref="command.footnotetext2"/>
+				<word ref="command.footskip"/>
+				<word ref="command.foreignlanguage"/>
+				<word ref="command.frac"/>
+				<word ref="command.frame"/>
+				<word ref="command.framebox"/>
+				<word ref="command.framebox2"/>
+				<word ref="command.framebox3"/>
+				<word ref="command.framebox4"/>
+				<word ref="command.frenchspacing"/>
+				<word ref="command.frontmatter"/>
+				<word ref="command.fussy"/>
+				<word ref="command.genfrac"/>
+				<word ref="command.glossary"/>
+				<word ref="command.printglossary"/>
+				<word ref="command.graphpaper"/>
+				<word ref="command.headheight"/>
+				<word ref="command.headsep"/>
+				<word ref="command.headtoname"/>
+				<word ref="command.height"/>
+				<word ref="command.hfill"/>
+				<word ref="command.hline"/>
+				<word ref="command.hoffset"/>
+				<word ref="command.hrulefill"/>
+				<word ref="command.hspace"/>
+				<word ref="command.hspacestar"/>
+				<word ref="command.huge"/>
+				<word ref="command.Huge"/>
+				<word ref="command.hyperlink"/>
+				<word ref="command.hypersetup"/>
+				<word ref="command.hypertarget"/>
+				<word ref="command.hyphenation"/>
+				<word ref="command.iflanguage"/>
+				<word ref="command.ifthenelse"/>
+				<word ref="command.include"/>
+				<word ref="command.includeonly"/>
+				<word ref="command.includegraphics"/>
+				<word ref="command.includegraphics2"/>
+				<word ref="command.includegraphicsstar"/>
+				<word ref="command.includegraphicsstar2"/>
+				<word ref="command.includegraphics3"/>
+				<word ref="command.includegraphics4"/>
+				<word ref="command.indent"/>
+				<word ref="command.index"/>
+				<word ref="command.indexname"/>
+				<word ref="command.indexspace"/>
+				<word ref="command.input"/>
+				<word ref="command.intertext"/>
+				<word ref="command.intextsep"/>
+				<word ref="command.invisible"/>
+				<word ref="command.itdefault"/>
+				<word ref="command.item"/>
+				<word ref="command.item2"/>
+				<word ref="command.itemindent"/>
+				<word ref="command.itemsep"/>
+				<word ref="command.itshape"/>
+				<word ref="command.jot"/>
+				<word ref="command.kill"/>
+				<word ref="command.label"/>
+				<word ref="command.labelenumi"/>
+				<word ref="command.labelenumii"/>
+				<word ref="command.labelenumiii"/>
+				<word ref="command.labelenumiv"/>
+				<word ref="command.labelitemi"/>
+				<word ref="command.labelitemii"/>
+				<word ref="command.labelitemiii"/>
+				<word ref="command.labelitemiv"/>
+				<word ref="command.labelsep"/>
+				<word ref="command.labelwidth"/>
+				<word ref="command.large"/>
+				<word ref="command.Large"/>
+				<word ref="command.LARGE"/>
+				<word ref="command.LaTeX"/>
+				<word ref="command.LaTeXe"/>
+				<word ref="command.ldots"/>
+				<word ref="command.leftbrack"/>
+				<word ref="command.lefteqn"/>
+				<word ref="command.leftmargin"/>
+				<word ref="command.leftmargini"/>
+				<word ref="command.leftmarginii"/>
+				<word ref="command.leftmarginiii"/>
+				<word ref="command.leftmarginiv"/>
+				<word ref="command.leftroot"/>
+				<word ref="command.limits"/>
+				<word ref="command.line"/>
+				<word ref="command.linebreak"/>
+				<word ref="command.linebreak2"/>
+				<word ref="command.linethickness"/>
+				<word ref="command.linewidth"/>
+				<word ref="command.listfigurename"/>
+				<word ref="command.listfiles"/>
+				<word ref="command.listoffigures"/>
+				<word ref="command.listoftables"/>
+				<word ref="command.listparindent"/>
+				<word ref="command.listtablename"/>
+				<word ref="command.location"/>
+				<word ref="command.lvert"/>
+				<word ref="command.lVert"/>
+				<word ref="command.mainmatter"/>
+				<word ref="command.makebox"/>
+				<word ref="command.makebox2"/>
+				<word ref="command.makebox3"/>
+				<word ref="command.makebox4"/>
+				<word ref="command.makeglossary"/>
+				<word ref="command.makeindex"/>
+				<word ref="command.makelabel"/>
+				<word ref="command.makelabels"/>
+				<word ref="command.maketitle"/>
+				<word ref="command.marginpar"/>
+				<word ref="command.marginpar2"/>
+				<word ref="command.marginparpush"/>
+				<word ref="command.marginparsep"/>
+				<word ref="command.marginparwidth"/>
+				<word ref="command.markboth"/>
+				<word ref="command.markright"/>
+				<word ref="command.mathbf"/>
+				<word ref="command.mathcal"/>
+				<word ref="command.mathindent"/>
+				<word ref="command.mathit"/>
+				<word ref="command.mathnormal"/>
+				<word ref="command.mathrm"/>
+				<word ref="command.mathsf"/>
+				<word ref="command.mathtt"/>
+				<word ref="command.mbox"/>
+				<word ref="command.mddefault"/>
+				<word ref="command.mdseries"/>
+				<word ref="command.medskip"/>
+				<word ref="command.medskipamount"/>
+				<word ref="command.medspace"/>
+				<word ref="command.mod"/>
+				<word ref="command.mspace"/>
+				<word ref="command.multicolumn"/>
+				<word ref="command.multiput"/>
+				<word ref="command.multilinegap"/>
+				<word ref="command.name"/>
+				<word ref="command.negmedspace"/>
+				<word ref="command.negthickspace"/>
+				<word ref="command.negthinspace"/>
+				<word ref="command.newboolean"/>
+				<word ref="command.newcommand"/>
+				<word ref="command.newcommand2"/>
+				<word ref="command.newcommand3"/>
+				<word ref="command.newcommandstar"/>
+				<word ref="command.newcommandstar2"/>
+				<word ref="command.newcommandstar3"/>
+				<word ref="command.newcounter"/>
+				<word ref="command.newcounter2"/>
+				<word ref="command.newenvironment"/>
+				<word ref="command.newenvironment2"/>
+				<word ref="command.newenvironment3"/>
+				<word ref="command.newenvironmentstar"/>
+				<word ref="command.newenvironmentstar2"/>
+				<word ref="command.newenvironmentstar3"/>
+				<word ref="command.newfont"/>
+				<word ref="command.newfont2"/>
+				<word ref="command.newlength"/>
+				<word ref="command.newpage"/>
+				<word ref="command.newsavebox"/>
+				<word ref="command.newtheorem"/>
+				<word ref="command.newtheorem2"/>
+				<word ref="command.newtheorem3"/>
+				<word ref="command.nocite"/>
+				<word ref="command.nofiles"/>
+				<word ref="command.noindent"/>
+				<word ref="command.nolimits"/>
+				<word ref="command.nolinebreak"/>
+				<word ref="command.nolinebreak2"/>
+				<word ref="command.nonfrenchspacing"/>
+				<word ref="command.nonumber"/>
+				<word ref="command.nopagebreak"/>
+				<word ref="command.nopagebreak2"/>
+				<word ref="command.normalcolor"/>
+				<word ref="command.normalfont"/>
+				<word ref="command.normalmarginpar"/>
+				<word ref="command.normalsize"/>
+				<word ref="command.not"/>
+				<word ref="command.notag"/>
+				<word ref="command.numberwithin"/>
+				<word ref="command.oddsidemargin"/>
+				<word ref="command.onecolumn"/>
+				<word ref="command.onlynotes"/>
+				<word ref="command.onlyslides"/>
+				<word ref="command.opening"/>
+				<word ref="command.oval"/>
+				<word ref="command.oval2"/>
+				<word ref="command.ovalbox"/>
+				<word ref="command.Ovalbox"/>
+				<word ref="command.overbrace"/>
+				<word ref="command.overleftarrow"/>
+				<word ref="command.overleftrightarrow"/>
+				<word ref="command.overline"/>
+				<word ref="command.overrightarrow"/>
+				<word ref="command.overset"/>
+				<word ref="command.pagebreak"/>
+				<word ref="command.pagebreak2"/>
+				<word ref="command.pagecolor"/>
+				<word ref="command.pagecolor2"/>
+				<word ref="command.pagename"/>
+				<word ref="command.pagenumbering"/>
+				<word ref="command.pageref"/>
+				<word ref="command.pagestyle"/>
+				<word ref="command.paperheight"/>
+				<word ref="command.paperwidth"/>
+				<word ref="command.par"/>
+				<word ref="command.paragraph"/>
+				<word ref="command.paragraph2"/>
+				<word ref="command.paragraphstar"/>
+				<word ref="command.parbox"/>
+				<word ref="command.parbox2"/>
+				<word ref="command.parindent"/>
+				<word ref="command.parsep"/>
+				<word ref="command.parskip"/>
+				<word ref="command.part"/>
+				<word ref="command.part2"/>
+				<word ref="command.partstar"/>
+				<word ref="command.partname"/>
+				<word ref="command.partopsep"/>
+				<word ref="command.path"/>
+				<word ref="command.pmb"/>
+				<word ref="command.pmod"/>
+				<word ref="command.poptabs"/>
+				<word ref="command.protect"/>
+				<word ref="command.providecommand"/>
+				<word ref="command.providecommand2"/>
+				<word ref="command.providecommand3"/>
+				<word ref="command.providecommandstar"/>
+				<word ref="command.providecommandstar2"/>
+				<word ref="command.providecommandstar3"/>
+				<word ref="command.ps"/>
+				<word ref="command.pushtabs"/>
+				<word ref="command.put"/>
+				<word ref="command.qbezier"/>
+				<word ref="command.qbezier2"/>
+				<word ref="command.qquad"/>
+				<word ref="command.quad"/>
+				<word ref="command.raggedbottom"/>
+				<word ref="command.raggedleft"/>
+				<word ref="command.raggedright"/>
+				<word ref="command.raisebox"/>
+				<word ref="command.raisebox2"/>
+				<word ref="command.raisetag"/>
+				<word ref="command.ref"/>
+				<word ref="command.reflectbox"/>
+				<word ref="command.refname"/>
+				<word ref="command.refstepcounter"/>
+				<word ref="command.renewcommand"/>
+				<word ref="command.renewcommand2"/>
+				<word ref="command.renewcommand3"/>
+				<word ref="command.renewcommandstar"/>
+				<word ref="command.renewcommandstar2"/>
+				<word ref="command.renewcommandstar3"/>
+				<word ref="command.renewenvironment"/>
+				<word ref="command.renewenvironment2"/>
+				<word ref="command.renewenvironment3"/>
+				<word ref="command.renewenvironmentstar"/>
+				<word ref="command.renewenvironmentstar2"/>
+				<word ref="command.renewenvironmentstar3"/>
+				<word ref="command.resizebox"/>
+				<word ref="command.resizeboxstar"/>
+				<word ref="command.rightbrack"/>
+				<word ref="command.rightmargin"/>
+				<word ref="command.rmdefault"/>
+				<word ref="command.rmfamily"/>
+				<word ref="command.Roman"/>
+				<word ref="command.roman"/>
+				<word ref="command.rotatebox"/>
+				<word ref="command.rule"/>
+				<word ref="command.rule2"/>
+				<word ref="command.rvert"/>
+				<word ref="command.rVert"/>
+				<word ref="command.savebox"/>
+				<word ref="command.savebox2"/>
+				<word ref="command.savebox3"/>
+				<word ref="command.savebox4"/>
+				<word ref="command.sbox"/>
+				<word ref="command.scalebox"/>
+				<word ref="command.scalebox2"/>
+				<word ref="command.scdefault"/>
+				<word ref="command.scriptscriptstyle"/>
+				<word ref="command.scriptsize"/>
+				<word ref="command.scriptstyle"/>
+				<word ref="command.scshape"/>
+				<word ref="command.section"/>
+				<word ref="command.section2"/>
+				<word ref="command.sectionstar"/>
+				<word ref="command.see"/>
+				<word ref="command.seealso"/>
+				<word ref="command.seename"/>
+				<word ref="command.selectfont"/>
+				<word ref="command.selectlanguage"/>
+				<word ref="command.setboolean"/>
+				<word ref="command.setcounter"/>
+				<word ref="command.setlength"/>
+				<word ref="command.settodepth"/>
+				<word ref="command.settoheight"/>
+				<word ref="command.settowidth"/>
+				<word ref="command.sfdefault"/>
+				<word ref="command.sffamily"/>
+				<word ref="command.shadowbox"/>
+				<word ref="command.shortstack"/>
+				<word ref="command.shortstack2"/>
+				<word ref="command.sideset"/>
+				<word ref="command.signature"/>
+				<word ref="command.sldefault"/>
+				<word ref="command.sloppy"/>
+				<word ref="command.slshape"/>
+				<word ref="command.small"/>
+				<word ref="command.smallskip"/>
+				<word ref="command.smallskipamount"/>
+				<word ref="command.smash"/>
+				<word ref="command.smash2"/>
+				<word ref="command.sqrt"/>
+				<word ref="command.sqrt2"/>
+				<word ref="command.stackrel"/>
+				<word ref="command.stepcounter"/>
+				<word ref="command.stretch"/>
+				<word ref="command.subitem"/>
+				<word ref="command.subparagraph"/>
+				<word ref="command.subparagraph2"/>
+				<word ref="command.subparagraphstar"/>
+				<word ref="command.subsection"/>
+				<word ref="command.subsection2"/>
+				<word ref="command.subsectionstar"/>
+				<word ref="command.substack"/>
+				<word ref="command.subsubitem"/>
+				<word ref="command.subsubsection"/>
+				<word ref="command.subsubsection2"/>
+				<word ref="command.subsubsectionstar"/>
+				<word ref="command.suppressfloat"/>
+				<word ref="command.suppressfloat2"/>
+				<word ref="command.tabbingsep"/>
+				<word ref="command.tabcolsep"/>
+				<word ref="command.tableofcontents"/>
+				<word ref="command.tablename"/>
+				<word ref="command.tabularnewline"/>
+				<word ref="command.tabularnewline2"/>
+				<word ref="command.tag"/>
+				<word ref="command.tagstar"/>
+				<word ref="command.tbinom"/>
+				<word ref="command.telephone"/>
+				<word ref="command.text"/>
+				<word ref="command.textbf"/>
+				<word ref="command.textemdash"/>
+				<word ref="command.textendash"/>
+				<word ref="command.textexclamdown"/>
+				<word ref="command.textquestiondown"/>
+				<word ref="command.textquotedblleft"/>
+				<word ref="command.textquotedblright"/>
+				<word ref="command.textquoteleft"/>
+				<word ref="command.textquoteright"/>
+				<word ref="command.textbullet"/>
+				<word ref="command.textperiodcentered"/>
+				<word ref="command.textbackslash"/>
+				<word ref="command.textbar"/>
+				<word ref="command.textless"/>
+				<word ref="command.textgreater"/>
+				<word ref="command.textvisiblespace"/>
+				<word ref="command.textasciicircum"/>
+				<word ref="command.textasciitilde"/>
+				<word ref="command.textsuperscript"/>
+				<word ref="command.textcompwordmark"/>
+				<word ref="command.textregistered"/>
+				<word ref="command.texttrademark"/>
+				<word ref="command.textcircled"/>
+				<word ref="command.textcolor"/>
+				<word ref="command.textcolor2"/>
+				<word ref="command.textfloatsep"/>
+				<word ref="command.textfraction"/>
+				<word ref="command.textheight"/>
+				<word ref="command.textit"/>
+				<word ref="command.textmd"/>
+				<word ref="command.textnormal"/>
+				<word ref="command.textrm"/>
+				<word ref="command.textsc"/>
+				<word ref="command.textsf"/>
+				<word ref="command.textsl"/>
+				<word ref="command.textstyle"/>
+				<word ref="command.texttt"/>
+				<word ref="command.textup"/>
+				<word ref="command.textwidth"/>
+				<word ref="command.tfrac"/>
+				<word ref="command.thanks"/>
+				<word ref="command.thicklines"/>
+				<word ref="command.thickspace"/>
+				<word ref="command.thinlines"/>
+				<word ref="command.thinspace"/>
+				<word ref="command.thisfancypage"/>
+				<word ref="command.thispagestyle"/>
+				<word ref="command.tiny"/>
+				<word ref="command.today"/>
+				<word ref="command.topfigrule"/>
+				<word ref="command.topfraction"/>
+				<word ref="command.topmargin"/>
+				<word ref="command.topsep"/>
+				<word ref="command.topskip"/>
+				<word ref="command.totalheight"/>
+				<word ref="command.ttdefault"/>
+				<word ref="command.ttfamily"/>
+				<word ref="command.twocolumn"/>
+				<word ref="command.twocolumn2"/>
+				<word ref="command.typein"/>
+				<word ref="command.typein2"/>
+				<word ref="command.typeout"/>
+				<word ref="command.unboldmath"/>
+				<word ref="command.underbrace"/>
+				<word ref="command.underleftarrow"/>
+				<word ref="command.underleftrightarrow"/>
+				<word ref="command.underline"/>
+				<word ref="command.underrightarrow"/>
+				<word ref="command.underset"/>
+				<word ref="command.unitlength"/>
+				<word ref="command.updefault"/>
+				<word ref="command.upshape"/>
+				<word ref="command.uproot"/>
+				<word ref="command.url"/>
+				<word ref="command.urlstyle"/>
+				<word ref="command.usebox"/>
+				<word ref="command.usecounter"/>
+				<word ref="command.usefont"/>
+				<word ref="command.usepackage"/>
+				<word ref="command.usepackage2"/>
+				<word ref="command.usepackage3"/>
+				<word ref="command.usepackage4"/>
+				<word ref="command.value"/>
+				<word ref="command.varinjlim"/>
+				<word ref="command.varliminf"/>
+				<word ref="command.varlimsup"/>
+				<word ref="command.varprojlim"/>
+				<word ref="command.vdots"/>
+				<word ref="command.vector"/>
+				<word ref="command.verb"/>
+				<word ref="command.verbstar"/>
+				<word ref="command.vfill"/>
+				<word ref="command.visible"/>
+				<word ref="command.vline"/>
+				<word ref="command.voffset"/>
+				<word ref="command.vpageref"/>
+				<word ref="command.vpageref2"/>
+				<word ref="command.vref"/>
+				<word ref="command.vspace"/>
+				<word ref="command.vspacestar"/>
+				<word ref="command.whiledo"/>
+				<word ref="command.widehat"/>
+				<word ref="command.widetilde"/>
+				<word ref="command.width"/>
+				<word ref="command.xleftarrow"/>
+				<word ref="command.xleftarrow2"/>
+				<word ref="command.xrightarrow"/>
+				<word ref="command.xrightarrow2"/>
+				<word ref="command.rm"/>
+				<word ref="command.it"/>
+				<word ref="command.sc"/>
+				<word ref="command.bf"/>
+				<word ref="command.sl"/>
+				<word ref="command.sf"/>
+				<word ref="command.tt"/>
+				<word ref="command.mit"/>
+				<word ref="command.cal"/>
+				<word ref="command.`"/>
+				<word ref="command.'"/>
+				<word ref="command.^"/>
+				<word ref="command.quote"/>
+				<word ref="command.~"/>
+				<word ref="command.="/>
+				<word ref="command.dot"/>
+				<word ref="command.u"/>
+				<word ref="command.v"/>
+				<word ref="command.H"/>
+				<word ref="command.t"/>
+				<word ref="command.c"/>
+				<word ref="command.d"/>
+				<word ref="command.b"/>
+				<word ref="command.r"/>
+				<word ref="command.oe"/>
+				<word ref="command.OE"/>
+				<word ref="command.ae"/>
+				<word ref="command.AE"/>
+				<word ref="command.aa"/>
+				<word ref="command.AA"/>
+				<word ref="command.o"/>
+				<word ref="command.O"/>
+				<word ref="command.l"/>
+				<word ref="command.L"/>
+				<word ref="command.ss"/>
+				<word ref="command.SS"/>
+				<word ref="command.dag"/>
+				<word ref="command.S"/>
+				<word ref="command.copyright"/>
+				<word ref="command.ddag"/>
+				<word ref="command.P"/>
+				<word ref="command.pounds"/>
+				<word ref="command._"/>
+				<word ref="command.amp"/>
+				<word ref="command.alpha"/>
+				<word ref="command.beta"/>
+				<word ref="command.gamma"/>
+				<word ref="command.delta"/>
+				<word ref="command.epsilon"/>
+				<word ref="command.varepsilon"/>
+				<word ref="command.zeta"/>
+				<word ref="command.eta"/>
+				<word ref="command.theta"/>
+				<word ref="command.vartheta"/>
+				<word ref="command.iota"/>
+				<word ref="command.kappa"/>
+				<word ref="command.lambda"/>
+				<word ref="command.mu"/>
+				<word ref="command.nu"/>
+				<word ref="command.xi"/>
+				<word ref="command.pi"/>
+				<word ref="command.varpi"/>
+				<word ref="command.rho"/>
+				<word ref="command.varrho"/>
+				<word ref="command.sigma"/>
+				<word ref="command.varsigma"/>
+				<word ref="command.tau"/>
+				<word ref="command.upsilon"/>
+				<word ref="command.phi"/>
+				<word ref="command.varphi"/>
+				<word ref="command.chi"/>
+				<word ref="command.psi"/>
+				<word ref="command.omega"/>
+				<word ref="command.Gamma"/>
+				<word ref="command.Delta"/>
+				<word ref="command.Theta"/>
+				<word ref="command.Lambda"/>
+				<word ref="command.Xi"/>
+				<word ref="command.Pi"/>
+				<word ref="command.Sigma"/>
+				<word ref="command.Upsilon"/>
+				<word ref="command.Phi"/>
+				<word ref="command.Psi"/>
+				<word ref="command.Omega"/>
+				<word ref="command.pm"/>
+				<word ref="command.mp"/>
+				<word ref="command.times"/>
+				<word ref="command.div"/>
+				<word ref="command.cdot"/>
+				<word ref="command.ast"/>
+				<word ref="command.star"/>
+				<word ref="command.dagger"/>
+				<word ref="command.ddagger"/>
+				<word ref="command.amalg"/>
+				<word ref="command.cap"/>
+				<word ref="command.cup"/>
+				<word ref="command.uplus"/>
+				<word ref="command.sqcap"/>
+				<word ref="command.sqcup"/>
+				<word ref="command.vee"/>
+				<word ref="command.wedge"/>
+				<word ref="command.oplus"/>
+				<word ref="command.ominus"/>
+				<word ref="command.otimes"/>
+				<word ref="command.circ"/>
+				<word ref="command.bullet"/>
+				<word ref="command.diamond"/>
+				<word ref="command.lhd"/>
+				<word ref="command.rhd"/>
+				<word ref="command.unlhd"/>
+				<word ref="command.unrhd"/>
+				<word ref="command.oslash"/>
+				<word ref="command.odot"/>
+				<word ref="command.bigcirc"/>
+				<word ref="command.Box"/>
+				<word ref="command.Diamond"/>
+				<word ref="command.bigtriangleup"/>
+				<word ref="command.bigtriangledown"/>
+				<word ref="command.triangleleft"/>
+				<word ref="command.triangleright"/>
+				<word ref="command.setminus"/>
+				<word ref="command.wr"/>
+				<word ref="command.le"/>
+				<word ref="command.leq"/>
+				<word ref="command.ge"/>
+				<word ref="command.geq"/>
+				<word ref="command.neq"/>
+				<word ref="command.sim"/>
+				<word ref="command.ll"/>
+				<word ref="command.gg"/>
+				<word ref="command.doteq"/>
+				<word ref="command.simeq"/>
+				<word ref="command.subset"/>
+				<word ref="command.supset"/>
+				<word ref="command.approx"/>
+				<word ref="command.asymp"/>
+				<word ref="command.subseteq"/>
+				<word ref="command.supseteq"/>
+				<word ref="command.cong"/>
+				<word ref="command.smile"/>
+				<word ref="command.equiv"/>
+				<word ref="command.frown"/>
+				<word ref="command.sqsubseteq"/>
+				<word ref="command.sqsupseteq"/>
+				<word ref="command.propto"/>
+				<word ref="command.bowtie"/>
+				<word ref="command.in"/>
+				<word ref="command.ni"/>
+				<word ref="command.prec"/>
+				<word ref="command.succ"/>
+				<word ref="command.vdash"/>
+				<word ref="command.dashv"/>
+				<word ref="command.preceq"/>
+				<word ref="command.succeq"/>
+				<word ref="command.models"/>
+				<word ref="command.perp"/>
+				<word ref="command.parallel"/>
+				<word ref="command.|"/>
+				<word ref="command.mid"/>
+				<word ref="command.not&lt;"/>
+				<word ref="command.not&gt;"/>
+				<word ref="command.not="/>
+				<word ref="command.notle"/>
+				<word ref="command.notge"/>
+				<word ref="command.notequiv"/>
+				<word ref="command.notprec"/>
+				<word ref="command.notsucc"/>
+				<word ref="command.notsim"/>
+				<word ref="command.notpreceq"/>
+				<word ref="command.notsucceq"/>
+				<word ref="command.notsimeq"/>
+				<word ref="command.notsubset"/>
+				<word ref="command.notsupset"/>
+				<word ref="command.notapprox"/>
+				<word ref="command.notsubseteq"/>
+				<word ref="command.notsupseteq"/>
+				<word ref="command.notcong"/>
+				<word ref="command.notsqsubseteq"/>
+				<word ref="command.notsqsupseteq"/>
+				<word ref="command.notasymp"/>
+				<word ref="command.notin"/>
+				<word ref="command.notin2"/>
+				<word ref="command.backslash"/>
+				<word ref="command.lfloor"/>
+				<word ref="command.rfloor"/>
+				<word ref="command.lceil"/>
+				<word ref="command.rceil"/>
+				<word ref="command.langle"/>
+				<word ref="command.rangle"/>
+				<word ref="command.uparrow"/>
+				<word ref="command.Uparrow"/>
+				<word ref="command.downarrow"/>
+				<word ref="command.Downarrow"/>
+				<word ref="command.updownarrow"/>
+				<word ref="command.Updownarrow"/>
+				<word ref="command.leftarrow"/>
+				<word ref="command.gets"/>
+				<word ref="command.Leftarrow"/>
+				<word ref="command.rightarrow"/>
+				<word ref="command.Rightarrow"/>
+				<word ref="command.leftrightarrow"/>
+				<word ref="command.Leftrightarrow"/>
+				<word ref="command.longleftarrow"/>
+				<word ref="command.Longleftarrow"/>
+				<word ref="command.longrightarrow"/>
+				<word ref="command.Longrightarrow"/>
+				<word ref="command.longleftrightarrow"/>
+				<word ref="command.Longleftrightarrow"/>
+				<word ref="command.mapsto"/>
+				<word ref="command.longmapsto"/>
+				<word ref="command.nearrow"/>
+				<word ref="command.hookleftarrow"/>
+				<word ref="command.hookrightarrow"/>
+				<word ref="command.searrow"/>
+				<word ref="command.leftharpoonup"/>
+				<word ref="command.rightharpoonup"/>
+				<word ref="command.swarrow"/>
+				<word ref="command.leftharpoondown"/>
+				<word ref="command.rightharpoondown"/>
+				<word ref="command.nwarrow"/>
+				<word ref="command.rightleftharpoons"/>
+				<word ref="command.leadsto"/>
+				<word ref="command.aleph"/>
+				<word ref="command.hbar"/>
+				<word ref="command.imath"/>
+				<word ref="command.jmath"/>
+				<word ref="command.ell"/>
+				<word ref="command.wp"/>
+				<word ref="command.Re"/>
+				<word ref="command.Im"/>
+				<word ref="command.mho"/>
+				<word ref="command.prime"/>
+				<word ref="command.emptyset"/>
+				<word ref="command.nabla"/>
+				<word ref="command.surd"/>
+				<word ref="command.partial"/>
+				<word ref="command.top"/>
+				<word ref="command.bot"/>
+				<word ref="command.forall"/>
+				<word ref="command.exists"/>
+				<word ref="command.neg"/>
+				<word ref="command.flat"/>
+				<word ref="command.natural"/>
+				<word ref="command.sharp"/>
+				<word ref="command.angle"/>
+				<word ref="command.triangle"/>
+				<word ref="command.clubsuit"/>
+				<word ref="command.diamondsuit"/>
+				<word ref="command.heartsuit"/>
+				<word ref="command.spadesuit"/>
+				<word ref="command.Join"/>
+				<word ref="command.infty"/>
+				<word ref="command.sum"/>
+				<word ref="command.int"/>
+				<word ref="command.oint"/>
+				<word ref="command.prod"/>
+				<word ref="command.coprod"/>
+				<word ref="command.bigcap"/>
+				<word ref="command.bigcup"/>
+				<word ref="command.bigsqcup"/>
+				<word ref="command.bigvee"/>
+				<word ref="command.bigwedge"/>
+				<word ref="command.bigodot"/>
+				<word ref="command.bigotimes"/>
+				<word ref="command.bigoplus"/>
+				<word ref="command.biguplus"/>
+				<word ref="command.arccos"/>
+				<word ref="command.arcsin"/>
+				<word ref="command.arctan"/>
+				<word ref="command.arg"/>
+				<word ref="command.cos"/>
+				<word ref="command.cosh"/>
+				<word ref="command.cot"/>
+				<word ref="command.coth"/>
+				<word ref="command.csc"/>
+				<word ref="command.deg"/>
+				<word ref="command.det"/>
+				<word ref="command.dim"/>
+				<word ref="command.exp"/>
+				<word ref="command.gcd"/>
+				<word ref="command.hom"/>
+				<word ref="command.inf"/>
+				<word ref="command.ker"/>
+				<word ref="command.lg"/>
+				<word ref="command.lim"/>
+				<word ref="command.liminf"/>
+				<word ref="command.limsup"/>
+				<word ref="command.ln"/>
+				<word ref="command.log"/>
+				<word ref="command.max"/>
+				<word ref="command.min"/>
+				<word ref="command.Pr"/>
+				<word ref="command.sec"/>
+				<word ref="command.sin"/>
+				<word ref="command.sinh"/>
+				<word ref="command.sup"/>
+				<word ref="command.tan"/>
+				<word ref="command.tanh"/>
+				<word ref="command.hat"/>
+				<word ref="command.check"/>
+				<word ref="command.dot2"/>
+				<word ref="command.breve"/>
+				<word ref="command.acute"/>
+				<word ref="command.ddot"/>
+				<word ref="command.grave"/>
+				<word ref="command.tilde"/>
+				<word ref="command.mathring"/>
+				<word ref="command.bar"/>
+				<word ref="command.vec"/>
+				<word ref="command.dashrightarrow"/>
+				<word ref="command.dashleftarrow"/>
+				<word ref="command.leftleftarrows"/>
+				<word ref="command.leftrightarrows"/>
+				<word ref="command.Lleftarrow"/>
+				<word ref="command.Rrightarrow"/>
+				<word ref="command.twoheadleftarrow"/>
+				<word ref="command.leftarrowtail"/>
+				<word ref="command.looparrowleft"/>
+				<word ref="command.leftrightharpoons"/>
+				<word ref="command.curvearrowleft"/>
+				<word ref="command.circlearrowleft"/>
+				<word ref="command.Lsh"/>
+				<word ref="command.upuparrows"/>
+				<word ref="command.upharpoonleft"/>
+				<word ref="command.downharpoonleft"/>
+				<word ref="command.multimap"/>
+				<word ref="command.leftrightsquigarrow"/>
+				<word ref="command.rightrightarrows"/>
+				<word ref="command.rightleftarrows"/>
+				<word ref="command.twoheadrightarrow"/>
+				<word ref="command.rightarrowtail"/>
+				<word ref="command.looparrowright"/>
+				<word ref="command.curvearrowright"/>
+				<word ref="command.circlearrowright"/>
+				<word ref="command.Rsh"/>
+				<word ref="command.downdownarrows"/>
+				<word ref="command.upharpoonright"/>
+				<word ref="command.downharpoonright"/>
+				<word ref="command.nleftarrow"/>
+				<word ref="command.nrightarrow"/>
+				<word ref="command.nLeftarrow"/>
+				<word ref="command.nRightarrow"/>
+				<word ref="command.nleftrightarrow"/>
+				<word ref="command.nLeftrightarrow"/>
+				<word ref="command.dotplus"/>
+				<word ref="command.smallsetminus"/>
+				<word ref="command.Cap"/>
+				<word ref="command.Cup"/>
+				<word ref="command.barwedge"/>
+				<word ref="command.veebar"/>
+				<word ref="command.doublebarwedge"/>
+				<word ref="command.boxminus"/>
+				<word ref="command.boxtimes"/>
+				<word ref="command.boxdot"/>
+				<word ref="command.boxplus"/>
+				<word ref="command.divideontimes"/>
+				<word ref="command.ltimes"/>
+				<word ref="command.rtimes"/>
+				<word ref="command.leftthreetimes"/>
+				<word ref="command.rightthreetimes"/>
+				<word ref="command.curlywedge"/>
+				<word ref="command.curlyvee"/>
+				<word ref="command.circleddash"/>
+				<word ref="command.circledast"/>
+				<word ref="command.circledcirc"/>
+				<word ref="command.centerdot"/>
+				<word ref="command.intercal"/>
+				<word ref="command.digamma"/>
+				<word ref="command.varkappa"/>
+				<word ref="command.beth"/>
+				<word ref="command.daleth"/>
+				<word ref="command.gimel"/>
+				<word ref="command.ulcorner"/>
+				<word ref="command.urcorner"/>
+				<word ref="command.llcorner"/>
+				<word ref="command.lrcorner"/>
+				<word ref="command.leqq"/>
+				<word ref="command.leqslant"/>
+				<word ref="command.eqslantless"/>
+				<word ref="command.lesssim"/>
+				<word ref="command.lessapprox"/>
+				<word ref="command.approxeq"/>
+				<word ref="command.lessdot"/>
+				<word ref="command.lll"/>
+				<word ref="command.lessgtr"/>
+				<word ref="command.lesseqgtr"/>
+				<word ref="command.lesseqqgtr"/>
+				<word ref="command.doteqdot"/>
+				<word ref="command.risingdotseq"/>
+				<word ref="command.fallingdotseq"/>
+				<word ref="command.backsim"/>
+				<word ref="command.backsimeq"/>
+				<word ref="command.subseteqq"/>
+				<word ref="command.Subset"/>
+				<word ref="command.sqsubset"/>
+				<word ref="command.preccurlyeq"/>
+				<word ref="command.curlyeqprec"/>
+				<word ref="command.precsim"/>
+				<word ref="command.precapprox"/>
+				<word ref="command.vartriangleleft"/>
+				<word ref="command.trianglelefteq"/>
+				<word ref="command.vDash"/>
+				<word ref="command.Vvdash"/>
+				<word ref="command.smallsmile"/>
+				<word ref="command.smallfrown"/>
+				<word ref="command.bumpeq"/>
+				<word ref="command.Bumpeq"/>
+				<word ref="command.geqq"/>
+				<word ref="command.geqslant"/>
+				<word ref="command.eqslantgtr"/>
+				<word ref="command.gtrsim"/>
+				<word ref="command.gtrapprox"/>
+				<word ref="command.gtrdot"/>
+				<word ref="command.ggg"/>
+				<word ref="command.gtrless"/>
+				<word ref="command.gtreqless"/>
+				<word ref="command.gtreqqless"/>
+				<word ref="command.eqcirc"/>
+				<word ref="command.circeq"/>
+				<word ref="command.triangleq"/>
+				<word ref="command.thicksim"/>
+				<word ref="command.thickapprox"/>
+				<word ref="command.supseteqq"/>
+				<word ref="command.Supset"/>
+				<word ref="command.sqsupset"/>
+				<word ref="command.succcurlyeq"/>
+				<word ref="command.curlyeqsucc"/>
+				<word ref="command.succsim"/>
+				<word ref="command.succapprox"/>
+				<word ref="command.vartriangleright"/>
+				<word ref="command.trianglerighteq"/>
+				<word ref="command.Vdash"/>
+				<word ref="command.shortmid"/>
+				<word ref="command.shortparallel"/>
+				<word ref="command.between"/>
+				<word ref="command.pitchfork"/>
+				<word ref="command.varpropto"/>
+				<word ref="command.blacktriangleleft"/>
+				<word ref="command.blacktriangleright"/>
+				<word ref="command.therefore"/>
+				<word ref="command.because"/>
+				<word ref="command.backepsilon"/>
+				<word ref="command.nless"/>
+				<word ref="command.nleq"/>
+				<word ref="command.nleqslant"/>
+				<word ref="command.nleqq"/>
+				<word ref="command.lneq"/>
+				<word ref="command.lneqq"/>
+				<word ref="command.lvertneqq"/>
+				<word ref="command.lnsim"/>
+				<word ref="command.lnapprox"/>
+				<word ref="command.nprec"/>
+				<word ref="command.npreceq"/>
+				<word ref="command.precnsim"/>
+				<word ref="command.precnapprox"/>
+				<word ref="command.nsim"/>
+				<word ref="command.nshortmid"/>
+				<word ref="command.nmid"/>
+				<word ref="command.nvdash"/>
+				<word ref="command.nvDash"/>
+				<word ref="command.ntriangleleft"/>
+				<word ref="command.ntrianglelefteq"/>
+				<word ref="command.nsubseteq"/>
+				<word ref="command.subsetneq"/>
+				<word ref="command.varsubsetneq"/>
+				<word ref="command.subsetneqq"/>
+				<word ref="command.varsubsetneqq"/>
+				<word ref="command.ngtr"/>
+				<word ref="command.ngeq"/>
+				<word ref="command.ngeqslant"/>
+				<word ref="command.ngeqq"/>
+				<word ref="command.gneq"/>
+				<word ref="command.gneqq"/>
+				<word ref="command.gvertneqq"/>
+				<word ref="command.gnsim"/>
+				<word ref="command.gnapprox"/>
+				<word ref="command.nsucc"/>
+				<word ref="command.nsucceq"/>
+				<word ref="command.succnsim"/>
+				<word ref="command.succnapprox"/>
+				<word ref="command.ncong"/>
+				<word ref="command.nshortparallel"/>
+				<word ref="command.nparallel"/>
+				<word ref="command.nVDash"/>
+				<word ref="command.ntriangleright"/>
+				<word ref="command.ntrianglerighteq"/>
+				<word ref="command.nsupseteq"/>
+				<word ref="command.nsupseteqq"/>
+				<word ref="command.nsubseteqq"/>
+				<word ref="command.supsetneq"/>
+				<word ref="command.varsupsetneq"/>
+				<word ref="command.supsetneqq"/>
+				<word ref="command.varsupsetneqq"/>
+				<word ref="command.hslash"/>
+				<word ref="command.vartriangle"/>
+				<word ref="command.triangledown"/>
+				<word ref="command.square"/>
+				<word ref="command.lozenge"/>
+				<word ref="command.circledS"/>
+				<word ref="command.measuredangle"/>
+				<word ref="command.nexists"/>
+				<word ref="command.Finv"/>
+				<word ref="command.Game"/>
+				<word ref="command.Bbbk"/>
+				<word ref="command.backprime"/>
+				<word ref="command.varnothing"/>
+				<word ref="command.blacktriangle"/>
+				<word ref="command.blacktriangledown"/>
+				<word ref="command.blacksquare"/>
+				<word ref="command.blacklozenge"/>
+				<word ref="command.bigstar"/>
+				<word ref="command.sphericalangle"/>
+				<word ref="command.complement"/>
+				<word ref="command.eth"/>
+				<word ref="command.diagup"/>
+				<word ref="command.diagdown"/>
+				<word ref="command.hyperbaseurl"/>
+				<word ref="command.href"/>
+				<word ref="command.hyperdef"/>
+				<word ref="command.hyperref"/>
+				<word ref="command.hyperref2"/>
+				<word ref="command.isodd"/>
+				<word ref="command.isundefined"/>
+				<word ref="command.equal"/>
+				<word ref="command.lengthtest"/>
+				<word ref="command.!"/>
+				<word ref="command.#"/>
+				<word ref="command.$"/>
+				<word ref="command.%"/>
+				<word ref="command.("/>
+				<word ref="command.)"/>
+				<word ref="command.+"/>
+				<word ref="command.,"/>
+				<word ref="command.-"/>
+				<word ref="command.-2"/>
+				<word ref="command.:"/>
+				<word ref="command.;"/>
+				<word ref="command.lessthan"/>
+				<word ref="command./"/>
+				<word ref="command.=2"/>
+				<word ref="command.greaterthan"/>
+				<word ref="command.@"/>
+				<word ref="command.["/>
+				<word ref="command.\"/>
+				<word ref="command.\2"/>
+				<word ref="command.\star"/>
+				<word ref="command.\star2"/>
+				<word ref="command.]"/>
+				<word ref="command.{"/>
+				<word ref="command.}"/>
+			</words>
+		</completion>
+	</completions>
+	<vocabulary ref="latex-vocab.xml"></vocabulary>
+	<copyrights>
+		<copyright id="fsf">
+		<![CDATA[Source: <a href="http://latex.computersci.org/Reference/Disclaimer">http://latex.computersci.org/Reference/Disclaimer</a>]]>
+		</copyright>
+		<copyright id="wikibookstex">
+		<![CDATA[Source: <a href="http://en.wikibooks.org/wiki/TeX">http://en.wikibooks.org/wiki/TeX</a>]]>
+		</copyright>
+		<copyright id="wikibookslatex">
+		<![CDATA[Source: <a href="http://en.wikibooks.org/wiki/LaTeX">http://en.wikibooks.org/wiki/LaTeX</a>]]>
+		</copyright>
+	</copyrights>
+</type>

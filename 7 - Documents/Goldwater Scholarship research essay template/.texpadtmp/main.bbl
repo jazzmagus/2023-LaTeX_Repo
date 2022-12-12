@@ -1,0 +1,56 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{this_article}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6c092b0c9f739587527f616624e77be3}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Jimbo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d6cfb2b8c4b3f9440ec4642438129367}{%
+           family={Doe},
+           familyi={D\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b817fde48e65c42fe790cc2377f94017}
+      \strng{fullhash}{b817fde48e65c42fe790cc2377f94017}
+      \strng{bibnamehash}{b817fde48e65c42fe790cc2377f94017}
+      \strng{authorbibnamehash}{b817fde48e65c42fe790cc2377f94017}
+      \strng{authornamehash}{b817fde48e65c42fe790cc2377f94017}
+      \strng{authorfullhash}{b817fde48e65c42fe790cc2377f94017}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Totally Real Journal}
+      \field{number}{1}
+      \field{title}{How Many Years Can I Keep on Doing This: An Analysis of My Self Worth}
+      \field{volume}{193}
+      \field{year}{2019}
+      \field{pages}{265\bibrangedash 275}
+      \range{pages}{11}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

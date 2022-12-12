@@ -1,0 +1,17 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/.texpadtmp/main.blg'
+[93] biber-darwin:322> INFO - === Thu Aug  6, 2020, 16:01:03
+[116] Biber.pm:415> INFO - Reading '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/.texpadtmp/main.bcf'
+[236] Biber.pm:943> INFO - Found 1 citekeys in bib section 0
+[253] Biber.pm:4256> INFO - Processing section 0
+[254] Utils.pm:75> INFO - Globbing data source ''/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/ref.bib''
+[254] Utils.pm:91> INFO - Globbed data source ''/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/ref.bib'' to /Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/ref.bib
+[268] Biber.pm:4455> INFO - Looking for bibtex format file '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/ref.bib' for section 0
+[269] bibtex.pm:1653> INFO - LaTeX decoding ...
+[273] bibtex.pm:1471> INFO - Found BibTeX data source '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/ref.bib'
+[334] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[334] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[334] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[334] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[343] bbl.pm:652> INFO - Writing '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/.texpadtmp/main.bbl' with encoding 'UTF-8'
+[345] bbl.pm:755> INFO - Output to /Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/Report Template - MCyber/.texpadtmp/main.bbl

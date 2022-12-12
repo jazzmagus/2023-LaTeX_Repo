@@ -1,0 +1,20 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/.texpadtmp/OrangeBookTemplate.blg'
+[91] biber-darwin:322> INFO - === Thu Aug  6, 2020, 16:13:25
+[113] Biber.pm:415> INFO - Reading '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/.texpadtmp/OrangeBookTemplate.bcf'
+[223] Biber.pm:943> INFO - Found 2 citekeys in bib section 0
+[238] Biber.pm:4256> INFO - Processing section 0
+[238] Utils.pm:75> INFO - Globbing data source ''/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/bibliography.bib''
+[238] Utils.pm:91> INFO - Globbed data source ''/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/bibliography.bib'' to /Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/bibliography.bib
+[250] Biber.pm:4455> INFO - Looking for bibtex format file '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/bibliography.bib' for section 0
+[251] bibtex.pm:1653> INFO - LaTeX decoding ...
+[256] bibtex.pm:1471> INFO - Found BibTeX data source '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/bibliography.bib'
+[277] Utils.pm:304> WARN - month field 'March' in entry 'article_key' is not an integer - this will probably not sort properly.
+[281] Utils.pm:304> WARN - month field 'January' in entry 'book_key' is not an integer - this will probably not sort properly.
+[290] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[290] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[290] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[290] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[293] bbl.pm:652> INFO - Writing '/Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/.texpadtmp/OrangeBookTemplate.bbl' with encoding 'UTF-8'
+[294] bbl.pm:755> INFO - Output to /Users/diegofantinelli/Documents/LaTeX DoX/Overleaf Projects (4 items)/OrangeBook/.texpadtmp/OrangeBookTemplate.bbl
+[295] Biber.pm:128> INFO - WARNINGS: 2

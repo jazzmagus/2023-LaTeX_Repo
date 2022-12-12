@@ -1,0 +1,70 @@
+% this code is originally taken from http://www.khirevich.com/, thanks to him.
+% changes include @misc support (for articles in arxiv.org), 
+\ProvidesFile{custom-numeric-comp.cbx}
+
+% Modified version of the script originally taken from
+% http://www.texdev.net/2010/03/08/biblatex-numbered-citations-as-footnotes/
+
+
+\RequireCitationStyle{numeric-comp}
+
+\ExecuteBibliographyOptions{citetracker,sorting=none}
+
+
+\DeclareCiteCommand{\ftCite}[\cbx@superscript]%
+  {\usebibmacro{cite:init}%
+    \let\multicitedelim=\supercitedelim%
+    \iffieldundef{prenote}%
+    {}%
+    {\BibliographyWarning{Ignoring prenote argument}}%
+    \iffieldundef{postnote}%
+      {}%
+      {\BibliographyWarning{Ignoring postnote argument}}}%
+  {\usebibmacro{citeindex}%
+      \usebibmacro{noteshortcite}%
+      \usebibmacro{cite:comp}}%
+  {}%
+  {\usebibmacro{cite:dump}}%
+
+\newbibmacro*{noteshortcite}{%
+  \ifciteseen%
+    {}%
+    {\xappto\cbx@citehook{%
+      \noexpand\footnotetext[\thefield{labelnumber}]{%
+        \entrydata{\thefield{entrykey}}{%
+        \usebibmacro{author/translator+others}\addperiod\addspace%
+        \usebibmacro{journal}\addperiod\addspace
+        \usebibmacro{eprint}\addperiod\addspace
+        \ifboolexpr{test {\ifentrytype{book}}}
+          {\usebibmacro{title}}{}
+        \printfield{year}\addperiod}}}}}
+
+%==========================================================%
+\newrobustcmd{\cbx@superscript}[1]{%
+  \mkbibsuperscript{#1}%
+  \cbx@citehook
+  \global\let\cbx@citehook=\empty}
+\let\cbx@citehook=\empty
+
+\newbibmacro*{bookabbr}
+  {
+    \usebibmacro{author/translator+others}\addperiod\addspace%
+    \usebibmacro{maintitle+title}\addperiod\newblock
+    \printfield{year}\addperiod
+  }
+
+\newbibmacro*{miscabbr}
+  {
+    \usebibmacro{author}\addperiod\addspace
+    \usebibmacro{eprint}\addperiod\addspace
+    \printfield{year}\addperiod
+  }
+\newbibmacro*{articleabbr}
+  {
+    \usebibmacro{author}\addperiod\addspace
+    \usebibmacro{journal}\addperiod\addspace
+    \printfield{year}\addperiod
+  }
+
+
+\endinput

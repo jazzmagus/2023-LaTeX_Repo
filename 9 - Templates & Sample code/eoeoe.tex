@@ -1,0 +1,103 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+\usepackage{pgf,tikz,pgfplots} 
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\MakeUppercase{titolo in header}}
+\fancyhead[R]{\MakeUppercase Diego Fantinelli}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.1pt}
+
+\parindent 0ex
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\vspace*{1cm}
+\Large{\textbf{Matematica - Lezioni per il Liceo}}\\
+\large{\textbf{- Sottotitolo -}}\\
+\vfill
+\line(1,0){400}\\[.5mm]
+\huge{\textbf{Questo TITOLONE}}\\[3mm]
+\Large{\textbf{- Questo Sottotitolone -}}\\[1mm]
+\line(1,0){400}\\
+\vfill
+{\scriptsize By Student Name}\\
+{\scriptsize Candidate \#} \\
+{\scriptsize \today} \\
+
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+\vspace*{1cm}
+\section{Introduzione}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius lacus eget magna elementum, quis ultricies justo vestibulum. Proin sed dolor vel est rhoncus tristique iaculis auctor mauris. Morbi ac tellus scelerisque purus pellentesque ultricies. Integer aliquet nunc quis urna ultricies, vitae egestas libero mollis. Nunc dolor neque, consequat vel pellentesque accumsan, molestie eu dui. Pellentesque massa mi, eleifend sit amet bibendum vitae, fringilla vel quam.
+
+\subsection{Come recuperare l'autostima}
+Sed fringilla, neque sit amet maximus luctus, neque eros fermentum ipsum, nec hendrerit leo urna id urna. Pellentesque vel odio lobortis diam placerat porttitor non auctor leo. 
+
+
+
+\subsection{come vincere al totocalcio}
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer pretium bibendum dolor eget interdum. Sed erat augue, rhoncus vel massa id, semper suscipit nulla. Fusce viverra eleifend facilisis. Morbi ipsum erat, scelerisque eget ex accumsan, volutpat porttitor velit.\\
+
+Maecenas lobortis purus sit amet augue faucibus, sed lacinia mi porta. Nullam placerat orci vel condimentum pulvinar. Cras tristique purus vitae sem convallis, vitae elementum ipsum gravida. Mauris vel nulla quis odio tempus porta condimentum quis ligula. Quisque dictum erat magna, et dignissim turpis mattis nec. Fusce id magna rutrum, tincidunt nulla sed, posuere tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula lacus metus, eu ultrices velit gravida ut. Cras enim leo, viverra eu risus vel, vehicula imperdiet ante. Praesent non tellus laoreet, vestibulum ante fermentum, vehicula tellus.\\
+
+Sed ultrices mi a lacus vestibulum aliquet. Nam tincidunt dui in pellentesque hendrerit. Phasellus diam libero, laoreet eu varius sed, vulputate a orci. Etiam odio tortor, sagittis nec quam quis, iaculis ultrices purus. Nunc semper purus nec elit mattis, non ullamcorper turpis accumsan. Duis eleifend commodo nibh vel viverra. Pellentesque aliquet blandit erat ac dignissim. Ut dignissim mauris urna, sed imperdiet nunc ullamcorper in. Fusce ut lectus mi. Etiam at lectus vel risus auctor facilisis. Suspendisse sagittis eros eros, nec commodo dui tristique eu. Etiam vel enim erat.
+\section{Presentazione}
+
+\section{Capitolo 1}
+
+\subsection{Una semplice sotto sezione}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius lacus eget magna elementum, quis ultricies justo vestibulum. Proin sed dolor vel est rhoncus tristique iaculis auctor mauris. Morbi ac tellus scelerisque purus pellentesque ultricies. Integer aliquet nunc quis urna ultricies, vitae egestas libero mollis. Nunc dolor neque, consequat vel pellentesque accumsan, molestie eu dui. Pellentesque massa mi, eleifend sit amet bibendum vitae, fringilla vel quam.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius lacus eget magna elementum, quis ultricies justo vestibulum. Proin sed dolor vel est rhoncus tristique iaculis auctor mauris. Morbi ac tellus scelerisque purus pellentesque ultricies. Integer aliquet nunc quis urna ultricies, vitae egestas libero mollis. Nunc dolor neque, consequat vel pellentesque accumsan, molestie eu dui. Pellentesque massa mi, eleifend sit amet bibendum vitae, fringilla vel quam.
+\subsection{}
+\section{Capitolo 2}
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-2.9999999999999987,
+xmax=5.00696864111498,
+ymin=-1.7652439024390238,
+ymax=1.1746515679442502,
+xtick={-2.5,-2,...,5},
+ytick={-1.6,-1.4000000000000001,...,1.0000000000000002},]
+\clip(-3,-1.7652439024390238) rectangle (5.00696864111498,1.1746515679442502);
+\draw[line width=1pt,color=qqwuqq,smooth,samples=100,domain=-2.9999999999999987:5.00696864111498] plot(\x,{sin((1/(\x))*180/pi)});
+\begin{scriptsize}
+\draw[color=qqwuqq] (-2.9529616724738665,-0.33710801393728235) node {$f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+\section{Conclusioni}
+
+\end{document}

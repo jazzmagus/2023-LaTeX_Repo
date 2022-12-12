@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{color}
+
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+\setlength{\columnseprule}{1pt} %Separator ruler width
+\def\columnseprulecolor{\color{red}} %Separator ruler colour
+
+\begin{document}
+
+\begin{multicols}{3}
+[
+\section{First Section}
+All human things are subject to decay. And when fate summons, Monarchs must obey.
+]
+
+Hello, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there.
+
+\columnbreak %Column break point
+
+This will be in a new column, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there.
+
+A blind text like this gives you information about the selected font, how 
+the letters are written and an impression of the look.  This text should
+contain all letters of the alphabet and it should be written in of the
+original language.There is no need for special content, but the length of
+words should match the language.
+\end{multicols}
+
+Something else here. The text should not be multicolumned in this part. Below an example of unbalanced columns.
+
+%Unbalanced columns. Stared environment.
+\begin{multicols*}{3}
+[
+\section{Second Section}
+]
+
+Hello, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there.
+
+This will be in a new column, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there.
+
+A blind text like this gives you information about the selected font, how 
+the letters are written and an impression of the look.  This text should
+contain all letters of the alphabet and it should be written in of the
+original language.There is no need for special content, but the length of
+words should match the language.
+\end{multicols*}
+
+\begin{multicols}{2}
+[
+\section{Third Section}
+Here's another section with another section heading
+]
+
+Hello, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there.
+
+This will be in a new column, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there.
+
+\vfill
+
+\begin{wrapfigure}{l}{0.7\linewidth}
+\includegraphics[width=\linewidth]{./lion-logo.jpg}
+\caption{This is the former Share\LaTeX{} logo}
+\end{wrapfigure}
+
+\blindtext
+
+\begin{wraptable}{l}{0.7\linewidth}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Name & ISO \\
+\hline
+Afghanistan & AF \\
+Aland Islands & AX \\
+Albania    &AL  \\
+Algeria   &DZ \\
+American Samoa & AS \\
+Andorra & AD   \\
+Angola & AO \\
+\hline
+\end{tabular}
+\caption{Table, floating element}
+\label{table:ta}
+\end{wraptable}
+\blindtext
+\end{multicols}
+
+\end{document}

@@ -1,0 +1,20 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is '/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/.texpadtmp/OrangeBookTemplate.blg'
+[113] biber-darwin:322> INFO - === Fri Sep 18, 2020, 15:26:53
+[133] Biber.pm:415> INFO - Reading '/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/.texpadtmp/OrangeBookTemplate.bcf'
+[265] Biber.pm:943> INFO - Found 2 citekeys in bib section 0
+[291] Biber.pm:4256> INFO - Processing section 0
+[291] Utils.pm:75> INFO - Globbing data source ''/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/bibliography.bib''
+[291] Utils.pm:91> INFO - Globbed data source ''/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/bibliography.bib'' to /Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/bibliography.bib
+[307] Biber.pm:4455> INFO - Looking for bibtex format file '/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/bibliography.bib' for section 0
+[310] bibtex.pm:1653> INFO - LaTeX decoding ...
+[322] bibtex.pm:1471> INFO - Found BibTeX data source '/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/bibliography.bib'
+[352] Utils.pm:304> WARN - month field 'March' in entry 'article_key' is not an integer - this will probably not sort properly.
+[358] Utils.pm:304> WARN - month field 'January' in entry 'book_key' is not an integer - this will probably not sort properly.
+[371] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[372] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[372] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[372] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[376] bbl.pm:652> INFO - Writing '/Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/.texpadtmp/OrangeBookTemplate.bbl' with encoding 'UTF-8'
+[378] bbl.pm:755> INFO - Output to /Users/diegofantinelli/Library/Mobile Documents/com~apple~CloudDocs/LaTeX DoX/- Books/OrangeBook/.texpadtmp/OrangeBookTemplate.bbl
+[378] Biber.pm:128> INFO - WARNINGS: 2

@@ -1,0 +1,106 @@
+\documentclass[]{article}
+
+\usepackage[style=numeric,
+    citetracker=true,
+    sorting=nty,
+    hyperref=true,
+    maxcitenames=1,
+    maxbibnames=5,
+    backref=true]{biblatex}
+    
+\usepackage{hyperref}
+
+% \newtoggle{postnoteprinted}
+% \renewbibmacro{postnote}{%
+%     \ifboolexpr{ test {\iffieldundef{postnote}}
+%               or test {\iftoggle{postnoteprinted}}}
+%         {}
+%         {\setunit{\addcomma\space at\space}%
+%     \ifboolexpr{ test {\iffieldundef{pagination}}
+%               or test {\iffieldequalstr{pagination}{page}}}
+%         {\printfield[default]{postnote}}
+%         {\printfield{postnote}}
+%     \global\toggletrue{postnoteprinted}}}
+ 
+% \renewbibmacro*{cite}{%
+%     \global\togglefalse{postnoteprinted}%
+%     \iffieldundef{shorthand}
+%         {\ifboolexpr{ test {\ifentrytype{article}}
+%                       or test {\ifentrytype{book}}
+%                       or test {\ifentrytype{misc}}}
+%             {\DeclareFieldAlias{journaltitle}{default}%
+%              \usedriver{}{\thefield{entrytype}:abbrv}}
+%             {{\ifthenelse{\ifnameundef{labelname}\OR\iffieldundef{labelyear}}
+%                 {\usebibmacro{cite:label}%
+%                  \setunit{\addspace}}
+%             {\printnames{labelname}%
+%              \setunit{\nameyeardelim}}%
+%             \usebibmacro{cite:labelyear+extrayear}}}}
+%         {\usebibmacro{cite:shorthand}}}
+        
+
+% \DeclareBibliographyDriver{article:abbrv}{%
+%     \usebibmacro{bibindex}%
+%     \usebibmacro{begentry}%
+%     \printnames{author}
+%     \setunit{\addcomma\space}%
+%     \usebibmacro{journal}%
+%     \setunit{\addcomma\space}%
+%     \usebibmacro{postnote}%
+%     \setunit{\addspace}%
+%     \usebibmacro{bracketedyear}%
+%     \usebibmacro{finentry}}
+
+% \DeclareBibliographyDriver{misc}{%
+%   \usebibmacro{bibindex}%
+%   \usebibmacro{begentry}%
+%   \usebibmacro{author/translator+others}%
+%   \setunit{\printdelim{nametitledelim}}\newblock
+%   \newunit
+%   \printlist{archivePrefix}%
+%   \usebibmacro{finentry}}
+% \DeclareBibliographyDriver{misc:abbrv}{%
+%     \usebibmacro{begentry}%
+%     \printnames{labelname}
+%     \setunit{\addcomma\space}%
+%     %   \usebibmacro{archivePrefix}%
+%     %   \setunit{\addcomma\space}%
+%     \usebibmacro{postnote}%
+%     \setunit{\addspace}%
+%     \usebibmacro{bracketedyear}%
+%     \usebibmacro{finentry}}
+
+% \DeclareBibliographyDriver{misc}{%
+%     \usebibmacro{bibindex}
+%     \usebibmacro{begentry}%
+%     \usebibmacro{author}
+%     \setunit{\printdelim{nametitledelim}}\newblock
+%     %   \usebibmacro{archivePrefix}%
+%     %   \setunit{\addcomma\space}%
+%     \usebibmacro{postnote}%
+%     \setunit{\addspace}%
+%     \usebibmacro{bracketedyear}%
+%     \usebibmacro{finentry}}
+
+\renewcommand{\citename}[1]{\citefield{#1}{title}}
+\addbibresource{/compile/references.bib}
+\begin{document}
+jojo\cite{qiang2018materials}
+\section{Introduction to \textit{biblatex}}
+\cite[19]{lookman2019active}
+\citetitle{qiang2018materials}
+% \bibliographystyle{plain}
+\begin{equation}
+    \sum 22)
+\end{equation}
+\textsc{jojo} is jojo
+\citefield{qiang2018materials}{title}
+\citename{lookman2019active}
+\newpage
+\cite{fernandez2020accelerating}
+
+\cite[1]{qiang2018materials}
+% \citefield{qiang2018materials}{archivePrefix}
+\printbibliography[nottype=online,heading=subbibliography, title={References appeared in the review},resetnumbers=true]
+\end{document}
+

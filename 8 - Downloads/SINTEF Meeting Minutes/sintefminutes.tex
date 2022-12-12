@@ -1,0 +1,61 @@
+\documentclass[unrestricted]{sintefminutes}
+
+\title{The \texttt{sintefminutes} Package}
+\author{Federico Zenith}
+\project{SIN\TeX}
+\wheremeeting{eRoom}
+\whenmeeting{None too soon}
+
+\initiator{Slartibartfast}
+\participant[information]{SINTEF employees}
+\participant[information]{\LaTeX\ hackers}
+\participant[present]{\LaTeX\ users}
+\participant[absent]{Word users}
+
+\begin{document}
+\frontmatter
+
+\section*{Agenda}
+\begin{itemize}
+  \item Prepare \LaTeX\ class for meeting minutes
+  \item Hold meeting
+  \item Write minutes
+  \item Compile with Xe\LaTeX\ or Lua\LaTeX
+\end{itemize}
+
+\section*{Meeting minutes}
+This class allows to write meeting minutes in the SINTEF official style.
+It is a subclass of \texttt{sintefdoc}, so see its documentation too.
+
+Title, author and date are set with \LaTeX's usual commands
+\verb|\title|, \verb|\author| and \verb|\date|.
+
+Several other options are self-documenting and will default to a useful
+tooltip à la \texttt{set with \textbackslash command}.
+
+The author is always first in the participants list, and is marked automatically
+as present.
+Other participants can be added with the \verb|\participant| command, which
+takes \emph{one} of the following optional arguments: \verb|present|, \verb|absent|
+and \verb|information|.
+For example,
+\begin{verbatim}
+\participant[present]{\LaTeX\ users}
+\end{verbatim}
+Participants should be set in the preamble.
+
+The task list is defined by writing the tasks with the \verb|\task| command, which
+takes three arguments for task description, responsible and due date, as
+follows:
+\begin{verbatim}
+\task{Learn \LaTeX}{Word users}{ASAP}
+\end{verbatim}
+To print out the task list, use the \verb|\tasklist| command.
+The task list is numbered automatically.
+
+\task{Learn \LaTeX}{Word users}{ASAP}
+\task{Check this template}{\TeX perts}{Anytime}
+\task{Enjoy}{\LaTeX\ users}{From now on}
+\tasklist
+
+\end{document}

@@ -1,0 +1,9 @@
+\babel@toc {UKenglish}{}
+\beamer@sectionintoc {1}{Overview}{2}{0}{1}
+\beamer@sectionintoc {2}{Mathematics}{3}{0}{2}
+\beamer@subsectionintoc {2}{1}{Theorem}{3}{0}{2}
+\beamer@subsectionintoc {2}{2}{Example}{4}{0}{2}
+\beamer@sectionintoc {3}{Highlighting}{5}{0}{3}
+\beamer@sectionintoc {4}{Lists}{7}{0}{4}
+\beamer@sectionintoc {5}{Effects}{8}{0}{5}
+\beamer@sectionintoc {6}{References}{13}{0}{6}

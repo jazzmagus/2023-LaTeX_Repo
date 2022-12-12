@@ -1,0 +1,336 @@
+%%% ====================================================================
+%%% @LaTeX-file{
+%%%   filename  = "amsthdoc.tex",
+%%%   version   = "2.04",
+%%%   date      = "2000/06/06",
+%%%   time      = "11:42:29 EDT",
+%%%   checksum  = "45213 291 1500 12328",
+%%%   author    = "American Mathematical Society",
+%%%   address   = "American Mathematical Society,
+%%%                Technical Support,
+%%%                Electronic Products and Services,
+%%%                P. O. Box 6248,
+%%%                Providence, RI 02940,
+%%%                USA",
+%%%   telephone = "401-455-4080 or (in the USA and Canada)
+%%%                800-321-4AMS (321-4267)",
+%%%   FAX       = "401-331-3842",
+%%%   email     = "tech-support@ams.org (Internet)",
+%%%   copyright = "Copyright 1999, 2000 American Mathematical Society,
+%%%                all rights reserved.  Copying of this file is
+%%%                authorized only if either:
+%%%                (1) you make absolutely no changes to your copy,
+%%%                including name; OR
+%%%                (2) if you do make changes, you first rename it
+%%%                to some other name.",
+%%%   supported = "yes",
+%%%   keywords  = "latex, theorem, proof, amsthm",
+%%%   abstract  = "This file is the User's Guide for the amsthm
+%%%                package.",
+%%%   docstring = "The checksum field above contains a CRC-16
+%%%                checksum as the first value, followed by the
+%%%                equivalent of the standard UNIX wc (word
+%%%                count) utility output of lines, words, and
+%%%                characters.  This is produced by Robert
+%%%                Solovay's checksum utility.",
+%%% }
+%%% ====================================================================
+%%% 
+%%% Traduzione di Onofrio de Bari <onodebari@gmail.com>
+%%%
+%%% Aggiornata al 13 febbraio 2001
+%%%
+\documentclass[a4paper]{article}
+\pagestyle{myheadings}
+\usepackage[italian]{babel}
+\usepackage{url,guit}
+\title{Uso del pacchetto \pkg{amsthm}}
+\author{Versione 2.07, 02/06/2000\\ American Mathematical Society\\
+\scriptsize{Traduzione di Onofrio de Bari (onodebari@gmail.com)}}
+\date{}
+
+\providecommand{\qq}[1]{\textquotedblleft#1\textquotedblright}
+\providecommand{\mdash}{\textemdash\penalty\hyphenpenalty}
+
+% Embedded \index commands are a legacy from the time when this
+% documentation was part of amsldoc. Since they don't hurt anything,
+% let's leave them in. Maybe they will become useful again in the
+% future. [mjd,2000/06/06]
+
+\chardef\bslchar=`\\ % p. 424, TeXbook
+\newcommand{\ntt}{%
+  \fontfamily\ttdefault \fontseries\mddefault \fontshape\updefault
+  \selectfont
+}
+\DeclareRobustCommand{\cn}[1]{{\ntt\bslchar#1}}
+\DeclareRobustCommand{\cls}[1]{{\ntt#1}}
+\DeclareRobustCommand{\pkg}[1]{{\ntt#1}}
+\DeclareRobustCommand{\opt}[1]{{\ntt#1}}
+\DeclareRobustCommand{\env}[1]{{\ntt#1}}
+\DeclareRobustCommand{\fn}[1]{{\ntt#1}}
+
+\providecommand{\qedsymbol}{\leavevmode
+  \hbox to.77778em{%
+  \hfil\vrule
+  \vbox to.675em{\hrule width.6em\vfil\hrule}%
+  \vrule\hfil}}
+
+\hfuzz4pt \vbadness9999 \hbadness5000
+\def\latex/{{\protect\LaTeX}}
+
+\setlength{\textwidth}{210mm}\addtolength{\textwidth}{-2in}
+\setlength{\oddsidemargin}{39pt}
+\addtolength{\textwidth}{-2\oddsidemargin}
+
+\begin{document}
+\maketitle
+\markboth{USO DEL PACCHETTO \pkg{amsthm}}{USO DEL PACCHETTO \pkg{amsthm}}
+%%% Nota del traduttore
+\subsubsection*{Nota alla traduzione italiana}
+
+Una copia di questo documento e altre traduzioni in italiano di
+manuali su \LaTeX\ sono reperibili presso
+\begin{itemize}
+\item\url{http://guild.prato.linux.it}
+\item\url{ftp://lorien.prato.linux.it/pub/guild}
+\item\url{ftp://ftp.unina.it/pub/TeX/info/italian}
+\end{itemize}
+e su ogni sito CTAN --- per esempio \url{ftp://ftp.tex.ac.uk/tex-archive} --- nella
+directory \url{/info/italian}.
+
+Dal giugno 2003 \`e attivo il \guittext (\guit), \TeX\ user group
+ufficiale in Italia. \guit\ \`e raggiungibile all'indirizzo web
+\begin{center}
+  \guiturl
+\end{center}
+Non essendo pi\`u attivo il gruppo Gilda/Guild, potete rivolgervi al
+\guit\ per ogni informazione riguardante \TeX, \LaTeX\ e la presente documentazione.
+\begin{flushright}
+  Onofrio de Bari (\guit)
+\end{flushright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduzione}
+
+Il pacchetto \pkg{amsthm} offre una versione migliorata del comando
+ \cn{newtheorem} di \latex/ per definire ambienti simili a teoremi. La
+versione del comando \cn{newtheorem} nel pacchetto \pkg{amsthm} riconosce
+ una specifico stile
+\cn{theoremstyle} (come avviene nel pacchetto \pkg{theorem} di
+ Mittelbach) ed \`e provvista di una forma \verb'*' per definire ambienti
+ non numerati. Il pacchetto
+\pkg{amsthm} definisce altres\`\i\ un ambiente \env{proof} che aggiunge
+ automaticamente un simbolo Q.E.D. in coda. Le classi di documento AMS
+ comprendono il pacchetto \pkg{amsthm}, quindi ogni situazione qui
+ descritta \`e ad esse applicabile; alcuni esempi sono forniti nel file
+\fn{thmtest.tex}.
+
+\section{Il comando \cn{newtheorem}}
+
+In articoli e libri relativi a ricerche matematiche, teoremi\index{teoremi}
+e dimostrazioni\index{dimostrazioni} sono tra gli elementi pi\`u
+comuni, ma gli autori ne usano anche molti altri che ricadono nella
+stessa generica classe: lemmi, proposizioni, assiomi, corollari,
+congetture, definizioni, note, casi, passi e cos\`\i\ via. Poich\'e questi
+elementi formano una porzione del flusso di testo dai contorni ben
+delimitati, sono naturalmente trattati in
+\latex/ come ambienti. Le classi di documento \latex/ di norma non
+forniscono ambienti predefiniti per gli elementi di tipo teorema perch\'e
+(a)~ci\`o renderebbe difficile agli autori esercitare il necessario
+controllo sulla numerazione automatica e (b)~la variet\`a di tali
+elementi \`e cos\`\i\ ampia da rendere impossibile per una
+classe di documento fornire ogni elemento che sarebbe richiesto. Esiste
+invece un comando
+\cn{newtheorem}, simile nell'effetto a \cn{newenvironment}, che facilita
+gli autori nell'impostare gli elementi richiesti per un particolare documento.
+
+Il comando \cn{newtheorem} ha due argomenti obbligatori; il primo \`e il
+nome dell'ambiente che l'autore desidera usare per questo elemento; il
+secondo \`e il testo che compare. Per esempio
+\begin{verbatim}
+\newtheorem{lem}{Lemma}
+\end{verbatim}
+significa che le istanze nel documento consistenti in
+\begin{verbatim}
+\begin{lem} Testo testo ... \end{lem}
+\end{verbatim}
+daranno luogo a
+\[\makebox[.8\columnwidth]{%
+  \textbf{Lemma 1.} \textit{Testo testo \dots}\hfill}\]
+in cui l'intestazione \`e costituita dal testo specificato \qq{Lemma} e da
+punteggiatura e numerazione automaticamente generati.
+
+Se si usa \cn{newtheorem*} al posto di \cn{newtheorem} nell'esempio
+sopra, non sar\`a generata la numerazione automatica per nessuno dei
+lemmi nel documento . Questa forma del comando pu\`o essere utile se si
+ha un solo lemma e non si vuole che sia numerato; pi\`u spesso,
+comunque, \`e usata per produrre una variante di uno dei comuni tipi di
+teoremi che sia dotata di un nome; se ad esempio si avesse un lemma il cui
+nome dovrebbe essere \qq{Lemma di Klein} invece di \qq{Lemma} +
+il numero, allora la dichiarazione
+\begin{verbatim}
+\newtheorem*{KL}{Lemma di Klein}
+\end{verbatim}
+permetterebbe di scrivere
+\begin{verbatim}
+\begin{KL} Testo testo ... \end{KL}
+\end{verbatim}
+e di ottenere l'\emph{output} richiesto.
+
+\section{Modifiche alla numerazione}
+
+In aggiunta ai due argomenti obbligatori, \cn{newtheorem} ha due
+argomenti opzionali che si escludono vicendevolmente; questi riguardano
+la sequenza\index{teeoremi!numerazione} e la gerarchia della numerazione.
+
+Come impostazione predefinita, ogni genere di ambiente di tipo teorema
+\`e numerato in maniera indipendente e pertanto, se si hanno tre lemmi e
+due teoremi frapposti, essi risulteranno numerati nel seguente modo: Lemma 1, Lemma
+2, Teorema 1, Lemma 3, Teorema 2. Se si desidera che i lemmi e i teoremi
+condividano la stessa sequenza di numerazione\mdash Lemma 1, Lemma 2, Teorema 3, Lemma
+4, Teorema 5\mdash si deve allora indicare la relazione desiderata nel
+modo seguente:
+\begin{verbatim}
+\newtheorem{thm}{Teorema}
+\newtheorem{lem}[thm]{Lemma}
+\end{verbatim}
+L'argomento opzionale \verb'[thm]' nella seconda dichiarazione fa in
+modo che l'ambiente \texttt{lem} condivida la sequenza di numerazione di
+\texttt{thm} invece di essere dotato di una sua sequenza indipendente.
+
+Al fine di avere un ambiente teorema numerato in maniera subordinata a
+un'unit\`a di sezionamento\mdash ad esempio per ottenere delle
+proposizioni numerate come Proposizione 2.1,
+Proposizione 2.2 e cos\`\i\ via nel Paragrafo 2\mdash si inserir\`a il nome
+dell'unit\`a genitrice in parentesi quadre alla fine:
+\begin{verbatim}
+\newtheorem{prop}{Proposizione}[section]
+\end{verbatim}
+Con l'argomento opzionale \verb'[section]', il contatore \verb'prop'
+sar\`a riportato a zero non appena verr\`a incrementato il contatore genitore \verb'section'.
+
+\section{Cambiare gli stili in ambienti di tipo teorema}
+
+\subsection{Il comando \cn{theoremstyle}}
+
+Nel pacchetto \pkg{amsthm} \`e disponibile il concetto di stile di
+teorema corrente,
+che determina cosa sar\`a restituito da un dato comando \cn{newtheorem}.
+I tre stili di teorema forniti\mdash
+\verb'plain',\index{plain theo@\texttt{plain} stile di teorema}\relax
+\index{definition theo@\texttt{definition} stile di teorema}\relax
+\index{remark theo@\texttt{remark} stile di teorema} \verb'definition' e
+\verb'remark'\mdash subiscono un differente trattamento tipografico che
+ad essi fornisce un'enfasi visiva associato alla rispettiva
+importanza. I dettagli di tale trattamento tipografico possono variare
+in base alla classe di documento, ma in generale lo stile \verb'plain'
+produce testo in corsivo, mentre gli altri due forniscono testo in tondo.
+
+Per creare nuovi ambienti di tipo teorema in differenti stili,
+si dividano i comandi \cn{new\-theorem} in gruppi e si premetta ad ogni
+gruppo l'appropriato \cn{theo\-rem\-style}; se non si d\`a alcun comando \cn{theoremstyle}
+, lo stile usato sar\`a \texttt{plain}. Alcuni esempi:
+\begin{verbatim}
+\theoremstyle{plain}% default
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposizione}
+\newtheorem*{cor}{Corollario}
+\newtheorem*{KL}{Lemma di Klein}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definizione}[section]
+\newtheorem{conj}{Congettura}[section]
+\newtheorem{exmp}{Esempio}[section]
+
+\theoremstyle{remark}
+\newtheorem*{comm}{Commento}
+\newtheorem*{note}{Nota}
+\newtheorem{caso}{Caso}
+\end{verbatim}
+
+\subsection{Spostamento dei numeri}
+
+Una frequente variazione di stile per i titoli di teoremi consiste
+nell'avere il numero del teorema sulla sinistra, all'inizio del titolo,
+invece che sulla destra. Poich\'e tale variazione \`e di solito eseguita
+in maniera generalizzata non badando ai singoli cambi con \cn{theoremstyle},
+lo spostamento dei numeri \`e effettuato posizionando un
+comando\cn{swapnumbers} all'inizio della lista delle dichiarazioni
+\cn{newtheorem} che devono essere modificate. Esempio:
+\begin{verbatim}
+\swapnumbers
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}
+\theoremstyle{remark}
+\newtheorem{rem}{Nota}
+\end{verbatim}
+Quando il pacchetto \pkg{amsthm} \`e usato con una delle generiche
+classi di documento \latex/
+come \cls{article} o \cls{book}, l'effetto delle dichiarazioni sopra
+riportate consister\`a nell'avere i titoli dei teoremi e delle note
+stampati nella forma \textbf{1.4~Teorema}, \textit{9.1~Nota}; con altre
+classi di documento il risultato potrebbe essere diverso.
+
+\subsection{Ulteriori possibilit\`a di personalizzazione}
+
+Altre possibilit\`a di personalizzazione sono fornite dal pacchetto
+\pkg{amsthm} nella forma del comando \cn{newtheoremstyle} e un metodo
+per usare le opzioni del pacchetto per caricare definizioni
+personalizzate dello stile dei teoremi; poich\'e queste caratteristiche
+sono in certo qual modo oltre i bisogni dell'utente medio, la
+discussione dei dettagli \`e rimandata al file di esempio
+\fn{thmtest.tex} e al commento in \fn{amsclass.dtx}.
+
+\section{Dimostrazioni}
+
+Un ambiente \env{proof} predefinito che \`e fornito dal pacchetto \pkg{amsthm}
+produce l'intestazione \qq{Proof} con interpunzione e spaziatura
+appropriate.
+%Qui vorrei mettere una n.d.t. che spieghi che se si usa babel con
+%l'opzione italian risultera' scritto 'dimostrazione' invece di
+%'proof'. Che ne dici?
+L'ambiente \env{proof} \`e principalmente inteso per
+dimostrazioni brevi, che non occupino pi\`u di una pagina o due;
+dimostrazioni pi\`u consistenti sono in generale meglio realizzate
+separatamente come \cn{section} o \cn{subsection} nel documento.
+
+Un argomento opzionale dell'ambiente \env{proof} permette di utilizzare un
+nome differente al posto di \qq{Proof}; se, ad esempio, si vuole che
+l'intestazione della dimostrazione sia \qq{Dimostrazione del teorema
+principale}, si scriver\`a
+\begin{verbatim}
+\begin{proof}[Dimostrazione del teorema principale]
+\end{verbatim}
+
+Un simbolo \qq{QED}, \qedsymbol, viene automaticamente aggiunto alla
+fine dell'ambiente \env{proof}; per sostiturlo con un diverso simbolo di
+fine dimostrazione, utilizzare \cn{renewcom\-mand} per ridefinire il comando \cn{qedsymbol}.
+Per una lunga dimostrazione realizzata come sottoparagrafo o paragrafo
+invece che con l'ambiente
+\env{proof}, si pu\`o ottenere il simbolo e l'usuale spaziatura che lo
+precede servendosi di \cn{qed}.
+
+Il posizionamento del simbolo QED pu\`o essere problematico se l'ultima
+parte di un ambiente \env{proof} \`e un'equazione in modalit\`a
+\emph{display} o un ambiente lista o qualcosa di questo genere; in questo caso basta
+posizionare un comando \cn{qedhere} nel punto in cui dovr\`a comparire
+il simbolo QED.
+\begin{verbatim}
+\begin{proof}
+...
+\begin{equation}
+G(t)=L\gamma!\,t^{-\gamma}+t^{-\delta}\eta(t) \qedhere
+\end{equation}
+\end{proof}
+\end{verbatim}
+Se il pacchetto \pkg{amsthm} viene utilizzato con una classe di documento non
+AMS e con il pacchetto \pkg{amsmath}, il pacchetto \pkg{amsthm} deve
+essere caricato
+\emph{dopo} \pkg{amsmath} e non prima.\footnote{Il posizionamento sul
+margine destro eseguito da \cn{qedhere} nelle equazioni in modalit\`a
+\emph{display} funziona solo con la versione 2 del pacchetto
+\pkg{amsmath} e non con le precedenti.}
+Se \cn{qedhere} provoca un messaggio d'errore in un'equazione, si provi
+a usare al suo posto \verb'\mbox{\qedhere}'.
+\end{document}
+

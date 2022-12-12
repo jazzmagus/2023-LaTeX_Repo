@@ -1,0 +1,329 @@
+%% Informations générales
+%\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{pan2}[01/10/2009]
+%Auteur: Vincent PANTALONI mailto: prof.pantaloni@gmail.com
+\newif\if@pst    \@pstfalse %Pour l'option pstricks (pas de pst par defaut)
+%________________________________
+%%   Chargement des extensions   |
+%________________________________|
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage[frenchb]{babel}   %gestion du francais
+\RequirePackage[dvips]{graphicx}
+\RequirePackage{verbatim,ifthen}
+\RequirePackage{textcomp,psfrag}
+\RequirePackage[dvips]{epsfig}
+\RequirePackage{calc}
+%\RequirePackage{slashbox}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\RequirePackage{multicol}
+\RequirePackage{framed} % Utile pour ROC: environnement leftbar
+%\RequirePackage[greek]{babel}
+\RequirePackage{amsmath}  %gestion des symboles math\'{e}matiques
+\RequirePackage{amsfonts,mathrsfs} %gestion des fontes math\'{e}matiques
+\RequirePackage{amssymb,amsthm}  %gestion des symboles math\'{e}matiques
+\RequirePackage[official]{eurosym} %pour avoir le symbole euro: \euro
+\RequirePackage{fancyhdr} %gestion des entetes et des pieds de page
+\RequirePackage{lastpage} %gestion du nombre total de pages du document
+\RequirePackage{color}   %gestion des couleurs, necessite french
+\RequirePackage{framed}  %pour faire des cadres gris avec:  \begin{shaded} \end{shaded}
+\RequirePackage{xspace} %gestion d'espaces apres \dots, \ier...
+\definecolor{shadecolor}{gray}{0.83} %0:noir; 1:blanc
+\RequirePackage{bclogo}
+%\RequirePackage{floatflt} %gestion des insertions de figures, NEEDS package french
+\RequirePackage{variations} %pour les tab de var et de signes
+\RequirePackage[french]{algorithm2e} % Pour les algorithmes
+%%  FONTES
+\RequirePackage{mflogo} %pour écrire MetaPost par \MP
+\RequirePackage{pifont} 
+\RequirePackage{frcursive} %pour une fonte d'écolier
+\RequirePackage{manfnt}    %Que pour le symbole danger: \textdbend commande: \DangerZ
+
+%__________________________________
+%%   DECLARATION OF THE OPTIONS    |
+% pst                              | %a revoir, ca marche pas, pstricks est chargé anw
+%__________________________________|
+%\DeclareOption{pst}{\@psttrue}
+%\DeclareOption*{}%% Ne rien faire quand une option est inconnue
+%\ProcessOptions
+%\if@pst
+%%%%%  load PSTRICKS stuff   %%%%%
+\RequirePackage{pstricks} 
+\RequirePackage{pst-plot,array}
+\RequirePackage{pst-math}
+\RequirePackage{pstricks-add}
+\RequirePackage{pst-tree}
+\RequirePackage{pst-eucl}
+\RequirePackage{pst-3d}
+\RequirePackage{pst-node,pstcol}
+%\fi
+%% Changement depuis pan.sty le format de page est dans le .tex
+%\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+%\ifhyperref
+%\usepackage[colorlinks]{hyperref} %gestions des hyperliens dans un document .dvi
+%\fi
+%__________________________________
+%           MY COMMANDS            | 
+%__________________________________|
+%Je tends à ne plus utiliser de raccourcis
+% pour améliorer la portabilité des documents, je préfère utiliser des
+% macros emacs (ou snippets Gedit) qui inserent directement la commande LaTeX. Cependant,
+% pour les ``vieux fichiers'' ces raccourcis sont parfois utilisés.
+%%%%
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\Th}{th} %\th est interdit (à cause de \the.. ?)
+\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\Bary}{Bar}
+\DeclareMathOperator{\RE}{Re} %\Re existe déjà mais gothique
+\DeclareMathOperator{\IM}{Im}
+%Vecteurs================================================================
+
+\newcommand{\Vect}[1]{\overrightarrow{\strut #1}}
+\newcommand{\V}[1]{\overrightarrow{\strut #1}} %vecteur AB: $\V{AB}$
+\newcommand{\vu}{\vec{u}\,} %vecteur u 
+\newcommand{\vv}{\vec{v}\,}
+\newcommand{\vw}{\vec{w}\,}
+\newcommand{\vi}{\vec{\imath}\,}
+\newcommand{\vj}{\vec{\jmath}\,}
+\newcommand{\vn}{\vec{n}\,}
+\newcommand{\usv}{\vec{u}\cdot \vec{v}} %u scalaire v%
+\newcommand{\vsu}{\vec{v}\cdot \vec{u}} %v scalaire u%
+\newcommand{\usw}{\vec{u}\cdot \vec{w}} %u scalaire w%
+\newcommand{\vsw}{\vec{v}\cdot \vec{w}} %v scalaire w%
+%__________________________________________________
+%~~~~~~~~~~~~~~~~RENEWCOMMAND~~~~~~~~~~~~~~~~~~~~~~|
+%__________________________________________________|
+\renewcommand{\leq}{\leqslant} % à la française
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\approx}{\simeq} %symbole ``environ égal'' j'oublie tt
+                               %le tps ce simeq.
+\newcommand{\congru}{\equiv}
+\renewcommand{\epsilon}{\varepsilon} % lettres grecques à la française
+\renewcommand{\phi}{\varphi}
+\renewcommand\FrenchLabelItem{\textbullet} %Des bullets à la place des -
+%~~~~~~~~~~~~~~~ENUMERATION
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\labelenumi}{{\bf{\arabic{enumi}}.}}
+\renewcommand{\labelenumii}{{\bf{\alph{enumii}}.}}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Constantes en romain:
+\newcommand{\I}{{\rm i}} %pour le i complexe
+\newcommand{\ud}{\,\mathrm{d}} %Pour faire un d droit dans les ``dx'' cf aussi \diff comme operateur.
+%Pour le symbole //  essayer \varparallel (marche pas)
+\newcommand{\parallele}{\makebox[0.7\width][l]{/}\makebox[0.7\width][r]{/}}
+%Repères. Commandes perso et autres croisées dans certains fichiers.
+\newcommand{\Oij}{(O;\vec{\imath}\,;\vec{\jmath}\,)}
+\newcommand{\Oijk}{(O;\vec{\imath}\,;\vec{\jmath}\,;\vec{k}\,)}
+\newcommand{\ouv}{(O;\vec{u}\,;\vec{v}\,)}
+\newcommand{\Ouv}{(O;\vec{u}\,;\vec{v}\,)}
+\newcommand{\oi}{(O;\vec{\imath}\,)}
+\newcommand{\rep}{$\left(O;\vect{\imath},\vect{\jmath}\right)$}
+\newcommand{\repc}{$\left(O;\vect{u},\vect{v}\right)$}
+
+%Liens logiques
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\ou}{\textbf{ou}}
+\newcommand{\et}{\textbf{et}}
+% Cursif
+\newcommand{\Ar}{\mathscr{A}}
+\newcommand{\Br}{\mathscr{B}}
+\newcommand{\Cr}{\mathscr{C}} 
+\newcommand{\Dr}{\mathscr{D}}
+\newcommand{\Er}{\mathscr{E}}
+\newcommand{\Fr}{\mathscr{F}}
+\newcommand{\Gr}{\mathscr{G}}
+\newcommand{\Hr}{\mathscr{H}}
+%\newcommand{\Para}{\mathscr{P}} %dejadef dans algorithm2e
+
+%norme=====================================================
+\newcommand{\norme}[1]{\Vert #1 \Vert}
+
+%Pr\'{e}sentation du d\'{e}terminant=======================
+\newcommand{\deter}[4]{
+\left\vert
+\begin{array}{cc}
+         #1& #3  \\
+        #2 & #4
+\end{array}
+\right\vert                                      }
+
+%coordonn\'{e}es verticales=====================================================
+%dimension 2 
+\newcommand{\cp}[2]{
+                                    \left(
+                                    \begin{array}{c}
+                                            #1\\
+                                    #2
+                                     \end{array}
+                            \right)
+                                     }
+%dimension 3
+\newcommand{\ce}[3]{
+                                    \left(
+                                    \begin{array}{c}
+                                            #1\\
+                                    #2 \\
+                            #3                                          
+                                     \end{array}
+                            \right)
+                                     }
+
+%Ensembles==============================================================
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\D}{\ensuremath{\mathbb{D}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\ZP}{\ensuremath{\mathbb{Z}[X]}} 
+\newcommand{\QP}{\ensuremath{\mathbb{Q}[X]}}
+\newcommand{\RP}{\ensuremath{\mathbb{R}[X]}}
+\newcommand{\CP}{\ensuremath{\mathbb{C}[X]}}
+
+%Operateurs==============================================================
+\newcommand{\card}{\operatorname{card}}
+\newcommand{\diff}{\operatorname{{\rm d}}}
+
+%Symboles===============================================================
+
+
+
+%liens avec le web============================================================
+%\newcommand{\dvilink}[2]{\href{dvi:#1}{#2}}
+
+% Raccourcis de noms de classe.                                        
+\newcommand{\term}{T$^{\text{ale}}$}
+\newcommand{\premiere}{1\iere}
+\newcommand{\seconde}{2$^{\text{de}}$}
+%%%----- Signature de pied de page
+\newcommand{\Pdpmail}{
+\footnotesize{Prof. \bsc{Pantaloni }  {\tt prof.pantaloni@gmail.com}}}
+\newcommand{\Pdpweb}{{\footnotesize {\tt
+      http://prof.pantaloni.free.fr}}}
+\newcommand{\Pdpweblink}{{\footnotesize
+    \url{http://prof.pantaloni.free.fr}}}
+% \url utilise le package href
+
+%Pr\'{e}sentation des devoirs==================================================
+% Projet: Faire un préambule simple avec des compteurs permettant de
+% choisir le type de feuille (cours, dl, exos...) 
+% sans avoir à  recourir à ces différents raccourcis.
+
+%Pr\'{e}sentation des exos=========================================================
+\newcounter{numeroexo}
+\newcommand{\exo}[1]{% Titre
+                     \refstepcounter{numeroexo}
+                     \vspace{1em} \par \noindent
+                     \raisebox{-0.7ex}{\bf Exercice \no \arabic{numeroexo}  #1}
+                     \hrulefill
+                     \par  \vspace{0.3em} \noindent 
+                    }
+
+\newcommand{\exods}[2]{% Titre-bareme
+                     \refstepcounter{numeroexo}
+                     \vspace{1em} \par \noindent
+                     \raisebox{-0.7ex}{\bf Exercice \no \arabic{numeroexo}  #1}
+                     \hrulefill \raisebox{-0.7ex}{\, (\, \textit{#2 points} \, )}
+                     \par \vspace{0.5em}
+                    }
+%Pareil mais en style cursif.
+\newcommand{\exodsc}[2]{% Titre-bareme
+                     \refstepcounter{numeroexo}
+                     \vspace{1em} \par \noindent
+                     \raisebox{-0.7ex}{\textcursive{Exercice \no \arabic{numeroexo}  #1}}
+                     \hrulefill \raisebox{-0.7ex}{\, (\, \textit{#2 points} \, )}
+                     \par \vspace{0.5em}
+                    }
+%------------------------------------------------------------------
+\newenvironment{exercice}%
+{\par\noindent\refstepcounter{numeroexo}
+  \rule{0pt}{3ex}\hspace{-2ex}\raisebox{-0.7ex}{\textbf{Exercice
+      \no\arabic{numeroexo} }}\hspace{2ex}\hrulefill \par \vspace{1em}%
+ \noindent }
+
+\newenvironment{exocursif}%
+{\par\noindent\refstepcounter{numeroexo} \rule{0pt}{3ex}\hspace{-2ex}\raisebox{-0.7ex}{\textcursive{Exercice \no\arabic{numeroexo}}}\hspace{2ex}\hrulefill \par \vspace{1em}%
+ \noindent }
+%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------
+% Environnements pour les cours======================================
+%\newenvironment{exemple}{\par\medskip\noindent\textbf{Exemple: }}{\par\smallskip}
+%\newenvironment{appli}{\par\medskip\noindent\textbf{Application: }}{\par\smallskip}
+%\newenvironment{exemples}{\par\medskip\noindent\textbf{Exemples: }}{\par\smallskip}
+%\def\encadre#1{\framebox{#1}}    % pas perso et sans intéret          
+
+%theoremes, lemmes ,etc..
+
+\newtheorem{lemme}{Lemme}
+\newtheorem{corollaire}{Corollaire}
+\theoremstyle{definition}\newtheorem{Def}{D\'efinition}
+\theoremstyle{plain}\newtheorem{prop}{Propri\'et\'e}
+\theoremstyle{plain}\newtheorem{theo}{Th\'{e}or\`{e}me}
+\theoremstyle{remark}\newtheorem*{rem}{Remarque}
+%\theoremstyle{definition}\newtheorem{exo}{Exercice}
+
+%%%
+%%%############################
+%%AJOUTS 2007
+%%
+\newcommand{\Sr}{\mathscr{S}}
+\newcommand{\Rr}{\mathscr{R}}
+\newlength{\Malongdemot}
+%\RequirePackage{latexsym}
+%%  Marge: Met le texte dans la marge en gras
+\newcommand{\Marge}[1]% 
+{\settowidth{\Malongdemot}{\textbf{#1.}}%
+\par\noindent \hspace{-\Malongdemot}{\textbf{#1}}\hspace{1ex} }
+%------------------
+\newcommand{\MargeT}[1]% Pareil+hrule+retour ligne
+{\settowidth{\Malongdemot}{\textbf{#1.}}%
+\par\noindent \rule{0pt}{3ex}\hspace{-\Malongdemot}\raisebox{-0.6ex}{\textbf{#1}}\hspace{1ex}\hrulefill \par \vspace{1em}%
+ \noindent }
+%------------------
+%%%  CENTRAGE: Met le texte au centre, en gras, avec une ligne horizontale avant et après sur la largeur de la page.
+\newcommand{\centrage}[1]% 
+{\settowidth{\Malongdemot}{\textbf{#1x.}}%
+\par\noindent \rule{0pt}{2ex}%
+\rule{(\linewidth-\Malongdemot)/2}{0.4pt}
+\hspace{0.6ex}\raisebox{-0.6ex}{\textbf{#1}}\hspace{0.8ex}\hrulefill
+\\%[0.5em]%
+\noindent }
+%-----------------------
+\newcommand{\entouregras}[1]% Entoure le texte et le met en gras
+{\par\noindent \rule{0pt}{4ex}%
+\noindent\hspace{-0.3em}
+\raisebox{0.5ex}{\ovalbox{\textbf{#1}}}
+}{\par\smallskip}
+%-----------------------
+\newcommand{\Bullet}[1]% Met le texte en gras avec un $\bullet$ et espace
+{\par\noindent \rule{0pt}{2ex}%
+\noindent\hspace{-1em}
+\raisebox{0ex}{$\bullet$ \textbf{#1}}
+}{\par\smallskip}
+
+%------------------------%Place le symbole danger en marge
+%Version 2 utilise \RequirePackage{manfnt}
+\reversemarginpar
+\def\DangerZ{\marginpar{\scalebox{.77}{\textdbend}}}
+%-------------------------
+\newcommand{\Mod}[3]{#1\equiv #2\ [#3]}
+%%-----------------------
+%% Les deux suivantes sont utiles lors de la preuve d'une équivalence
+%% et notent une flèche d'implication (ou récip) entre parenthèses
+%% dans la marge
+\newcommand{\Impli}{\settowidth{\Malongdemot}{$(\Longrightarrow )$}%
+\par\noindent \hspace{-\Malongdemot}{$(\Longrightarrow )$}\hspace{1ex} }
+\newcommand{\Recip}{\settowidth{\Malongdemot}{$(\Longleftarrow )$}%
+\par\noindent \hspace{-\Malongdemot}{$(\Longleftarrow )$}\hspace{1ex} }
+% Celle -ci met un filet en marge et indique ROC pour marquer les
+% preuves à connaitre en TS
+\newenvironment{ROC}{%
+\begin{leftbar}%
+}%
+{\end{leftbar}%
+\marginpar{\rotatebox{90}{$\mathbf{R\heartsuit C}$}}}
+%% Fin du package
+\endinput

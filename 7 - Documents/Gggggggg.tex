@@ -1,0 +1,46 @@
+\documentclass{book}
+\usepackage{multicol}
+ 
+\usepackage{fancyhdr}
+   \fancyhead[L]{\textsf{\rightmark}}
+     \fancyhead[R]{\textsf{\leftmark}}
+ 
+     \fancyfoot[C]{\textbf{\textsf{\thepage}}}
+ 
+  \fancyhead[L]{\textsf{\rightmark}}
+     \fancyhead[R]{\textsf{\leftmark}}
+ 
+     \fancyfoot[C]{\textbf{\textsf{\thepage}}}
+ 
+     \renewcommand{\headrulewidth}{1.4pt}
+     \renewcommand{\footrulewidth}{1.4pt}
+ 
+     \newcommand{\dict}[3]{
+         \markboth{#1}{#1}
+         \par\noindent\vspace{0\baselineskip}
+         \textbf{\textsf{#1}} \textit{-#2 -} #3}
+ 
+     \pagestyle{fancy}
+ 
+\usepackage{lipsum}
+ 
+\begin{document}
+ 
+\section*{DERIVATE}
+ 
+\begin{multicols}{2}
+     \dict{main}{n}{\lipsum[3]}
+     \dict{material}{n}{\lipsum[2]}
+     \dict{mathematic}{n}{\lipsum[2]}
+     \dict{more}{n}{\lipsum[3]}
+\end{multicols}
+ 
+\section*{Z}
+ 
+\begin{multicols}{2}
+     \dict{zebra}{n}{\lipsum[1]}
+     \dict{zero}{n}{\lipsum[3]}
+      \dict{zinfandel}{n}{\lipsum[2]}
+\end{multicols}
+ 
+\end{document}

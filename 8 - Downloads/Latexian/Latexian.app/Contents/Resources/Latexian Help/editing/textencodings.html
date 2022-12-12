@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+
+	<head>
+		<title>Text Encodings</title>
+		<link rel="stylesheet" href="../style.css" type="text/css" />
+	</head>
+	<body>
+	<div class="helpcontent">
+	<div class="sectiontitle"><a href="../index.html">Latexian Help</a> &gt; Text Encodings</div>
+	<div class="sectioncontent">
+		<div class="subsectioncontent">
+			Text Encodings specify the format in which text documents are saved to a disk. For documents that contain only English characters and standard punctuation symbols, the "Plain Text (ASCII)" encoding is usually the best choice. This encoding is compatible with the LaTeX and XeTeX typesetters without any configuration required. UTF-8 is often a good encoding choice for documents that contain international characters or special punctuation. UTF-8 is compatible with XeTeX without special configuration; in LaTeX, the following command can be included in the preamble for UTF-8 compatibility:<br/><br/>
+			<code>\usepackage[utf8]{inputenc}</code>
+		</div>
+		<div class="contents">
+			<div class="title">Contents</div>
+			<ul>
+				<li><a href="#default">Default Encodings for Opening and Saving</a></li>
+				<li><a href="#document">Document-Specific Encodings</a></li>
+			</ul>
+		</div>
+		<div class="subsectiontitle"><a name="default"/>Default Encodings for Opening and Saving</div>
+		<div class="subsectioncontent">
+			In the "Documents" section of Latexian's Preferences, you can specify default encodings for opening and saving files. Selecting "Automatic" will mean that Latexian will attempt to automatically determine the encoding of a document when it is opened, based on the statistical analysis of the document's contents. If this is not producing the desired results (i.e. you see strange characters when opening a document), you may need to specify the encoding to use. This can be done with the Preferences setting or with <a href="#document">document-specific settings<a>.<br/><br/>
+			Latexian also includes a Preference option for the default text encoding for saving files. This value will be used by default when saving an untitled document for the first time. When saving existing documents, the encoding for saving defaults to the encoding that was used when opening the document. See <a href="#document">Document-Specific Encodings<a> for information on how to change the encoding of an existing document.
+			
+		</div>
+		<div class="subsectiontitle"><a name="document"/>Document-Specific Encodings</div>
+		<div class="subsectioncontent">
+			The Open and Save panels in Latexian both allow an encoding to be selected that is different from the default value set in Latexian's Preferences. If you want to select an encoding that will always be used for a specific document, then open the document and then select "Get Info" from the "File" menu. The "Get Info" panel allows an encoding to be selected, which will then become the new default for that document.
+		</div>
+	</div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Press Release
+% LaTeX Template
+% Version 1.0 (2/6/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,pressrelease]{newlfm} % Font size
+
+\usepackage{charter} % Use the Charter font for the document text
+
+\PhrPhone{Phone} % Customize the "Telephone" text
+\PhrEmail{Email} % Customize the "E-mail" text
+%\PhrContact{Contact} % Uncomment this line to change the 'Contact:' text
+
+%----------------------------------------------------------------------------------------
+%	PRESS RELEASE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\makeletterhead{Uiuc}{\Cheader{\vspace{16pt}\includegraphics[width=0.5\linewidth]{logo.png}}} % Include a company logo, if you don't use one you will need to uncomment line 6 in the prsrls.tex file
+\lthUiuc % Print the company/institution logo
+
+\release{For Immediate Release} % When the press release may be used
+
+\namefrom{John Smith} % Name
+
+\addrfrom{ % From address
+123 Broadway \\
+City, State 12345
+}
+
+\phonefrom{(000) 111-1111} % Phone number
+
+\emailfrom{john@smith.com} % Email address
+
+\headline{This is the Headline} % Headline for the press release
+
+\newcommand{\subtitle}{This is a subtitle to the headline giving more information about the headline.} % Subtitle for the press release, if you don't want one just remove the subtitle text leaving the rest of the command
+
+\byline{\textbf{City, Country -- \today ~--} Summary/overview of facts including who, what, where, when as well as why the press should care enough to write about this.} % A summary line for the press release
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\begin{newlfm}
+
+%----------------------------------------------------------------------------------------
+%	PRESS RELEASE CONTENT
+%----------------------------------------------------------------------------------------
+
+%\begin{singlespace} % Uncomment for single line spacing
+
+Paragraph one, with additional details about the announcement. The most important information goes in this paragraph.
+
+Paragraph two goes here, with even more details about the announcement. Also included in this paragraph is a quote backing up the claims and statements above. Oftentimes there will be a quote from the CEO or other executives as well as a quote from customers or partners, depending on the nature of the announcement.
+
+Paragraph three goes here and wraps it up, with details about pricing, availability, etc. After this paragraph include some standard boilerplate text for the company (see below). The entire release is designed to be one page long at most (ideally). Keep the length short and to the point because newswire services only allows a certain number of characters and then charges for additional. Every time you put out a release on the news wire you'll want to convert it into a PDF and put it on your website in a Press section in the company area as well - that way the content will get indexed by search engines and help your overall site ranking in search results.
+
+Founded in 2013, XYZ company develops products that help customers XXX. Major customers of XYZ company include YYZ. XYZ company has offices in XXX and over XXX employees worldwide and is a leader in the XXX market. More information about XYZ Software can be found at www.abc.com.
+For additional information contact: Name Email Phone Number
+
+%\end{singlespace} % Uncomment for single line spacing
+
+%----------------------------------------------------------------------------------------
+
+\end{newlfm}
+\end{document}

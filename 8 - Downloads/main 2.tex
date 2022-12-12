@@ -1,0 +1,282 @@
+% Todas as linhas precedidas pelo simbolo '%' são comentários
+% e não afetam em nada o seu texto final.
+
+% IGNORE. Pacotes necessários e acessórios para o documento
+\documentclass[12pt]{exam}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[brazil]{babel}
+\usepackage[shortlabels]{enumitem}
+% ---
+
+% Informações que podem ser configuradas
+% ---
+\newcommand{\class}{FCF611 - Lógica II} % Nome da disciplina
+\newcommand{\term}{2018.2}              % Perído Letivo
+\newcommand{\examnum}{Exercício de Nivelamento}      % Número/Nome do exercício.
+\newcommand{\examdate}{20/08/2018}        % insere a data no documento
+\newcommand{\timelimit}{}               % IGNORE
+% ---
+
+
+
+\begin{document} % declaração de que o documento começa aqui.
+\pagestyle{plain}
+\thispagestyle{empty}
+% ... formatação do cabeçalho
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+ \textbf{\class} & \textbf{Nome:} & \textit{Fellipe de Carvalho Silva}\\             % Insira o seu nome dentro dos {}'.
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+% ---
+
+% Inicio das questões. 
+\begin{questions}
+
+\question Raciocinando semânticamente, determine a validade ou invalidade nos casos a seguir.
+ 
+\begin{multicols}{2}
+  \begin{enumerate}[(a)]
+
+% daqui em diante se pode ter ideia de como digitar os simbolos lógicos e as fórmulas complexas.
+
+    \item 
+     $A \lor B, \neg A \vDash B$
+
+    \item
+     $A \leftrightarrow B, \neg A \vDash \neg B$
+
+    \item
+     $\neg \left( A\land B \right)\vDash \neg B\land \neg A$
+
+    \item
+     $A\rightarrow B\vDash A\lor B$
+
+    \item
+     $\neg A\rightarrow \neg B\vDash A\rightarrow B$
+
+    \item
+     $A, A\rightarrow B\vDash A\leftrightarrow B$
+
+    \item
+     $B\rightarrow \neg C\vDash \neg(B\land C)$
+
+    \item
+     $\neg(A\lor B), C\leftrightarrow A\vDash \neg C$
+
+    \item
+     $\neg(A\land B), D\leftrightarrow A\vDash \neg D$
+     
+    \item 
+     $A \vDash (A\rightarrow (B\land A))\rightarrow (A\land B)$
+
+    \item
+     $(B\land C) \rightarrow A, \neg B, \neg C\vDash \neg A$
+
+    \item
+     $A \leftrightarrow B, B\leftrightarrow C\vDash A\leftrightarrow C$
+
+    \item
+     $A \rightarrow (B\lor C), (B\land C)\rightarrow D\vDash A\rightarrow D$
+
+    \item
+     $(\neg A \lor B)\lor C, (B\lor C)\rightarrow D\vDash A\rightarrow D$
+
+    \item
+     $(A\rightarrow B), A\vDash A$
+
+    \item
+     $(A\land B)\rightarrow C, A\land \neg C, B\vDash C\land \neg C$
+
+
+  \end{enumerate}
+\end{multicols}
+
+
+
+\end{questions}
+
+Exemplo I.
+
+\bigskip
+
+a) $A \lor B, \neg A \vDash B$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(A\lor B)=V$, 
+ii. $v(\neg A)=V$ e 
+iii. $v(B)=F$. Note que de i. e iii., pelo significado da ($\lor$), temos que iv. $v(A)=V$. De iv., pelo significado da ($\neg$), temos que v. $v(\neg A)=F$. Contudo, de ii. e v., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+Exemplo II.
+
+\bigskip
+
+m) $A \rightarrow (B\lor C), (B\land C)\rightarrow D\vDash A\rightarrow D$
+
+\begin{proof}
+Vamos mostrar que $A \rightarrow (B\lor C), (B\land C)\rightarrow D\nvDash A\rightarrow D$. Para ver isto, tome a valoração $v$, tal que 
+(i) $v(A)=V, v(D)=F, v(B)=V, v(C)=F $. Como $v(B)=V$, pelo significado da ($\lor$) temos que $v(B\lor C)=V$. Daí, pelo significado da ($\to$), podemos determinar que (ii) $v(A\to (B\lor C))=V$. Do fato de que $v(C)=F$ e de que $v(D)=F$, pelo significado da ($\land$) e ($\to$), temos que (iii) $v((B\land C)\to D)=V$. Por (i) e pelo significado da ($\to$), segue-se que (iv) $v(A\to D)=F$. Assim, por (ii) e (iii), sabemos que a valoração dada torna as premissas verdadeiras, mas por (iv), que torna a conclusão falsa. Logo, o argumento é inválido.\\
+\end{proof}
+
+\pagebreak
+
+Resoluções.\\ 
+
+\bigskip
+
+a) Respondido no Exemplo I.\\
+
+\bigskip
+
+b) $A \leftrightarrow B, \neg A \vDash \neg B$
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(A \leftrightarrow B)=V$, 
+ii. $v(\neg A)=V$ e 
+iii. $v(\neg B)=F$. De iii., pelo significado da ($\neg$), temos que iv. $v(B)=V$. De i. e iv., pelo significado da ($\leftrightarrow$), temos que v. $v(A)=V$ . Contudo, de ii. e de v., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+c) $\neg \left( A\land B \right)\vDash \neg B\land \neg A$
+
+\begin{proof}
+Vamos mostrar que $\neg \left( A\land B \right)\nvDash \neg B\land \neg A$. Para ver isto, tome a valoração $v$, tal que: i. $v(A)=V$, $v(B)=F$. Por i. e pelo significado da ($\land$), temos que $v(A\land B)=F$. Daí, pelo significado da ($\neg$), podemos determinar que ii. $v(\neg \left( A\land B \right))=V$. Porém por i. e pelo significado da ($\neg$), determinamos que iii. $v(\neg A)=F$. Então, por iii. e pelo significado da ($\land$) temos iv. $v(\neg B\land \neg A)=F$. Assim, por ii., sabemos que a valoração dada torna as premissas verdadeiras, mas por iv., que torna a conclusão falsa. Logo, o argumento é inválido.\\
+\end{proof}
+
+\bigskip
+
+d) $A\rightarrow B\vDash A\lor B$
+
+\begin{proof}
+Vamos mostrar que $A\rightarrow B\nvDash A\lor B$. Para ver isto, tome a valoração $v$, tal que: i. $v(A)=F$, $v(B)=F$. Por i. e pelo significado da ($\rightarrow$), temos que ii. $v(A\rightarrow B)=V$. Porém por i. e pelo significado da ($\lor$), temos que iii. $v(A\lor B)=F$. Assim, por ii., sabemos que a valoração dada torna as premissas verdadeiras, mas por iii., que torna a conclusão falsa. Logo, o argumento é inválido.\\
+\end{proof}
+
+\bigskip
+
+e) $\neg A\rightarrow \neg B\vDash A\rightarrow B$
+
+\begin{proof}
+Vamos mostrar que $\neg A\rightarrow \neg B\nvDash A\rightarrow B$. Para ver isto, tome a valoração $v$, tal que: i. $v(\neg A)=F$, $v(\neg B)=V$. Por i. e pelo significado da ($\rightarrow$), temos que ii. $v(\neg A\rightarrow \neg B)=V$. Enquanto por i. e pelo significado da ($\neg$), temos que iii. $v(A)=V$, $v(B)=F$. Daí, por iii. e pelo significado da ($\rightarrow$), temos que iv.  $v(A\rightarrow B)=F$. Assim, por ii. sabemos que a valoração dada torna as premissas verdadeiras, mas por iv., que torna a conclusão falsa. Logo, o argumento é inválido.\\
+\end{proof}
+
+\pagebreak
+
+f) $A, A\rightarrow B\vDash A\leftrightarrow B$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(A)=V$, 
+ii. $v(A\rightarrow B)=V$ e 
+iii. $v(A\leftrightarrow B)=F$. De i. e ii., pelo significado da ($\rightarrow$), temos que iv. $v(B)=V$. De i. e iv., pelo significado da ($\leftrightarrow$), temos que v. $v(A\leftrightarrow B)=V$. Contudo, de iii. e v., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+g) $B\rightarrow \neg C\vDash \neg(B\land C)$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(B\rightarrow \neg C)=V$ e 
+ii. $v(\neg(B\land C))=F$. De ii., pelo significado da ($\neg$), temos que iii. $v(B\land C)=V$. De iii., pelo significado da ($\land$), temos que iv. $v(B)=V$, $v(C)=V$. De iv., pelo significado da ($\neg$), temos que v. $v(B)=V$, $v(\neg C)=F$. De v., pelo significado da ($\rightarrow$), temos que vi. $v(B\rightarrow \neg C)=F$. Contudo, de i. e vi., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+h) $\neg(A\lor B), C\leftrightarrow A\vDash \neg C$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(\neg(A\lor B))=V$, 
+ii. $v(C\leftrightarrow A)=V$ e 
+iii. $v(\neg C)=F$. De i., pelo significado da ($\neg$), temos que iv. $v(A\lor B)=F$. De iv., pelo significado da ($\lor$), temos que v. $v(A)=F$, $v(B)=F$. De ii. e v., pelo significado de ($\leftrightarrow$), temos que vi. $v(C)=F$. De vi., pelo significado da ($\neg$), temos que vii. $v(\neg C)=V$. Contudo, de iii. e vii., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas  verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+i) $\neg(A\land B), D\leftrightarrow A\vDash \neg D$
+
+\begin{proof}
+Vamos mostrar que $\neg(A\land B), D\leftrightarrow A\nvDash \neg D$. Para ver isto, tome a valoração $v$, tal que: 
+i. $v(A)=V$, $v(B)=F$, $v(D)=V$. Por i. e pelo significado da ($\land$), temos que ii. $v(A\land B)=F$. Por ii. e pelo significado da ($\neg$), temos que iii. $v(\neg(A\land B))=V$. Por i. e pelo significado da ($\leftrightarrow$), temos que iv. $v(D\leftrightarrow A)=V$. Daí, por i. e pelo significado da ($\neg$), temos que v. $v(\neg D)=F$. Assim, por iii. e por iv., sabemos que a valoração dada torna as premissas verdadeiras, mas por v., que torna a conclusão falsa. Logo, o argumento é inválido.\\
+\end{proof}
+
+\pagebreak
+
+j) $A \vDash (A\rightarrow (B\land A))\rightarrow (A\land B)$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(A)=V$ e 
+ii. $v((A\rightarrow (B\land A))\rightarrow (A\land B))=F$. De ii., pelo significado da ($\rightarrow$), temos que iii. $v(A\rightarrow (B\land A))=V$, $v(A\land B)=F$. De i. e iii., pelo significado da ($\land$), temos quem iv. $v(B)=F$. De iv., pelo significado da ($\land$), temos que v. $v(B\land A)=F$. De i. e v., pelo significado da ($\rightarrow$), temos que vi. $v(A\rightarrow (B\land A))=F$. Contudo, de iii. e vi., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+k) $(B\land C) \rightarrow A, \neg B, \neg C\vDash \neg A$
+
+\begin{proof}
+Vamos mostrar que  $(B\land C) \rightarrow A, \neg B, \neg C\nvDash \neg A$. Para ver isto, tome a valoração $v$, tal que:
+i. $v(B)=F$, $v(C)=F$, $v(A)=V$. Por i. e pelo significado da ($\land$), temos que ii. $v(B\land C)=F$. Por i., ii. e pelo significado da ($\rightarrow$), temos que iii. $v((B\land C) \rightarrow A)=V$. Por i. e pelo significado da ($\neg$), temos que iv. $v(\neg B)=V$, $v(\neg C)=V$. Daí, por i. e pelo significado da ($\neg$), temos que v. $v(\neg A)=F$. Assim, por iii. e por iv., sabemos que a valoração dada torna as premissas verdadeiras, mas por iv., que torna a conclusão falsa. Logo, o argumento é inválido.\\
+\end{proof}
+
+\bigskip
+
+l)  $A \leftrightarrow B, B\leftrightarrow C\vDash A\leftrightarrow C$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(A\leftrightarrow B)=V$, 
+ii. $v(B\leftrightarrow C)=V$ e 
+iii. $v(A\leftrightarrow C)=F$. De i., pelo significado da ($\leftrightarrow$), temos que iv. a. $v(A)=V$, $v(B)=V$, ou b. $v(A)=F$, $v(B)=F$. De i. e ii., pelo significado da ($\leftrightarrow$), temos que v. a. $v(B)=V$, $v(C)=V$, ou b. $v(B)=F$, $v(C)=F$. De iii., pelo significado da ($\leftrightarrow$), temos que vi. a. $v(A)=V$, $v(C)=F$, ou b. $v(A)=F$, $v(C)=V$. Contudo, de iv., v. e vi., nas duas valorações possíveis, obtemos contradições, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+m) Respondido no Exemplo II.\\
+
+\bigskip
+
+\pagebreak
+
+n) $(\neg A \lor B)\lor C, (B\lor C)\rightarrow D\vDash A\rightarrow D$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v((\neg A \lor B)\lor C)=V$,
+ii. $v((B\lor C)\rightarrow D)=V$ e
+iii. $v(A\rightarrow D)=F$. De iii., pelo significado da ($\rightarrow$), temos que iv. $v(A)=V$, $v(D)=F$. De ii. e iv., pelo significado da ($\rightarrow$), temos que v. $v(B\lor C)=F$. De v., e pelo significado da ($\lor$), temos que vi. $v(B)=F$, $v(C)=F$. De iv., pelo significado da ($\neg$), temos que vii. $v(\neg A)=F$. De vi. e vii., pelo significado da ($\lor$), temos que viii. $v(\neg A \lor B)=F$. De vi. e viii., pelo significado da ($\lor$), temos que ix. $v((\neg A\lor B)\lor C)=F$. Contudo, de i. e ix., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+o) $(A\rightarrow B), A\vDash A$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é válido. Suponha, por absurdo, que o argumento é inválido. Assim, há uma valoração $v$, tal que:
+i. $v(A\rightarrow B)=V$, 
+ii. $v(A)=V$ e 
+iii. $v(A)=F$. Logo de início, de ii. e iii., obtemos uma contradição, visto que $v$ é função. Segue-se disso que não há valoração que torne as premissas verdadeiras e a conclusão falsa. Portanto, o argumento é válido.\\
+\end{proof}
+
+\bigskip
+
+p) $(A\land B)\rightarrow C, A\land \neg C, B\vDash C\land \neg C$
+
+\begin{proof}
+Iremos demonstrar que o presente argumento é inválido. Para isso, basta perceber que sua conclusão em si mesma é uma contradição. Tomando a conclusão como verdadeira, temos uma valoração $v$, tal que: i. $v(C\land \neg C)=V$. De i., pelo significado da ($\land$), temos que ii. $v(C)=V$, $v(\neg C)=V$. De $v(\neg C)=V$, pelo significado da ($\neg$), temos que iii. $v(C)=F$. De iii. e i. obtemos uma contradição. Segue-se disso que não há valoração que torne a conclusão verdadeira, ainda que independente das premissas. Portanto, o argumento é inválido.\\
+\end{proof}
+
+\bigskip
+
+\end{document}

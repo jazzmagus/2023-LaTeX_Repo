@@ -1,0 +1,325 @@
+%%
+%% This is file `rhm.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% smfclass.dtx  (with options: `rhm')
+%% 
+%%
+%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  %% Classes, paquetages pour les publications de la SMF %%
+%%  %% (c) 1999-2001 Societe mathematique de France        %%
+%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\ProvidesPackage{rhm}[2001/10/17 v1.0c
+  Fichier additionnel pour la soumission des articles a la Revue d'histoire des mathematiques]
+  \newif\ifsmf@anonyme
+  \DeclareOption{anonyme}{\smf@anonymetrue}
+\ProcessOptions\relax
+\RequirePackage[square,sort]{natbib}%CS
+
+\let\ps@copyright\ps@empty
+
+\textheight 17.7cm
+\textwidth 11.2cm
+\addtolength{\oddsidemargin}{.9cm}
+\addtolength{\evensidemargin}{.9cm}
+\addtolength{\topmargin}{.5cm}
+\headheight=10pt
+\headsep 7mm
+\footskip 7mm
+\arraycolsep 1.5pt
+\abstractmargin\normalparindent
+
+\def\th@plain{%
+  \let\thm@indent\noindent
+  \thm@headfont{\normalfont\scshape}%
+  \thm@notefont{\normalfont}%
+  \thm@preskip.5\linespacing \@plus .5\linespacing\relax
+  \thm@postskip\thm@preskip
+  \thm@headpunct{\pointrait}
+  \let\thmheadnl\relax
+  \itshape }
+
+\def\abstractheadfont{\normalfont\scshape}
+\def\smf@enddoc{}
+\ifsmf@anonyme
+  \renewcommand{\author}[2][]{%
+    \ifx\@empty\authors
+      \gdef\shortauthors{}\gdef\authors{}%
+   \else
+      \g@addto@macro\shortauthors{}%
+      \g@addto@macro\authors{}%
+   \fi
+   \g@addto@macro\addresses{\author{}}%
+}
+ \def\@setaddresses{}
+\else
+\renewcommand{\author}[2][]{%
+  \ifx\@empty\authors
+    \gdef\shortauthors{#1}\gdef\authors{#2}%
+  \else
+    \g@addto@macro\shortauthors{\and#1}%
+    \g@addto@macro\authors{\and#2}%
+  \fi
+  \g@addto@macro\addresses{\author{#1}}%
+}
+  \def\@setaddresses{\begingroup
+    \rightskip=0pt plus 1cm
+    \emergencystretch .5\textwidth
+    \exhyphenpenalty=-100
+    \interlinepenalty\@M
+    \def\baselinestretch{1}% \normalfont\footnotesize
+    \def\\{\unskip, \penalty-10\ignorespaces}%
+    \def\cond@bullet {{\setbox0\hbox{\quad$\bullet$\quad}%
+         \hskip 0pt plus 3cm\penalty -30\hskip 0pt plus -3cm
+         \cleaders \copy0 \hskip\wd0 }}%
+    \def\firstauthor##1{{\scshape ##1}\let\address\firstaddress
+        \let\author\otherauthor}%
+    \def\otherauthor##1{\par\nobreak
+      {\scshape ##1}\let\address\firstaddress}%
+    \def\firstaddress##1##2{\unskip, \let\address\otheraddress
+         \penalty-20\ignorespaces##2}%
+    \def\otheraddress##1##2{\cond@bullet \ignorespaces##2}%
+    \let\author\firstauthor
+    \let\address\firstaddress
+    \def\curraddr{\address}%
+    \def\email##1##2{\@ifnotempty{##2}%%CS
+        {\par\noindent
+         {Courrier  \'electronique~:}~{\ttfamily\ignorespaces ##2}}}%
+    \def\urladdr##1##2{\@ifnotempty{##2}%%CS
+        {\par\noindent
+         {Url~:}~{\ttfamily\ignorespaces ##2}\par}}%
+    \addresses
+    \endgroup}
+\fi
+\def\smf@boldmath{\mathversion{bold}}
+\def\@setdate{{\@date}} %% enleve le \@@par%CS
+\def\smf@byfont{\scshape}
+\csname smf@byauthorfalse\endcsname %% ``par'' et auteur sur la meme ligne
+\def\smf@authorfont{\scshape\smaller}%CS
+\def\@endmaketitlehook{}%
+\def\@maketitlehook{\bgroup
+ \normalparindent0pt
+ \footnotetext{%
+ \ifx\@empty\@date\else\@setdate\par\smallskip\fi
+ \@setaddresses\par\smallskip
+ \def\abstractheadfont{}
+ \ifx\@empty\@subjclass\else\@setsubjclass\par\smallskip\fi
+ \ifx\@empty\@keywords\else\@setkeywords\par\smallskip\fi
+ \ifx\@empty\thankses\else \@setthanks\par\smallskip\fi
+    \par}%CS
+ \egroup}
+
+\def\smf@rubriquestatus{}
+\def\smf@rubrique{}
+
+\def\@maketitle{\cleardoublepage\thispagestyle{copyright}%CS
+  \begingroup
+  \uppercasenonmath\shorttitle
+  \ifx\@empty\shortauthors \let\shortauthors\shorttitle
+   \else \uppercasenonmath\shortauthors \andify\shortauthors \fi
+  \toks@\@xp{\shortauthors}\@temptokena\@xp{\shorttitle}%
+  \ifx\smf@rubriquestatus\@empty
+       \edef\@tempa{\@nx\markboth{\the\toks@}{\the\@temptokena}}\@tempa
+  \else
+    \def\@tempa{F}\ifx\smf@rubriquestatus\@tempa\@makerubriquetitle\fi
+    \uppercasenonmath\smf@rubrique
+    \toks@\@xp{\shortauthors}\@temptokena\@xp{\smf@rubrique}%
+       \edef\@tempa{\@nx\markboth{\the\toks@}{\the\@temptokena}}\@tempa
+  \fi
+  \topskip\z@skip
+  \vtop to 55 mm{%
+  \parindent=0pt
+ % \hrule
+  \medskip
+  {\abstractfont\smf@journalhead\par}\vfil
+  \begin{center}
+  \def\baselinestretch{1.2}\large\vfil
+   {\smf@titlefont\smf@boldmath\smaller\MakeUppercase\@title\par}
+  \vfil\def\smfbyname{}%
+   \ifx\@empty\smfbyname\else
+     {\smf@byfont\smfbyname\ifsmf@byauthor\par\vfil\else\ \fi}%
+   \fi
+   {\smf@authorfont
+    \edef\smfandname{{\noexpand\normalfont \smfandname}}
+    \andify\authors\authors\par}
+% \vfil
+    \vrule height .4pt width .3\textwidth \vfil
+  \end{center}}
+  \@maketitlehook
+  \par\bigskip
+  \ifx\@empty\@dedicatory\else\@setdedicatory\medskip\fi
+  \@setabstract\par\smallskip\@setaltabstract\par
+  \bigskip\bigskip
+\endgroup}
+
+\def\@setaltabstracthead{\abstractheadfont \altabstractname
+  \ifx\@alttitle\@empty\else\ \normalfont(\@alttitle)\fi}%CS
+
+\def\smf@journalhead{}
+
+\def\@setsubjclass{%
+  \abstractfont
+  {\abstractheadfont\subjclassname~:}\enspace\ignorespaces
+  \@subjclass\@addpunct{{\upshape.}}}
+\def\@setkeywords{%
+  \abstractfont
+  {\abstractheadfont\keywordsname~:}\enspace\ignorespaces
+  \@keywords\@addpunct{{\upshape.}}}
+
+\def\smfdate#1#2{%
+  \@ifempty{#2}
+  {\date{Texte re\c cu le\ #1\@addpunct{{\upshape.}}}}
+  {\date{Texte re\c cu le\ #1, r\'evis\'e le\ #2\@addpunct{{\upshape.}}}}
+}
+
+\def\smf@titlefont{\bfseries}
+
+\def\part{\@startsection{part}{1}%
+  \z@{3\linespacing\@plus\linespacing}{2\linespacing}%
+  {\centering\bfseries\smf@boldmath\MakeUppercase}}
+
+\def\section{\@startsection{section}{1}%
+  \parindent{1.5\linespacing\@plus\linespacing}{.5\linespacing}%
+  {\bfseries\smf@boldmath\centering\smaller\MakeUppercase}}
+
+\def\subsection{\@startsection{subsection}{2}%
+  \parindent{.7\linespacing\@plus.7\linespacing}{.2\linespacing}
+  {\bfseries\itshape\smf@boldmath}}
+
+\def\subsubsection{\@startsection{subsubsection}{3}%
+  \parindent{.4\linespacing}{1sp}%
+  {\normalfont\itshape}}
+
+\def\paragraph{\@startsection{paragraph}{4}%
+  \parindent{.4\linespacing}{-\fontdimen2\font}%
+  {\normalfont\itshape}}
+
+\def\subparagraph{\@startsection{subparagraph}{5}%
+  \parindent{.3\linespacing}{-\fontdimen2\font}%
+  \normalfont}
+
+%% Num\'eros de pages
+\def\ps@headings{\ps@empty
+  \def\@oddfoot{}%
+  \def\@evenfoot{}%
+  \def\@evenhead{\normalfont
+     \rlap{\thepage}\hfil {\scriptsize\leftmark{}{}}\hfil}%
+  \def\@oddhead{\normalfont
+     \hfil {\scriptsize\rightmark{}{}}\hfil \llap{\thepage}}%
+  \let\@mkboth\@gobbletwo} 
+\ps@headings
+
+%% Notes de bas de page
+\def\@makefnmark{\hbox{\textsuperscript{\normalfont\@thefnmark}}}
+\def\@makefntext{\parindent0pt\sloppy\indent
+        \ifx\@makefnmark\relax\else\@makefnmark\nobreak\ \fi
+        \ignorespaces}
+
+\footnotesep\baselineskip
+
+%%%%%%% BIBLIOGRAPHIE AVEC NATBIB ET RHMUNSRTNAT %%%%%%
+
+\bibpunct{[}{]}{;}{a}{}{;}%CS
+\renewcommand\betweenauthors{\&}%CS
+\gdef\harvardand{\&}
+\def\bibfont{\small}%CS
+\AtBeginDocument{%
+    \nocite{*}%
+    \let\refname\bibname%
+}%CS
+\let\citepyear\citeyearpar%CS
+
+\bibhang50pt
+\renewcommand\NAT@bibsetup%
+   [1]{\leftmargin\bibhang
+       \itemindent-\leftmargin
+       \labelwidth\z@skip
+       \itemsep\bibsep
+       \parsep\z@skip}
+
+\def\RHMoldauteur{}
+\def\RHMauteur#1{\def\tempa{#1}\ifx\tempa\RHMoldauteur
+  \else \def\RHMoldauteur{#1} #1 \\\relax \hbox{}\fi}
+
+\def\RHMEtiquette#1{%
+   \setbox\@tempboxa\hbox{\hskip-\bibhang\kern\normalparindent
+       \hbox{[\textup{#1}]}\kern\labelsep}%
+   \ifdim\wd\@tempboxa<0pt \wd\@tempboxa 0pt \fi
+   \box\@tempboxa}
+
+\def\RHMfirstnewblock{\noindent\hbox{}}
+
+\AtBeginDocument{%
+\def\@tempa{english}
+\ifx\@tempa\smf@language
+   \def\smfdansname{in}%
+   \def\smfmultipages{pp.\kern2pt}
+   \def\smfunipage{p.\kern2pt}
+   \def\smfedition{edition}
+   \def\smfnumeroname{no.}
+   \def\smfedbyname{ed.\kern3pt by}
+\else
+   \def\smfdansname{dans}%
+   \def\smfmultipages{p.\kern2pt}
+   \def\smfunipage{p.\kern2pt}
+   \def\smfedition{\'edition}   
+   \def\smfnumeroname{n\textsuperscript{o}}
+   \let\smfedsname\smfedname
+   \def\smfedbyname{\'ed.\kern3pt par}
+\fi
+}
+
+%%%%%% MACROS UTILES %%%%%%%%
+
+\def\siecle#1{\textsc{\expandafter\romannumeral #1}\textsuperscript{e} si\`ecle}
+\let\up\textsuperscript
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% CITATIONS DE TEXTES %%
+\AtBeginDocument{%
+\providecommand{\og}{``}
+\providecommand{\fg}{''}
+\providecommand{\@smflanguage}{}
+\providecommand{\@smfaltlanguage}{}
+}
+
+\newenvironment{smfcitation}%
+{\par\vskip3pt minus 2pt\begin{small}\leftskip\normalparindent%
+\renewcommand{\baselinestretch}{.95}\normalfont\noindent\ignorespaces
+}
+{\par\end{small}\vskip3pt minus 2pt}
+
+\newenvironment{altsmfcitation}%
+{\par\vskip3pt minus 2pt\begin{small}\leftskip\normalparindent%
+\renewcommand{\baselinestretch}{.95}\normalfont%
+\itshape\@smfaltlanguage\noindent\ignorespaces
+}
+{\@smflanguage\par\end{small}\vskip3pt minus 2pt}
+
+\def\frontmatter{}
+\def\mainmatter{\def\baselinestretch{1.15}\normalfont}
+\def\backmatter{\def\baselinestretch{1}\normalfont}
+\AtBeginDocument{\gdef\smfbyname{}}
+\endinput
+%%
+%% End of file `rhm.sty'.

@@ -1,0 +1,77 @@
+% % -*- coding:utf-8 -*-
+\documentclass[aspectratio=169,10pt]{beamer}
+\nonstopmode
+
+\usepackage{appendixnumberbeamer}
+\usepackage{graphicx}
+\usepackage{url}
+\input{colors}
+
+% \usepackage{beamerthememetropolis}
+\usetheme[progressbar=frametitle,noslidenumbers]{metropolis}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\usepackage{xcolor}
+
+
+\title{Presentation Template Sommersemester 2020}
+% \subtitle{Learning to Identify Similarities between Mathematical Expressions}
+\author{Lukas Pfahler}
+
+\institute{TU Dortmund University - Department of Computer Science}
+\titlegraphic{\hfill\includegraphics[height=8mm]{tu-do-logo.pdf}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}[t,fragile]{Querying Data used to be simple...}
+  \begin{itemize}
+      \item Tutorial for Beamer \url{https://www.overleaf.com/learn/latex/Beamer_Presentations:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Getting_Started}
+      \item Quelle Template: \url{https://github.com/matze/mtheme}
+      \item Quelle Bild: \url{https://unsplash.com/photos/52gEprMkp7M}
+  \end{itemize}
+\end{frame}
+
+\section{Sections Give Structure}
+
+\begin{frame}[fragile]{How about a very large image?}
+
+\begin{columns}
+    \begin{column}{0.57\paperwidth}
+        \vspace{0.5pt}
+        \includegraphics[width=\linewidth, clip]{images/city}
+    \end{column}
+    \begin{column}[c]{0.43\paperwidth}
+        \begin{itemize}
+        \item Itemize Environments are important
+        \item We can \alert{highlight} words
+        \pause
+        \item We can add animations.\\(please don't over-do it)
+        \end{itemize}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\section{Outlook}
+\begin{frame}{Outlook}
+\Large
+The font size should be as large as possible
+\begin{itemize}
+\item \textit{Never smaller than the age of the oldest audience member}
+\item Don't vary sizes to much, never within a slide
+\item Stick to one font
+\item Don't overuse formatting like bold, italics, alert, etc.
+\end{itemize}
+But you knew all that already...
+\end{frame}
+
+\begin{frame}[t,standout]
+\Large
+Clever Last Words to Stimulate Discussion
+\end{frame}
+
+\end{document}

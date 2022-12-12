@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+
+	<head>
+		<title>File Types</title>
+		<link rel="stylesheet" href="../style.css" type="text/css" />
+	</head>
+	<body>
+	<div class="helpcontent">
+	<div class="sectiontitle"><a href="../index.html">Latexian Help</a> &gt; File Types</div>
+	<div class="sectioncontent">
+		<div class="caption">
+			<a href="images/filetypeprefs.jpg" target="_blank"><img src="images/filetypeprefs.jpg" height="215" width="250" border="0"/><br />
+			File Types Preferences</a>
+		</div>
+		Latexian determines a file's type based on the extension in a file's name. The file type affects how code coloring, code
+		completion, and previewing is performed for a file. For example, Latexian will apply the BibTeX coloring rules to a file
+		if the file's name ends with a BibTeX file extension, such as ".bib". The File Types section of the Preferences allows the file
+		type associations to be customized, although the default values should work well for most people.<br /><br />
+		File extensions can be removed and new ones added in the File Types Preferences. For each extension in the list, a file type
+		must be specified from the following choices:
+		<ul>
+			<li>LaTeX: LaTeX rules for code coloring and code completion; LaTeX typesetter is used for preview and export.</li>
+			<li>LaTeX (DVI): LaTeX rules for code coloring and code completion; the LaTeX typesetter is used to generate a DVI file, which is then converted to a PDF.</li>
+			<li>XeTeX: The same as LaTeX, except the XeTeX typesetter is used for preview and export.</li>
+			<li>BibTeX: BibTeX rules for code coloring and code completion.</li>
+			<li>Plain Text: file will not be colored.</li>
+		</ul><br />
+		If a file in a project has an extension not listed in the File Types Preferences, then the file will open in the default external 
+		application. If you would like such a file to open in Latexian, then add its extension in the Preferences, or you can also
+		right-click the file in the project file browser and select "Open As Text". The File Types Preferences also allow you to specify the
+		file type for new, untitled documents; once such a document is saved, it will use its file extension to determine its type.
+	</div>
+	</div>
+	</body>
+</html>
