@@ -1,0 +1,192 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+%\usepackage{italian, babel}
+\setbeamertemplate{frame numbering}[none]
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usepackage{graphics}
+\renewcommand{\familydefault}{\rmdefault}
+%\usecolortheme{spruce}
+\setbeamercolor{background canvas}{bg=white}
+
+\title{Lezione di Matematica: Derivate}
+\subtitle{sottotitolo lezione}
+\date{\today}
+\author{Diego Fantinelli}
+\institute{Matematica per il Liceo}
+
+\begin{document}
+%\metroset{block=fill}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+    
+    \begin{abstract}
+        The Dunning Kruger Effect is a cognitive bias that makes people believe
+        they are smarter and more capable than they actually are. The effect is
+        related to people's general inaptitude to recognize their lack of
+        ability. To learn how this comes about and what you can do to avoid it
+        from happening to you.
+    \end{abstract}
+\end{frame}
+
+\begin{frame}{sommario}
+  \tableofcontents
+\end{frame}
+
+
+% \begin{frame}
+% \begin{block}{cos'è una \textbf{frazione algebrica}}
+
+% \begin{quote}
+% Si tratta di una \textbf{divisione} tra polinomi, espressa sotto forma di
+% frazione.
+% \end{quote}
+
+% \begin{quote}
+% \end{quote}
+
+% \begin{quote}
+% \emph{esempio:} {\((x + 1):(x^{2} - 1)\)}
+% \end{quote}
+
+% {\[\frac{\text{numeratore}}{\text{denominatore}}\rightarrow\frac{N(x)}{D(x)}\rightarrow\frac{x + 1}{x^{2} - 1}\]}
+
+% \begin{itemize}
+% \item
+%   Il \emph{dividendo} prende il nome di \textbf{numeratore}
+% \item
+%   Il \emph{divisore} prende il nome di \textbf{denominatore}
+% \end{itemize}
+% \end{block}
+% \end{frame}
+
+\begin{frame}{prerequisiti}
+\begin{itemize}
+\item
+  \textbf{Fattorizzazione polinomiale}
+\item
+  indispensabile per poter semplificare una \emph{frazione algebrica}
+\item
+  \textbf{mcm} tra polinomi
+\item
+  per potersi riportare alla \textbf{forma normale} di una
+  \emph{frazione algebrica}: \[\dfrac{N(x)}{D(x)} = \dfrac{\text{numeratore polinomiale}}{\text{denominatore polinomiale}}\]
+\end{itemize}
+\end{frame}
+
+% \begin{frame}
+% \begin{block}{Le tre cose da fare}
+% \begin{enumerate}
+% \tightlist
+% \item
+%   Ridurla in \textbf{forma normale}, nel caso si trattasse di
+%   un'\emph{espressione con frazioni algebriche}
+% \end{enumerate}
+
+% \begin{itemize}
+% \item
+%   fattorizzare tutti in denominatori
+% \item
+%   denominatore comune
+% \end{itemize}
+
+% \begin{enumerate}
+% \item
+%   Determinare le \textbf{Condizioni di Esistenza}, C.E.
+% \item
+%   fattorizzare il numeratore, se possibile
+% \item
+%   semplificare, se possibile
+% \end{enumerate}
+% \end{block}
+% \end{frame}
+
+% \begin{frame}{Riduzione di frazioni algebriche allo stesso denominatore}
+% \begin{quote}
+% Per ridurre più frazioni allo stesso denominatore, bisogna trasformarle
+% in frazioni \textbf{equivalenti} aventi tutte lo stesso denominatore
+% (\textbf{M.C.D.} minimo comune denominatore).
+% \end{quote}
+% \end{frame}
+
+% \begin{frame}
+% \begin{block}{Il procedimento}
+% È analogo a quello usato per ridurre più frazioni numeriche allo stesso
+% denominatore:
+
+% \begin{enumerate}
+% \item
+%   si semplificano le frazioni date;
+% \item
+%   le frazioni così ottenute sono quelle a cui si applicano direttamente
+%   i passaggi successivi;
+% \item
+%   il denominatore comune cercato (\emph{minimo comune denominatore}) è
+%   il \textbf{mcm} dei denominatori;
+% \end{enumerate}
+% \end{block}
+% \end{frame}
+
+% \begin{frame}
+% \begin{block}{LaTeX}
+% \end{block}
+
+% \begin{block}{esempio 1}
+% \begin{itemize}
+% \item
+%   fattorizziamo e \textbf{semplifichiamo}:
+% \item
+%   {\(\frac{(x + 1)}{(x^{2} - 1)} = \frac{(x + 1)}{(x + 1)(x - 1)} = \frac{1}{(x - 1)}\)}
+% \item
+%   determiniamo le \textbf{condizioni di esistenza}, C.E.
+% \item
+%   poniamo il denominatore \textbf{uguale a zero} determinare per quali
+%   valori di {\(x\)} il \textbf{denominatore si annulla}:
+% \item
+%   {\(D(x) = 0\rightarrow x - 1 = 0\Rightarrow x = 1\)}
+% \end{itemize}
+% \end{block}
+% \end{frame}
+
+% \begin{frame}
+% \begin{block}{scriviamo correttamente la soluzione}
+% \begin{itemize}
+% \item
+%   Condizioni di esistenza:
+% \item
+%   {\(C.E.:x \neq 1\)}
+% \item
+%   Insieme di Definizione:
+% \item
+%   {\(IdD = \overset{insieme,di,definizione}{\overbrace{{\forall x \in \mathbb{R}:x \neq 1}}}\)}
+% \end{itemize}
+
+% \begin{frame}
+% \begin{block}{questi li facciamo alla lavagna...}
+% \begin{itemize}
+% \item
+%   {\[\frac{3x + 15}{x^{2} - 25}\]}
+% \item
+%   {\[\frac{2x^{4} - 18}{(x - 1)(2x - 3) - (x - 2)(x - 3)}\]}
+% \item
+%   {\[\frac{x}{x + 2} - \frac{8}{x^{2} - 4} + \frac{2}{x - 2}\]}
+% \item
+%   {\[- \frac{10}{x - 2} + \frac{x + 2}{x} + \frac{2}{3x^{2} - x}\]}
+% \end{itemize}
+% \end{block}
+% \end{frame}
+
+% \begin{frame}{Due regole d'oro}
+% \begin{block}{1. \textbf{fattorizzare} i \textbf{denominatori}}
+% \begin{block}{{\(\Rightarrow\)} serve a calcolare il \emph{minimo comun
+% denominatore}}
+% \end{block}
+% \end{block}
+
+
+\end{document}
