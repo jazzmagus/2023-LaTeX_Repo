@@ -1,0 +1,16 @@
+\frametitle{How about a very large image?}
+
+\begin{columns}
+    \begin{column}{0.57\paperwidth}
+        \vspace{0.5pt}
+        \includegraphics[width=\linewidth, clip]{images/city}
+    \end{column}
+    \begin{column}[c]{0.43\paperwidth}
+        \begin{itemize}
+        \item Itemize Environments are important
+        \item We can \alert{highlight} words
+        \pause
+        \item We can add animations.\\(please don't over-do it)
+        \end{itemize}
+    \end{column}
+\end{columns}
