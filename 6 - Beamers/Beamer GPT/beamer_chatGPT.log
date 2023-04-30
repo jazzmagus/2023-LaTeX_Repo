@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.3)  18 APR 2023 19:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.3)  30 APR 2023 10:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -747,13 +747,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3
 
 ]
-<parabola.png, id=51, 251.4996pt x 231.0231pt>
+<parabola.png, id=57, 251.4996pt x 231.0231pt>
 File: parabola.png Graphic file (type png)
 <use parabola.png>
 Package pdftex.def Info: parabola.png  used on input line 40.
-(pdftex.def)             Requested size: 199.1693pt x 182.96097pt.
+(pdftex.def)             Requested size: 139.42093pt x 128.0748pt.
 
-Overfull \vbox (74.73265pt too high) detected at line 40
+Overfull \vbox (19.84648pt too high) detected at line 40
  []
 
 [4
@@ -765,6 +765,10 @@ Overfull \vbox (74.73265pt too high) detected at line 40
 ] [7
 
 ] [8
+
+] [9
+
+] [10
 
 ]
 \tf@nav=\write6
@@ -778,21 +782,21 @@ Overfull \vbox (74.73265pt too high) detected at line 40
 
  (/Users/diegofantinelli/GitHub/2023-LaTeX_Repo/6 - Beamers/Beamer GPT/beamer_chatGPT.aux)
 Package rerunfilecheck Info: File `beamer_chatGPT.out' has not changed.
-(rerunfilecheck)             Checksum: 931C8B690AF5075EB5C54B42C7D31D0E;520.
+(rerunfilecheck)             Checksum: 735B848C1A96DEAE785F566A8D80EC1B;692.
  ) 
 Here is how much of TeX's memory you used:
- 25296 strings out of 476024
- 518921 string characters out of 5790019
+ 25309 strings out of 476024
+ 519035 string characters out of 5790019
  1856388 words of memory out of 5000000
- 45212 multiletter control sequences out of 15000+600000
+ 45220 multiletter control sequences out of 15000+600000
  519039 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,122p,1972b,763s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on "/Users/diegofantinelli/GitHub/2023-LaTeX_Repo/6 - Beamers/Beamer GPT/beamer_chatGPT.pdf" (8 pages, 127151 bytes).
+Output written on "/Users/diegofantinelli/GitHub/2023-LaTeX_Repo/6 - Beamers/Beamer GPT/beamer_chatGPT.pdf" (10 pages, 128231 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 80 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,3 +1,4 @@
 \beamer@sectionintoc {1}{Introduzione alla Parabola}{3}{0}{1}
 \beamer@sectionintoc {2}{Equazione della Parabola}{5}{0}{2}
 \beamer@sectionintoc {3}{Proprietà della Parabola}{7}{0}{3}
+\beamer@sectionintoc {4}{Proprietà della Iperbole}{9}{0}{4}

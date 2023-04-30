@@ -23,8 +23,15 @@
 \headcommand {\beamer@framepages {7}{7}}
 \headcommand {\slideentry {3}{0}{2}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@partpages {1}{8}}
-\headcommand {\beamer@subsectionpages {7}{8}}
 \headcommand {\beamer@sectionpages {7}{8}}
-\headcommand {\beamer@documentpages {8}}
-\headcommand {\gdef \inserttotalframenumber {5}}
+\headcommand {\beamer@subsectionpages {7}{8}}
+\headcommand {\sectionentry {4}{Proprietà della Iperbole}{9}{Proprietà della Iperbole}{0}}
+\headcommand {\slideentry {4}{0}{1}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {4}{0}{2}{10/10}{}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@partpages {1}{10}}
+\headcommand {\beamer@subsectionpages {9}{10}}
+\headcommand {\beamer@sectionpages {9}{10}}
+\headcommand {\beamer@documentpages {10}}
+\headcommand {\gdef \inserttotalframenumber {6}}
