@@ -12,6 +12,7 @@
 \usepackage[utf8]{inputenc}
 % \usepackage[dvipsnames]{xcolor}
 \usepackage{multicol}
+\usepackage{mathtools}
 \usepackage{parskip}[5pt]
 % \usepackage{xcolor}
 \definecolor{mypink1}{rgb}{0.858, 0.188, 0.478}
@@ -94,7 +95,17 @@ $$
 \textbf{esempio}:
 \hrule
 
-$$\left(2 a^2+3 b^3\right)\left(2 a^2-3 b^3\right)=\left(2 a^2\right)^2-\left(3 b^3\right)^2=4 a^4-9 b^6$$\\ 
+$$\left(2 a^2+3 b^3\right)\left(2 a^2-3 b^3\right)=(\underbracket{2 a^2}_{A})^2- (\underbracket{3 b^3}_{B})^2=4 a^4-9 b^6$$\\[10pt]
+
+Nel precedente esempio e in riferimento alla formula generale $(A+B)(A-B)=A^2-B^2$, abbiamo:
+
+\[
+\begin{rcases*}
+    A = 2a^2\\
+    B= 3b^3
+\end{rcases*} \quad \small{\textit{suggerimento: i segni dei due termini non condizionano il risultato}} 
+\]
+
 
 \end{frame}
 
@@ -167,7 +178,7 @@ $$  \left(2 a b^3-3 c x\right)^2=4 a^2 b^6+ 9 c^2 x^2-12 a b^3 c x$$
         (A+B+C)^2=A^2+B^2+C^2+2 A B+2 B C+2 A C
         $$}\\[20pt]
 
-        \textbf{nota}: Ancora una volta, fare attenzione ai segna quando si eseguono i doppi prodotti
+        \textbf{nota}: Ancora una volta, fare attenzione ai segni quando si eseguono i doppi prodotti
         \end{column} 
     \end{columns}
     
