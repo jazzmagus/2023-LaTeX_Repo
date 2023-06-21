@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.3)  20 JUN 2023 11:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.3)  20 JUN 2023 16:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -879,11 +879,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [5
 
-]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 110.
-
-[6
+] [6
 
 ] [7
 
@@ -894,7 +890,7 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 110.
 ] [10
 
 ]
-Overfull \hbox (4.26222pt too wide) detected at line 225
+Overfull \hbox (4.26222pt too wide) detected at line 229
 \OT1/cmr/m/n/14.4 (\OML/cmm/m/it/14.4 A \OT1/cmr/m/n/14.4 + \OML/cmm/m/it/14.4 B\OT1/cmr/m/n/14.4 )[] = \OML/cmm/m/it/14.4 A[] \OT1/cmr/m/n/14.4 + 3\OML/cmm/m/it/14.4 A[]B \OT1/cmr/m/n/14.4 + 3\OML/cmm/m/it/14.4 AB[] \OT1/cmr/m/n/14.4 + \OML/cmm/m/it/14.4 B[]
  []
 
@@ -914,7 +910,7 @@ Overfull \hbox (4.26222pt too wide) detected at line 225
 <ae.jpeg, id=158, 1927.2pt x 1204.5pt>
 File: ae.jpeg Graphic file (type jpg)
 <use ae.jpeg>
-Package pdftex.def Info: ae.jpeg  used on input line 318.
+Package pdftex.def Info: ae.jpeg  used on input line 322.
 (pdftex.def)             Requested size: 455.2446pt x 256.07692pt.
  [17
 
@@ -933,15 +929,15 @@ Package rerunfilecheck Info: File `prodotti_notevoli.out' has not changed.
 (rerunfilecheck)             Checksum: CBBA361BB07B8DD563CA6F872B599F12;1187.
  ) 
 Here is how much of TeX's memory you used:
- 27316 strings out of 476024
- 558156 string characters out of 5790019
+ 27317 strings out of 476024
+ 558167 string characters out of 5790019
  1861388 words of memory out of 5000000
- 47160 multiletter control sequences out of 15000+600000
+ 47161 multiletter control sequences out of 15000+600000
  527038 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,122p,2041b,774s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "/Users/diegofantinelli/GitHub/2023-LaTeX_Repo/1 - Scuola Template Completi/4 - Beamer Lessons/2023_Pasini_ex/Ripasso_prodotti_notevoli/prodotti_notevoli.pdf" (17 pages, 582642 bytes).
+Output written on "/Users/diegofantinelli/GitHub/2023-LaTeX_Repo/1 - Scuola Template Completi/4 - Beamer Lessons/2023_Pasini_ex/Ripasso_prodotti_notevoli/prodotti_notevoli.pdf" (17 pages, 581388 bytes).
 PDF statistics:
  277 PDF objects out of 1000 (max. 8388607)
  200 compressed objects within 2 object streams
