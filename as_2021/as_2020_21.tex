@@ -1,0 +1,462 @@
+\documentclass[10pt, a4paper twoside, notitlepage, notoc, justified]{tufte-handout}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[italian]{babel}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{caption}
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+\setlength{\columnsep}{1cm}
+%\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+\usepackage{pgf,tikz,pgfplots} 
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\setlength{\columnseprule}{0.5pt}
+\def\columnseprulecolor{\color{black}}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\small {\MakeUppercase {ISS "G. A. Remondini"} - Bassano del Grappa}}
+\fancyhead[R]{\small \emph{Anno Scolastico 2020-21}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.15pt}
+\renewcommand{\footrulewidth}{0.1pt}
+
+\parindent 0ex
+%\setlength{\parindent}{2em}
+%\setlength{\parskip}{1em}
+%\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title page
+
+\begin{document}
+\noindent
+{\LARGE{\textbf{ 2024 PROGRAMMAZIONE CLASSI - MATEMATICA}}}\\[3mm]
+%\begin{titlepage}
+%\begin{center}
+%\vspace{1cm}
+{\textit {\small {\em prof.:} Diego Fantinelli}}\\[4mm]
+{\textbf{Anno Scolastico 2020-21}}\\
+%\vfill
+%\line(1,0){400}\\[.5mm]
+%{\Huge{\textbf{Diario di Bordo 2021}}}
+%\Large{\textbf{- Sottotitolo:  -}}\\[1mm]
+%\abstract{spiegazione: il presente documento serve da traccia per la Programmazione Didattica}
+\line(1,0){400}\\
+\begin{abstract}
+	\lipsum[2]
+\end{abstract}
+
+\tableofcontents
+%\vfill
+%{\scriptsize By Student Name}\\
+%{\scriptsize Candidate \#} \\
+%{\scriptsize \today} \\
+%\end{center}
+%
+%\end{titlepage}
+
+%------------------------------------- ESEMPIO Evento
+%\begin{loggentry}{30.09.2020}{\em Presentazioni e ripasso}\\
+%Ad un primo approccio la classe pare collaborativa e sufficientemente silenziosa.
+%Il rispetto delle prescrizioni Covid-19
+%\end{loggentry}
+%------------------------------------- introduzione
+
+%\thispagestyle{empty}
+%\clearpage
+
+\setcounter{page}{1}
+
+\newenvironment{loggentry}[2]% date, heading
+{\noindent\textbf{#2}\marginnote{#1}\\}{\vspace{0.5cm}}
+
+%------------------------------------- LA CLASSE 2^C
+\newpage
+\section{La CLASSE 2C}
+\marginpar{{\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+\newthought{osservazioni}\\ 
+Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus
+La Classe si presenta piuttosto numerosa {\em (27 alunni)}, ma piuttosto silenziosa - eccezion fatta per un piccolo gruppo da tenere sotto controllo -.\\ 
+
+$$
+\begin{array}{|l|l|l|l|l|}
+\hline \text {\bf n.} & \text {\bf cognome } & \text {\bf nome } & \text {\bf email } & \text {\bf note }\\
+\hline \text {\bf 1 } & \text { Alberti } & \text { Leonardo } & \text { s8443999i@remondini.net } & \text {\emph {\footnotesize Brevissime note essenziali, comportamento}}\\
+\hline \text {\bf 2* } & \text { Aslam } & \text { Daniyal } & \text { s8443979e@remondini.net } & \\
+\hline \text {\bf 3 } & \text { Baldin } & \text { Eleonora } & \text { s8444239a@remondini.net } & \\
+\hline \text {\bf 4 } & \text { Boafo } & \text { Rexford } & \text { s8444247a@remondini.net } & \text {\emph {\footnotesize BES Linguistico}}\\
+\hline \text {\bf 5 } & \text { Canova } & \text { Jacopo } & \text { s8233910n@remondini.net } & \text {\emph {\footnotesize R - BES ADHD, deficit attenzione}}\\
+\hline \text {\bf 6 } & \text { Caon } & \text { Leonardo } & \text { s8444020b@remondini.net } & \text {\emph {\emph {\footnotesize R}}}\\
+\hline \text {\bf 7 } & \text { Caspon } & \text { Edward } & \text { s8444016h@remondini.net } & \text {\footnotesize DSA}\\
+\hline \text {\bf 8 } & \text { Cavalli } & \text { Susy } & \text { s8444188k@remondini.net } & \\
+\hline \text {\bf 9 } & \text { Cristofari } & \text { Giorgia } & \text { s8502603y@remondini.net } & \\
+\hline \text {\bf 10 } & \text { Dannoun } & \text { Amal } & \text { s7798946p@remondini.net } & \text {\footnotesize DSA}\\
+\hline \text {\bf 11* } & \text { Dedoro } & \text { Nicole } & \text { s8444186l@remondini.net } & \text {\emph {\footnotesize Brevissime note essenziali, comportamento}}\\
+\hline \text {\bf 12 } & \text { Descube } & \text { Beatrice } & \text { s7799179u@remondini.net } & \\
+\hline \text {\bf 13 } & \text { Fraccaro } & \text { Sarah } & \text { s8444168s@remondini.net } & \\
+\hline \text {\bf 14 } & \text { Hanouni } & \text { Jihad } & \text { s8444000n@remondini.net } & \\
+\hline \text {\bf 15 } & \text { Lollato } & \text { Giulia } & \text { s8444143g@remondini.net } & \text {\emph {\footnotesize Tutoring }}\\
+\hline \text {\bf 16 } & \text { Lunardon } & \text { Irene } & \text { s8444140u@remondini.net } & \text {\footnotesize DSA}\\
+\hline \text {\bf 17 } & \text { Maggiolo } & \text { Anita } & \text { s8444135s@remondini.net } & \text {\footnotesize DSA}\\
+\hline \text {\bf 18 } & \text { Militello } & \text { Giuseppe } & \text { s8443996x@remondini.net } & \text {\emph {\footnotesize Tutoring }}\\
+\hline \text {\bf 19 } & \text { Operti } & \text { Chiara Maria } & \text { s8444101a@remondini.net } & \text {\emph {\footnotesize Tutoring - DSA}}\\
+\hline \text {\bf 20 } & \text { Prandina } & \text { Lucia } & \text { s8444103g@remondini.net } & \\
+\hline \text {\bf 21 } & \text { Pupaza } & \text { Alex Vladut } & \text { s8443947g@remondini.net } & \text {\emph {\footnotesize Ha frequentato il "Da Ponte" per un breve periodo}}\\
+\hline \text {\bf 22 } & \text { Sefedin } & \text { Jetka } & \text { s8444074f@remondini.net } & \text {\emph {\footnotesize R}}\\
+\hline \text {\bf 23 } & \text { Spagnolo } & \text { Giulia } & \text { s8444066a@remondini.net } & \\
+\hline \text {\bf 24 } & \text { Stegarescu } & \text { Elisa Rebecca } & \text { s8443953w@remondini.net } & \text {\emph {\footnotesize R - BES ADHD, deficit attenzione}}\\
+\hline \text {\bf 25 } & \text { Tafa } & \text { Zyra } & \text { s8444259o@remondini.net } & {\emph {\footnotesize BES Linguistico}}\\
+\hline \text {\bf 26 } & \text { Tekyi } & \text { Emmanuela } & \text { s8444061v@remondini.net } & \text {\footnotesize DSA}\\
+\hline \text {\bf 27 } & \text { Zanchetta } & \text { Eyasu } & \text { s8443965m@remondini.net } & {\emph {\footnotesize Brevissime note essenziali, comportamento}}\\
+\hline
+\end{array}
+$$
+
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. 
+\newthought{nota 2}\\ Nulla et lectus vestibulum ur na fringilla ultrices. 
+
+%------------------------------------- LA CLASSE
+\newpage
+\section{Programmazione Didattica 2 C}
+\subsection{\small \bf MODULO 1 - Ripasso Fattorizzazione}
+
+\begin{loggentry}{Settembre - Ottobre}{\em Insiemi Numerici}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar {\footnotesize {{\em competenze:}\\ $A_1$ - Utilizzare le tecniche e le procedure del calcolo aritmetico rappresentandole anche sotto forma grafica.}}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}
+		\begin{itemize}
+			\item Frazioni algebriche:\\ semplificazione
+			\item Equazioni numeriche di primo grado fratte.
+			\item Tecniche risolutive di un problema, anche utilizzando equazioni di primo grado.
+			\end{itemize}
+		\item {\bf Abilità:}
+		\begin{itemize}
+			\item Saper fattorizzare un polinomio
+			\item Utilizzo dell'algebra per risolvere problemi numerici e algebrici
+			\end{itemize}
+	\end{enumerate} 
+
+\columnbreak
+
+\begin{enumerate}
+		\item {\bf Conoscenze:}
+		\begin{itemize}
+			\item Frazioni algebriche:\\ semplificazione
+			\item Equazioni numeriche di primo grado fratte.
+			\item Tecniche risolutive di un problema, anche utilizzando equazioni di primo grado.
+			\end{itemize}
+		\item {\bf Abilità:}
+		\begin{itemize}
+			\item Saper fattorizzare un polinomio
+			\item Utilizzo dell'algebra per risolvere problemi numerici e algebrici
+			\end{itemize}
+	\end{enumerate} 
+}
+\end{multicols}
+\newthought{nota 1}\\ La programmazione subirà uno slittamento a causa di un indispensabile ripasso: hanno rimosso tutto ciò che avevano eventualmente acquisito lo scorso anno scolastico. 
+\newthought{osservazioni}\\ Programmare la Verifica di ripasso sulla Fattorizzazione, per la IV settimana di Ottobre.
+\end{loggentry}
+
+\newpage
+\subsection{\small \bf MODULO 2: Calcolo Letterale}
+
+\begin{loggentry}{Settembre - Ottobre}{\em Insiemi Numerici}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar {\footnotesize {{\em competenze:}\\ $A_1$ - Utilizzare le tecniche e le procedure del calcolo aritmetico rappresentandole anche sotto forma grafica.}}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}
+		\begin{itemize}
+			\item Frazioni algebriche:\\ semplificazione
+			\item Equazioni numeriche di primo grado fratte.
+			\item Tecniche risolutive di un problema, anche utilizzando equazioni di primo grado.
+			\end{itemize}
+		\item {\bf Abilità:}
+		\begin{itemize}
+			\item Saper fattorizzare un polinomio
+			\item Utilizzo dell'algebra per risolvere problemi numerici e algebrici
+			\end{itemize}
+	\end{enumerate} 
+
+\columnbreak
+
+\begin{enumerate}
+		\item {\bf Conoscenze:}
+		\begin{itemize}
+			\item Frazioni algebriche:\\ semplificazione
+			\item Equazioni numeriche di primo grado fratte.
+			\item Tecniche risolutive di un problema, anche utilizzando equazioni di primo grado.
+		\end{itemize}
+		\item {\bf Abilità:}
+		\begin{itemize}
+			\item Saper fattorizzare un Polinomio
+			\item Utilizzo dell'algebra per risolvere problemi numerici e algebrici
+		\end{itemize}
+	\end{enumerate} 
+}
+\end{multicols}
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus.
+\end{loggentry}
+
+%------------------------------------- Lessons
+\newpage
+\section{\small \bf LEZIONI}
+\subsection{\small \bf {\em MODULO 1: Ripasso Fattorizzazione}}
+\begin{loggentry}{mer 30.09.2020}{\em Presentazioni e ripasso}\\
+Ad un primo approccio la classe pare collaborativa e sufficientemente silenziosa.
+Il rispetto delle prescrizioni Covid-19
+\end{loggentry}
+
+\begin{loggentry}{ven 02.10.2020}{\em Presentazione Programma}\\
+salvo poi ricredermi, il giorno dopo. Testa di serie Dedoro Nicole (RdC), che con altri 3/4, movimentano/disturbano parecchio le lezioni.
+\end{loggentry}
+
+\begin{loggentry}{mer 07.10.2020}{\em Inizio Ripasso: Monomi e Polinomi}\\
+{\em Intro: la precisione in matematica; il calcolo letterale e le imprecisioni.}\\
+"Tutto apposto"; "un'altro"; "perchè";\\ sono tutti esempi di un linguaggio di comunicazione - la lingua italiana appunto - che richiede precisione, come nella matematica e in altri linguaggi: non si può quindi sostenere che gli altri linguaggi non richiedano precisione. 
+\begin{enumerate}
+			\item Il calcolo letterale: perché usiamo le lettere? 
+			\item I Polinomi.
+			\item Le operazioni con {\em monomi e polinomi}.
+		\end{enumerate}
+\end{loggentry}
+
+\begin{loggentry}{ven 09.10.2020}{\em Intro: Calcolo Letterale: perché fattorizzare un Polinomio?}\\
+Scomporre/Fattorizzare un Polinomio: qual é l'utilità?
+\end{loggentry}
+\newthought{osservazioni}\\ La gestione della lezione con i gruppi {\em "a distanza"} è piuttosto complicato\\
+\newthought{nota 1}\\ Il livello di attenzione sfiora i 15'.\\
+
+\begin{loggentry}{mer 14.10.2020}{\em Fattorizzazione}\\
+{\em Intro: la precisione in matematica; il calcolo letterale e le imprecisioni.}\\
+"Tutto apposto"; "un'altro"; "perchè" sono tutti esempi di un linguaggio di comunicazione - la lingua italiana appunto - che richiede precisione, come nella matematica e in altri linguaggi: non si può quindi sostenere che gli altri linguaggi non richiedano precisione. 
+\begin{enumerate}
+			\item Come e perché si {\em fattorizza} un Polinomio? 
+			\item I metodi:
+			\begin{enumerate}
+				\item {\em Raccoglimento TOTALE}
+				\item {\em Raccoglimento PARZIALE}
+				\item {\em Prodotti Notevoli}
+				\item {\em Trinomio "particolare"}
+				\item {\em Trinomio di secondo grado}
+				\item {\em Regola di Ruffini:}
+				\begin{itemize}
+					\item Teorema del Resto
+					\item Divisione tra Polinomi
+					\item Teorema di Ruffini
+				\end{itemize}
+			\end{enumerate}
+		\end{enumerate}
+\end{loggentry}
+
+\newthought{nota 1}\\ Si sono visti solo alcuni esempi di Prodotti Notevoli, un paio di esercizi:\\ La classe è molto arrugginita.
+\begin{itemize}
+	\item $(2x-1)^2$;
+	\item $(x+1) \cdot (x-1)$;
+	\item $4x^2-4x+1 = (2x-1)^2$.
+\end{itemize}
+
+\newthought{Esercizi assegnati:}\\ Es. dal 12 al 15, e 30 a pag. 15; Es. n. 56, 57 e 72 a pag. 17.\\
+
+\begin{loggentry}{ven 16.10.2020}{\em Fattorizzazione}\\
+Riprendere la lezione di mer 14.10.2020;
+\end{loggentry}
+%------------------------------------- CLASSE 3^Qa - COMM.LE SER -------------------------
+
+\newpage
+\section{La Classe 3QA - Servizi Commerciali Serali}
+\marginpar {\footnotesize {\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+La classe si presenta molto eterogenea in termini di preparazione e competenze sulla specifica materia, ma già sufficientemente coesa da permettere un'azione didattica efficace.\\
+Si tratta di persone adulte che, per la maggior parte, lavora.\\
+Il problema principale sembra essere il carico di lavoro che la classe è in grado di reggere: è prossimo allo zero.
+
+$$
+\begin{array}{|l|l|l|l|l|}
+\hline \text {\bf n.} & \text {\bf cognome } & \text {\bf nome } & \text {\bf email } & \text {\bf note }\\
+\hline \text {\bf 1 } & \text { Arias Moreno } & \text { Freudy Josue } & \text { @remondini.net } & \text {\emph {\footnotesize Brevissime note essenziali, comportamento}}\\
+\hline \text {\bf 2 } & \text { Bellini } & \text { Daniela } & \text { @remondini.net } & \\
+\hline \text {\bf 3 } & \text { Bonato } & \text { Simone } & \text { @remondini.net } & \\
+\hline \text {\bf 4 } & \text { Bortoli } & \text { Veronica } & \text { @remondini.net } & \\
+\hline \text {\bf 5 } & \text { Dalle Nogare } & \text { Filippo } & \text { @remondini.net } & \\
+\hline \text {\bf 6 } & \text { Faggion } & \text { Ilaria } & \text { @remondini.net } & \\
+\hline \text {\bf 7 } & \text { Fantinelli } & \text { Matteo } & \text { @remondini.net } & \\
+\hline \text {\bf 8 } & \text { Furlan } & \text { Giulia } & \text { @remondini.net } & \\
+\hline \text {\bf 9 *} & \text { Laqnissi } & \text { Linda } & \text { @remondini.net } & \\
+\hline \text {\bf 10 } & \text { Pegoraro } & \text { Marco } & \text { @remondini.net } & \\
+\hline \text {\bf 11 } & \text { Pizzato } & \text { Chiara } & \text { @remondini.net } & \text {\emph {\footnotesize Brevissime note essenziali, comportamento}}\\
+\hline \text {\bf 12 } & \text { Proietti } & \text { Valentina } & \text { @remondini.net } & \\
+\hline \text {\bf 13 } & \text { Tommasini } & \text { Valentina } & \text { @remondini.net } & \\
+\hline \text {\bf 14 } & \text { Vladoiu } & \text { Elena Diana } & \text { @remondini.net } & \\
+\hline \text {\bf 15 } & \text { Zanon } & \text { Angelica } & \text { @remondini.net } & \\
+\hline
+\end{array}
+$$
+
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus
+
+%------------------------------------- LA CLASSE
+\newpage
+\section{Programmazione Didattica 3 QA}
+\subsection{\small \bf MODULO 1 - Gli Insiemi Numerici}
+
+\begin{loggentry}{Settembre - Ottobre}{\em Insiemi Numerici}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar {\footnotesize {\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}
+		\begin{itemize}
+			\item Frazioni algebriche: semplificazione
+			\item Equazioni numeriche di primo grado fratte.
+			\item Tecniche risolutive di un problema, anche utilizzando equazioni di primo grado.
+			\end{itemize}
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate} 
+\columnbreak
+
+\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Frazioni algebriche: semplificazione
+Equazioni numeriche di primo grado fratte.
+Tecniche risolutive di un problema, anche utilizzando equazioni di primo grado
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+\end{enumerate}
+}
+\end{multicols}
+\newthought{nota 1}\\ Nulla et lectus vestibulum ur na fringilla ultrices. \newthought{nota 2}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus sit amet tortor gravida placerat. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus.
+\end{loggentry}
+
+\newpage
+\subsection{\small \bf MODULO 2: Calcolo Letterale}
+
+\begin{loggentry}{Settembre - Ottobre}{\em Insiemi Numerici}
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+
+\marginpar{{\em competenze:}\\This is a margin note using the geometry package, set at 
+3cm vertical offset to the line it is typeseted}
+\begin{multicols}{2}
+{\small
+	\begin{enumerate}
+		\item {\bf Conoscenze:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Abilità:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\bf Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate} 
+\columnbreak
+
+\begin{enumerate}
+		\item {\em Lezione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+		\item {\em Comportamento:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\item {\em Attenzione:}\\ Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Mauris ut leo. Cras viverra metus rhoncus sem.
+	\end{enumerate}
+	}
+\end{multicols}
+\newthought{nota 1}\\ Programmare verifica di fine ottobre. 
+\newthought{nota 2}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus sit amet tortor gravida placerat. 
+\newthought{osservazioni}\\ Nulla et lectus vestibulum ur na fringilla ultrices. ellus eu tellus.
+\end{loggentry}
+
+%------------------------------------- Lessons
+\newpage
+\section{\small \bf LEZIONI}
+\subsection{\small \bf MODULO 1: Gli Insiemi Numerici}
+\begin{loggentry}{gio | 01.10.2020}{\em Presentazioni e ripasso}\\
+Trattandosi di una classe di adulti, gli studenti sono sufficientemente responsabili da non presentare ostacoli/rallentamenti allo svolgimento della programmazione didattica.\\Vengono rispettate le prescrizioni Covid-19
+\end{loggentry}
+
+\begin{loggentry}{ven | 03.10.2020 - DAD}{\em Presentazioni e presa visione Programma}\\
+La lezione a distanza ha visto tutta la classe presente.\\
+E' indispensabile adottare soluzioni che permettano la verifica della partecipazione.\\
+\end{loggentry}
+
+\begin{loggentry}{gio | 08.10.2020 }{\em Inizio Programmazione: I Numeri Naturali: $\N$}
+\begin{enumerate}
+	\item Intro agli Insiemi Numerici: $\N$, $\Z$, $\Q$, $\R$.
+	\item L'Insieme $\N$ dei  Numeri Naturali
+	\item Le Operazioni
+\end{enumerate}
+\end{loggentry}
+
+\begin{loggentry}{ven | 09.10.2020 - DAD}{\em Esercizi sui num. naturali}\\
+\marginpar {\footnotesize {\em proposta alle classe:}\\ modalità "3x1":\\ 3 controlli quaderno = 1 voto Orale}
+La lezione a distanza ha visto quasi tutta la classe presente: solo due assenti.
+\begin{itemize}
+	\item es. a pag. 36 n. 50, 51, 52, 53.
+\end{itemize}
+\end{loggentry}
+
+\begin{loggentry}{gio | 15.10.2020 }{\color{red}{\em > I Numeri Naturali: $\N$}}
+\begin{enumerate}
+	\item Le operazioni in $\N$.
+	\item Massimo Comune Divisore e minimo comune multiplo in $\N$
+	\item Scomporre un Numero Naturale
+	\item I Numeri Primi
+	\item Elevamento a potenza: proprietà delle {\em potenze}
+	\item Radicali: proprietà dei {\em radicali}
+\end{enumerate}
+\end{loggentry}
+
+\begin{loggentry}{ven | 16.10.2020 - DAD}{\em Esercizi sui num. naturali}\\
+La lezione a distanza ha visto quasi tutta la classe presente: solo due assenti.
+\begin{itemize}
+	\item es. 
+	\item 2
+	\item 3 
+\end{itemize}
+\end{loggentry}
+%=======================================================================
+%
+%
+%%------------------------------------- DICEMBRE 2020
+%
+%
+%%------------------------------------- GENNAIO 2021
+%
+%
+%%------------------------------------- FEBBRAIO 2021
+%
+%
+%%------------------------------------- MARZO 2021
+%
+%
+%%------------------------------------- APRILE 2021
+%
+%
+%%------------------------------------- MAGGIO 2021
+%
+%
+%%------------------------------------- GIUGNO 2021
+\end{document}

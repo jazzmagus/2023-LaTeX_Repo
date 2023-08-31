@@ -1,0 +1,13 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{Ottobre - 2021}{1}{section*.1}%
+\contentsline {subsection}{Classe 1 C}{1}{subsection*.2}%
+\contentsline {subsection}{Classe 1 B}{1}{subsection*.3}%
+\contentsline {subsection}{attenzione}{1}{subsection*.4}%
+\contentsline {subsection}{comportamento}{2}{subsection*.5}%
+\contentsline {subsection}{attenzione}{2}{subsection*.6}%
+\contentsline {section}{Novembre - 2021}{2}{section*.7}%
+\contentsline {subsection}{Classe 1 C}{2}{subsection*.8}%
+\contentsline {subsection}{Classe 4 C}{3}{subsection*.9}%
+\contentsline {subsection}{Classe 3 C}{3}{subsection*.10}%
+\contentsfinish 
