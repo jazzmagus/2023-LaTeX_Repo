@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{Hintergrund}{2}{0}{1}
-\beamer@sectionintoc {2}{Organisation}{3}{0}{2}
-\beamer@subsectionintoc {2}{1}{Level 2}{3}{0}{2}
-\beamer@subsubsectionintoc {2}{1}{1}{Ebene 3}{3}{0}{2}
