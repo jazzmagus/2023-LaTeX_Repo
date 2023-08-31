@@ -1,2 +1,0 @@
-\beamer@sectionintoc {1}{Sections Give Structure}{2}{0}{1}
-\beamer@sectionintoc {2}{Outlook}{5}{0}{2}

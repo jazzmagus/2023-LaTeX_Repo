@@ -1,0 +1,291 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Daily Laboratory Book
+% LaTeX Template
+% Version 1.0 (4/4/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frank Kuster (http://www.ctan.org/tex-archive/macros/latex/contrib/labbook/)
+%
+% Important note:
+% This template requires the labbook.cls file to be in the same directory as the
+% .tex file. The labbook.cls file provides the necessary structure to create the
+% lab book.
+%
+% HOW TO USE THIS TEMPLATE 
+% Each day in the lab consists of three main things:
+%
+% 1. LABDAY: The first thing to put is the \labday{} command with a date in 
+% curly brackets, this will make a new page and put the date in big letters 
+% at the top.
+%
+% 2. EXPERIMENT: Next you need to specify what experiment(s) you are 
+% working on with an \experiment{} command with the experiment shorthand 
+% in the curly brackets. The experiment shorthand is defined in the 
+% 'DEFINITION OF EXPERIMENTS' section below, this means you can 
+% say \experiment{pcr} and the actual text written to the PDF will be what 
+% you set the 'pcr' experiment to be. If the experiment is a one off, you can 
+% just write it in the bracket without creating a shorthand. Note: if you don't 
+% want to have an experiment, just leave this out and it won't be printed.
+%
+% 3. CONTENT: Following the experiment is the content, i.e. what progress 
+% you made on the experiment that day.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[idxtotoc,hyperref,openany]{labbook} % 'openany' here removes the gap page between days, erase it to restore this gap; 'oneside' can also be added to remove the shift that odd pages have to the right for easier reading
+
+\usepackage[ 
+  backref=page,
+  pdfpagelabels=true,
+  plainpages=false,
+  colorlinks=true,
+  bookmarks=true,
+  pdfview=FitB]{hyperref} % Required for the hyperlinks within the PDF
+  
+\usepackage{booktabs} % Required for the top and bottom rules in the table
+\usepackage{float} % Required for specifying the exact location of a figure or table
+\usepackage{graphicx} % Required for including images2
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{multicol}
+\usepackage[italian]{babel}
+%\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{comment}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{CadetBlue}}
+\newcommand{\HRule}{\rule{\linewidth}{0.1mm}} % Command to make the lines in the title page
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DEFINITION OF EXPERIMENTS
+%----------------------------------------------------------------------------------------
+
+\newexperiment{example}{This is an example experiment}
+\newexperiment{example2}{This is another example experiment}
+\newexperiment{example3}{This is yet another example experiment}
+\newexperiment{table}{This shows a sample table}
+%\newexperiment{shorthand}{Description of the experiment}
+
+%---------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\frontmatter % Use Roman numerals for page numbers
+\title{
+\begin{center}
+\HRule \\[0.5cm]
+{\Huge \bfseries Diario di Bordo \\[0.5cm] \Large Dipartimento di Matematica}\\[0.4cm] % Degree
+\HRule \\[1.5cm]
+\end{center}
+}
+\author{\LARGE Diego Fantinelli \\ \\ \Large \texttt {diego.fantinelli@gmail.com} \\[2cm]} % Your name and email address
+%\bigskip
+\date{A.S. 2020/21} % Beginning date
+
+\maketitle
+
+\tableofcontents
+
+\mainmatter % Use Arabic numerals for page numbers
+
+%----------------------------------------------------------------------------------------
+%	LAB BOOK CONTENTS
+%----------------------------------------------------------------------------------------
+
+% Blank template to use for new days:
+
+%\labday{Day, Date Month Year}
+
+%\experiment{}
+
+%Text
+
+%-----------------------------------------
+
+%\experiment{}
+
+%Text
+
+%----------------------------------------------------------------------------------------
+
+\labday{Friday, 25 November 2011}
+
+\experiment{example}
+
+\begin{multicols}{2}
+\lipsum[1]
+\end{multicols}
+%-----------------------------------------
+
+\experiment{example2} % Multiple experiments can be included in a single day, this allows you to segment what was done each day into separate categories
+
+%\begin{figure}[H] % Example of including images
+%\begin{center}
+%\includegraphics[width=\linewidth]{example_figure}
+%\end{center}
+%\caption{Example figure.}
+%\label{fig:example_figure}
+%\end{figure}
+\begin{multicols}{2}
+\lipsum[1]
+\end{multicols}
+%-----------------------------------------
+
+\experiment{example}
+\section*{comportamento}
+\lipsum[3]
+	\subsection*{Lezione - Il Calcolo Integrale}
+	\begin{multicols}{2}
+	\subsubsection*{Cenni Storici}
+	L'idea di base del concetto di integrale era nota ad Archimede di Siracusa, vissuto tra il 287 e il 212 a.C., ed era contenuta nel metodo da lui usato per il calcolo dell'area del cerchio o dell'area sottesa al segmento di un ramo di parabola, detto metodo di esaustione, già proposta da Eudosso di Cnido.
+
+Nel XVII secolo alcuni matematici trovarono altri metodi per calcolare l'area sottesa al grafico di semplici funzioni, tra di essi figurano, ad esempio, Bonaventura Cavalieri, scopritore del metodo degli indivisibili (anni 1640), Pierre de Fermat (1636) e Nicolaus Mercator (1668). In quegli stessi anni Pietro Mengoli (1659) diede una prima definizione di integrale.
+
+Nel diciassettesimo e diciottesimo secolo Isaac Newton, Gottfried Leibniz, Johann Bernoulli dimostrarono indipendentemente il teorema fondamentale del calcolo integrale, che ricondusse tale problema alla ricerca della primitiva di una funzione.
+
+
+Qual è l'integrale (animazione)
+La definizione di integrale per le funzioni continue in un intervallo venne inizialmente formulata da Augustin-Louis Cauchy, che a partire dal lavoro di Mengoli, descrisse l'integrale utilizzando la definizione di limite. In seguito Bernhard Riemann propose la sua definizione, in modo da comprendere classi più estese di funzioni. Nel 1875, Gaston Darboux riformulò la definizione già individuata da Cauchy in modo da evitare l'uso di limiti e dimostrando che era del tutto equivalente alla definizione data da Riemann. Per questo motivo spesso si parla di integrale di Riemann-Darboux. Allo scopo di comprendere una classe molto più estesa di funzioni, Henri Lebesgue produsse una definizione di integrale più complessa, attraverso l'introduzione della teoria della misura. In seguito Thomas Stieltjes fu in grado di generalizzare l'integrale di Riemann introducendo il concetto di funzione integratrice e, con un procedimento del tutto analogo, Johann Radon generalizzò l'integrale di Lebesgue. Una definizione d'integrale alternativa a quella di Lebesgue-Radon venne fornita da Percy J. Daniell, che la ricavò a partire dall'integrale di Riemann-Stieltjes.
+	\end{multicols}
+%----------------------------------------------------------------------------------------
+
+\labday{Friday, 26 March 2010}
+
+\experiment{table}
+
+\begin{table}[H]
+\begin{tabular}{l l l}
+\toprule
+\textbf{Groups} & \textbf{Treatment X} & \textbf{Treatment Y} \\
+\toprule
+1 & 0.2 & 0.8\\
+2 & 0.17 & 0.7\\
+3 & 0.24 & 0.75\\
+4 & 0.68 & 0.3\\
+\bottomrule
+\end{tabular}
+\caption{The effects of treatments X and Y on the four groups studied.}
+\label{tab:treatments_xy}
+\end{table}
+
+Table \ref{tab:treatments_xy} shows that groups 1-3 reacted similarly to the two treatments but group 4 showed a reversed reaction.
+
+%----------------------------------------------------------------------------------------
+
+\labday{Saturday, 27 March 2010}
+
+\experiment{Bulleted list example} % You don't need to make a \newexperiment if you only plan on referencing it once
+
+This is a bulleted list:
+
+\begin{itemize}
+\item Item 1
+\item Item 2
+\item \ldots and so on
+\end{itemize}
+
+%-----------------------------------------
+
+\experiment{example}
+
+\lipsum[6]
+
+%-----------------------------------------
+
+\experiment{example2}
+
+\lipsum[7]
+
+%-----------------------------------------
+
+\labday{27 agosto 2021}
+
+\experiment{Classe 1 C}
+\begin{multicols}{2}
+Text \colorbox{BurntOrange}{questo testo è evidenziato}\\
+\lipsum[2]
+Text \colorbox{SpringGreen}{questo testo è evidenziato}\\
+\end{multicols}
+\hrule
+
+%-----------------------------------------
+
+\experiment{}
+
+Text
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	FORMULAE AND MEDIA RECIPES
+%----------------------------------------------------------------------------------------
+
+\labday{} % We don't want a date here so we make the labday blank
+
+\begin{center}
+\HRule \\[0.4cm]
+{\huge \textbf{Formulae and Media Recipes}}\\[0.4cm] % Heading
+\HRule \\[1.5cm]
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	MEDIA RECIPES
+%----------------------------------------------------------------------------------------
+
+\newpage
+
+\huge \textbf{Media} \\ \\
+
+\normalsize \textbf{Media 1}\\
+\begin{table}[H]
+\begin{tabular}{l l l}
+\toprule
+\textbf{Compound} & \textbf{1L} & \textbf{0.5L}\\
+\toprule
+Compound 1 & 10g & 5g\\
+Compound 2 & 20g & 10g\\
+\bottomrule
+\end{tabular}
+\caption{Ingredients in Media 1.}
+\label{tab:med1}
+\end{table}
+
+%-----------------------------------------
+
+%\textbf{Media 2}\\ \\
+
+%Description
+
+%----------------------------------------------------------------------------------------
+%	FORMULAE
+%----------------------------------------------------------------------------------------
+
+\newpage
+
+\huge \textbf{Formulae} \\ \\
+
+\normalsize \textbf{Formula 1 - Pythagorean theorem}\\ \\
+$a^2 + b^2 = c^2$\\ \\
+
+%-----------------------------------------
+
+%\textbf{Formula X - Description}\\ \\
+
+%Formula
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

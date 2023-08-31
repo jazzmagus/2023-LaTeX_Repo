@@ -1,9 +1,0 @@
-{
-    "ltex.disabledRules": {
-        "en-US": [
-            "MORFOLOGIK_RULE_EN_US"
-        ]
-    },
-    "latex-workshop.latex.rootFile.useSubFile": false,
-    "latex-workshop.synctex.path": ""
-}
