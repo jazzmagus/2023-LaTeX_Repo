@@ -1,0 +1,337 @@
+\documentclass[11pt, a4paper]{exam}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{mdframed}
+\usepackage{enumitem}
+% \usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{color,soul}
+\usepackage{nicefrac}
+\usepackage[margin=1.1in]{geometry}
+% \usepackage[top=1.6cm, bottom=1.4cm, left=1.4cm, right=2cm, includefoot]{geometry}
+\usepackage{amsmath, amssymb, amsfonts, mathrsfs}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{dashrule}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,fit}
+\usepackage{xparse}
+\usepackage{tkz-euclide}
+\usepackage{upquote}
+\usepackage{caption}
+\usepackage{parskip}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\usepackage{pifont}
+%\usepackage{enumerate}
+%\usepackage{enumitem}
+\usepackage{linegoal}
+\usepackage[font=footnotesize,labelfont=bf, format=hang]{caption}
+\usepackage{venndiagram}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usetikzlibrary{arrows.meta,bending,positioning}
+\pgfplotsset{every x tick label/.append style={font=\footnotesize, yshift=0.6ex}, grid style={dashed}}
+\pgfplotsset{every y tick label/.append style={font=\footnotesize, xshift=0.5ex}}
+\usetikzlibrary{arrows}
+\setlength{\columnsep}{1cm}
+\tikzset{
+  arrow/.style = {-stealth[bend]},
+}
+
+\definecolor{mygray}{gray}{0.9}
+
+%\usepackage{fancyhdr}
+%\usepackage{float}
+\definecolor{maroon}{cmyk}{0,0.87,0.68,0.32}
+\definecolor{almond}{rgb}{0.94, 0.87, 0.8}
+\definecolor{cosmiclatte}{rgb}{1.0, 0.97, 0.91}
+\definecolor{eggshell}{rgb}{0.94, 0.92, 0.84}
+
+
+% \renewcommand{\questionshook}{%
+%   \setlength{\leftmargin}{0pt}%
+% }
+% \renewcommand{\choiceshook}{%
+%   \setlength{\leftmargin}{20pt}%
+% }
+
+% \checkboxchar{$\square$}
+% \checkedchar{$\boxtimes$}
+% \CorrectChoiceEmphasis{}  % solo per non avere bold nelle risposte corrette
+
+% \renewcommand{\checkboxeshook}{
+% \setlength{\labelsep}{2.4em}
+% \setlength{\leftmargin}{4em}
+% }
+
+% \newcommand{\ChoiceLabel}[1]{\hspace{-1.6em}\makebox[1.6em][l]{\textbf{#1}}\ignorespaces}
+% \newcommand{\WrongChoice}[1]{\choice \ChoiceLabel{#1}}
+% \newcommand{\RightChoice}[1]{\correctchoice \ChoiceLabel{#1}}
+% \newcommand{\Item}[1]{\hspace{-17pt}\makebox[17pt][l]{\textbf{#1.}}\ignorespaces}
+% \newcommand{\midmatch}{\hspace{0.75in}\underline{\hspace{0.25in}     }}
+
+
+\setlength{\parskip}{0.6mm}
+
+% ========================== colors =======================
+
+\definecolor{mygray}{gray}{0.9}
+\definecolor{maroon}{cmyk}{0,0.87,0.68,0.32}
+\definecolor{almond}{rgb}{0.94, 0.87, 0.8}
+\definecolor{cosmiclatte}{rgb}{1.0, 0.97, 0.91}
+\definecolor{eggshell}{rgb}{0.94, 0.92, 0.84}
+\definecolor{floralwhite}{rgb}{1.0, 0.98, 0.94}
+\definecolor{darksienna}{rgb}{0.24, 0.08, 0.08}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{cinnabar}{rgb}{0.89, 0.26, 0.2}
+\definecolor{caribbeangreen}{rgb}{0.0, 0.8, 0.6}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
+\definecolor{burlywood}{rgb}{0.87, 0.72, 0.53}
+\definecolor{neonorange}{rgb}{255, 151, 24}
+
+
+% ========================== watermark =======================
+
+% \usepackage[firstpage]{draftwatermark}
+% \SetWatermarkLightness{ 0.9 }
+% \SetWatermarkColor{ brown!30 }
+% \SetWatermarkText{soluzioni}
+% \SetWatermarkScale{ 4 }
+
+% ---------------------------------- Intestazione
+
+\newcommand{\class}{\huge {Verbale del Consiglio di Classe}}
+\newcommand{\term}{\Large {Classe: 4 QAZ}}
+\newcommand{\examnum}{\large{anno scolastico 2023/'24}}
+\newcommand{\examtitle}{\large{prof. Diego Fantinelli}}
+\newcommand{\examdate}{28 ottobre 2022}
+\newcommand{\timelimit}{60 minuti}
+\CorrectChoiceEmphasis{\color{maroon}}
+\SolutionEmphasis{\color{maroon} \footnotesize}
+\renewcommand{\solutiontitle}{\noindent\textbf{Soluzione:}\par\noindent}
+
+\pagestyle{headandfoot}
+\firstpageheader{}{}{}
+\runningheader{\footnotesize IIS "G. A. Remondini" - Bassano del Grappa (VI)}{}{Verbale del Consiglio di Classe}
+\runningheadrule
+
+\firstpagefooter{}{}{}
+\runningfooter{}{}{pag. \thepage\ di \numpages}
+\runningfootrule
+
+
+% \documentclass[11pt]{article}
+
+% \usepackage[italian]{babel}
+% \usepackage[inline]{enumitem}
+% \usepackage{pifont}
+% \usepackage{amssymb}
+% \usepackage{fancyhdr}
+% \usepackage{enumitem}
+% \usepackage{blindtext}
+% \usepackage{lipsum}
+% \usepackage{multicol}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \rhead{\today}
+% \lhead{\em Liceo Scientifico "J. Da Ponte - Bassano del Grappa"}
+% \cfoot{\thepage}
+
+%\fancyhead{}
+%\fancyhead[CO,RE]{Liceo Scientifico "J. Da Ponte - Bassano del Grappa"}
+%\fancyfoot{}
+%\fancyfoot[LE,RO]{\thepage}
+%%\fancyfoot[LO,CE]{Chapter \thechapter}
+%\fancyfoot[CO,RE]{Author Name}
+
+
+
+
+% \title{Verbale del Consiglio di Classe}
+% \author{Classe 3 C \thanks{funded by the Overleaf team}}
+% \date{\today}
+
+
+
+\begin{document}
+
+% =============================================== Title Page ================================ 
+
+\tikz [remember picture, overlay] %
+\node [shift={(1.3cm,-0.5cm)}] at (current page.north west) %
+[anchor=north west] %
+{\includegraphics[width = 22mm]{logo_rem.jpeg}};\\[2ex]
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[align=left, text width=14cm, anchor=north west] (texy)
+    at ($(current page.north) + (-7cm,-0.6cm)$)
+    {
+    \begin{center}
+      \footnotesize {\bf ISTITUTO D’ISTRUZIONE SUPERIORE “G. A. REMONDINI”}\\ TECNICO PER IL TURISMO, LE BIOTECNOLOGIE SANITARIE E LA LOGISTICA PROFESSIONALE PER I SERVIZI COMMERCIALI, SERVIZI PER LA SANITÀ E L’ASSISTENZA SOCIALE,
+      SERVIZI PER L'ENOGASTRONOMIA\\
+      Via Travettore, 33 - 36061 Bassano del Grappa (VI)\\ tel: 0424.523592 - Fax : 0424.220037 -  VIIS01700L@istruzione.it
+    \end{center}
+    };
+\end{tikzpicture}
+% \rule[2ex]{\textwidth}{0.5pt}\\
+\tikz [remember picture, overlay] %
+\node [shift={(17.5cm,-0.5cm)}] at (current page.north west) %
+[anchor=north west] %
+{\includegraphics[width = 18mm]{logo_italy.png}};\\[2ex]
+
+\begin{center}
+\vfill
+\rule[2ex]{\textwidth}{0.5pt}
+{\bf \class}\\[20pt]
+{\bf \term }\\[30pt]
+
+% \begin{multicols}{2}
+% {\em \large{\examtitle}}\\
+% {\em \large{\examnum}}
+% \end{multicols}
+
+\rule[2ex]{\textwidth}{0.5pt}\\
+\end{center}
+
+\vfill
+%\maketitle
+% \begin{center}
+% 	{\huge Verbale del Consiglio di Classe}\\[40pt]
+% %	{\em Bassano del Grappa, \today}\\[2cm]
+% \end{center}
+%\par\noindent\rule{\textwidth}{0.4pt}
+{\bf Presenti:}
+\begin{multicols}{2}
+% \noindent
+
+\begin{itemize}
+	\item [$\square$]Giona Fantinelli - \em Coordinatore
+	\item [$\square$]Ginevra Grasselli - \em Segretario
+	\item [$\square$]Gemma Luzzi - \em Storia
+	\item [$\square$]Alessia - \em Ed. Motoria
+	\item [$\square$]Gemma Grasselli \em Tecnologia
+	\item [$\square$]Gemma Gilotti - \em Religione
+	\item [$\square$]Alessia Rossi - \em Matematica
+	\item [$\square$]Claudio Bertin - \em Psicologia
+	\item [$\square$]Claudio Lolli - \em Fisica
+\end{itemize}
+
+\end{multicols}
+{\bf Assenti:}\\
+\begin{itemize}
+  \item [$\square$]Giona
+  \item [$\square$]Ginevra
+  \item [$\square$]Gemma
+\end{itemize}
+\vspace{12pt}
+{\bf dei quali giustificati:}\\[8pt]
+\begin{itemize}
+  \item [$\square$]Giona: {\em malattia, certificato medico}
+  \item [$\square$]Ginevra: {\em quarante per test tampone positivo}
+\end{itemize}
+
+\begin{center}
+\begin{multicols}{2}
+	Coordinatore: {\em prof. Gino Bramieri}\\
+	Segretario: {\em prof. Gino Bartali}\\ 
+	\end{multicols}
+\end{center}
+\par\noindent\rule{\textwidth}{0.2pt}\\
+
+\newpage
+
+Il Consiglio di Classe inizia alle 14:53.\\
+Siamo in grado di cominciare a meno che qualcuno non abbia qualcosa da dire extra CdC.\\[20pt]
+{\bf Interventi pre-consiglio}
+
+\begin{enumerate}[label=\roman*]
+	\item [\em prof. Gregory:]Andamento della Classe:
+	\begin{enumerate}
+		\item \lipsum[2]
+		\item prova 2
+	\end{enumerate}
+	\item [\em prof. Fantinelli:]\lipsum[2]
+	\item [\em prof. Arturo:]\lipsum[3]
+\end{enumerate}
+
+\vspace{12pt}
+\par\noindent\dotfill{}\\[10pt]
+%\par\noindent\rule{\textwidth}{0.4pt}\\
+\newpage
+\subsection*{Ordine del Giorno}
+\begin{enumerate}
+	\item Andamento della Classe
+	\item Sospensioni e provvedimenti disciplinari
+	\item Sicurezzza COVID
+	\item Varie ed eventuali
+\end{enumerate}
+
+\vspace{12pt}
+\par\noindent\dotfill{}\\[10pt]
+%\par\noindent\rule{\textwidth}{0.4pt}\\
+\subsection*{Discussione OdG del Giorno}
+\begin{enumerate}
+	\item Andamento della Classe
+	
+	\begin{enumerate}
+		\item Si ritiene che in generale \dots
+		\item Si ritiene che in generale \dots
+		\item si propone pertanto \dots
+	\end{enumerate}
+	
+	\item Sospensioni e provvedimenti disciplinari
+		\begin{enumerate}
+		\item Si ritiene che in generale \dots
+		\item Si ritiene che in generale \dots
+		\item si propone pertanto \dots
+	\end{enumerate}
+	
+	\item Sicurezzza COVID-19
+		\begin{enumerate}
+		\item Si ritiene che in generale \dots
+		\item Si ritiene che in generale \dots
+		\item si propone pertanto \dots
+	\end{enumerate}
+	
+	\item Varie ed eventuali
+		\begin{enumerate}
+		\item Si ritiene che in generale \dots
+		\item Si ritiene che in generale \dots
+		\item si propone pertanto \dots
+	\end{enumerate}
+	
+\end{enumerate}
+
+
+\vspace{12pt}
+\par\noindent\dotfill{}\\[12pt]
+%\par\noindent\rule{\textwidth}{0.4pt}\\
+\subsection*{Conclusioni}
+\begin{enumerate}[label=\roman*]
+	\item [\em prof. Gregory:]Andamento della Classe
+	\item [\em prof. Rossi:]Ultricies et, tellus. Donec aliquet, tortor sed accumsan bib endum, erat ligula aliquet magna, vitae ornare o dio metus a mi. Morbi ac orci et nisl hendrerit mollis. Susp endisse ut massa. Cras nec ante. Pellen- tesque a nulla. Cum so ciis nato que p enatibus et magnis dis partu- rient montes, nascetur ridiculus mus.
+\end{enumerate}
+Il CdC termina alle ore 18:55.
+
+\vfill
+\begin{center}
+\begin{multicols}{2}
+	Il Coordinatore\\[12pt] \rule{4cm}{0.4pt}\\
+	Il Segretario\\[12pt]	\rule{4cm}{0.4pt}\\ 
+	\end{multicols}
+\end{center}
+
+%\begin{itemize}
+%\item[$\square$]
+%no checked
+%\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$]
+%failed
+%\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$]
+%checked
+%\end{itemize}
+
+\end{document}
